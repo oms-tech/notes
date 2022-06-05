@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Welcome to OMSCS Notes
 
-## Getting Started
+This repository contains the raw Markdown lecture notes from OMSCS courses that
+myself and others have meticulously written throughout our time in the program.
 
-First, run the development server:
+Feel free to read the notes here or on [OMSCS Notes](https://www.omscs-notes.com).
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## We are looking for notetakers
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Out of the top twenty-five courses (by number of reviews) in the program, we have
+produced notes for five:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. ✅ [CS-6250 (Computer Networks)](https://www.omscs-notes.com/computer-networks/welcome)
+2. ✅ [CS-6035 (Introduction to Information Security)](https://www.omscs-notes.com/information-security/welcome)
+3. ✅ [CS-7646 (Machine Learning for Trading)](https://www.omscs-notes.com/machine-learning-trading/welcome)
+4. ❌ CS-7641 (Machine Learning)
+5. ❌ CS-6515 (Graduate Algorithms)
+6. ✅ [CS-6200 (Introduction to Operating Systems)](https://www.omscs-notes.com/operating-systems/welcome)
+7. ❌ CS-6300 (Software Development Process)
+8. ❌ CS-7637 (Knowledge-Based AI)
+9. ❌ CS-7638 (Artificial Intelligence for Robotics)
+10. ❌ CSE-6242 (Data and Visual Analytics)
+11. ❌ CS-6601 (Artificial Intelligence)
+12. ❌ CS-6400 (Database Systems)
+13. ❌ CS-6750 (Human Computer Interaction)
+14. ❌ CS-6476 (Computer Vision)
+15. ❌ CS-7642 (Reinforcement Learning)
+16. ❌ CS-6310 (Software Architecture and Design)
+17. ❌ CS-6475 (Computational Photography)
+18. ❌ ISYE-6501 (Introduction to Analytics Modeling)
+19. ❌ CS-6340 (Software Analysis)
+20. ❌ CS-6262 (Network Security)
+21. ❌ CS-6210 (Advanced Operating Systems)
+22. ❌ CSE-6040 (Computing for Data Analytics)
+23. ❌ CS-6290 (High Performance Computer Architecture)
+24. ❌ CS-6440 (Introduction to Health Informatics)
+25. ✅ [ISYE-6644 (Simulation)](https://www.omscs-notes.com/simulation/welcome)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+If you would like to add notes for any of the courses seen here (or any other
+courses in the program), please reach out via [email](mailto:matt@omscs-notes.com)
+or on [LinkedIn](www.linkedin.com/in/matthew-schlenker). Your help would be very
+much appreciated!
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Thank you and happy studying!**
