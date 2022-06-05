@@ -13,4 +13,4 @@ jobs:
       - name: Install markdownlint-cli
         run: yarn add -D markdownlint-cli
       - name: Lint Markdown
-        run: yarn run lint
+        run: yarn run markdownlint
