@@ -1,0 +1,16 @@
+name: Lint
+
+on: [push]
+
+jobs:
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install markdownlint-cli
+        run: yarn add -D markdownlint-cli
+      - name: Lint Markdown
+        run: yarn run lint

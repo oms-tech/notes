@@ -1,0 +1,70 @@
+# Learn more about markdownlint rules here:
+# https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+
+# All rules not explicitly disabled are turned ON.
+default: true
+
+# Deprecated rules
+MD002: false
+MD006: false
+
+# Stylistic rules
+heading-style:
+  style: "atx"
+ul-style:
+  style: "dash"
+code-block-style:
+  style: "fenced"
+code-fence-style:
+  style: "backtick"
+emphasis-style:
+  style: "asterisk"
+strong-style:
+  style: "asterisk"
+hr-style:
+  style: "---"
+
+# > Rationale: Projects may wish to enforce a consistent document structure
+# across a set of similar content.
+#
+# It's a fine rule, but I don't think it makes sense for this project.
+required-headings: false
+
+# > Rationale: Extremely long lines can be difficult to work with in some
+# editors.
+#
+# This rule probably makes sense, but turning it on generates like 10,000
+# errors, none of which are automatically fixable. If someone wants to put up
+# a PR, I would gladly accept it.
+line-length: false
+
+# > Rationale: Some markdown parsers generate anchors for headings based on the
+# heading name; headings with the same content can cause problems with that.
+#
+# Indeed, I will do this on the web side, but I only care about second-level
+# headings, so the rule only needs to be enforced on siblings.
+no-duplicate-heading:
+  siblings_only: true # Multiple headings with the same content
+
+# > Rationale: Headings are not meant to be full sentences.
+#
+# I agree with this, but I'd like to allow "!" in addition to "?", which is
+# allowed by default.
+no-trailing-punctuation:
+  punctuation: ".,;:"
+
+# Rationale: Raw HTML is allowed in markdown, but this rule is included for
+# those who want their documents to only include "pure" markdown, or for those
+# who are rendering markdown documents in something other than HTML.
+#
+# Valid point, and worth revisting. For the time being, the IIS exam review
+# notes use <details>/<summary> components to show/hide questio answers.
+no-inline-html:
+  allowed_elements:
+    - details
+    - summary
+
+# This is a huge accessibility fail on my part and needs to be rectified ASAP.
+# The site has ~2,500 images and I haven't added alt text to any of them. I need
+# help with this!
+no-alt-text: false
