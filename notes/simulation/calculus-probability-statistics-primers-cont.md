@@ -1,3 +1,8 @@
+---
+course: Simulation
+title: Calculus, Probability, and Statistics Primers, Continued
+---
+
 # Calculus, Probability, and Statistics Primers, Continued
 
 ## Conditional Expectation (OPTIONAL)

@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Distributed Shared Memory
+---
+
 # Distributed Shared Memory
 
 ## Reviewing DFS

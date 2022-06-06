@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Udacity Quizzes
+---
+
 # Udacity Quizzes
 
 ## The Security Mindset

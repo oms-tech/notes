@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Final Exam Review
+---
+
 # Final Exam Review
 
 Before getting into final exam review Dr. Ahamad spends some time discussing

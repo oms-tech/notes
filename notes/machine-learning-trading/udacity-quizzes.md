@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Udacity Quizzes
+---
+
 # Udacity Quizzes
 
 ## Reading and Plotting Stock Data

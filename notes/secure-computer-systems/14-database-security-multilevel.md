@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Database Security Multi-level
+---
+
 # Database Security Multi-level
 
 ## Multi-Level Security

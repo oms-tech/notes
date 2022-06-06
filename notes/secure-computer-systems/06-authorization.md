@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Discretionary Access Control
+---
+
 # Discretionary Access Control
 
 ## Motivations

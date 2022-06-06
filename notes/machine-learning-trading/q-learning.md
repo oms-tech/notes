@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Q-Learning
+---
+
 # Q-Learning
 
 ## Overview

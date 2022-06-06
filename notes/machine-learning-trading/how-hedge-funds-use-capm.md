@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: How Hedge Funds Use the CAPM
+---
+
 # How Hedge Funds Use the CAPM
 
 ## Risks for Hedge Funds

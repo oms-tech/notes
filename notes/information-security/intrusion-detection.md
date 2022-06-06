@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Intrusion Detection
+---
+
 # Intrusion Detection
 
 ## Defense in Depth

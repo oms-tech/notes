@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: The Power of NumPy
+---
+
 # The Power of NumPy
 
 ## What is NumPy?

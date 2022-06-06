@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Thread Performance Considerations
+---
+
 # Thread Performance Considerations
 
 ## Which Threading Model Is Better?

@@ -1,3 +1,8 @@
+---
+course: Simulation
+title: Generating Uniform Random Numbers
+---
+
 # Generating Uniform Random Numbers
 
 ## Introduction

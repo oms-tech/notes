@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Statistical Analysis of Time Series
+---
+
 # Statistical Analysis of Time Series
 
 ## Global Statistics

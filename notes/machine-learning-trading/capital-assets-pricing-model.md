@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: The Capital Assets Pricing Model (CAPM)
+---
+
 # The Capital Assets Pricing Model (CAPM)
 
 ## Definition of a Portfolio

@@ -1,3 +1,8 @@
+---
+course: Computer Networks
+title: Introduction, History, and Internet Architecture
+---
+
 # Introduction, History, and Internet Architecture
 
 ## A Brief History of the Internet

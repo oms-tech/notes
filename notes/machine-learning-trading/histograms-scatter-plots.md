@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Histograms and Scatter Plots
+---
+
 # Histograms and Scatter Plots
 
 ## A Closer Look at Daily Returns

@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: IO Management
+---
+
 # IO Management
 
 ## I/O Devices

@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: The Fundamental Law of Active Portfolio Management
+---
+
 # The Fundamental Law of Active Portfolio Management
 
 ## Grinold's Fundamental Law

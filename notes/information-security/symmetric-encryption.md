@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Symmetric Encryption
+---
+
 # Symmetric Encryption
 
 ## Block Cipher Scheme

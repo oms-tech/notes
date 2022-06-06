@@ -1,3 +1,8 @@
+---
+course: Simulation
+title: Welcome to Simulation
+---
+
 # Welcome to Simulation
 
 ## Howdy Friends

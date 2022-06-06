@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: IPSec and TLS
+---
+
 # IPSec and TLS
 
 ## Goals of IPSec

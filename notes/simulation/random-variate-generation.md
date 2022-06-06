@@ -1,3 +1,8 @@
+---
+course: Simulation
+title: Random Variate Generation
+---
+
 # Random Variate Generation
 
 ## Inverse Transform Method

@@ -1,3 +1,8 @@
+---
+course: Computer Networks
+title: Router Design and Algorithms (Part 2)
+---
+
 # Router Design and Algorithms (Part 2)
 
 ## Why We Need Packet Classification?

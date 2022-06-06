@@ -1,3 +1,8 @@
+---
+course: Computer Networks
+title: Welcome to CN
+---
+
 # Welcome to CN
 
 ## Howdy Friends

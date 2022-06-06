@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: The Security Mindset
+---
+
 # The Security Mindset
 
 ## Why Cyber Security?

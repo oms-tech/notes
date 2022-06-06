@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: How Machine Learning is Used at a Hedge Fund
+---
+
 # How Machine Learning is Used at a Hedge Fund
 
 ## The ML Problem

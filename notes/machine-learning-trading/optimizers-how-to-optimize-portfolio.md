@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: "Optimizers: How to Optimize a Portfolio"
+---
+
 # "Optimizers: How to Optimize a Portfolio"
 
 ## What is Portfolio Optimization

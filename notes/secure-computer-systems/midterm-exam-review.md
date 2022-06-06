@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Midterm Exam Review
+---
+
 # Midterm Exam Review
 
 It is expected that you not only know the concepts, but can apply, analyze, and evaluate them.

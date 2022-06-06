@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Design Principles
+---
+
 # Design Principles
 
 ## Why Design Principles?

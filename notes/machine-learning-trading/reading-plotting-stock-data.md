@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Reading and Plotting Stock Data
+---
+
 # Reading and Plotting Stock Data
 
 ## Data in CSV files

@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Mandatory Access Control
+---
+
 # Mandatory Access Control
 
 ## Discretionary Access Control

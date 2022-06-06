@@ -1,3 +1,8 @@
+---
+course: Simulation
+title: Course Tour
+---
+
 # Course Tour
 
 ## Whirlwind Tour

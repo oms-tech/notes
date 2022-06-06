@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Table of Contents
+---
+
 # Table of Contents
 
 - [Getting Started](01-getting-started.md)

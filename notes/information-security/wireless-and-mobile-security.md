@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Wireless and Mobile Security
+---
+
 # Wireless and Mobile Security
 
 ## Introduction to Wifi

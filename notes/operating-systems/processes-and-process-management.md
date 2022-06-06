@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Processes and Process Management
+---
+
 # Processes and Process Management
 
 ## What is a Process?

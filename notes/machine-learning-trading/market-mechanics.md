@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Market Mechanics
+---
+
 # Market Mechanics
 
 ## What Is in an Order

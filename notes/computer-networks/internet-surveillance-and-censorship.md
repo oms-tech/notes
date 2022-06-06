@@ -1,3 +1,8 @@
+---
+course: Computer Networks
+title: Internet Surveillance and Censorship
+---
+
 # Internet Surveillance and Censorship
 
 ## DNS Censorship: What is it?

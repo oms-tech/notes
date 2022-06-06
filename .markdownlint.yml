@@ -53,6 +53,8 @@ no-duplicate-heading:
 no-trailing-punctuation:
   punctuation: ".,;:"
 
+single-h1: false
+
 # Rationale: Raw HTML is allowed in markdown, but this rule is included for
 # those who want their documents to only include "pure" markdown, or for those
 # who are rendering markdown documents in something other than HTML.

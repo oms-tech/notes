@@ -1,3 +1,8 @@
+---
+course: Computer Networks
+title: Applications Videos
+---
+
 # Applications Videos
 
 ## Multimedia Applications: A Perspecitve From the Network

@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Technical Analysis
+---
+
 # Technical Analysis
 
 ## Technical Vs. Fundamental Analysis

@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: SELinux Mandatory Access Control
+---
+
 # SELinux Mandatory Access Control
 
 Janek Desai helped put together content for this module, and teaches it in the on-campus course.

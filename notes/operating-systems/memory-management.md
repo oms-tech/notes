@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Memory Management
+---
+
 # Memory Management
 
 ## Memory Management: Goals

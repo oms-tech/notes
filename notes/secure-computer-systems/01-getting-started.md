@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Getting Started
+---
+
 # Getting Started
 
 ## The Security Mindset and Operating Systems

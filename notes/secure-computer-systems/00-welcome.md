@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Welcome
+---
+
 # Welcome
 
 ## Download These Notes

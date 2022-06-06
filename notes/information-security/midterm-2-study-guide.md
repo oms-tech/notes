@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Midterm 2 Study Guide
+---
+
 # Midterm 2 Study Guide
 
 ## Chapter 7: Denial-of-Service Attacks

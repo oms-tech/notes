@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Malicious Code
+---
+
 # Malicious Code
 
 ## What is Malware Quiz

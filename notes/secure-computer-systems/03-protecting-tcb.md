@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Protecting TCB
+---
+
 # Protecting TCB
 
 ## Background

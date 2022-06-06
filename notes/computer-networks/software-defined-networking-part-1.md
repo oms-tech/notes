@@ -1,3 +1,8 @@
+---
+course: Computer Networks
+title: Software Defined Networking (Part 1)
+---
+
 # Software Defined Networking (Part 1)
 
 ## What led us to SDN?

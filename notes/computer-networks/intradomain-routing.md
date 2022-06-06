@@ -1,3 +1,8 @@
+---
+course: Computer Networks
+title: Intradomain Routing
+---
+
 # Intradomain Routing
 
 ## Routing Algorithms

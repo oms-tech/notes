@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Welcome to GIOS
+---
+
 # Welcome to GIOS
 
 ## Howdy Friends

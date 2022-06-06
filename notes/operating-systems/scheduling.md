@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Scheduling
+---
+
 # Scheduling
 
 ## Scheduling Overview

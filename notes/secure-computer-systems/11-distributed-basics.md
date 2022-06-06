@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Distributed Systems Basics
+---
+
 # Distributed Systems Basics
 
 With distributed systems we might have a server communicating with a user over an open network. An adversary might see this traffic and could maybe modify it.

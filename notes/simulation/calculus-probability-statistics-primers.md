@@ -1,3 +1,8 @@
+---
+course: Simulation
+title: Calculus, Probability, and Statistics Primers
+---
+
 # Calculus, Probability, and Statistics Primers
 
 ## Calculus Primer (OPTIONAL)

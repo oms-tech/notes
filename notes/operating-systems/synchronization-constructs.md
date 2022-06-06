@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Synchronization Constructs
+---
+
 # Synchronization Constructs
 
 ## Why Are We Still Talking About Synchronization?

@@ -1,3 +1,8 @@
+---
+course: Simulation
+title: Input Analysis
+---
+
 # Input Analysis
 
 ## Introduction

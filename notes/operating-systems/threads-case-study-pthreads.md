@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Threads Case Study - PThreads
+---
+
 # Threads Case Study - PThreads
 
 ## PThread Creation

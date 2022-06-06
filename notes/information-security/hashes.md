@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Hashes
+---
+
 # Hashes
 
 ## Hash Functions

@@ -1,3 +1,8 @@
+---
+course: Simulation
+title: Output Data Analysis
+---
+
 # Output Data Analysis
 
 ## Introduction

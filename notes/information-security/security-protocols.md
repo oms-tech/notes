@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Security Protocols
+---
+
 # Security Protocols
 
 ## Why Security Protocols
