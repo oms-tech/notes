@@ -33,10 +33,9 @@ required-headings: false
 # > Rationale: Extremely long lines can be difficult to work with in some
 # editors.
 #
-# This rule probably makes sense, but turning it on generates like 10,000
-# errors, none of which are automatically fixable. If someone wants to put up
-# a PR, I would gladly accept it.
-line-length: false
+# Makes sense, but some headers run long. I'll disable line length for those.
+line-length:
+  headers: false
 
 # > Rationale: Some markdown parsers generate anchors for headings based on the
 # heading name; headings with the same content can cause problems with that.
