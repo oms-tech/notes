@@ -9,7 +9,9 @@ title: Welcome to Simulation
 
 Here are my notes for Simulation, which I took in Fall 2020.
 
-Each document in "Lecture Notes" corresponds to a module in Canvas. Within each document, the headings correspond to the videos within that module. Usually, I omit any introductory, summary, or administrative content.
+Each document in "Lecture Notes" corresponds to a module in Canvas. Within each
+document, the headings correspond to the videos within that module. Usually, I
+omit any introductory, summary, or administrative content.
 
 ## Textbook Information
 
@@ -20,24 +22,34 @@ The following textbooks helped me get an **A** in this course:
 
 ## Download These Notes
 
-Some students have asked for PDF versions of the notes for a simpler, more portable
-studying experience. The following PDFs are available for download.
+Some students have asked for PDF versions of the notes for a simpler, more
+portable studying experience. The following PDFs are available for download.
 
-- [Simulation - Exam 1 Cheat Sheet](https://payhip.com/b/Lk14 'A two-page PDF cheat sheet for Simulation Exam 1. The source .tex file is included for easy editing.')
-- [Simulation - Exam 2 Cheat Sheet](https://payhip.com/b/POqp 'A four-page PDF cheat sheet for Simulation Exam 2. The source .tex file is included for easy editing.')
-- [Simulation - Exam 3 Cheat Sheet](https://payhip.com/b/mZis 'A six-page PDF cheat sheet for Simulation Exam 3. The source .tex file is included for easy editing.')
-- [Simulation - Lecture Notes](https://payhip.com/b/kzli 'The complete set of Simulation lecture notes, covering content from all ten modules.')
-- [Simulation - Complete](https://payhip.com/b/PZen 'The complete set of Simulation notes, including lecture notes and exam review materials.')
+- [Simulation - Exam 1 Cheat Sheet](https://payhip.com/b/Lk14 'A two-page PDF
+  cheat sheet for Simulation Exam 1. The source .tex file is included for easy
+  editing.')
+- [Simulation - Exam 2 Cheat Sheet](https://payhip.com/b/POqp 'A four-page PDF
+  cheat sheet for Simulation Exam 2. The source .tex file is included for easy
+  editing.')
+- [Simulation - Exam 3 Cheat Sheet](https://payhip.com/b/mZis 'A six-page PDF
+  cheat sheet for Simulation Exam 3. The source .tex file is included for easy
+  editing.')
+- [Simulation - Lecture Notes](https://payhip.com/b/kzli 'The complete set of
+  Simulation lecture notes, covering content from all ten modules.')
+- [Simulation - Complete](https://payhip.com/b/PZen 'The complete set of
+  Simulation notes, including lecture notes and exam review materials.')
 
 ## Environment Setup
 
-This class requires some environment setup. I have recorded the following YouTube walkthroughs, which may be helpful:
+This class requires some environment setup. I have recorded the following
+YouTube walkthroughs, which may be helpful:
 
 - [Running Arena in GT Virtual Lab](https://www.youtube.com/watch?v=fmDfofNywkg)
 
 ## Contact
 
-If you have any questions, comments, concerns, or improvements, don't hesitate to reach out to me. You can find me at:
+If you have any questions, comments, concerns, or improvements, don't hesitate
+to reach out to me. You can find me at:
 
 - [matt@omscs-notes.com](mailto:matt@omscs-notes.com)
 - [Matt Schlenker \| Linkedin](https://www.linkedin.com/in/matthew-schlenker/)

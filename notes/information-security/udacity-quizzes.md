@@ -13,7 +13,9 @@ title: Udacity Quizzes
 
 ### Security Impact Quiz Solution
 
-No one right solution. I think the important thing to understand here is that no company is safe from a breach, and many companies that you interact on a daily basis have suffered breaches.
+No one right solution. I think the important thing to understand here is that no
+company is safe from a breach, and many companies that you interact on a daily
+basis have suffered breaches.
 
 ### Black Market Prices Quiz
 
@@ -23,7 +25,9 @@ No one right solution. I think the important thing to understand here is that no
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/E405BEDE-4306-4A65-91C9-AD0296201E67.png)
 
-I think the point here is not to remember the exact numbers, but rather to understand that this information can be purchased relatively cheaply. This makes sense given that millions of records can be retrieved in a single breach.
+I think the point here is not to remember the exact numbers, but rather to
+understand that this information can be purchased relatively cheaply. This makes
+sense given that millions of records can be retrieved in a single breach.
 
 ### Sony Pictures Quiz
 
@@ -43,7 +47,8 @@ Read more [here](https://en.wikipedia.org/wiki/Sony_Pictures_hack)
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/1ED304D4-8E4A-43E3-9209-62B58C7AD5E5.png)
 
-Since data breaches involve the disclosure of information to unauthorized parties, these breaches violate confidentiality.
+Since data breaches involve the disclosure of information to unauthorized
+parties, these breaches violate confidentiality.
 
 ### Losses Due to Cyber Crime Quiz
 
@@ -71,9 +76,12 @@ Since data breaches involve the disclosure of information to unauthorized partie
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/1094841F-A963-4260-BA08-4E5F4BB130B5.png)
 
-Since `allow_login`, `pwdstr` and `targetpwd` are all local variables to `main`, any access of them will access memory locations inside the stack frame for `main`.
+Since `allow_login`, `pwdstr` and `targetpwd` are all local variables to `main`,
+any access of them will access memory locations inside the stack frame for
+`main`.
 
-The only lines of code that don't access the stack frame for `main` are the calls to `printf`, (which create a new stack frame), and `else`.
+The only lines of code that don't access the stack frame for `main` are the
+calls to `printf`, (which create a new stack frame), and `else`.
 
 ### Attacker Code Quiz
 
@@ -83,13 +91,22 @@ The only lines of code that don't access the stack frame for `main` are the call
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/82AEC50D-14C8-41D9-98DB-930CF11CA87E.png)
 
-Remember that the stack pointer moves down in memory as space is allocated. This means that `allow_login` will receive memory starting at the highest feasible address, and `pwdstr` will receive memory starting at the next highest feasible address.
+Remember that the stack pointer moves down in memory as space is allocated. This
+means that `allow_login` will receive memory starting at the highest feasible
+address, and `pwdstr` will receive memory starting at the next highest feasible
+address.
 
-Suppose both `int` and `char` occupy 1 byte. `allow_login` may be allocated 1 byte of space starting at memory address `1000`. `pwdstr` may be allocated 12 bytes of space starting at memory address `988`.
+Suppose both `int` and `char` occupy 1 byte. `allow_login` may be allocated 1
+byte of space starting at memory address `1000`. `pwdstr` may be allocated 12
+bytes of space starting at memory address `988`.
 
-If the user enters a password longer than 12 bytes, the remaining bytes will overflow into the memory allocated to `allow_login`, effectively overwriting its value.
+If the user enters a password longer than 12 bytes, the remaining bytes will
+overflow into the memory allocated to `allow_login`, effectively overwriting its
+value.
 
-Since login will succeed if `allow_login` is anything but 0 (i.e. not a fail-safe default), this overflow will almost certainly lead to access being granted.
+Since login will succeed if `allow_login` is anything but 0 (i.e. not a
+fail-safe default), this overflow will almost certainly lead to access being
+granted.
 
 ### Buffer Overflow Quiz
 
@@ -99,11 +116,16 @@ Since login will succeed if `allow_login` is anything but 0 (i.e. not a fail-saf
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/07B11C34-5DB8-4233-BC74-E2075631A2E1.png)
 
-The first answer is wrong. The target password can be as long as you'd like, but if the attacker submits a longer password, the overflow will still happen.
+The first answer is wrong. The target password can be as long as you'd like, but
+if the attacker submits a longer password, the overflow will still happen.
 
-The third answer is also wrong. Besides the fact that you shouldn't ever really add useless variables, these variables will only provide a finite amount of distance between the user-filled buffer and the return address. With a long enough password, the attacker can still overwrite the return address.
+The third answer is also wrong. Besides the fact that you shouldn't ever really
+add useless variables, these variables will only provide a finite amount of
+distance between the user-filled buffer and the return address. With a long
+enough password, the attacker can still overwrite the return address.
 
-Only the second answer is correct. The overflow happens precisely because input larger than the space allocated for that input is not rejected by the program.
+Only the second answer is correct. The overflow happens precisely because input
+larger than the space allocated for that input is not rejected by the program.
 
 ### NVD Quiz
 
@@ -129,11 +151,16 @@ Only the second answer is correct. The overflow happens precisely because input 
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/618CEAB7-54EA-4819-9CE8-12CA704FC5C1.png)
 
-Stack canaries do prevent return-to-libc buffer overflow attacks, because stack canaries prevent return address overwriting. Without overwriting the return address, a function can only return to the function that called it.
+Stack canaries do prevent return-to-libc buffer overflow attacks, because stack
+canaries prevent return address overwriting. Without overwriting the return
+address, a function can only return to the function that called it.
 
-ASLR does not protect against read-only buffer overflow exploits. ASLR only makes it harder to supply key addresses in write-based buffer overflow exploits.
+ASLR does not protect against read-only buffer overflow exploits. ASLR only
+makes it harder to supply key addresses in write-based buffer overflow exploits.
 
-Heartbleed cannot be avoided by using a non-executable stack. Heartbleed is a read-based buffer overflow exploit, and the attack did not involve injecting any machine instructions onto the stack.
+Heartbleed cannot be avoided by using a non-executable stack. Heartbleed is a
+read-based buffer overflow exploit, and the attack did not involve injecting any
+machine instructions onto the stack.
 
 ## Operating System Security
 
@@ -141,7 +168,8 @@ Heartbleed cannot be avoided by using a non-executable stack. Heartbleed is a re
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/3E4E1A33-04F6-49C8-A8BE-5C9B97CD9F46.png)
 
-[Mac vs PC Security](https://usa.kaspersky.com/resource-center/threats/mac-vs-pc#.VRLACxDF-Hw)
+[Mac vs PC
+Security](https://usa.kaspersky.com/resource-center/threats/mac-vs-pc#.VRLACxDF-Hw)
 
 ### Secure OS Quiz 1 Solution
 
@@ -155,7 +183,9 @@ Heartbleed cannot be avoided by using a non-executable stack. Heartbleed is a re
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/14FB0734-2CED-4A50-97FE-789C608E61C3.png)
 
-A system call requires control transfer from the calling process into the OS, which then must perform authentication/authorization checks before granting access and transferring control back.
+A system call requires control transfer from the calling process into the OS,
+which then must perform authentication/authorization checks before granting
+access and transferring control back.
 
 This is more costly than a regular call, which incurs none of this overhead.
 
@@ -167,7 +197,8 @@ This is more costly than a regular call, which incurs none of this overhead.
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/9F2E641A-BA27-4DEB-8754-E4C12B164432.png)
 
-Processes run on behalf of users. Users must login to the system to run applications/processes.
+Processes run on behalf of users. Users must login to the system to run
+applications/processes.
 
 ### User Isolation Quiz
 
@@ -201,7 +232,9 @@ Processes run on behalf of users. Users must login to the system to run applicat
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/449C3685-5396-4F92-A070-F09425449193.png)
 
-In this case, we have tampered with the TCB by turning off the check. The access still proceeds through the operating system, and is still technically correct (i.e. the access wasn't permitted because of a bug).
+In this case, we have tampered with the TCB by turning off the check. The access
+still proceeds through the operating system, and is still technically correct
+(i.e. the access wasn't permitted because of a bug).
 
 ### Size of Security Code
 
@@ -211,7 +244,8 @@ In this case, we have tampered with the TCB by turning off the check. The access
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/A944CF7D-097D-4359-B600-BAB6F6E3BB8F.png)
 
-I think the point being made here is that the increase in complexity may be accompanied by an increase in vulnerability.
+I think the point being made here is that the increase in complexity may be
+accompanied by an increase in vulnerability.
 
 ### Hypervisor Code Size Quiz
 
@@ -221,7 +255,9 @@ I think the point being made here is that the increase in complexity may be acco
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/32D8E299-1B81-442E-8468-5834F515C381.png)
 
-Again, the argument being made here is that using a hypervisor as a TCB, with fewer lines of code than a full-fledged operating system, might be a more secure choice.
+Again, the argument being made here is that using a hypervisor as a TCB, with
+fewer lines of code than a full-fledged operating system, might be a more secure
+choice.
 
 ## Authentication
 
@@ -233,7 +269,8 @@ Again, the argument being made here is that using a hypervisor as a TCB, with fe
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/57996615-B926-4F51-BF29-E3372F1A5C63.png)
 
-If someone steals your phone, you will be thankful for your lock screen/passcode.
+If someone steals your phone, you will be thankful for your lock
+screen/passcode.
 
 ### Login Attacks Quiz
 
@@ -243,7 +280,9 @@ If someone steals your phone, you will be thankful for your lock screen/passcode
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/DBB01EA0-AF2A-4894-96DF-5D34EEC42A10.png)
 
-Remember, the positive event is gaining access to the system. A false positive is gaining access erroneously. An attacker authenticating as someone else is a false positive.
+Remember, the positive event is gaining access to the system. A false positive
+is gaining access erroneously. An attacker authenticating as someone else is a
+false positive.
 
 ### Implementation Quiz
 
@@ -261,7 +300,8 @@ Remember, the positive event is gaining access to the system. A false positive i
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/3F2C0344-3371-466B-B6CF-D7D1E177661C.png)
 
-If we are attacking systems, we might get the best bang for our buck trying these passwords.
+If we are attacking systems, we might get the best bang for our buck trying
+these passwords.
 
 ### Password Quiz
 
@@ -271,7 +311,9 @@ If we are attacking systems, we might get the best bang for our buck trying thes
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/31FE2544-CBD2-4906-B310-7F05DC21E645.png)
 
-A trusted path ensures that there is no application between the user and the operating system. Without this path, malicious programs may intercept login credentials.
+A trusted path ensures that there is no application between the user and the
+operating system. Without this path, malicious programs may intercept login
+credentials.
 
 ### Hashed Passwords Quiz
 
@@ -297,7 +339,9 @@ A trusted path ensures that there is no application between the user and the ope
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/B3B14694-D6EC-4C26-B0F3-C00DBB302AB8.png)
 
-With ten options for the first digit, ten options for the second digit, and so on, the total number of four digit pins is $10 \times 10 \times 10 \times 10$, or $10^4$, or $10,000$.
+With ten options for the first digit, ten options for the second digit, and so
+on, the total number of four digit pins is $10 \times 10 \times 10 \times 10$,
+or $10^4$, or $10,000$.
 
 ### Brute Force Quiz
 
@@ -307,7 +351,9 @@ With ten options for the first digit, ten options for the second digit, and so o
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/0EA2B5B0-F329-4B96-80EA-1BF697743D43.png)
 
-With 72 options for each other six characters, the total number of unique passwords is 72^6, which is the number of attempts the hacker will have to make in the very worst case.
+With 72 options for each other six characters, the total number of unique
+passwords is 72^6, which is the number of attempts the hacker will have to make
+in the very worst case.
 
 ### Touch Screen Passwords Quiz
 
@@ -317,7 +363,9 @@ With 72 options for each other six characters, the total number of unique passwo
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/D02FF363-D3A3-4D71-B4E6-E5A137CE04A8.png)
 
-Basically, the idea here is that attackers will likely not have to exhaustively search the space of possible patterns because biases exist that greatly shrink this space into a much smaller space of much more probable patterns.
+Basically, the idea here is that attackers will likely not have to exhaustively
+search the space of possible patterns because biases exist that greatly shrink
+this space into a much smaller space of much more probable patterns.
 
 ### Multi-factor Authentication Quiz
 
@@ -327,7 +375,9 @@ Basically, the idea here is that attackers will likely not have to exhaustively 
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/CC9A6A59-47B9-465A-BCAD-4F0257BE84A5.png)
 
-Remember, a false positive occurs when a malicious user is granted access to the system as a valid user. The likelihood of this happening decreases when multiple authentication components are employed by the system.
+Remember, a false positive occurs when a malicious user is granted access to the
+system as a valid user. The likelihood of this happening decreases when multiple
+authentication components are employed by the system.
 
 ### Chip and Pin Authentication Quiz
 
@@ -337,7 +387,9 @@ Remember, a false positive occurs when a malicious user is granted access to the
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/4668FB80-8C96-4083-A753-7E4A41F8CC1D.png)
 
-Read more [here](http://www.darkreading.com/vulnerabilities---threats/flaws-in-emv-chip-and-pin-undercut-security/d/d-id/1269155) and [here](https://www.schneier.com/blog/archives/2014/05/preplay_attack_.html).
+Read more
+[here](http://www.darkreading.com/vulnerabilities---threats/flaws-in-emv-chip-and-pin-undercut-security/d/d-id/1269155)
+and [here](https://www.schneier.com/blog/archives/2014/05/preplay_attack_.html).
 
 ### Biometric Authentication Quiz
 
@@ -347,7 +399,8 @@ Read more [here](http://www.darkreading.com/vulnerabilities---threats/flaws-in-e
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/62C0DA99-A728-42B8-867F-D0FB6CEB9DA2.png)
 
-As a basic example, consider someone recording your voice and playing it back to a voice-based authentication system.
+As a basic example, consider someone recording your voice and playing it back to
+a voice-based authentication system.
 
 ## Access Control
 
@@ -359,7 +412,8 @@ As a basic example, consider someone recording your voice and playing it back to
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/C9D0D775-0D1F-4695-9F4F-8EBA71914E34.png)
 
-Controlling read access is connected to data confidentiality, while controlling write access is connected to data integrity.
+Controlling read access is connected to data confidentiality, while controlling
+write access is connected to data integrity.
 
 ### Determining Access Quiz
 
@@ -379,7 +433,8 @@ Access control conflicts can be securely resolved by denying access.
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/69519ED2-526D-47DB-8CFF-B3A922D2DBDF.png)
 
-Bob can write the contents of the file to a new file that he owns, and share that file with Charlie.
+Bob can write the contents of the file to a new file that he owns, and share
+that file with Charlie.
 
 ### ACE Quiz
 
@@ -389,7 +444,9 @@ Bob can write the contents of the file to a new file that he owns, and share tha
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/89BFDAE7-ED13-41D6-BB4C-01D5948DD108.png)
 
-The presentation of the ticket is sufficient to gain access to the theater. No other access checks are required. This is closest in functionality to a capability.
+The presentation of the ticket is sufficient to gain access to the theater. No
+other access checks are required. This is closest in functionality to a
+capability.
 
 ### ACE Access Quiz
 
@@ -399,7 +456,9 @@ The presentation of the ticket is sufficient to gain access to the theater. No o
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/0D94E256-D8D9-4BCE-9E83-F7BFD18F7E20.png)
 
-Negative access rights supersede positive access rights, so you can't terminate as soon as you find a positive access right. You can terminate as soon as you find a negative access right, though.
+Negative access rights supersede positive access rights, so you can't terminate
+as soon as you find a positive access right. You can terminate as soon as you
+find a negative access right, though.
 
 NB: The third option can't be true if the second option is true.
 
@@ -419,7 +478,8 @@ NB: The third option can't be true if the second option is true.
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/B464C794-6718-40DB-BDAB-EAA956AD1C13.png)
 
-As long as you had the permissions when you called `open`, you can access the file using the file descriptor.
+As long as you had the permissions when you called `open`, you can access the
+file using the file descriptor.
 
 ### Unix File Sharing Quiz
 
@@ -429,7 +489,9 @@ As long as you had the permissions when you called `open`, you can access the fi
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/8E7ED659-B2F6-4823-A54F-C312F6110482.png)
 
-You would need to somehow add the descriptor to the per-process descriptor table for the process with which you wish to share the descriptor. Since the OS owns this table, mutating it is impossible.
+You would need to somehow add the descriptor to the per-process descriptor table
+for the process with which you wish to share the descriptor. Since the OS owns
+this table, mutating it is impossible.
 
 ### SetUID Bit Quiz
 
@@ -439,7 +501,8 @@ You would need to somehow add the descriptor to the per-process descriptor table
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/E2739829-4308-4DBE-8C7D-0AAF1025E54E.png)
 
-The effective UID of a process executing a file with the setuid bit set is the owner of the file, not the user who created the process.
+The effective UID of a process executing a file with the setuid bit set is the
+owner of the file, not the user who created the process.
 
 ### RBAC Benefits Quiz
 
@@ -457,7 +520,8 @@ The effective UID of a process executing a file with the setuid bit set is the o
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/5DEE9998-897C-4B46-8565-A383DD6FC069.png)
 
-From a security standpoint, denying access is a fail-safe default. It never fails to keep your system secure.
+From a security standpoint, denying access is a fail-safe default. It never
+fails to keep your system secure.
 
 ## Mandatory Access Control
 
@@ -479,7 +543,8 @@ DAC can't control information flow, so we must use MAC.
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/9EF783B9-6360-427A-918C-CDF9773C4034.png)
 
-BLP is concerned with military/governmental intelligence. HIPAA is concerned with health information.
+BLP is concerned with military/governmental intelligence. HIPAA is concerned
+with health information.
 
 ### Security Clearance Quiz
 
@@ -489,7 +554,8 @@ BLP is concerned with military/governmental intelligence. HIPAA is concerned wit
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/D0C61525-5A43-4B43-8C64-4CCBC4715B41.png)
 
-Source: [Washington Post](https://www.washingtonpost.com/news/the-switch/wp/2014/03/24/5-1-million-americans-have-security-clearances-thats-more-than-the-entire-population-of-norway/?noredirect=on)
+Source: [Washington
+Post](https://www.washingtonpost.com/news/the-switch/wp/2014/03/24/5-1-million-americans-have-security-clearances-thats-more-than-the-entire-population-of-norway/?noredirect=on)
 
 ### Order Quiz
 
@@ -509,7 +575,8 @@ Given any two real numbers, one number is always greater than the other.
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/89DAADB0-D668-480D-8B6D-38C0037CCE42.png)
 
-While `secret < top-secret` , `{Asia, Europe}` cannot be compared with `{Europe, South-America}`.
+While `secret < top-secret` , `{Asia, Europe}` cannot be compared with `{Europe,
+South-America}`.
 
 ### Sensitive Data Quiz
 
@@ -519,9 +586,13 @@ While `secret < top-secret` , `{Asia, Europe}` cannot be compared with `{Europe,
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/34881303-A27C-4BB1-807C-03DE3A0016D9.png)
 
-In order for `D1` to dominate `D2`, `D1` must have a higher sensitivity level than `D2`.
+In order for `D1` to dominate `D2`, `D1` must have a higher sensitivity level
+than `D2`.
 
-In addition, the compartment of `D1` must contain the compartment of `D2` in order to be 'greater' (based on the ordering rules for sets). For this to be the case, the compartment of `D2` must be a subset of ("narrower" than) the compartment of `D1`.
+In addition, the compartment of `D1` must contain the compartment of `D2` in
+order to be 'greater' (based on the ordering rules for sets). For this to be the
+case, the compartment of `D2` must be a subset of ("narrower" than) the
+compartment of `D1`.
 
 ### Unclassified Documents Quiz
 
@@ -531,7 +602,10 @@ In addition, the compartment of `D1` must contain the compartment of `D2` in ord
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/3D70CF4F-3BC7-40D2-B75C-FB84BB1CE0D8.png)
 
-Write-down says that individuals cannot write documents with a classification that is less than their security clearance. Therefore, unclassified documents cannot be written by individuals holding a security clearance of classified, secret, or top secret.
+Write-down says that individuals cannot write documents with a classification
+that is less than their security clearance. Therefore, unclassified documents
+cannot be written by individuals holding a security clearance of classified,
+secret, or top secret.
 
 ### Classified Data Quiz
 
@@ -541,7 +615,10 @@ Write-down says that individuals cannot write documents with a classification th
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/A699ECFA-0934-4CCD-9C63-056FD1E46428.png)
 
-Because of the write-up rule, individuals are allowed to write documents at a classification level that is greater than their clearance level. Individuals with unclassified security clearance are thus allowed to write top secret documents.
+Because of the write-up rule, individuals are allowed to write documents at a
+classification level that is greater than their clearance level. Individuals
+with unclassified security clearance are thus allowed to write top secret
+documents.
 
 ### BLP Model Quiz
 
@@ -551,7 +628,9 @@ Because of the write-up rule, individuals are allowed to write documents at a cl
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/3D182BB1-66B8-4F82-8795-E5BEEA1C6F11.png)
 
-For example, if a user is writing to a top secret document, and the classification level suddenly changes to secret, the write-up rule is violated and information is flowing in the wrong direction.
+For example, if a user is writing to a top secret document, and the
+classification level suddenly changes to secret, the write-up rule is violated
+and information is flowing in the wrong direction.
 
 ### Clark Wilson Quiz
 
@@ -561,7 +640,8 @@ For example, if a user is writing to a top secret document, and the classificati
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/A4317935-9B6A-4DB8-869A-1644B8A403F0.png)
 
-In mandatory access control, sharing decisions are not made at the discretion of the user.
+In mandatory access control, sharing decisions are not made at the discretion of
+the user.
 
 ### COI Quiz
 
@@ -571,7 +651,8 @@ In mandatory access control, sharing decisions are not made at the discretion of
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/2A693A0B-93E6-4AE5-B6AB-3869601B5800.png)
 
-Competition implies that there is a possibility for a conflict of interest. Chinese Wall is best at preventing these situations.
+Competition implies that there is a possibility for a conflict of interest.
+Chinese Wall is best at preventing these situations.
 
 ### RBAC Quiz
 
@@ -619,7 +700,8 @@ Security by obscurity violates open design.
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/D70011C5-D8EA-404D-82A6-7A6C4A77DDDB.png)
 
-A fail-safe default is one that provides security unless otherwise specified. In this case, the default should be traffic encryption.
+A fail-safe default is one that provides security unless otherwise specified. In
+this case, the default should be traffic encryption.
 
 ### Reducing TCB Size Quiz
 
@@ -765,7 +847,8 @@ A primary key uniquely identifies a row.
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/13759837-A50F-4319-9A86-FDD985C5EE27.png)
 
-Consider the case where one student from a region containing two students retrieves the grade information about that region.
+Consider the case where one student from a region containing two students
+retrieves the grade information about that region.
 
 ## Malicious Code
 
@@ -801,7 +884,8 @@ Consider the case where one student from a region containing two students retrie
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/6294734B-447D-4C84-9F5E-C80BD8923832.png)
 
-Macro viruses run when an infected document is opened with a given application. Boot sector viruses run before the operating system is loaded.
+Macro viruses run when an infected document is opened with a given application.
+Boot sector viruses run before the operating system is loaded.
 
 ### Rootkit Quiz
 
@@ -863,7 +947,8 @@ Macro viruses run when an infected document is opened with a given application. 
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/3F23779C-7FEB-4551-A120-ED3B7046EFF2.png)
 
-Remember, the characteristics of DNS servers can be used to amplify the effects of DDoS attacks, not mitigate them.
+Remember, the characteristics of DNS servers can be used to amplify the effects
+of DDoS attacks, not mitigate them.
 
 ### C&C Design Quiz
 
@@ -873,9 +958,12 @@ Remember, the characteristics of DNS servers can be used to amplify the effects 
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/FE123C3D-C49F-4AA5-80F0-0DF1EF468A48.png)
 
-The second answer is false. Bot code can have logic bombs or other triggers that enable bot to attack without contacting a C&C server.
+The second answer is false. Bot code can have logic bombs or other triggers that
+enable bot to attack without contacting a C&C server.
 
-The third answer is also false. A botnet is more likely to be found using custom communication protocols, as admins observing the network are more likely to detect strange types of traffic flowing from their system.
+The third answer is also false. A botnet is more likely to be found using custom
+communication protocols, as admins observing the network are more likely to
+detect strange types of traffic flowing from their system.
 
 ### Botnet C&C Quiz
 
@@ -885,11 +973,14 @@ The third answer is also false. A botnet is more likely to be found using custom
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/F388379F-0461-46F3-9211-1ADA9775FEE1.png)
 
-A single gmail account, hardcoded in bot code, is both easy to detect and easy to disrupt.
+A single gmail account, hardcoded in bot code, is both easy to detect and easy
+to disrupt.
 
-P2P traffic will easily stand out in an enterprise network where peer-to-peer communications are not typically allowed.
+P2P traffic will easily stand out in an enterprise network where peer-to-peer
+communications are not typically allowed.
 
-A news site can be hard to detect, because traffic to news websites is common. However, if the site is identified as being malicious, it can easily be blocked.
+A news site can be hard to detect, because traffic to news websites is common.
+However, if the site is identified as being malicious, it can easily be blocked.
 
 ### APT Quiz
 
@@ -933,7 +1024,10 @@ A news site can be hard to detect, because traffic to news websites is common. H
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/448612E5-28F9-422A-ADBA-7661F4D4F1EF.png)
 
-The first example follows the "default drop" rule, which is high security but requires new services to be expressly allowed. The second example follows the "default forward" rule, which is easier to use at the expense of security. The final approach sits in between the two in terms of security and ease of use.
+The first example follows the "default drop" rule, which is high security but
+requires new services to be expressly allowed. The second example follows the
+"default forward" rule, which is easier to use at the expense of security. The
+final approach sits in between the two in terms of security and ease of use.
 
 ### Packet Filtering Quiz
 
@@ -959,7 +1053,9 @@ The first example follows the "default drop" rule, which is high security but re
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/AE45FA72-0C13-4F06-A89A-620E2894EBFC.png)
 
-If the device is not always protected by the corporate network, as is the case in scenarios 1 and 3, then the personal firewall is needed for additional security.
+If the device is not always protected by the corporate network, as is the case
+in scenarios 1 and 3, then the personal firewall is needed for additional
+security.
 
 ### Firewall Deployment Quiz
 
@@ -1003,7 +1099,10 @@ If the device is not always protected by the corporate network, as is the case i
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/72F9A46A-F7C2-43E0-84F0-BC956FF413A6.png)
 
-Read more [here](http://www.infoworld.com/article/2606776/hacking/155947-Biggest-baddest-boldest-software-backdoors-of-all-time.html#slide3), [here](https://www.gnu.org/philosophy/proprietary-back-doors.html), and [here](https://www.eecs.berkeley.edu/~daw/teaching/cs261-f07/scribenotes/1025-brian.pdf).
+Read more
+[here](http://www.infoworld.com/article/2606776/hacking/155947-Biggest-baddest-boldest-software-backdoors-of-all-time.html#slide3),
+[here](https://www.gnu.org/philosophy/proprietary-back-doors.html), and
+[here](https://www.eecs.berkeley.edu/~daw/teaching/cs261-f07/scribenotes/1025-brian.pdf).
 
 ### Analysis Detection Quiz
 
@@ -1135,7 +1234,9 @@ Read more [here](http://www.infoworld.com/article/2606776/hacking/155947-Biggest
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/462EA39F-5754-47D1-B624-335F35CF3647.png)
 
-In a brute-force attack, the attacker must try all potential keys. The only way to make this task more difficult is to increase the length of the key, thus increasing the size of the keyspace.
+In a brute-force attack, the attacker must try all potential keys. The only way
+to make this task more difficult is to increase the length of the key, thus
+increasing the size of the keyspace.
 
 ### Simple Ciphers Quiz
 
@@ -1145,7 +1246,8 @@ In a brute-force attack, the attacker must try all potential keys. The only way 
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/B6279774-5618-4B04-8081-1499BCF75299.png)
 
-Since "A" maps to "D", "B" maps to "E", and so forth, we can just "rewind" each letter in the ciphertext by three to obtain the plaintext.
+Since "A" maps to "D", "B" maps to "E", and so forth, we can just "rewind" each
+letter in the ciphertext by three to obtain the plaintext.
 
 ### Monoalphabetic Cipher Quiz
 
@@ -1171,7 +1273,11 @@ Since "A" maps to "D", "B" maps to "E", and so forth, we can just "rewind" each 
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/9FCFF378-D376-46B5-8734-E5DB63549DCA.png)
 
-The **avalanche effect** states that a small change in the input to a hash function causes a large change to the output. We want this in place as a way to obscure similar passwords. Without the avalanche effect, an attacker may be able to deduce password `A` from its hash value if he knows that the hash of a string `B` is similar to `A`'s hash.
+The **avalanche effect** states that a small change in the input to a hash
+function causes a large change to the output. We want this in place as a way to
+obscure similar passwords. Without the avalanche effect, an attacker may be able
+to deduce password `A` from its hash value if he knows that the hash of a string
+`B` is similar to `A`'s hash.
 
 ### Symmetric Encryption Quiz
 
@@ -1215,9 +1321,13 @@ The **avalanche effect** states that a small change in the input to a hash funct
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/9E317675-DB11-4A1E-AAC8-D59F6667ABB9.png)
 
-"H" has an ASCII code of 72, which maps to `0b01001000`, and "i" has an ASCII code of 105, which maps to `0b01101001`. "F" maps to 15 (`0b1111`) and "A" maps to 11 (`0b1001`), so "FA" maps to `0b11111001` and "F2" maps to `0b11111001`.
+"H" has an ASCII code of 72, which maps to `0b01001000`, and "i" has an ASCII
+code of 105, which maps to `0b01101001`. "F" maps to 15 (`0b1111`) and "A" maps
+to 11 (`0b1001`), so "FA" maps to `0b11111001` and "F2" maps to `0b11111001`.
 
-We XOR two numbers bit-by-bit, and we return 0 when the bits match and 1 otherwise. Therefore `0b0100100001101001` XOR `0b1111100111110010` is `0b1011000110011011`.
+We XOR two numbers bit-by-bit, and we return 0 when the bits match and 1
+otherwise. Therefore `0b0100100001101001` XOR `0b1111100111110010` is
+`0b1011000110011011`.
 
 ### S Box Quiz
 
@@ -1261,7 +1371,9 @@ We XOR two numbers bit-by-bit, and we return 0 when the bits match and 1 otherwi
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/E00E3BB9-A148-4AFA-8A9E-DAFA95C4DC80.png)
 
-In modular addition, a number $k$  has an inverse $k'$ such that $k + k' \pmod M = 0$. In this case, $M = 20$ and $k = 8$. Therefore, $k' = 12$ because $8 + 12 \pmod{20} = 0$.
+In modular addition, a number $k$  has an inverse $k'$ such that $k + k' \pmod M
+= 0$. In this case, $M = 20$ and $k = 8$. Therefore, $k' = 12$ because $8 + 12
+\pmod{20} = 0$.
 
 ### Modular Multiplication Quiz
 
@@ -1271,7 +1383,9 @@ In modular addition, a number $k$  has an inverse $k'$ such that $k + k' \pmod M
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/252A1D26-CED8-446B-B012-40592D172D03.png)
 
-In modular multiplication, a number $k$  has an inverse $k'$ such that $k \times k' \pmod M = 1$. In this case, $M = 17$ and $k = 3$. Therefore, $k' = 6$ because $3 \times 6 \pmod{17} =  18 \pmod{17} = 1$.
+In modular multiplication, a number $k$  has an inverse $k'$ such that $k \times
+k' \pmod M = 1$. In this case, $M = 17$ and $k = 3$. Therefore, $k' = 6$ because
+$3 \times 6 \pmod{17} =  18 \pmod{17} = 1$.
 
 ### Totient Quiz
 
@@ -1281,7 +1395,10 @@ In modular multiplication, a number $k$  has an inverse $k'$ such that $k \times
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/4A80521F-0882-4BAC-A178-7A72A29A1531.png)
 
-If $n = p \times q$ and $p$ and $q$ are prime, then $\phi(n) = (p - 1) \times (q - 1)$. For $n = 21$, $p = 3$ and $q = 7$, $\phi(n) = (3 - 1) \times (7 - 1) = 2 \times 6 = 12$.
+If $n = p \times q$ and $p$ and $q$ are prime, then $\phi(n) = (p - 1) \times (q
+
+- 1)$. For $n = 21$, $p = 3$ and $q = 7$, $\phi(n) = (3 - 1) \times (7 - 1) = 2
+\times 6 = 12$.
 
 ### Modular Exponentiation Quiz
 
@@ -1291,7 +1408,13 @@ If $n = p \times q$ and $p$ and $q$ are prime, then $\phi(n) = (p - 1) \times (q
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/7396A649-2E25-4636-9B04-532FA86DC8C6.png)
 
-We know that $x^y \pmod n = x^{y \pmod{\phi(n)}} \pmod n$. For $x = 7$, $y = 27$ and $n = 30$, $7^{27} \pmod{30} = 7^{27 \pmod{\phi(30)}} \pmod{30}$. We can calculate $\phi(30)$ as follows:  $\phi(30) = \phi(3) \times \phi(10) = \phi(3) \times \phi(2) \times \phi(5) = 2 \times 1 \times 4 = 8$. Thus, $7^{27} \pmod{30} = 7^{27 \pmod 8} \pmod{30}$. If we divide 27 by 8, we are left with a remainder of 3, so $7^{27} \pmod{30} = 7^3 \pmod{30}$. $7^3 = 343$, which yields a remainder of 13 when divided by 30.
+We know that $x^y \pmod n = x^{y \pmod{\phi(n)}} \pmod n$. For $x = 7$, $y = 27$
+and $n = 30$, $7^{27} \pmod{30} = 7^{27 \pmod{\phi(30)}} \pmod{30}$. We can
+calculate $\phi(30)$ as follows:  $\phi(30) = \phi(3) \times \phi(10) = \phi(3)
+\times \phi(2) \times \phi(5) = 2 \times 1 \times 4 = 8$. Thus, $7^{27}
+\pmod{30} = 7^{27 \pmod 8} \pmod{30}$. If we divide 27 by 8, we are left with a
+remainder of 3, so $7^{27} \pmod{30} = 7^3 \pmod{30}$. $7^3 = 343$, which yields
+a remainder of 13 when divided by 30.
 
 ### RSA Quiz
 
@@ -1301,7 +1424,10 @@ We know that $x^y \pmod n = x^{y \pmod{\phi(n)}} \pmod n$. For $x = 7$, $y = 27$
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/9B9F10D9-B82B-4F16-8A44-B25CCADF7491.png)
 
-$n = p \times q = 11 \times 3 = 33$ and $\phi(n) = (p - 1) \times (q - 1) = 2 \times 10 = 20$. $e$ and $d$ must be multiplicative inverses $\pmod{\phi(n)}$, so for $e = 7$, $d = 3$, since $21 \pmod{20} = 1$. Finally, public key ${e, n}$ is equal to ${7, 33}$, and private key, ${d, n}$ is equal to ${3, 33}$.
+$n = p \times q = 11 \times 3 = 33$ and $\phi(n) = (p - 1) \times (q - 1) = 2
+\times 10 = 20$. $e$ and $d$ must be multiplicative inverses $\pmod{\phi(n)}$,
+so for $e = 7$, $d = 3$, since $21 \pmod{20} = 1$. Finally, public key ${e, n}$
+is equal to ${7, 33}$, and private key, ${d, n}$ is equal to ${3, 33}$.
 
 ### RSA Encryption Quiz
 
@@ -1311,7 +1437,10 @@ $n = p \times q = 11 \times 3 = 33$ and $\phi(n) = (p - 1) \times (q - 1) = 2 \t
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/A38846E8-2C2B-4683-B7FF-6D847E9F23CE.png)
 
-Encrypting message $m$ involves computing  $m^e \pmod n$, which is equivalent to $2^7 \pmod{33} = 128 \pmod{33} = 29$.  Decrypting ciphertext $C$ involves computing $C^d \pmod n$, which is equivalent to $29^3 \pmod{33} = 24389 \pmod{33} = 3$.
+Encrypting message $m$ involves computing  $m^e \pmod n$, which is equivalent to
+$2^7 \pmod{33} = 128 \pmod{33} = 29$.  Decrypting ciphertext $C$ involves
+computing $C^d \pmod n$, which is equivalent to $29^3 \pmod{33} = 24389
+\pmod{33} = 3$.
 
 ### RSA in Practice Quiz
 
@@ -1321,7 +1450,8 @@ Encrypting message $m$ involves computing  $m^e \pmod n$, which is equivalent to
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/3D62323C-0309-4B49-BEBB-E17D8C79A0BD.png)
 
-Always use standard libraries, as they have been reviewed and tested by experts in the field.
+Always use standard libraries, as they have been reviewed and tested by experts
+in the field.
 
 ### Diffie-Hellman Quiz
 
@@ -1331,7 +1461,9 @@ Always use standard libraries, as they have been reviewed and tested by experts 
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/AA61E589-45F8-4F17-87B5-0FCE0DD5A99D.png)
 
-Alice sends $\alpha^a \pmod q$ to Bob, which is equivalent to $5^6 \pmod{23} = 8$. Bob sends $\alpha^b \pmod q$ to Alice, which is equivalent to $5^{15} \pmod{23} = 19$.
+Alice sends $\alpha^a \pmod q$ to Bob, which is equivalent to $5^6 \pmod{23} =
+8$. Bob sends $\alpha^b \pmod q$ to Alice, which is equivalent to $5^{15}
+\pmod{23} = 19$.
 
 ### RSA, Diffie-Hellman Quiz
 
@@ -1351,7 +1483,8 @@ Alice sends $\alpha^a \pmod q$ to Bob, which is equivalent to $5^6 \pmod{23} = 8
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/EC0A4B95-7A5E-4C5B-87AD-6D39D17FA04C.png)
 
-Given a hash length $n$, an attacker needs to hash $2^{n / 2}$ messages to find a collision. For $n = 128$, an attacker needs to compute $2^{64}$ hashes.
+Given a hash length $n$, an attacker needs to hash $2^{n / 2}$ messages to find
+a collision. For $n = 128$, an attacker needs to compute $2^{64}$ hashes.
 
 ### Hash Function Quiz
 
@@ -1405,7 +1538,8 @@ Given a hash length $n$, an attacker needs to hash $2^{n / 2}$ messages to find 
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/D5A3CBE4-FC07-4B05-9A8E-58657B7FB1DB.png)
 
-If you spoof your IP address, responses to your packets will not reach you. Therefore, IP spoofing is only useful for unidirectional communication.
+If you spoof your IP address, responses to your packets will not reach you.
+Therefore, IP spoofing is only useful for unidirectional communication.
 
 ### IPSec Quiz 1
 
@@ -1463,7 +1597,8 @@ If you spoof your IP address, responses to your packets will not reach you. Ther
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/34823FD7-F6DD-46F3-A29D-2FEE62D8D7FA.png)
 
-While transport layer protocols do rely on the IP layer, TLS does not specifically rely on IPSec.
+While transport layer protocols do rely on the IP layer, TLS does not
+specifically rely on IPSec.
 
 ## Wireless and Mobile Security
 
@@ -1491,7 +1626,8 @@ While transport layer protocols do rely on the IP layer, TLS does not specifical
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/3BB6C671-DF45-44C8-A21D-620C92AF45ED.png)
 
-Betcha thought it was gonna be all Microsoft, didn't you? Read more [here](https://techtalk.gfi.com/most-vulnerable-operating-systems-and-applications-in-2014/).
+Betcha thought it was gonna be all Microsoft, didn't you? Read more
+[here](https://techtalk.gfi.com/most-vulnerable-operating-systems-and-applications-in-2014/).
 
 ### Security Quiz
 
@@ -1509,7 +1645,8 @@ Betcha thought it was gonna be all Microsoft, didn't you? Read more [here](https
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/F55BD9F8-0B42-44EE-ABC9-2653B6FE11E0.png)
 
-Read more [here](https://www.computerworld.com/article/2483867/researchers-outwit-apple--plant-malware-in-the-app-store.html).
+Read more
+[here](https://www.computerworld.com/article/2483867/researchers-outwit-apple--plant-malware-in-the-app-store.html).
 
 ### iOS Security Quiz
 
@@ -1519,7 +1656,8 @@ Read more [here](https://www.computerworld.com/article/2483867/researchers-outwi
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/9B84187A-9DAC-4F61-8E87-9EACE74CD93D.png)
 
-Read more [here](https://drive.google.com/file/d/0BxxXk1d3yyuZOFlsdkNMSGswSGs/view).
+Read more
+[here](https://drive.google.com/file/d/0BxxXk1d3yyuZOFlsdkNMSGswSGs/view).
 
 ### iOS Quiz
 
@@ -1547,7 +1685,8 @@ Read more [here](https://drive.google.com/file/d/0BxxXk1d3yyuZOFlsdkNMSGswSGs/vi
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/2CE3FD4D-3E64-4591-A9F3-D19A90B9C151.png)
 
-Cookies are just strings of text. They are not compiled code, and therefore cannot infect a system the way a virus can.
+Cookies are just strings of text. They are not compiled code, and therefore
+cannot infect a system the way a virus can.
 
 ### Web Security Quiz
 
@@ -1641,7 +1780,10 @@ NOTE: answers 1 and 3 are correct.
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/8785FC32-D688-48B9-935A-B03C867CF522.png)
 
-Read more [here](http://blogs.wsj.com/riskandcompliance/2015/03/02/crisis-of-the-week-anthems-breach-response/) and [here](http://www.latimes.com/business/hiltzik/la-fi-mh-anthem-is-warning-consumers-20150306-column.html).
+Read more
+[here](http://blogs.wsj.com/riskandcompliance/2015/03/02/crisis-of-the-week-anthems-breach-response/)
+and
+[here](http://www.latimes.com/business/hiltzik/la-fi-mh-anthem-is-warning-consumers-20150306-column.html).
 
 ### Security Breach Quiz
 
@@ -1675,7 +1817,8 @@ Read more [here](http://blogs.wsj.com/riskandcompliance/2015/03/02/crisis-of-the
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/5F82F572-BDB4-46BD-BC15-382A67CD15C8.png)
 
-Read more [here](https://www.partnerre.com/assets/uploads/docs/cyber-survey-results.pdf).
+Read more
+[here](https://www.partnerre.com/assets/uploads/docs/cyber-survey-results.pdf).
 
 ### Proactive Security Quiz
 
@@ -1751,7 +1894,8 @@ Read more [here](https://www.partnerre.com/assets/uploads/docs/cyber-survey-resu
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/1F9A054B-54D7-423A-979A-609AFF05841F.png)
 
-Read more [here](https://www.pewresearch.org/internet/2015/05/20/americans-attitudes-about-privacy-security-and-surveillance/).
+Read more
+[here](https://www.pewresearch.org/internet/2015/05/20/americans-attitudes-about-privacy-security-and-surveillance/).
 
 ### Right to Be Forgotten Quiz
 
@@ -1769,7 +1913,8 @@ Read more [here](https://www.pewresearch.org/internet/2015/05/20/americans-attit
 
 ![](https://assets.omscs-notes.com/images/notes/information-security/348B6806-8887-4721-BE27-1A1404BAA50A.png)
 
-Read more [here](https://www.eff.org/who-has-your-back-government-data-requests-2015)
+Read more
+[here](https://www.eff.org/who-has-your-back-government-data-requests-2015)
 
 ### Google Privacy Policy Quiz
 

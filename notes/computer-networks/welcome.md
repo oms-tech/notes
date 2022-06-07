@@ -7,7 +7,8 @@ title: Welcome to CN
 
 ## Howdy Friends
 
-Each document in "Lecture Notes" corresponds to a module in Canvas. Within each document, the headings correspond to the videos within that module.
+Each document in "Lecture Notes" corresponds to a module in Canvas. Within each
+document, the headings correspond to the videos within that module.
 
 ## Textbook Information
 
@@ -18,7 +19,8 @@ The following textbooks have been recommended for this course:
 
 ## Download These Notes
 
-Some students have asked for PDF versions of the notes for a simpler, more portable
-studying experience. The following PDFs are available for download.
+Some students have asked for PDF versions of the notes for a simpler, more
+portable studying experience. The following PDFs are available for download.
 
-- [Computer Networks - Complete](https://payhip.com/b/tCvzd 'The complete set of CN lecture notes, covering content from all twelve lectures.')
+- [Computer Networks - Complete](https://payhip.com/b/tCvzd 'The complete set of
+  CN lecture notes, covering content from all twelve lectures.')
