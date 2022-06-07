@@ -53,7 +53,17 @@ no-duplicate-heading:
 no-trailing-punctuation:
   punctuation: ".,;:"
 
-single-h1: false
+# > Rationale: A top-level heading is an h1 on the first line of the file, and
+# serves as the title for the document. If this convention is in use, then there
+# can not be more than one title for the document, and the entire document should
+# be contained within this heading.
+#
+# Valid, but the `title` key in frontmatter counts as an h1 by default, so I have
+# to disable it. The `title` key can't change, however, because it is consumed
+# elsewhere.
+
+single-h1:
+  front_matter_title: ""
 
 # Rationale: Raw HTML is allowed in markdown, but this rule is included for
 # those who want their documents to only include "pure" markdown, or for those
