@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Access Control
+---
+
 # Access Control
 
 ## Controlling Accesses to Resources

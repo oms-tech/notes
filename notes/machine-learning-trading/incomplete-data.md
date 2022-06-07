@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Incomplete Data
+---
+
 # Incomplete Data
 
 ## Pristine Data

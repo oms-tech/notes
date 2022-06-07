@@ -1,3 +1,8 @@
+---
+course: Computer Networks
+title: Router Design and Algorithms (Part 1)
+---
+
 # Router Design and Algorithms (Part 1)
 
 ## What's Inside a Router?

@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Firewalls
+---
+
 # Firewalls
 
 ## Defense in Depth

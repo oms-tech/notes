@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Portfolio Optimization and the Efficient Frontier
+---
+
 # Portfolio Optimization and the Efficient Frontier
 
 ## Overview

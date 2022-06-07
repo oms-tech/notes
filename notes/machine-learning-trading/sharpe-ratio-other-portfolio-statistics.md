@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Sharpe Ratio and Other Portfolio Statistics
+---
+
 # Sharpe Ratio and Other Portfolio Statistics
 
 ## Daily Portfolio Values

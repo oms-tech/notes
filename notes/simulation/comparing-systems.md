@@ -1,3 +1,8 @@
+---
+course: Simulation
+title: Comparing Systems
+---
+
 # Comparing Systems
 
 ## Introduction

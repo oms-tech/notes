@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Operating System Security
+---
+
 # Operating System Security
 
 ## Operating Systems Defined

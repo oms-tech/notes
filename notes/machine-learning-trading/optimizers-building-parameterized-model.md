@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: "Optimizers: Building a Parameterized Model"
+---
+
 # "Optimizers: Building a Parameterized Model"
 
 ## What is an Optimizer

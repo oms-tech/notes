@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Inter-Process Communication
+---
+
 # Inter-Process Communication
 
 ## Inter Process Communication

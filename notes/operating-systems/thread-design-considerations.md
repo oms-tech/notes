@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Thread Design Considerations
+---
+
 # Thread Design Considerations
 
 ## Kernel Vs. User Level Threads

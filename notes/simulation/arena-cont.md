@@ -1,3 +1,8 @@
+---
+course: Simulation
+title: Arena, Continued
+---
+
 # Arena, Continued
 
 ## Simple Two-Channel Manufacturing Example

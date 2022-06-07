@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Datacenter Technologies
+---
+
 # Datacenter Technologies
 
 ## Internet Services

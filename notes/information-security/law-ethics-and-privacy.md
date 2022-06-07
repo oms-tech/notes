@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Law, Ethics, and Privacy
+---
+
 # Law, Ethics, and Privacy
 
 ## US Laws Related to Online Abuse

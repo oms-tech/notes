@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Final Exam Review Questions
+---
+
 # Final Exam Review Questions
 
 ## P3L1

@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Database Security
+---
+
 # Database Security
 
 ## Importance of Database Security

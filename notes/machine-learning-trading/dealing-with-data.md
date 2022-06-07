@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Dealing With Data
+---
+
 # Dealing With Data
 
 ## How Data Is Aggregated

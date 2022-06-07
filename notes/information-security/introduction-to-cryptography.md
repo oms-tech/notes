@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Introduction to Cryptography
+---
+
 # Introduction to Cryptography
 
 ## Decryption

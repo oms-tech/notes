@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Covert Channels
+---
+
 # Covert Channels
 
 ## Confinement Problem

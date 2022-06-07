@@ -1,3 +1,8 @@
+---
+course: Computer Networks
+title: Autonomous System Relationship and Interdomain Routing
+---
+
 # Autonomous System Relationship and Interdomain Routing
 
 ## Autonomous Systems and Internet Interconnection

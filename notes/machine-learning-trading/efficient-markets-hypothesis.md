@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Efficient Markets Hypothesis
+---
+
 # Efficient Markets Hypothesis
 
 ## Our Hypothesis

@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Authentication
+---
+
 # Authentication
 
 ## Background

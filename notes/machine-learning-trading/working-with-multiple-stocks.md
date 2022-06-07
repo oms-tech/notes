@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Working with Multiple Stocks
+---
+
 # Working with Multiple Stocks
 
 ## Pandas DataFrame Recap

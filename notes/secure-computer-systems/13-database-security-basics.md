@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Database Security Basics
+---
+
 # Database Security Basics
 
 ## Overview

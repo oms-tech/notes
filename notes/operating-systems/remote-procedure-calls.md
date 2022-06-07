@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Remote Procedure Calls
+---
+
 # Remote Procedure Calls
 
 ## Why RPC?

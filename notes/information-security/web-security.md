@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Web Security
+---
+
 # Web Security
 
 ## How the Web Works

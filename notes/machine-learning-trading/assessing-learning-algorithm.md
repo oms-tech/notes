@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Assessing a Learning Algorithm
+---
+
 # Assessing a Learning Algorithm
 
 ## A Closer Look at KNN Solutions

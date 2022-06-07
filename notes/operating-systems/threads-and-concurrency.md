@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Threads And Concurrency
+---
+
 # Threads And Concurrency
 
 ## Process vs. Thread

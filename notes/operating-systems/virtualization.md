@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Virtualization
+---
+
 # Virtualization
 
 ## What is Virtualization?

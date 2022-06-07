@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Welcome to ML4T
+---
+
 # Welcome to ML4T
 
 ## Howdy Friends

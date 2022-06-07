@@ -1,3 +1,8 @@
+---
+course: Simulation
+title: General Simulation Principles
+---
+
 # General Simulation Principles
 
 ## Steps in a Simulation Study

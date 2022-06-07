@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Public-Key Cryptography
+---
+
 # Public-Key Cryptography
 
 ## Modular Arithmetic

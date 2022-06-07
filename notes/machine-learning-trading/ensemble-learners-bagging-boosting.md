@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Ensemble Learners, Bagging, and Boosting
+---
+
 # Ensemble Learners, Bagging, and Boosting
 
 ## Ensemble Learners

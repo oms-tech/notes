@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Cyber Security
+---
+
 # Cyber Security
 
 ## Managing Security

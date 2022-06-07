@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Midterm 1 Study Guide
+---
+
 # Midterm 1 Study Guide
 
 ## DAC

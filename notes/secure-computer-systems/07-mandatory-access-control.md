@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Mandatory Access Control
+---
+
 # Mandatory Access Control
 
 ## Why Mandatory Access Control

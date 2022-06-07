@@ -1,3 +1,8 @@
+---
+course: Simulation
+title: Arena
+---
+
 # Arena
 
 ## Process-Interaction Overview

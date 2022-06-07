@@ -1,3 +1,8 @@
+---
+course: Simulation
+title: Hand and Spreadsheet Simulations
+---
+
 # Hand and Spreadsheet Simulations
 
 ## Stepping Through a Differential Equation

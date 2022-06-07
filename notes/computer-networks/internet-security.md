@@ -1,3 +1,8 @@
+---
+course: Computer Networks
+title: Internet Security
+---
+
 # Internet Security
 
 ## Properties of Secure Communication

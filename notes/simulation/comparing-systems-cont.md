@@ -1,3 +1,8 @@
+---
+course: Simulation
+title: Comparing Systems, Continued
+---
+
 # Comparing Systems, Continued
 
 ## Normal Means Selection

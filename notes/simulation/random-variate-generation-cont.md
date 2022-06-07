@@ -1,3 +1,8 @@
+---
+course: Simulation
+title: Random Variate Generation, Continued
+---
+
 # Random Variate Generation, Continued
 
 ## Composition (OPTIONAL)

@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Distributed File Systems
+---
+
 # Distributed File Systems
 
 ## Distributed File Systems

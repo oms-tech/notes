@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Midterm Exam Review Questions
+---
+
 # Midterm Exam Review Questions
 
 ## What are the key roles of an operating system?

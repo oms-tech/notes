@@ -1,3 +1,8 @@
+---
+course: Computer Networks
+title: Applications CDNs and Overlay Networks
+---
+
 # Applications CDNs and Overlay Networks
 
 ## Introduction to Content Distribution Networks

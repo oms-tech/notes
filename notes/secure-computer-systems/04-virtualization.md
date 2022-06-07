@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Virtualization and Security
+---
+
 # Virtualization and Security
 
 ## Why Virtualization

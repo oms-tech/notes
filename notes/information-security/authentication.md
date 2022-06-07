@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Authentication
+---
+
 # Authentication
 
 ## What is Authentication?

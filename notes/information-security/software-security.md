@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Software Security
+---
+
 # Software Security
 
 ## Software Vulnerabilities

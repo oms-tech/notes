@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: So You Want to be a Hedge Fund Manager
+---
+
 # So You Want to be a Hedge Fund Manager
 
 ## Types of Funds

@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: What Is a Company Worth
+---
+
 # What Is a Company Worth
 
 ## What Is a Company Worth Quiz

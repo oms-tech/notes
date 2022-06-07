@@ -1,3 +1,8 @@
+---
+course: Computer Networks
+title: Software Defined Networking (Part 2)
+---
+
 # Software Defined Networking (Part 2)
 
 ## Revisiting the Motivation for SDN

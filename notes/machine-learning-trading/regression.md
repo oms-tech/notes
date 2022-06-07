@@ -1,3 +1,8 @@
+---
+course: Machine Learning for Trading
+title: Regression
+---
+
 # Regression
 
 ## Parametric Regression

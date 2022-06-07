@@ -1,3 +1,8 @@
+---
+course: Introduction to Operating Systems
+title: Introduction To Operating Systems
+---
+
 # Introduction To Operating Systems
 
 ## What is an operating system?

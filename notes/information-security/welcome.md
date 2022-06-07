@@ -1,3 +1,8 @@
+---
+course: Introduction to Information Security
+title: Welcome to IIS
+---
+
 # Welcome to IIS
 
 ## Howdy Friends

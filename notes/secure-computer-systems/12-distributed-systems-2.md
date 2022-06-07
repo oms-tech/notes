@@ -1,3 +1,8 @@
+---
+course: Secure Computer Systems
+title: Distributed Systems, Secure Boot, Delegation, Decentralized Trust
+---
+
 # Distributed Systems, Secure Boot, Delegation, Decentralized Trust
 
 Users delegate to machines that act on their behalf.
