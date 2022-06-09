@@ -1,6 +1,6 @@
-export type Params = { id: string; course: string };
+import { NoteContent, NoteParams } from "../../types";
 
 export interface Fetcher {
-  getParams(): Promise<Params[]>;
-  getNote(params: Params): Promise<string>;
+  getParams(): Promise<NoteParams[]>;
+  getNote(params: NoteParams): Promise<NoteContent>;
 }

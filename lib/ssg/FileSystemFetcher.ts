@@ -2,21 +2,22 @@ import glob from "glob";
 import path from "path";
 import fs from "fs";
 
-import { Fetcher, Params } from "./Fetcher";
+import { NoteParams, NoteContent } from "../../types";
+import { Fetcher } from "./Fetcher";
 
 export class FileSystemFetcher implements Fetcher {
-  public notesRoot = "notes";
+  private notesRoot = "notes";
 
   getParams = async () => {
-    return new Promise<Params[]>((resolve, reject) => {
+    return new Promise<NoteParams[]>((resolve, reject) => {
       glob("**/*.md", { cwd: this.notesRoot }, (err, filenames) => {
         if (err) return reject(err);
 
         const paths = filenames
           .map(path.parse)
-          .map(({ dir: course, name: id }) => ({
-            course,
-            id,
+          .map(({ dir: courseId, name: noteId }) => ({
+            courseId,
+            noteId,
           }));
 
         return resolve(paths);
@@ -24,20 +25,22 @@ export class FileSystemFetcher implements Fetcher {
     });
   };
 
-  getNote = async (params: Params) => {
-    const { course, id } = params;
+  getNote = async (params: NoteParams) => {
+    const { courseId, noteId } = params;
 
     const notePath = path.format({
-      dir: path.join(this.notesRoot, course),
-      name: id,
+      dir: path.join(this.notesRoot, courseId),
+      name: noteId,
       ext: ".md",
     });
 
-    return new Promise<string>((resolve, reject) => {
+    return new Promise<NoteContent>((resolve, reject) => {
       fs.readFile(notePath, (err, buffer) => {
         if (err) return reject(err);
 
-        return resolve(buffer.toString());
+        const raw = buffer.toString();
+
+        return resolve({ raw });
       });
     });
   };
