@@ -12,6 +12,9 @@ import remarkMath from "remark-math";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+
 import { FileSystemFetcher } from "../../lib/ssg";
 import { isNoteMetadata, NoteParams, Note as NoteProps } from "../../types";
 
@@ -60,7 +63,7 @@ const Note: NextPage<NoteProps> = ({ raw, course, title, readingTime }) => (
             </span>
           </h1>
         </div>
-        <div className="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
+        <div className="mt-6 prose prose-pre:p-0 prose-indigo prose-md text-gray-500 mx-auto">
           <ReactMarkdown
             remarkPlugins={[remarkFrontmatter, remarkMath]}
             rehypePlugins={[
@@ -70,6 +73,24 @@ const Note: NextPage<NoteProps> = ({ raw, course, title, readingTime }) => (
             ]}
             disallowedElements={["h1"]}
             components={{
+              code({ node, inline, className, children, ...props }) {
+                const match = /language-(\w+)/.exec(className || "");
+                return match && !inline ? (
+                  <SyntaxHighlighter
+                    customStyle={{ margin: 0 }}
+                    language={match[1]}
+                    {...props}
+                    style={darcula}
+                    showLineNumbers
+                  >
+                    {String(children).replace(/\n$/, "")}
+                  </SyntaxHighlighter>
+                ) : (
+                  <code className="bg-gray-100 rounded-sm p-1" {...props}>
+                    {children}
+                  </code>
+                );
+              },
               img({ node, src = "", ...props }) {
                 return (
                   <span className="relative block" style={{ height: 450 }}>
