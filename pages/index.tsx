@@ -19,7 +19,6 @@ const Home: NextPage<{ params: NoteParams[] }> = ({ params }) => {
       <Head>
         <title>Home | OMSCS Notes</title>
         <meta name="description" content="OMSCS Notes" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
