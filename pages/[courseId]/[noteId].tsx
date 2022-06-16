@@ -14,7 +14,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { nord } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import { FileSystemFetcher } from "../../lib/ssg";
 import { isNoteMetadata, NoteParams, Note as NoteProps } from "../../types";
@@ -104,7 +104,7 @@ const Note: NextPage<NoteProps> = ({ raw, course, title, readingTime }) => (
                     customStyle={{ margin: 0 }}
                     language={match[1]}
                     {...props}
-                    style={darcula}
+                    style={nord}
                     showLineNumbers
                   >
                     {String(children).replace(/\n$/, "")}
