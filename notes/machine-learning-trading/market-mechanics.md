@@ -17,7 +17,7 @@ symbol of the equity that we are interested in - for instance, IBM or SPLV.
 
 Next, we need to indicate how many shares we are interested in transacting.
 Equities sell in units of shares, not dollars. In other words, we wouldn't tell
-our broker that we want $100,000 of Apple, but rather 100,000 shares of Apple.
+our broker that we want \$100,000 of Apple, but rather 100,000 shares of Apple.
 
 Next, we need to tell the broker whether the order is a market order or a limit
 order. A **market order** means that we are willing to accept whatever price the
@@ -34,7 +34,7 @@ determines the price for us.
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-10-22-09-40.png)
 
-An order to buy 100 shares of IBM for no more than $99.95 a share might look
+An order to buy 100 shares of IBM for no more than \$99.95 a share might look
 like this.
 
 ```bash
@@ -54,7 +54,7 @@ buy or sell. Investors view the order book to determine how other investors are
 interested in transacting this stock.
 
 Let's suppose that we issue the very first order of the day: an order to buy 100
-shares of IBM at a limit price of $99.95. Since the exchange does not have any
+shares of IBM at a limit price of \$99.95. Since the exchange does not have any
 shares of IBM for sale at this price, they cannot fulfill our order. Instead,
 they add it to the order book.
 
@@ -65,7 +65,7 @@ BID 99.95 100
 ```
 
 Let's suppose an order comes in to sell 1000 shares of IBM at a limit price of
-$100. Since there is no one willing to buy IBM at $100 per share, the exchange
+\$100. Since there is no one willing to buy IBM at \$100 per share, the exchange
 has to add this order to its order book as well.
 
 ```bash
@@ -88,9 +88,9 @@ BID 99.85  50
 Suppose the exchange receives a market order to buy 100 shares of IBM. The
 exchange looks at its order book and determines that, since it has 1600 shares
 for sale, it can fulfill the order. The exchange must give the client the lowest
-price, so it sells 100 shares from the pool of 1000 for sale at $100.
+price, so it sells 100 shares from the pool of 1000 for sale at \$100.
 
-As a result, the number of shares for sale at $100 drops, and the order book now
+As a result, the number of shares for sale at \$100 drops, and the order book now
 looks like this.
 
 ```bash
@@ -117,12 +117,12 @@ The price is likely to drop in the near future because there is more selling
 pressure than buying pressure.
 
 Consider what would happen if we put in a market order to sell 200 shares. We
-would get 100 shares at $99.95, 50 shares at $99.90, and 50 shares at $99.85.
-Our single order would cause the price of the equity to drop by $0.10.
+would get 100 shares at \$99.95, 50 shares at \$99.90, and 50 shares at \$99.85.
+Our single order would cause the price of the equity to drop by \$0.10.
 
 On the other hand, suppose we issue a market order to buy 200 shares. We would
-receive 200 of the 1000 shares available for sale at $100. The next market buy
-order would start with the remaining 800 shares for sale at $100. In other
+receive 200 of the 1000 shares available for sale at \$100. The next market buy
+order would start with the remaining 800 shares for sale at \$100. In other
 words, our buy order wouldn't affect the sale price at all.
 
 ## How Orders Affect the Order Book
@@ -139,7 +139,7 @@ BID 99.85  50
 ```
 
 What happens if we receive a market order to buy 100 shares of IBM? We have 1000
-shares for sale at $100 and, since we have to give the client the best price, we
+shares for sale at \$100 and, since we have to give the client the best price, we
 sell them 100 shares at that price. Now we have the following order book.
 
 ```bash
@@ -151,10 +151,10 @@ BID 99.90  50
 BID 99.85  50
 ```
 
-Let's now consider a limit order for 100 shares of IBM at $100.02. Looking at
+Let's now consider a limit order for 100 shares of IBM at \$100.02. Looking at
 the order book, we can satisfy that order. Since the client doesn't want to pay
-more than $100.02 for the shares, we can sell them 100 shares from the pool for
-sale at $100. Now, our order book looks like this.
+more than \$100.02 for the shares, we can sell them 100 shares from the pool for
+sale at \$100. Now, our order book looks like this.
 
 ```bash
 ASK 100.10 100
@@ -166,9 +166,9 @@ BID 99.85  50
 ```
 
 Let's look now at a market order to sell 175 shares of IBM. We have 100 shares
-available at $99.95, so we sell those, but we have to go deeper into the book to
-fulfill the rest of the order. We sell the block of 50 shares for $99.90, and we
-sell the remaining 25 shares from the pool of 50 shares priced at $99.85.
+available at \$99.95, so we sell those, but we have to go deeper into the book to
+fulfill the rest of the order. We sell the block of 50 shares for \$99.90, and we
+sell the remaining 25 shares from the pool of 50 shares priced at \$99.85.
 
 Notice that we had to drop the sale price twice in the process of fulfilling the
 order, which is indicative that our book is experiencing more sell pressure than
@@ -331,9 +331,9 @@ If we want to sell a stock once it dips below a specific price, we might issue a
 specific price, we might issue a **stop gain** order.
 
 A **trailing stop** order is similar to a stop-loss order, except the threshold
-price moves. For instance, we might issue a trailing stop at $0.10 behind the
+price moves. For instance, we might issue a trailing stop at \$0.10 behind the
 price. As the price rises, the value at which we want to sell the stock rises as
-well. When the price drops more than $0.10, the broker issues a sell order.
+well. When the price drops more than \$0.10, the broker issues a sell order.
 
 These three orders rely on our broker watching the market until the conditions
 we specify are met and then issuing a simple buy or sell order to an exchange.
@@ -346,24 +346,24 @@ if we believe its price is going to go down.
 ## Mechanics of Short Selling: Entry
 
 Suppose that we want to take a short position in IBM, which is currently selling
-at $100 per share.
+at \$100 per share.
 
 Joe holds 100 shares of IBM, and he likes IBM, so he wants to hold onto the
 shares long-term. However, he is willing to lend us his 100 shares in the
 short-term.
 
 Lisa thinks IBM is going to go up in price, so she wants to buy IBM now. We
-borrow the 100 shares from Joe and sell them to Lisa, who pays us $10,000.
+borrow the 100 shares from Joe and sell them to Lisa, who pays us \$10,000.
 
-After everything settles, we have $10,000 in our brokerage account, but we also
+After everything settles, we have \$10,000 in our brokerage account, but we also
 owe Joe 100 shares of IBM. If Joe decides that he wants his shares back, we have
 to purchase them from the market and return them to him.
 
 ## Short Selling Quiz
 
-Suppose we've been watching IBM, and we decide to short it when it reaches $100
-because we think that it is going to go down. If we short 100 shares at $100 per
-share and submit an order to buy back the shares at $90 per share to close out
+Suppose we've been watching IBM, and we decide to short it when it reaches \$100
+because we think that it is going to go down. If we short 100 shares at \$100 per
+share and submit an order to buy back the shares at \$90 per share to close out
 our position, what is our net return?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-12-20-36-56.png)
@@ -372,23 +372,23 @@ our position, what is our net return?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-12-20-37-14.png)
 
-Each time IBM drops $1 in price, we make $100 because we are shorting 100
-shares. Altogether, the stock dropped $10, so we made $1000.
+Each time IBM drops \$1 in price, we make \$100 because we are shorting 100
+shares. Altogether, the stock dropped \$10, so we made \$1000.
 
 ## Mechanics of Short Selling: Exit
 
-We now have $10,000 in our account from selling Joe's 100 shares to Lisa at $100
+We now have \$10,000 in our account from selling Joe's 100 shares to Lisa at \$100
 per share, and we owe Joe 100 shares of IBM.
 
 Let's suppose that, since that transaction, IBM has dropped in price and is now
-selling at $90 per share. We can make a profit from that price differential, so
+selling at \$90 per share. We can make a profit from that price differential, so
 we decide to close our position. To do so, we need to buy 100 shares from
 someone who wants to sell them, like Nate.
 
 We buy 100 shares from Nate and return them to Joe, thus fulfilling our
-obligation to Joe. Since IBM was selling at $90 a share, and we owed Joe 100
-shares, we had to buy $9000 worth of stock. However, we had $10,000 in our
-account from our initial sale to Lisa, so we have netted $1000.
+obligation to Joe. Since IBM was selling at \$90 a share, and we owed Joe 100
+shares, we had to buy \$9000 worth of stock. However, we had \$10,000 in our
+account from our initial sale to Lisa, so we have netted \$1000.
 
 In reality, we don't make any agreements with individual investors like Joe,
 Lisa, or Nate. We make agreements with our broker, who facilitates these types
@@ -397,12 +397,12 @@ of trades for us.
 ## What Can Go Wrong
 
 Let's suppose we haven't yet closed our short position. We owe 100 shares of
-IBM, and we need to buy those shares at a price of under $100 per share to make
+IBM, and we need to buy those shares at a price of under \$100 per share to make
 a profit.
 
-If the price of IBM goes up to, say, $150 a share, instead of down to $90 a
+If the price of IBM goes up to, say, \$150 a share, instead of down to \$90 a
 share, our short becomes unprofitable. When we go to exit our position, it costs
-us $15,000 to buy back the shares we sold for $10,000, leaving us with a $5,000
+us \$15,000 to buy back the shares we sold for \$10,000, leaving us with a \$5,000
 loss.
 
 Generally, if we short a stock and the price of that stock goes up instead of

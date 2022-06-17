@@ -727,29 +727,29 @@ result, 68% of samples from a distribution characterized by these statistics
 will fall between -0.25 and 0.35. There is plenty of room for bad performance in
 that spread.
 
-We will start with $5,000 allocated to each stock, for a total portfolio value
-of $30,000. Then, we will simulate each stock's performance over the five years
+We will start with \$5,000 allocated to each stock, for a total portfolio value
+of \$30,000. Then, we will simulate each stock's performance over the five years
 and aggregate them into a final portfolio value.
 
 Let's try a simulation.
 
 ![](https://assets.omscs-notes.com/images/notes/simulation/2020-08-22-16-07-02.png)
 
-In this round, we did pretty well; after five years, we turned $30000 into more
-than $41000.
+In this round, we did pretty well; after five years, we turned \$30,000 into more
+than \$41,000.
 
 Let's try again.
 
 ![](https://assets.omscs-notes.com/images/notes/simulation/2020-08-22-16-07-46.png)
 
-In this round, we did poorly. We lost almost $8000.
+In this round, we did poorly. We lost almost \$8,000.
 
 Let's try one more.
 
 ![](https://assets.omscs-notes.com/images/notes/simulation/2020-08-22-16-08-28.png)
 
 In this round, we were quite lucky. All of our stocks posted significant gains,
-and we ended up with almost $100,000 in our portfolio.
+and we ended up with almost \$100,000 in our portfolio.
 
 How do we make sense of such round-to-round variability? We can simulate our
 portfolio's performance, say, 1000 times and then compute summary statistics

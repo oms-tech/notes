@@ -48,16 +48,16 @@ We can describe each chunk using five data points: open, high, low, close, and
 volume. Let's consider the first chunk.
 
 The **open** is the price of the first transaction within the chunk, which is
-$100.00. The **high** is the highest transaction price within the chunk, which
-is also $100.00. The **low** is the lowest transaction price within the chunk,
-which is $99.05. The **close** is the price of the last transaction within the
-chunk, which is $95.50. Finally, the **volume** represents the total number of
+\$100.00. The **high** is the highest transaction price within the chunk, which
+is also \$100.00. The **low** is the lowest transaction price within the chunk,
+which is \$99.05. The **close** is the price of the last transaction within the
+chunk, which is \$95.50. Finally, the **volume** represents the total number of
 shares transacted within the chunk, which is 600.
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-24-22-38-26.png)
 
 We can similarly consolidate the next chunk. Both the open and the low are
-$99.00, while the high and the close are $99.95. The volume is 300.
+\$99.00, while the high and the close are \$99.95. The volume is 300.
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-24-22-39-33.png)
 
@@ -74,8 +74,8 @@ Consider the following plot of IBM stock prices over time.
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-24-22-42-38.png)
 
-Notice the sudden drops in price. In one example, the price drops from $300 per
-share to $75 per share; in another, the price drops from $250 per share to $125
+Notice the sudden drops in price. In one example, the price drops from \$300 per
+share to \$75 per share; in another, the price drops from \$250 per share to \$125
 per share. These drops represent a 75% and a 50% price decline, respectively.
 
 Undoubtedly, the value of IBM did not drop that much in one day, so, which of
@@ -90,11 +90,10 @@ the following reasons might explain the sudden drop in stock price?
 What we see here is a **stock split**, whereby a single share becomes $n$
 shares, and the price of each share is divided by $n$.
 
-For example, consider the drop in price from $300 per share to $75 per share.
+For example, consider the drop in price from \$300 per share to \$75 per share.
 This 75% drop in price is consistent with a 4-for-1 stock split, whereby one
 share becomes four shares. Note that the total value of the shares is preserved
-
-- four $75 shares still equals $300 worth of IBM - but the number of overall
+\- four \$75 shares still equals \$300 worth of IBM - but the number of overall
 shares has increased.
 
 ## Stock Splits
@@ -103,9 +102,9 @@ The most common reason for a company to issue a stock split is to drive down the
 share price. Naturally, that begs the question: why is a high share price a
 problem?
 
-Consider a stock with a high share price, such as $500. Investors generally buy
-stocks in groups of one hundred - referred to as a **lot**. At $500 per share, a
-lot costs $50,000, and some investors might find this price prohibitively
+Consider a stock with a high share price, such as \$500. Investors generally buy
+stocks in groups of one hundred - referred to as a **lot**. At \$500 per share, a
+lot costs \$50,000, and some investors might find this price prohibitively
 expensive. Additionally, share price impacts derivative securities, like stock
 options, which typically control lots, and can make them more expensive and less
 liquid.
@@ -167,16 +166,16 @@ the adjusted close price for this stock?
 
 For each day since the stock split, the adjusted close is equivalent to the
 actual close. As a result, the adjusted close for the most recent of the three
-days is $100.
+days is \$100.
 
 For all days before the 2:1 split, we calculate the adjusted close by dividing
 the actual close by two. As a result, the adjusted close prices for the previous
-two days, moving backward from the split, are $50 and $25, respectively.
+two days, moving backward from the split, are \$50 and \$25, respectively.
 
-Consider buying one share of stock, on the first of the three days, for $50.
-After the split, we would have two shares, each worth $50, and by the third day,
-our shares would be worth $100 apiece. This trajectory represents a four-fold
-increase in value, from $50 to $200 worth of stock.
+Consider buying one share of stock, on the first of the three days, for \$50.
+After the split, we would have two shares, each worth \$50, and by the third day,
+our shares would be worth \$100 apiece. This trajectory represents a four-fold
+increase in value, from \$50 to \$200 worth of stock.
 
 Note that using the adjusted close accurately reflects this quadrupling of
 value, whereas the actual close seems to indicate, incorrectly, only a doubling
@@ -186,12 +185,12 @@ of value.
 
 Many companies regularly pay dividends to their shareholders. For example, a
 company might pay a 1-2% dividend per share per year. For a stock trading at
-$100 per share, this dividend equals $1-2.
+\$100 per share, this dividend equals \$1-2.
 
 Dividend payments can have significant effects on a stock's price. Consider a
-company whose stock is currently trading at around $100 per share and for which
-investors have derived a fundamental value of exactly $100 per share. Let's
-suppose that this stock has an upcoming dividend payment of $1.
+company whose stock is currently trading at around \$100 per share and for which
+investors have derived a fundamental value of exactly \$100 per share. Let's
+suppose that this stock has an upcoming dividend payment of \$1.
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-27-16-10-25.png)
 
@@ -207,15 +206,15 @@ about after the dividend is paid?
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-27-16-12-15.png)
 
 The day before the dividend is paid, we should expect to see the stock price
-rise to $101. A share price of $101 reflects the underlying value of $100 per
-share, for which there is consensus, plus the expected $1 dividend payment.
+rise to \$101. A share price of \$101 reflects the underlying value of \$100 per
+share, for which there is consensus, plus the expected \$1 dividend payment.
 
-On the very next day, we should expect the price to drop by $1 to $100 per
+On the very next day, we should expect the price to drop by \$1 to \$100 per
 share. Since the dividend has been paid, the share price should drop back down
-to the price aligned with its fundamental value: $100 per share.
+to the price aligned with its fundamental value: \$100 per share.
 
 Note that the overall value for investors who bought before the dividend was
-paid is still $101 per share: $100 per share plus $1 in cash per share.
+paid is still \$101 per share: \$100 per share plus \$1 in cash per share.
 
 ## Adjusting For Dividends
 
@@ -224,9 +223,9 @@ Let's recall the dividend scenario we were just describing.
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-03-06-15-47-37.png)
 
 Between the date that the dividend is announced and the date it is paid, we see
-the share price generally rise from the consensus price - $100 - to accommodate
+the share price generally rise from the consensus price - \$100 - to accommodate
 the value of the dividend. After the dividend is paid, we see the share price
-immediately drop back $100.
+immediately drop back \$100.
 
 Let's consider now how we might adjust historical prices to account for
 dividends. Remember that the adjusted price as of today is always the same as
@@ -234,14 +233,14 @@ the actual price. As we move backward in time, these two values remain the same
 until we encounter a dividend.
 
 Once we encounter a dividend, we adjust all of the preceding prices downward by
-the proportion of the dividend payment. In this case, with a 1% dividend - $1
-paid on a $100 share - we reduce all prices before the dividend date by 1%.
+the proportion of the dividend payment. In this case, with a 1% dividend - \$1
+paid on a \$100 share - we reduce all prices before the dividend date by 1%.
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-03-06-15-53-10.png)
 
 To double-check this adjustment, consider buying and holding a stock through the
 dividend payment. We would see an increase in the value of our holding by about
-$1: the dividend payment.
+\$1: the dividend payment.
 
 Thus, the adjustment is performing its purpose. It bakes in the value added by
 the dividend and allows us to monitor the overall value of our holdings, as

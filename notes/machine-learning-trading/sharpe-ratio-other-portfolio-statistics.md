@@ -11,10 +11,10 @@ We want to understand how to calculate the overall daily value of a portfolio so
 that we can compute statistics on portfolio performance.
 
 Let's consider the following portfolio. Assume we start with a portfolio value
-of $1 million, and we track the portfolio from the beginning of 2009 to the end
+of \$1 million, and we track the portfolio from the beginning of 2009 to the end
 of 2011.
 
-At the beginning of 2009, we split our $1 million into the following four
+At the beginning of 2009, we split our \$1 million into the following four
 allocations: 40% SPY, 40% XOM, 10% GOOG, and 10% GLD. We hold these positions
 for the entire 3-year period and assess whether we gained our lost money at the
 end of 2011.
@@ -53,7 +53,7 @@ pos_vals = alloced * start_val # 1_000_000
 ```
 
 The first row of `pos_vals` gives us the initial amount of cash allocated to
-each stock - $400,000, $400,000, $100,000, and $100,000 - and each subsequent
+each stock - \$400,000, \$400,000, \$100,000, and \$100,000 - and each subsequent
 row adjusts that amount based on the normalized, allocation-scaled price value
 for that row.
 
@@ -68,7 +68,7 @@ each day:
 port_val = pos_vals.sum(axis=1) # Sum across columns
 ```
 
-The first row of `port_val` is simply the sum of the initial allocations: $1
+The first row of `port_val` is simply the sum of the initial allocations: \$1
 million. Each subsequent row reflects the new value of the portfolio as the
 value of our positions changes as a result of stock price movement.
 

@@ -279,11 +279,11 @@ they need to look at the probability of an adverse security event happening. For
 a given set of assets, threat landscape, and set of security controls, there is
 some nonzero probability of system compromise. Second, the business must
 consider the financial impact of the adverse event. For example, a data breach
-may cost a company $10 million.
+may cost a company \$10 million.
 
 For a probability `P` and impact `I`, we can define **risk exposure** `R = PI`.
 For example, given a 50% chance of an adverse security event that is going to
-cost $10 million, the risk exposure is $5 million.
+cost \$10 million, the risk exposure is \$5 million.
 
 An organization wants to reduce their risk exposure, and they can achieve this
 reduction by implementing security controls. Since every control comes at a
@@ -407,8 +407,8 @@ can be difficult for two reasons: first, risk is difficult to quantify, and,
 second, cybersecurity does not make money.
 
 The primary economic argument for cybersecurity is based on return on investment
-(ROI), not revenue generation. For example, an investment of $5 million in
-cybersecurity that shields an organization from a $10 million security incident
+(ROI), not revenue generation. For example, an investment of \$5 million in
+cybersecurity that shields an organization from a \$10 million security incident
 is a worthwhile spend.
 
 Of course, demonstrating this sort of cost-benefit analysis to upper management

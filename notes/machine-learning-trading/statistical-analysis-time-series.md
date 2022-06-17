@@ -315,8 +315,8 @@ simple equation:
 (price[t] / price [t - 1]) - 1
 ```
 
-For example, let's suppose that yesterday a stock closed at $100 and today the
-stock closed at $110. The daily return for the stock today is:
+For example, let's suppose that yesterday a stock closed at \$100 and today the
+stock closed at \$110. The daily return for the stock today is:
 
 ```python
 (110 / 100) - 1 # = 1.1 - 1 = 0.1 = 10%
@@ -408,7 +408,7 @@ Let's look at a chart of SPY prices for the year 2012.
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-01-12-23-06-40.png)
 
-This stock started 2012 at  $125 and finished at $142. However, when we hear
+This stock started 2012 at  \$125 and finished at \$142. However, when we hear
 about a stock on the news, we don't usually hear beginning and end prices, but
 rather something like: "SPY gained 13.6% in 2012."
 

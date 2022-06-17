@@ -1248,17 +1248,17 @@ to purchase the stock at a pre-agreed strike price, $k$, at pre-determined
 expiry date, $T$. The owner pays an up-front fee for the privilege to exercise
 this option.
 
-Let's look at an example. Say that we believe that IBM will sell for $120 per
-share in a few months. Currently, it's selling for $100 per share. It would be
-nice to buy 1000 shares of IBM at $100 per share today, but perhaps we don't
-have $100,000 on hand to make that purchase. Instead, we can buy an option
-today, for maybe $1.50, that allows us to buy IBM at $105 per share in a few
-months. If IBM does go to $120 per share, we can exercise our option,
-instantaneously buying IBM for $105 and selling for $120, netting a $13.50
-profit ($15 minus the option price, $1.50).
+Let's look at an example. Say that we believe that IBM will sell for \$120 per
+share in a few months. Currently, it's selling for \$100 per share. It would be
+nice to buy 1000 shares of IBM at \$100 per share today, but perhaps we don't
+have \$100,000 on hand to make that purchase. Instead, we can buy an option
+today, for maybe \$1.50, that allows us to buy IBM at \$105 per share in a few
+months. If IBM does go to \$120 per share, we can exercise our option,
+instantaneously buying IBM for \$105 and selling for \$120, netting a \$13.50
+profit (\$15 minus the option price, \$1.50).
 
-If the stock drops to, say, $95 per share, then we would choose simply not to
-exercise the option. Obviously, it doesn't make sense to buy IBM for $105 per
+If the stock drops to, say, \$95 per share, then we would choose simply not to
+exercise the option. Obviously, it doesn't make sense to buy IBM for \$105 per
 share using the option when we can just go to the market and buy it for less.
 
 The question then becomes: what is a fair price to pay for an option? The value,
@@ -1277,7 +1277,7 @@ penalty of $e^{-rT}$, where $r$ is the "risk-free" interest rate that the
 government is currently guaranteeing.
 
 We can calculate $V$ to determine what the option is worth. For example, if we
-determine that the option is worth $1.50, and we can buy it for $1.30, then
+determine that the option is worth \$1.50, and we can buy it for \$1.30, then
 perhaps we stand to make some profit.
 
 Alternatively, we can use the option merely for an insurance policy. Southwest

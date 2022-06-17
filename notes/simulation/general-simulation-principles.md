@@ -532,7 +532,7 @@ Automod, and AnyLogic require a lot less programming effort to get up and
 running.
 
 There are 5-10 major simulation players in university settings. In industry, the
-price for simulation packages can range from under $1,000 to more than $100,000.
+price for simulation packages can range from under \$1,000 to more than \$100,000.
 Thankfully, freeware is also available: simulation packages exist in Java and
 Python (SimPyl). Though they might contain a learning curve, these packages can
 be powerful and enjoyable to work with.

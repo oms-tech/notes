@@ -934,19 +934,19 @@ The price is likely to drop in the near future because there is more selling
 pressure than buying pressure.
 
 Consider what would happen if we put in a market order to sell 200 shares. We
-would get 100 shares at $99.95, 50 shares at $99.90, and 50 shares at $99.85.
-Our single order would cause the price of the equity to drop by $0.10.
+would get 100 shares at \$99.95, 50 shares at \$99.90, and 50 shares at \$99.85.
+Our single order would cause the price of the equity to drop by \$0.10.
 
 On the other hand, suppose we issue a market order to buy 200 shares. We would
-receive 200 of the 1000 shares available for sale at $100. The next market buy
-order would start with the remaining 800 shares for sale at $100. In other
+receive 200 of the 1000 shares available for sale at \$100. The next market buy
+order would start with the remaining 800 shares for sale at \$100. In other
 words, our buy order wouldn't affect the sale price at all.
 
 ### Short Selling Quiz
 
-Suppose we've been watching IBM, and we decide to short it when it reaches $100
-because we think that it is going to go down. If we short 100 shares at $100 per
-share and submit an order to buy back the shares at $90 per share to close out
+Suppose we've been watching IBM, and we decide to short it when it reaches \$100
+because we think that it is going to go down. If we short 100 shares at \$100 per
+share and submit an order to buy back the shares at \$90 per share to close out
 our position, what is our net return?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-12-20-36-56.png)
@@ -955,14 +955,14 @@ our position, what is our net return?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-12-20-37-14.png)
 
-Each time IBM drops $1 in price, we make $100 because we are shorting 100
-shares. Altogether, the stock dropped $10, so we made $1000.
+Each time IBM drops \$1 in price, we make \$100 because we are shorting 100
+shares. Altogether, the stock dropped \$10, so we made \$1000.
 
 ## What Is a Company Worth
 
 ### What Is a Company Worth Quiz
 
-Suppose there is a company that consistently generates $1 per year. What is that
+Suppose there is a company that consistently generates \$1 per year. What is that
 company worth?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-16-12-35-39.png)
@@ -975,10 +975,10 @@ company worth?
 
 Assume that we are in a position to receive one of three different assets.
 
-The first asset is a $1 bill: cold, hard cash. The second asset is a Tucker
+The first asset is a \$1 bill: cold, hard cash. The second asset is a Tucker
 Balch bond; essentially, a promise certified by the professor that he will pay
-us $1 in one year. The third asset is a US Government bond, which also pays out
-$1 in one year, but is backed by the United States government.
+us \$1 in one year. The third asset is a US Government bond, which also pays out
+\$1 in one year, but is backed by the United States government.
 
 Which of these assets would you rather receive? Rank the choices from 1 (best)
 to 3 (worst).
@@ -989,14 +989,14 @@ to 3 (worst).
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-16-13-49-15.png)
 
-The most valuable asset among these three is the $1 delivered right now because
+The most valuable asset among these three is the \$1 delivered right now because
 you can spend it right now. The other two are promises for a reward at some
 point in the future. Among these two bonds, the one backed by the US government
 is likely more valuable than the one backed by the professor.
 
 ### Intrinsic Value Quiz
 
-Consider a company that pays a dividend of $2 per year. Given a discount rate of
+Consider a company that pays a dividend of \$2 per year. Given a discount rate of
 4%, what is the intrinsic value of this company?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-17-20-35-00.png)
@@ -1014,15 +1014,15 @@ $$ PV = \frac{\$2}{0.04} = \$50 $$
 
 Consider a fictitious airline company.
 
-This company owns 10 airplanes, each valued at $10 million. Additionally, it has
-a brand name worth another $10 million. Finally, it has an outstanding loan for
-$20 million. What is the book value of this company?
+This company owns 10 airplanes, each valued at \$10 million. Additionally, it has
+a brand name worth another \$10 million. Finally, it has an outstanding loan for
+\$20 million. What is the book value of this company?
 
-This company pays $1 million per year in dividends. Assuming a 5% discount rate,
+This company pays \$1 million per year in dividends. Assuming a 5% discount rate,
 what is the intrinsic value of this company?
 
 This company has one million shares of stock outstanding. Given a stock price of
-$75 per share, what is the market capitalization of this company?
+\$75 per share, what is the market capitalization of this company?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-17-21-08-46.png)
 
@@ -1031,20 +1031,20 @@ $75 per share, what is the market capitalization of this company?
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-17-21-09-03.png)
 
 To calculate book value, we take the value of the total assets and subtract the
-intangible assets, like the brand, and the liabilities. Given $110,000,000 in
-total assets, a $10,000,000 intangible asset, and a $20,000,000 liability, the
-book value for this company is $80,000,000.
+intangible assets, like the brand, and the liabilities. Given \$110,000,000 in
+total assets, a \$10,000,000 intangible asset, and a \$20,000,000 liability, the
+book value for this company is \$80,000,000.
 
 To compute the intrinsic value, we divide the value of the dividends,
-$1,000,000, by the discount rate, 0.05, to get $20,000,000.
+\$1,000,000, by the discount rate, 0.05, to get \$20,000,000.
 
 To compute the market capitalization, we take the product of the share price,
-$75, and the number of outstanding shares, 1,000,000, to get $75,000,000.
+\$75, and the number of outstanding shares, 1,000,000, to get \$75,000,000.
 
 ### Would you Buy this Stock Quiz
 
-Since this company has a market capitalization of $75,000,000, we could buy all
-of the shares and, effectively the company, for $75,000,000. Should we?
+Since this company has a market capitalization of \$75,000,000, we could buy all
+of the shares and, effectively the company, for \$75,000,000. Should we?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-17-21-12-47.png)
 
@@ -1053,9 +1053,9 @@ of the shares and, effectively the company, for $75,000,000. Should we?
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-18-01-10-10.png)
 
 It might seem like a tricky question, given such a relatively low intrinsic
-value, but it's not. We should buy this company for $75,000,000 and then break
-it apart and sell the individual assets for $80,000,000 to get an immediate
-$5,000,000 profit.
+value, but it's not. We should buy this company for \$75,000,000 and then break
+it apart and sell the individual assets for \$80,000,000 to get an immediate
+\$5,000,000 profit.
 
 Stock prices very rarely dip below book value for this exact reason; otherwise,
 predatory buyers swoop in and buy the whole company just to sell it for parts.
@@ -1160,7 +1160,7 @@ moves one percent. An $\alpha$ of 0.01 tells us that stock A will move 1% above
 its movement with the market.
 
 As a result, stock A moves 10% plus 1%, for a total relative return of 11%, and
-a total absolute return of $5.50, 11% on a $50 investment.
+a total absolute return of \$5.50, 11% on a \$50 investment.
 
 Let's consider stock B now, which has a $\beta$ of 2.0 and an $\alpha$ of -0.01.
 A $\beta$ of 2.0 tells us that for every percentage point the market moves,
@@ -1169,10 +1169,10 @@ stock A moves two percent. An $\alpha$ of -0.01 tells us that stock A will move
 
 As a result, stock B moves 20% minus 1%, for a total relative return of 19%.
 However, since we shorted stock B, this return is actually -19%, and we have
-lost $9.50.
+lost \$9.50.
 
-Let's compute the total return. Since we gained $5.50 on stock A and lost $9.50
-on stock B, our total absolute return is -$4.
+Let's compute the total return. Since we gained \$5.50 on stock A and lost \$9.50
+on stock B, our total absolute return is -\$4.
 
 Calculating the relative return is a little tricky; that is, we can't just add
 11% and -19% to get -8%. Instead, since we split our investment across stock A
@@ -1183,13 +1183,13 @@ Now, let's look at the case where the market falls 10%.
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-21-22-25-50.png)
 
 In this case, stock A falls with the market, but does 1% better, for a total
-relative loss of 9%, which equates to a $4.50 loss on a $50 investment.
+relative loss of 9%, which equates to a \$4.50 loss on a \$50 investment.
 
 Stock B falls twice as hard as the market, and does 1% worse on top of that, for
 a total relative loss of 21%. However, since we shorted stock B, this loss is
-actually a 21% gain, or a gain of $10.50 on a $50 investment.
+actually a 21% gain, or a gain of \$10.50 on a \$50 investment.
 
-Overall, this market scenario nets us 6%, or $6 on a $100 investment.
+Overall, this market scenario nets us 6%, or \$6 on a \$100 investment.
 
 ### Allocations Remove Market Risk Quiz
 
@@ -1300,8 +1300,8 @@ Consider the following plot of IBM stock prices over time.
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-24-22-42-38.png)
 
-Notice the sudden drops in price. In one example, the price drops from $300 per
-share to $75 per share; in another, the price drops from $250 per share to $125
+Notice the sudden drops in price. In one example, the price drops from \$300 per
+share to \$75 per share; in another, the price drops from \$250 per share to \$125
 per share. These drops represent a 75% and a 50% price decline, respectively.
 
 Undoubtedly, the value of IBM did not drop that much in one day, so, which of
@@ -1316,11 +1316,10 @@ the following reasons might explain the sudden drop in stock price?
 What we see here is a **stock split**, whereby a single share becomes $n$
 shares, and the price of each share is divided by $n$.
 
-For example, consider the drop in price from $300 per share to $75 per share.
+For example, consider the drop in price from \$300 per share to \$75 per share.
 This 75% drop in price is consistent with a 4-for-1 stock split, whereby one
 share becomes four shares. Note that the total value of the shares is preserved
-
-- four $75 shares still equals $300 worth of IBM - but the number of overall
+\- four \$75 shares still equals \$300 worth of IBM - but the number of overall
 shares has increased.
 
 ### Split Adjustment Quiz
@@ -1337,16 +1336,16 @@ the adjusted close price for this stock?
 
 For each day since the stock split, the adjusted close is equivalent to the
 actual close. As a result, the adjusted close for the most recent of the three
-days is $100.
+days is \$100.
 
 For all days before the 2:1 split, we calculate the adjusted close by dividing
 the actual close by two. As a result, the adjusted close prices for the previous
-two days, moving backward from the split, are $50 and $25, respectively.
+two days, moving backward from the split, are \$50 and \$25, respectively.
 
-Consider buying one share of stock, on the first of the three days, for $50.
-After the split, we would have two shares, each worth $50, and by the third day,
-our shares would be worth $100 apiece. This trajectory represents a four-fold
-increase in value, from $50 to $200 worth of stock.
+Consider buying one share of stock, on the first of the three days, for \$50.
+After the split, we would have two shares, each worth \$50, and by the third day,
+our shares would be worth \$100 apiece. This trajectory represents a four-fold
+increase in value, from \$50 to \$200 worth of stock.
 
 Note that using the adjusted close accurately reflects this quadrupling of
 value, whereas the actual close seems to indicate, incorrectly, only a doubling
@@ -1364,15 +1363,15 @@ about after the dividend is paid?
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-27-16-12-15.png)
 
 The day before the dividend is paid, we should expect to see the stock price
-rise to $101. A share price of $101 reflects the underlying value of $100 per
-share, for which there is consensus, plus the expected $1 dividend payment.
+rise to \$101. A share price of \$101 reflects the underlying value of \$100 per
+share, for which there is consensus, plus the expected \$1 dividend payment.
 
-On the very next day, we should expect the price to drop by $1 to $100 per
+On the very next day, we should expect the price to drop by \$1 to \$100 per
 share. Since the dividend has been paid, the share price should drop back down
-to the price aligned with its fundamental value: $100 per share.
+to the price aligned with its fundamental value: \$100 per share.
 
 Note that the overall value for investors who bought before the dividend was
-paid is still $101 per share: $100 per share plus $1 in cash per share.
+paid is still \$101 per share: \$100 per share plus \$1 in cash per share.
 
 ## Efficient Markets Hypothesis
 
@@ -1460,7 +1459,7 @@ better choice, we have to also consider the risk inherent in each scenario.
 Now we can consider the risk-adjusted reward.
 
 Let's look at the single-bet case first. In this case, the expected reward is
-$20, and the expected risk is $31.62. If we divide the reward by the risk, we
+\$20, and the expected risk is \$31.62. If we divide the reward by the risk, we
 get a value of 0.63.
 
 What is the risk-adjusted reward calculation for the multi-bet case?
@@ -1471,8 +1470,8 @@ What is the risk-adjusted reward calculation for the multi-bet case?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-03-10-23-50-00.png)
 
-In the multi-bet case, the reward was the same - $20 - but the risk was much
-smaller: $1. Thus, the risk-adjusted reward for this scenario is 20, which is
+In the multi-bet case, the reward was the same - \$20 - but the risk was much
+smaller: \$1. Thus, the risk-adjusted reward for this scenario is 20, which is
 much higher than that of the single-bet scenario.
 
 The take-home message here is that we can increase the risk-adjusted reward
@@ -1585,28 +1584,28 @@ reward. On the other hand, a negative reward indicates that we lost money on the
 position. Daily return could be either a component of the state - a factor we
 consider before generating an action - but it could also be a reward.
 
-### Which Approach Gets $1M Quiz
+### Which Approach Gets \$1M Quiz
 
 Which of the following approaches leads our robot to a policy that causes it to
-reach the $1 million reward?
+reach the \$1 million reward?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-03-25-22-05-58.png)
 
-### Which Approach Gets $1M Quiz Solution
+### Which Approach Gets \$1M Quiz Solution
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-03-25-22-13-18.png)
 
-With an infinite horizon, the robot may exclusively grab the $1 ad infinitum, or
-it might first grab the $1 million before returning to the $1. As a result,
-obtaining the $1 million is possible with infinite horizon, but not guaranteed.
+With an infinite horizon, the robot may exclusively grab the \$1 ad infinitum, or
+it might first grab the \$1 million before returning to the \$1. As a result,
+obtaining the \$1 million is possible with infinite horizon, but not guaranteed.
 
-With a finite horizon of length four, the robot does not reach the $1 million. A
-journey towards the $1 million results in four penalties, whereas heading
-towards the $1 results in a positive reward. However, if we increase the horizon
-to ten, the robot does reach the $1 million.
+With a finite horizon of length four, the robot does not reach the \$1 million. A
+journey towards the \$1 million results in four penalties, whereas heading
+towards the \$1 results in a positive reward. However, if we increase the horizon
+to ten, the robot does reach the \$1 million.
 
 In the discounted scenario, each reward in the future is successively devalued
-by 5%. Even so, the $1 million reward is so large that seeking this reward is
+by 5%. Even so, the \$1 million reward is so large that seeking this reward is
 still the optimal strategy.
 
 ## Q-Learning
@@ -1649,7 +1648,7 @@ we examine when selecting an appropriate action.
 
 Neither adjusted close nor SMA alone are useful components of the state because
 they don't particularly mean much as absolute values. For example, if GOOG
-closes at $1000 per share, and XYZ closes at $5 per share, we cannot determine,
+closes at \$1000 per share, and XYZ closes at \$5 per share, we cannot determine,
 based on that information alone, whether we should buy, sell, or hold either of
 those stocks.
 

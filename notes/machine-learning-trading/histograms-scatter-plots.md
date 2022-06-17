@@ -11,7 +11,7 @@ Let's recap how we generate daily returns from a time series of pricing data.
 
 Given a series of stock prices, the daily return on day `d` is equal to the
 price at day `d` divided by the price at `d - 1`, minus one. For example, if the
-stock closed at $100 on day `d - 1` and at $110 on day `d`, the corresponding
+stock closed at \$100 on day `d - 1` and at \$110 on day `d`, the corresponding
 daily return is:
 
 ```python
