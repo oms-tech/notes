@@ -7,7 +7,7 @@ title: What Is a Company Worth
 
 ## What Is a Company Worth Quiz
 
-Suppose there is a company that consistently generates $1 per year. What is that
+Suppose there is a company that consistently generates \$1 per year. What is that
 company worth?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-16-12-35-39.png)
@@ -54,17 +54,17 @@ they would receive in the sale would be their book value.
 
 Finally, **market capitalization** calculates company value as the product of
 the number of outstanding shares in the market and the current share price. For
-example, if Apple has 1,000,000 outstanding shares, priced at $1,000 per share,
-its value, based on market cap, would be $1 billion.
+example, if Apple has 1,000,000 outstanding shares, priced at \$1,000 per share,
+its value, based on market cap, would be \$1 billion.
 
 ## The Balch Bond Quiz
 
 Assume that we are in a position to receive one of three different assets.
 
-The first asset is a $1 bill: cold, hard cash. The second asset is a Tucker
+The first asset is a \$1 bill: cold, hard cash. The second asset is a Tucker
 Balch bond; essentially, a promise certified by the professor that he will pay
-us $1 in one year. The third asset is a US Government bond, which also pays out
-$1 in one year, but is backed by the United States government.
+us \$1 in one year. The third asset is a US Government bond, which also pays out
+\$1 in one year, but is backed by the United States government.
 
 Which of these assets would you rather receive? Rank the choices from 1 (best)
 to 3 (worst).
@@ -75,7 +75,7 @@ to 3 (worst).
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-16-13-49-15.png)
 
-The most valuable asset among these three is the $1 delivered right now because
+The most valuable asset among these three is the \$1 delivered right now because
 you can spend it right now. The other two are promises for a reward at some
 point in the future. Among these two bonds, the one backed by the US government
 is likely more valuable than the one backed by the professor.
@@ -94,7 +94,7 @@ deliver the dollar.
 Formally, we are trying to find the present value $PV$ of a dollar delivered in
 the future as a fraction of its future value $FV$. Keep in mind that the future
 value is nothing more than the value that we are promised; for this example, the
-future value of a promise of $1 is $1.
+future value of a promise of \$1 is \$1.
 
 Given an interest rate, $IR$ and a waiting period, $i$, measured in years, we
 can calculate $PV$ as follows.
@@ -103,10 +103,10 @@ $$ PV = \frac{FV}{(1 + IR)^i} $$
 
 Let's first consider the case of receiving a one-dollar bill right now. Since we
 don't have to wait, $i = 0$ and $PV = FV$. In other words, the payment is
-fulfilled immediately and is worth the face value of the bill: $1.
+fulfilled immediately and is worth the face value of the bill: \$1.
 
 Let's look at a different example. Suppose that the United States government
-offers a bond at a 1% interest rate. The present value of $1, paid to us in one
+offers a bond at a 1% interest rate. The present value of \$1, paid to us in one
 year, at a 1% interest rate is
 
 $$ PV = \frac{\$1}{(1 + 0.01)^1} $$
@@ -115,7 +115,7 @@ $$ PV = \frac{\$1}{1.01} $$
 
 $$ PV \approx \$0.99 $$
 
-In other words, we should only buy this government bond if we have to pay $0.99
+In other words, we should only buy this government bond if we have to pay \$0.99
 or less.
 
 Now consider the Tucker Balch Bond. Professor Balch can't sell us his bond with
@@ -123,7 +123,7 @@ the same interest rate as the government bond; since he is less trustworthy than
 the US government, a smart investor would pick the government bond every time.
 
 Professor Balch can only attract investors by offering a higher interest rate,
-such as 5%. The present value of $1, paid to us in one year, at a 5% interest
+such as 5%. The present value of \$1, paid to us in one year, at a 5% interest
 rate is
 
 $$ PV = \frac{\$1}{(1 + 0.05)^1} $$
@@ -132,8 +132,8 @@ $$ PV = \frac{\$1}{1.05} $$
 
 $$ PV \approx \$0.95 $$
 
-In other words, if Professor Balch wants to attract us to buy his $1 bond, he
-could only charge us $0.95.
+In other words, if Professor Balch wants to attract us to buy his \$1 bond, he
+could only charge us \$0.95.
 
 We can plot the present value of a \$1 bond backed by both the US government and
 Tucker Balch, as a function of $i$.
@@ -183,7 +183,7 @@ This infinite sum reduces to a simple expression.
 
 $$ IV = \frac{FV}{DR} $$
 
-Let's consider a company that generates a $1 dividend. Suppose that, after much
+Let's consider a company that generates a \$1 dividend. Suppose that, after much
 research, we decide that the risk level of an investment in this company is such
 that we deserve future dividends at a 5% discount rate.
 
@@ -193,7 +193,7 @@ $$ \frac{\$1}{0.05} = \$20 $$
 
 ## Intrinsic Value Quiz
 
-Consider a company that pays a dividend of $2 per year. Given a discount rate of
+Consider a company that pays a dividend of \$2 per year. Given a discount rate of
 4%, what is the intrinsic value of this company?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-17-20-35-00.png)
@@ -217,20 +217,20 @@ and so on. Intangible assets, like patents, or the value of a brand, are much
 harder to price. Liabilities refer to things that are owed, like loans, debts,
 or other obligations.
 
-Let's consider a company that owns four factories, each priced at $10 million,
-and three patents, each valued at $5 million. Additionally, suppose the company
-has one liability, a loan worth $10 million.
+Let's consider a company that owns four factories, each priced at \$10 million,
+and three patents, each valued at \$5 million. Additionally, suppose the company
+has one liability, a loan worth \$10 million.
 
-If we take the total value of the assets, $55 million, and subtract the
-intangible assets, $15 million in patents, and the $10 million liability, we get
-a book value of $30 million for this company.
+If we take the total value of the assets, \$55 million, and subtract the
+intangible assets, \$15 million in patents, and the \$10 million liability, we get
+a book value of \$30 million for this company.
 
 ## Market Capitalization
 
 Alternatively, we can let the market determine the value of a company. Market
 capitalization is the product of the number of outstanding shares and the share
-price. For instance, a company with 1,000,000 shares and a share price of $100
-has a market capitalization of $100,000,000.
+price. For instance, a company with 1,000,000 shares and a share price of \$100
+has a market capitalization of \$100,000,000.
 
 ## Why Information Affects Stock Price
 
@@ -270,15 +270,15 @@ investor to sell off their stock, thus driving down the share price.
 
 Consider a fictitious airline company.
 
-This company owns 10 airplanes, each valued at $10 million. Additionally, it has
-a brand name worth another $10 million. Finally, it has an outstanding loan for
-$20 million. What is the book value of this company?
+This company owns 10 airplanes, each valued at \$10 million. Additionally, it has
+a brand name worth another \$10 million. Finally, it has an outstanding loan for
+\$20 million. What is the book value of this company?
 
-This company pays $1 million per year in dividends. Assuming a 5% discount rate,
+This company pays \$1 million per year in dividends. Assuming a 5% discount rate,
 what is the intrinsic value of this company?
 
 This company has one million shares of stock outstanding. Given a stock price of
-$75 per share, what is the market capitalization of this company?
+\$75 per share, what is the market capitalization of this company?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-17-21-08-46.png)
 
@@ -287,20 +287,20 @@ $75 per share, what is the market capitalization of this company?
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-17-21-09-03.png)
 
 To calculate book value, we take the value of the total assets and subtract the
-intangible assets, like the brand, and the liabilities. Given $110,000,000 in
-total assets, a $10,000,000 intangible asset, and a $20,000,000 liability, the
-book value for this company is $80,000,000.
+intangible assets, like the brand, and the liabilities. Given \$110,000,000 in
+total assets, a \$10,000,000 intangible asset, and a \$20,000,000 liability, the
+book value for this company is \$80,000,000.
 
 To compute the intrinsic value, we divide the value of the dividends,
-$1,000,000, by the discount rate, 0.05, to get $20,000,000.
+\$1,000,000, by the discount rate, 0.05, to get \$20,000,000.
 
 To compute the market capitalization, we take the product of the share price,
-$75, and the number of outstanding shares, 1,000,000, to get $75,000,000.
+\$75, and the number of outstanding shares, 1,000,000, to get \$75,000,000.
 
 ## Would you Buy this Stock Quiz
 
-Since this company has a market capitalization of $75,000,000, we could buy all
-of the shares and, effectively the company, for $75,000,000. Should we?
+Since this company has a market capitalization of \$75,000,000, we could buy all
+of the shares and, effectively the company, for \$75,000,000. Should we?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-17-21-12-47.png)
 
@@ -309,9 +309,9 @@ of the shares and, effectively the company, for $75,000,000. Should we?
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-18-01-10-10.png)
 
 It might seem like a tricky question, given such a relatively low intrinsic
-value, but it's not. We should buy this company for $75,000,000 and then break
-it apart and sell the individual assets for $80,000,000 to get an immediate
-$5,000,000 profit.
+value, but it's not. We should buy this company for \$75,000,000 and then break
+it apart and sell the individual assets for \$80,000,000 to get an immediate
+\$5,000,000 profit.
 
 Stock prices very rarely dip below book value for this exact reason; otherwise,
 predatory buyers swoop in and buy the whole company just to sell it for parts.

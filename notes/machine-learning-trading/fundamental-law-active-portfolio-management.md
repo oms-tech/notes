@@ -175,7 +175,7 @@ almost 32 times riskier than the multi-bet scenario.
 Now we can consider the risk-adjusted reward.
 
 Let's look at the single-bet case first. In this case, the expected reward is
-$20, and the expected risk is $31.62. If we divide the reward by the risk, we
+\$20, and the expected risk is \$31.62. If we divide the reward by the risk, we
 get a value of 0.63.
 
 What is the risk-adjusted reward calculation for the multi-bet case?
@@ -186,8 +186,8 @@ What is the risk-adjusted reward calculation for the multi-bet case?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-03-10-23-50-00.png)
 
-In the multi-bet case, the reward was the same - $20 - but the risk was much
-smaller: $1. Thus, the risk-adjusted reward for this scenario is 20, which is
+In the multi-bet case, the reward was the same - \$20 - but the risk was much
+smaller: \$1. Thus, the risk-adjusted reward for this scenario is 20, which is
 much higher than that of the single-bet scenario.
 
 The take-home message here is that we can increase the risk-adjusted reward
@@ -222,7 +222,7 @@ allocate our 1000 tokens to 1000 tables. We looked at two extreme cases: one
 where we put a small bet on all 1000 tables and another where we put all our
 money on one table.
 
-We saw that the expected return was the same in both cases - about $20 - but the
+We saw that the expected return was the same in both cases - about \$20 - but the
 risk was substantially higher for the single-bet case. This was true for the two
 types of risk we examined: risk of "losing it all" and risk as standard
 deviation.

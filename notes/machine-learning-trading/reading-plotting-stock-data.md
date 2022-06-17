@@ -69,8 +69,8 @@ same. Naturally, no splits or dividends occurred between 4 P.M. and now.  As we
 go back in time, however, we begin to encounter these events, and the close and
 adjusted close values correspondingly diverge.
 
-If we look back to the first trading day in 2000, we see a close of $25.00 and
-an adjusted close of $5.36. The most recent close we see is $46.73.
+If we look back to the first trading day in 2000, we see a close of \$25.00 and
+an adjusted close of \$5.36. The most recent close we see is \$46.73.
 
 If we compare just the closing prices, it seems like an investment in 2000 would
 have grown by less than 100%. If we instead compare the adjusted closes, the

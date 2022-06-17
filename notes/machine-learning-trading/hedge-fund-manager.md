@@ -122,18 +122,18 @@ subject to macroeconomic and market activity.
 
 ## Two and Twenty
 
-Consider that we are managing a hedge fund with $100,000,000 AUM. Over a year,
+Consider that we are managing a hedge fund with \$100,000,000 AUM. Over a year,
 our investment skill results in an increase in the value of that fund by 15%; in
-other words, the fund grew from $100,000,000 to $115,000,000.
+other words, the fund grew from \$100,000,000 to \$115,000,000.
 
 What's our compensation?
 
 Two percent of AUM comes out to $0.02 \times 100,000,000 = 2,000,000$ and twenty
 percent of profits equals $0.2 \times 15,000,000 = 3,000,000$. In total, our
-compensation for the year would be about $5,000,000.
+compensation for the year would be about \$5,000,000.
 
 One question we might ask: when determining our compensation, should we use an
-AUM of $100,000,000 or $115,000,000? It depends on the hedge fund, of course,
+AUM of \$100,000,000 or \$115,000,000? It depends on the hedge fund, of course,
 and when they take accounting snapshots, but the AUM used for compensation will
 likely fall somewhere between the two values.
 

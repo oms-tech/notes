@@ -218,7 +218,7 @@ we examine when selecting an appropriate action.
 
 Neither adjusted close nor SMA alone are useful components of the state because
 they don't particularly mean much as absolute values. For example, if GOOG
-closes at $1000 per share, and XYZ closes at $5 per share, we cannot determine,
+closes at \$1000 per share, and XYZ closes at \$5 per share, we cannot determine,
 based on that information alone, whether we should buy, sell, or hold either of
 those stocks.
 

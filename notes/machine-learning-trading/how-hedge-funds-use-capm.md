@@ -34,7 +34,7 @@ long-short portfolio is widespread amongst hedge funds.
 
 Consider the following scenario. Let's assume that the market stays flat,
 returning 0%, over the next 10 days and that we enter the following positions
-today: a $50 long position in stock A and a $50 short position in stock B. Let's
+today: a \$50 long position in stock A and a \$50 short position in stock B. Let's
 also assume that our predictions are perfect. Stock A rises 1% above the market,
 and stock B falls 1% below the market.
 
@@ -46,7 +46,7 @@ Since the market returned 0%, the equation simplifies.
 
 $$ r_A = \alpha_A $$
 
-Since $\alpha_A$ is 0.01, our return is 1% of $50, or $0.50.
+Since $\alpha_A$ is 0.01, our return is 1% of \$50, or \$0.50.
 
 Now, consider the returns of stock B, using the CAPM equation.
 
@@ -57,9 +57,9 @@ Again, since the market returned 0%, the equation simplifies.
 $$ r_B = \alpha_B $$
 
 Since both $\alpha_B$ and our investment in stock B are negative, we actually
-made a profit: -1% of -$50, or $0.50.
+made a profit: -1% of -\$50, or \$0.50.
 
-Altogether we made $1, a 1% return on our total investment.
+Altogether we made \$1, a 1% return on our total investment.
 
 ## Two Stock Scenario Quiz
 
@@ -89,7 +89,7 @@ moves one percent. An $\alpha$ of 0.01 tells us that stock A will move 1% above
 its movement with the market.
 
 As a result, stock A moves 10% plus 1%, for a total relative return of 11%, and
-a total absolute return of $5.50, 11% on a $50 investment.
+a total absolute return of \$5.50, 11% on a \$50 investment.
 
 Let's consider stock B now, which has a $\beta$ of 2.0 and an $\alpha$ of -0.01.
 A $\beta$ of 2.0 tells us that for every percentage point the market moves,
@@ -98,10 +98,10 @@ stock A moves two percent. An $\alpha$ of -0.01 tells us that stock A will move
 
 As a result, stock B moves 20% minus 1%, for a total relative return of 19%.
 However, since we shorted stock B, this return is actually -19%, and we have
-lost $9.50.
+lost \$9.50.
 
-Let's compute the total return. Since we gained $5.50 on stock A and lost $9.50
-on stock B, our total absolute return is -$4.
+Let's compute the total return. Since we gained \$5.50 on stock A and lost \$9.50
+on stock B, our total absolute return is -\$4.
 
 Calculating the relative return is a little tricky; that is, we can't just add
 11% and -19% to get -8%. Instead, since we split our investment across stock A
@@ -112,13 +112,13 @@ Now, let's look at the case where the market falls 10%.
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-02-21-22-25-50.png)
 
 In this case, stock A falls with the market, but does 1% better, for a total
-relative loss of 9%, which equates to a $4.50 loss on a $50 investment.
+relative loss of 9%, which equates to a \$4.50 loss on a \$50 investment.
 
 Stock B falls twice as hard as the market, and does 1% worse on top of that, for
 a total relative loss of 21%. However, since we shorted stock B, this loss is
-actually a 21% gain, or a gain of $10.50 on a $50 investment.
+actually a 21% gain, or a gain of \$10.50 on a \$50 investment.
 
-Overall, this market scenario nets us 6%, or $6 on a $100 investment.
+Overall, this market scenario nets us 6%, or \$6 on a \$100 investment.
 
 ## Two Stock CAPM Math
 

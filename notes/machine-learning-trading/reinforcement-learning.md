@@ -200,10 +200,10 @@ robot navigating the following maze.
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-03-25-21-43-07.png)
 
-This maze has a reward of $1 two spaces away and a much higher reward of $1
-million eight spaces away. The $1 reward is unique in that the robot can receive
-it multiple times; for instance, entering, exiting, and re-entering the $1
-square results in a $2 reward. The robot can only receive the $1 million reward
+This maze has a reward of \$1 two spaces away and a much higher reward of \$1
+million eight spaces away. The \$1 reward is unique in that the robot can receive
+it multiple times; for instance, entering, exiting, and re-entering the \$1
+square results in a \$2 reward. The robot can only receive the \$1 million reward
 once.
 
 The red squares are obstacles, and the robot cannot occupy those spaces. The
@@ -212,21 +212,21 @@ negative numbers, penalties.
 
 Let's say we wanted to optimize the sum of the robot's rewards from now until
 infinity. We refer to this timeframe as an **infinite horizon**. In this case,
-we don't particularly care if the robot exclusively grabs the $1 ad infinitum,
-or if it first grabs the $1 million before returning to the $1. With regard to
+we don't particularly care if the robot exclusively grabs the \$1 ad infinitum,
+or if it first grabs the \$1 million before returning to the \$1. With regard to
 the reward, either strategy is sufficient since both result in an infinite
 reward.
 
 More often than not, we have a **finite horizon**. We might, for example, want
 to optimize our reward over the next three moves. If we take three steps towards
-the $1 million reward, we are going to experience three penalties of -1, for a
-total penalty of -3. If we take three steps towards the $1, however, we
-experience a reward of zero, a reward of $1, and a reward of 0, for a total
-reward of $1.
+the \$1 million reward, we are going to experience three penalties of -1, for a
+total penalty of -3. If we take three steps towards the \$1, however, we
+experience a reward of zero, a reward of \$1, and a reward of 0, for a total
+reward of \$1.
 
 If we extend our horizon out to eight moves, we see that the optimal path
-changes. Instead of retrieving the $1 reward four times, we can incur seven
-penalties of -1 in exchange for the $1 million reward.
+changes. Instead of retrieving the \$1 reward four times, we can incur seven
+penalties of -1 in exchange for the \$1 million reward.
 
 We can now articulate the expression that we want to maximize. Given a horizon
 of size $n$, and note that $n$ can equal infinity, we want to maximize the
@@ -260,26 +260,26 @@ closer it is to one, the more we value rewards in the future (the less we
 discount them). The closer it is to zero, the less we value rewards in the
 future (the more we discount them).
 
-## Which Approach Gets $1M Quiz
+## Which Approach Gets \$1M Quiz
 
 Which of the following approaches leads our robot to a policy that causes it to
-reach the $1 million reward?
+reach the \$1 million reward?
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-03-25-22-05-58.png)
 
-## Which Approach Gets $1M Quiz Solution
+## Which Approach Gets \$1M Quiz Solution
 
 ![](https://assets.omscs-notes.com/images/notes/machine-learning-trading/2020-03-25-22-13-18.png)
 
-With an infinite horizon, the robot may exclusively grab the $1 ad infinitum, or
-it might first grab the $1 million before returning to the $1. As a result,
-obtaining the $1 million is possible with infinite horizon, but not guaranteed.
+With an infinite horizon, the robot may exclusively grab the \$1 ad infinitum, or
+it might first grab the \$1 million before returning to the \$1. As a result,
+obtaining the \$1 million is possible with infinite horizon, but not guaranteed.
 
-With a finite horizon of length four, the robot does not reach the $1 million. A
-journey towards the $1 million results in four penalties, whereas heading
-towards the $1 results in a positive reward. However, if we increase the horizon
-to ten, the robot does reach the $1 million.
+With a finite horizon of length four, the robot does not reach the \$1 million. A
+journey towards the \$1 million results in four penalties, whereas heading
+towards the \$1 results in a positive reward. However, if we increase the horizon
+to ten, the robot does reach the \$1 million.
 
 In the discounted scenario, each reward in the future is successively devalued
-by 5%. Even so, the $1 million reward is so large that seeking this reward is
+by 5%. Even so, the \$1 million reward is so large that seeking this reward is
 still the optimal strategy.

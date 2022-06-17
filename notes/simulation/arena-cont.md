@@ -1217,7 +1217,7 @@ we see a lot of red.
 
 Let's look at some reports. The main variable that we care about is "Avg Total
 Cost", which refers to how much we have to spend daily to keep the shop running.
-In this case, we have to spend just under $143.
+In this case, we have to spend just under \$143.
 
 ![](https://assets.omscs-notes.com/images/notes/simulation/2020-10-08-23-33-02.png)
 
