@@ -105,8 +105,10 @@ Here is the expression for the Fibonacci generator, which got its name got its
 name from the famed sequence that involves adding the previous two numbers to
 get the current number.
 
-$$ \begin{alignedat}{1} X_i &= (X_{i-1} + X_{i-2})\bmod m, \quad i = 1,2,... \\
-R_i &= X_i / m \end{alignedat} $$
+$$
+\begin{alignedat}{1} X_i &= (X_{i-1} + X_{i-2})\bmod m, \quad i = 1,2,... \\
+R_i &= X_i / m \end{alignedat}
+$$
 
 For this sequence, $X_{-1}$ and $X_0$ are seeds, and $m$ is the modulus.
 Remember that $a = b \bmod m$ if and only if $a$ is the remainder of $b/m$. For
@@ -132,9 +134,11 @@ Here is the general form for an LCG. Given a modulus, $m$, and the constants $a$
 and $c$, we generate a pseudo-random integer, $X_i$, and its corresponding
 Uniform(0,1) counterpart, $R_i$, using the following equations:
 
-$$ \begin{alignedat}{1} X_i &= (aX_{i-1}+c) \bmod m, \text{where } X_0 \text{ is
+$$
+\begin{alignedat}{1} X_i &= (aX_{i-1}+c) \bmod m, \text{where } X_0 \text{ is
 the seed.} \\
-R_i &= X_i / m, \quad i = 1,2,... \end{alignedat} $$
+R_i &= X_i / m, \quad i = 1,2,... \end{alignedat}
+$$
 
 We choose $a$, $c$, and $m$ carefully to ensure both that the $R_i$'s appear to
 be i.i.d uniforms and that the generator has long periods or **cycle lengths**:
@@ -146,15 +150,19 @@ the amount of time until the LCG starts to repeat.
 
 Let's look at an example. Consider the following LCG:
 
-$$ X_i = (5X_{i-1} + 3) \bmod 8 $$
+$$
+X_i = (5X_{i-1} + 3) \bmod 8
+$$
 
 Starting with the seed, $X_0 = 0$, we can generate the following sequence of
 values:
 
-$$ \begin{array}{c|cccccccc|cc} i & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+$$
+\begin{array}{c|cccccccc|cc} i & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
 \hline X_i & 0 & 3 & 2 & 5 & 4 & 7 & 6 & 1 & 0 & 3 \\ \hline R_i & 0 & 3/8 & 2/8
 & 5/8 & 4/8 & 7/8 & 6/8 & 1/8 & 0 & 3/8 \\
-\end{array} $$
+\end{array}
+$$
 
 Notice that this sequence starts repeating with after eight observations: $X_8 =
 X_0 = 0$. This generator is a **full-period generator** since it has a cycle
@@ -176,13 +184,17 @@ generators.
 
 Consider the following generator:
 
-$$ X_i = (5X_{i-1} + 2) \bmod 8 $$
+$$
+X_i = (5X_{i-1} + 2) \bmod 8
+$$
 
 Does this generator achieve full cycle? Let's find out:
 
-$$ \begin{array}{c|cccc|c} i & 0 & 1 & 2 & 3 & 4 \\ \hline X_i & 0 & 2 & 4 & 6 &
+$$
+\begin{array}{c|cccc|c} i & 0 & 1 & 2 & 3 & 4 \\ \hline X_i & 0 & 2 & 4 & 6 &
 0  \\ \hline R_i & 0 & 2/8 & 4/8 & 6/8 & 0  \\
-\end{array} $$
+\end{array}
+$$
 
 If we seed this sequence with an odd number, we only see odd numbers. Similarly,
 if we seed this sequence with an even number, we only see even numbers.
@@ -193,21 +205,26 @@ modulus is eight, this generator does not achieve full cycle.
 
 Let's look at a much better generator, which we have seen before:
 
-$$ X_i = 16807X_{i-1} \bmod 2^{31}-1 $$
+$$
+X_i = 16807X_{i-1} \bmod 2^{31}-1
+$$
 
 This particular generator has a full-period (greater than two billion) cycle
 length, except when $X_0 = 0$.
 
 Let's look at the algorithm for generating each $X_i$ and $R_i$:
 
-$$ \begin{alignedat}{1} & K \leftarrow \lfloor X_{i-1} / 237773 \rfloor \\
+$$
+\begin{alignedat}{1} & K \leftarrow \lfloor X_{i-1} / 237773 \rfloor \\
 & X_i \leftarrow 16807(X_{i-1} - 127773K) - 2836K \\
 & \text{if } X_i < 0, \text{then set } X_i \leftarrow X_i + 214748367 \\
-& R_i \leftarrow X_i * 4.656612875\text{E-}10 \end{alignedat} $$
+& R_i \leftarrow X_i * 4.656612875\text{E-}10 \end{alignedat}
+$$
 
 As an example, if $X_0 = 12345678$, then:
 
-$$ \begin{alignedat}{1} & K \leftarrow \lfloor 12345678 / 237773 \rfloor = 96 \\
+$$
+\begin{alignedat}{1} & K \leftarrow \lfloor 12345678 / 237773 \rfloor = 96 \\
 & X_1 \leftarrow 16807[12345678 - 127773(96)] - 2836(96) = 1335380034 \\
 & R_1 \leftarrow 1335380034 * 4.656612875\text{E-}10 = 0.621835 \end{alignedat}
 $$
@@ -228,7 +245,9 @@ careful because subtle problems can arise.
 
 Let's take a look at the RANDU generator, which was popular during the 1960s:
 
-$$ X_i = 65539 X_{i-1} \bmod 2^{31} $$
+$$
+X_i = 65539 X_{i-1} \bmod 2^{31}
+$$
 
 Unfortunately, the numbers that this LCG generates are provably not i.i.d., even
 from a statistical point of view.
@@ -253,7 +272,9 @@ In this lesson, we will look at the Tausworthe generator.
 Let's take a look at the Tausworthe generator. We will define a sequence of
 binary digits, $B_1, B_2,...,$ as:
 
-$$ B_i = \left(\sum_{j=1}^q c_j B_{i-j}\right) \bmod 2 $$
+$$
+B_i = \left(\sum_{j=1}^q c_j B_{i-j}\right) \bmod 2
+$$
 
 In other words, we calculate each $B_i$ by taking the sum of the $q$ previous
 $c_j B_{i -j}$ products, where $c_j \in \{0,1\}$. We take the entire sum $\bmod
@@ -263,37 +284,45 @@ Instead of using the previous $q$ entries in the sequence to compute $B_i$, we
 can use a shortcut that saves a lot of computational effort, which takes the
 same amount of time regardless of the size of $q$:
 
-$$ B_i = (B_{i-r} + B_{i-q}) \bmod 2 = B_{i-r} \text{ XOR } B_{i-q} \quad 0 < r
-< q $$
+$$
+B_i = (B_{i-r} + B_{i-q}) \bmod 2 = B_{i-r} \text{ XOR } B_{i-q} \quad 0 < r
+< q
+$$
 
 Remember that any $B_i$ can only be either $0$ or $1$. Consider the following
 table:
 
-$$ \begin{array}{cc|cc} B_{i-r} & B_{i-q} & B_{i-r} + B_{i-q} & (B_{i-r} +
+$$
+\begin{array}{cc|cc} B_{i-r} & B_{i-q} & B_{i-r} + B_{i-q} & (B_{i-r} +
 B_{i-q}) \bmod 2 \\ \hline 0 & 0 & 0 & 0 \\
 0 & 1 & 1 & 1 \\
 1 & 0 & 1 & 1 \\
-1 & 1 & 10 & 0 \end{array} $$
+1 & 1 & 10 & 0 \end{array}
+$$
 
 Now, let's consider the $\text{XOR}$ operator. If we think of the $\text{OR}$
 operator as, colloquially, "either this or that", we can think of the
 $\text{XOR}$ as "either this or that, but not both"; indeed, $\text{XOR}$ is an
 abbreviation of "eXclusive OR". Let's look at the truth table:
 
-$$ \begin{array}{cc|c} B_{i-r} & B_{i-q} & B_{i-r} \text{ XOR } B_{i-q}  \\
+$$
+\begin{array}{cc|c} B_{i-r} & B_{i-q} & B_{i-r} \text{ XOR } B_{i-q}  \\
 \hline 0 & 0 & 0 \\
 0 & 1 & 1 \\
 1 & 0 & 1 \\
-1 & 1 & 0 \end{array} $$
+1 & 1 & 0 \end{array}
+$$
 
 Thus, we can see that $(B_{i-r} + B_{i-q}) \bmod 2$ and $B_{i-r} \text{ XOR }
 B_{i-q}$ are indeed equivalent. Of course, we might use an even simpler
 expression to compute $B_i$, which doesn't involve $\text{XOR}$:
 
-$$ B_i = \left\{ \begin{matrix} 0 & B_{i-r} = B_{i-q} \\
+$$
+B_i = \left\{ \begin{matrix} 0 & B_{i-r} = B_{i-q} \\
     1 & B_{i-r} \neq B_{i-q}
     \end{matrix}
-  \right. $$
+  \right.
+$$
 
 To initialize the $B_i$ sequence, we need to specify, $B_1, B_2,..., B_q$.
 
@@ -304,8 +333,10 @@ $i > 5$, $B_i = B_{i-3} \text{ XOR } B_{i-5}$. For example, $B_6 = B_3 \text{
 XOR } B_1 = 0$ and $B_7 = B_4 \text{ XOR } B_2 = 0$. Let's look at the first 36
 values in the sequence:
 
-$$ 1111 \quad 1000 \quad 1101 \quad 1101 \quad 0100 \quad 0010 \quad 0101 \quad
-1111 $$
+$$
+1111 \quad 1000 \quad 1101 \quad 1101 \quad 0100 \quad 0010 \quad 0101 \quad
+1111
+$$
 
 Generally, the period of these bit sequences is $2^q - 1$. In our case, $q = 5$,
 so $2^5 - 1 = 31$. Indeed, the thirty-second bit restarts the sequence of five
@@ -320,8 +351,10 @@ zero and one.
 For example, suppose $l=4$. Given the sequence of bits in the previous sequence,
 we get the following sequence of randoms:
 
-$$ 1111_2, 1000_2, 1101_2, 1101_2,... \to \frac{15}{16}, \frac{8}{16},
-\frac{13}{16}, \frac{13}{16}, ... $$
+$$
+1111_2, 1000_2, 1101_2, 1101_2,... \to \frac{15}{16}, \frac{8}{16},
+\frac{13}{16}, \frac{13}{16}, ...
+$$
 
 Tausworthe generators have a lot of potential. They have many nice properties,
 including long periods and fast calculations. Like with the LCGs, we have to
@@ -337,7 +370,9 @@ some of which have remarkable properties.
 
 Let's consider the following generalization:
 
-$$ X_i = \left(\sum_{j=1}^q a_i X_{i-j}\right) \bmod m $$
+$$
+X_i = \left(\sum_{j=1}^q a_i X_{i-j}\right) \bmod m
+$$
 
 Generators of this form can have extremely large periods - up to $m^q - 1$ if we
 choose the parameters correctly. However, we need to be careful. The Fibonacci
@@ -362,11 +397,13 @@ and we should not use these simple tricks to combine generators.
 The following is a very strong combined generator. First, we initialize
 $X_{1,0}, X_{1,1}, X_{1,2}, X_{2,0}, X_{2,1}, X_{2,2}$. Next, for $i \geq 3$:
 
-$$ \begin{aligned} & X_{1,i} = (1,403,580X_{1, i-2} - 810,728X_{1,i-3}) \bmod
+$$
+\begin{aligned} & X_{1,i} = (1,403,580X_{1, i-2} - 810,728X_{1,i-3}) \bmod
 (2^{32} - 209) \\
 & X_{2,i} = (527,612X_{2, i-1} - 1,370,589X_{2,i-3}) \bmod (2^{32} - 22,853) \\
 & Y_i = (X_{1,i} - X_{2,i}) \bmod(2^{32} - 209) \\
-& R_i = Y_i / (2^{32} - 209) \end{aligned} $$
+& R_i = Y_i / (2^{32} - 209) \end{aligned}
+$$
 
 As crazy as this generator looks, it only requires simple mathematical
 operations. It works well, it's easy to implement, and it has an amazing cycle
@@ -390,7 +427,9 @@ discussion.
 
 Suppose we have the following multiplicative generator:
 
-$$ X_i = aX_{i-1} \bmod 2^n $$
+$$
+X_i = aX_{i-1} \bmod 2^n
+$$
 
 This generator can have a cycle length of at most $2^{n-2}$, which means that
 this generator is not full-cycle. To make matters worse, we can only achieve
@@ -400,34 +439,42 @@ for some $k$.
 For example, suppose $X_i = 13X_{i-1}\bmod64$. Note that $a = 8k + 5, k = 1$ and
 $n = 2^6 = 64$. Consider the following sequence of values:
 
-$$ \begin{array}{c|cccccccc} X_0 & X_1 & X_2 & X_3 & X_4 & \cdots & X_8 & \cdots
+$$
+\begin{array}{c|cccccccc} X_0 & X_1 & X_2 & X_3 & X_4 & \cdots & X_8 & \cdots
 & X_{16} \\ \hline 1 & 13 & 41 & 21 & 17 & \cdots & 33 & \cdots & 1 \end{array}
 $$
 
 We can see that we have cycled after $2^{n-2} = 2^4 = 16$ entries. What happens
 to the cycle length if $X_0$ is even?
 
-$$ \begin{array}{c|cccccc} X_0 & X_1 & X_2 & X_3 & X_4 & \cdots & X_8  \\ \hline
-2& 26 & 18 & 42 & 34 & \cdots & 33 \end{array} $$
+$$
+\begin{array}{c|cccccc} X_0 & X_1 & X_2 & X_3 & X_4 & \cdots & X_8  \\ \hline
+2& 26 & 18 & 42 & 34 & \cdots & 33 \end{array}
+$$
 
 Here, we cycle after $2^{n-3} = 8$ entries. Let's look at the cycle for $X_0 =
 3$. As we can see, our cycle length increases back to $2^{n-2}$:
 
-$$ \begin{array}{c|cccccccc} X_0 & X_1 & X_2 & X_3 & X_4 & \cdots & X_8 & \cdots
+$$
+\begin{array}{c|cccccccc} X_0 & X_1 & X_2 & X_3 & X_4 & \cdots & X_8 & \cdots
 & X_{16} \\ \hline 3 & 39 & 56 & 63 & 51 & \cdots & 35 & \cdots & 3 \end{array}
 $$
 
 Finally, let's look at the sequence when $X_0 = 4$. As we can see, when we seed
 the generator with this value, our cycle length drops to four.
 
-$$ \begin{array}{c|cccc} X_0 & X_1 & X_2 & X_3 & X_4 \\ \hline 4 & 52 & 36 & 20
-& 4 \end{array} $$
+$$
+\begin{array}{c|cccc} X_0 & X_1 & X_2 & X_3 & X_4 \\ \hline 4 & 52 & 36 & 20
+& 4 \end{array}
+$$
 
 ### Theorem 2
 
 Suppose we have the following linear congruential generator:
 
-$$ X_i = (aX_{i-1} + c) \mod m, \quad c > 0 $$
+$$
+X_i = (aX_{i-1} + c) \mod m, \quad c > 0
+$$
 
 This generator has full cycle if the following three conditions hold:
 
@@ -439,7 +486,9 @@ This generator has full cycle if the following three conditions hold:
 Let's look at a corollary to this theorem. Consider the following special case
 of the general LCG above:
 
-$$ X_i = (aX_{i-1} + c) \mod 2^n, \quad (c, n > 1) $$
+$$
+X_i = (aX_{i-1} + c) \mod 2^n, \quad (c, n > 1)
+$$
 
 This generator has full cycle if $c$ is odd and $a = 4k+1$ for some $k$.
 
@@ -447,7 +496,9 @@ This generator has full cycle if $c$ is odd and $a = 4k+1$ for some $k$.
 
 Suppose we have the following multiplicative generator:
 
-$$ X_i = aX_{i=1} \bmod m, \quad m \text{ is prime} $$
+$$
+X_i = aX_{i=1} \bmod m, \quad m \text{ is prime}
+$$
 
 This generator has full period ($m - 1$, in this case), if and only if the
 following two conditions hold:
@@ -485,8 +536,10 @@ measures how adjacent are correlated with each other. Here's a result from [this
 paper](https://www.ams.org/journals/mcom/1961-15-076/S0025-5718-1961-0144489-8/S0025-5718-1961-0144489-8.pdf)
 by Greenberg from 1961:
 
-$$ \text{Corr}(R_1, R_2) \leq \frac{1}{a}\left(1 - \frac{6c}{m} +
-6\left(\frac{c}{m}\right)^2\right) + \frac{a+6}{m} $$
+$$
+\text{Corr}(R_1, R_2) \leq \frac{1}{a}\left(1 - \frac{6c}{m} +
+6\left(\frac{c}{m}\right)^2\right) + \frac{a+6}{m}
+$$
 
 Remember that $a$ is the multiplicative constant, $c$ is the additive constant,
 and $m$ is the modulus.
@@ -595,7 +648,9 @@ The only thing that could be wrong is the null hypothesis.
 The goodness-of-fit statistic, $\chi^2$, gives us some insight into how well our
 observations match our expectations. Here's how we compute $\chi^2$:
 
-$$ \chi_0^2 = \sum_{i=1}^k \frac{(O_i - E_i)^2}{E_i} $$
+$$
+\chi_0^2 = \sum_{i=1}^k \frac{(O_i - E_i)^2}{E_i}
+$$
 
 > Note the subscript of $0$. All this means is that $\chi^2_0$ is a statistic
 > that we collect by observation.
@@ -648,8 +703,10 @@ $n$ and $k$. When $k$ is so large we can't find tables with values for
 $\chi^2_{a,k-1}$, we can approximate the $\chi^2$ quantile using the following
 expression:
 
-$$ \chi^2_{\alpha, k-1} \approx (k-1) \left[1 - \frac{2}{9(k-1)} + z_a
-\sqrt{\frac{2}{9(k-1)}}\right]^3 $$
+$$
+\chi^2_{\alpha, k-1} \approx (k-1) \left[1 - \frac{2}{9(k-1)} + z_a
+\sqrt{\frac{2}{9(k-1)}}\right]^3
+$$
 
 Note that $z_a$ is the appropriate standard normal quantile.
 
@@ -660,15 +717,19 @@ into $k=5$ equal sub-intervals. The expected number of observations that fall
 into each interval is $E_i = n/k = 200$. Let's look at the observations we
 gathered:
 
-$$ \begin{array}{c|ccccc} \text{interval} & [0,0.2] & (0.2,0.4] & (0.4, 0.6] &
+$$
+\begin{array}{c|ccccc} \text{interval} & [0,0.2] & (0.2,0.4] & (0.4, 0.6] &
 (0.6, 0.8] & (0.8, 1.0] \\ \hline E_i & 200 & 200 & 200 & 200 & 200 \\
-O_i & 179 & 208 & 222 & 199 & 192 \end{array} $$
+O_i & 179 & 208 & 222 & 199 & 192 \end{array}
+$$
 
 Let's compute the goodness-of-fit statistic:
 
-$$ \begin{alignedat}{1} \chi_0^2 &= \sum_{i=1}^k \frac{(O_i - E_i)^2}{E_i} \\
+$$
+\begin{alignedat}{1} \chi_0^2 &= \sum_{i=1}^k \frac{(O_i - E_i)^2}{E_i} \\
 &= \frac{1}{200}((-21)^2 + 8^2 + 22^2 + (-1)^2 + (-8)^2) \\[2ex] & =
-\frac{1054}{200} = 5.27 \end{alignedat} $$
+\frac{1054}{200} = 5.27 \end{alignedat}
+$$
 
 Since $k=5$, we are looking at a $\chi^2$ distribution with four degrees of
 freedom. Let's choose $\alpha = 0.05$. Now, we need to look up the
@@ -690,10 +751,12 @@ all assume that the PRNs are independent.
 
 Let's consider three different sequences of coin tosses:
 
-$$ \begin{aligned} \text{A. H,T,H,T,H,T,H,T,H,T} \\
+$$
+\begin{aligned} \text{A. H,T,H,T,H,T,H,T,H,T} \\
 \text{B. H,H,H,H,H,T,T,T,T,T} \\
 \text{C. H,H,H,T,T,H,T,T,H,T} \\
-\end{aligned} $$
+\end{aligned}
+$$
 
 In example A, we have a high negative correlation between the coin tosses since
 tails always follows heads and vice versa. In example B, we have a high positive
@@ -715,8 +778,10 @@ few". There are several types of runs tests, and we'll look at two of them.
 
 Consider the following PRNs:
 
-$$ .41 \quad .68 \quad .89 \quad .84 \quad .74 \quad .91 \quad .55 \quad .71
-\quad .36 \quad .30 \quad .09 $$
+$$
+.41 \quad .68 \quad .89 \quad .84 \quad .74 \quad .91 \quad .55 \quad .71
+\quad .36 \quad .30 \quad .09
+$$
 
 In the **"up and down" runs test**, we look to see whether we go "up" or "down"
 as we move from PRN to PRN. Going from $.41$ to $.68$, we go up. Going from
@@ -726,47 +791,61 @@ to $0.74$, we go down again.
 Let's transform our sequence of PRNs into one of plusses and minuses, where a
 plus sign indicates going up, and a minus sign indicates going down:
 
-$$ ++--+-+--- ... $$
+$$
+++--+-+--- ...
+$$
 
 Here are the associated runs - there are six in total - demarcated by commas:
 
-$$ ++,--,+,-,+,---, ... $$
+$$
+++,--,+,-,+,---, ...
+$$
 
 Let $A$ denote the total number of up and down runs out of the $n$ observations.
 Like we said, $A = 6$ in this example. If $n$ is large (say, $\geq 20$), and the
 $R_j$'s are indeed independent, then $A$ is approximately normal, with the
 following parameters:
 
-$$ A \approx \text{Nor}\left(\frac{2n-1}{3}, \frac{16n-29}{90}\right) $$
+$$
+A \approx \text{Nor}\left(\frac{2n-1}{3}, \frac{16n-29}{90}\right)
+$$
 
 Let's transform $A$ into a standard normal random variable, $Z_0$, which we
 accomplish with the following manipulation:
 
-$$ Z_0 = \frac{A - E[A]}{\sqrt{\text{Var}(A)}} $$
+$$
+Z_0 = \frac{A - E[A]}{\sqrt{\text{Var}(A)}}
+$$
 
 Now we can finally quantify "too large" and "too small". Specifically, we reject
 $H_0$ if the absolute value of $Z_0$ is greater than the $\alpha/2$ standard
 normal quantile:
 
-$$ f(Z_0) = \left\{ \begin{matrix} \text{Reject } H_0 & |Z_0| > z_{\alpha/2} \\
+$$
+f(Z_0) = \left\{ \begin{matrix} \text{Reject } H_0 & |Z_0| > z_{\alpha/2} \\
     \text{Accept } H_0 & |Z_0| \leq z_{\alpha/2}
-  \end{matrix} \right. $$
+  \end{matrix} \right.
+$$
 
 ### Up and Down Example
 
 Suppose we have observed $A = 55$ runs over $n = 100$ observations. Given these
 variables, $A$ is approximately normal with the following parameters:
 
-$$ \begin{alignedat}{1} A &\approx \text{Nor}\left(\frac{2(100)-1}{3},
+$$
+\begin{alignedat}{1} A &\approx \text{Nor}\left(\frac{2(100)-1}{3},
 \frac{16(100)-29}{90}\right) \\
 & \approx \text{Nor}\left(\frac{199}{3}, \frac{1571}{90}\right) \\
-& \approx \text{Nor}\left(66.33, 17.46\right) \end{alignedat} $$
+& \approx \text{Nor}\left(66.33, 17.46\right) \end{alignedat}
+$$
 
 Let's compute $Z_0$:
 
-$$ \begin{alignedat}{1} Z_0 &= \frac{A - E[A]}{\sqrt{\text{Var}(A)}} \\[3ex] &=
+$$
+\begin{alignedat}{1} Z_0 &= \frac{A - E[A]}{\sqrt{\text{Var}(A)}} \\[3ex] &=
 \frac{55 - 66.33}{\sqrt{17.46}} \\[3ex] &\approx \frac{-11.33}{4.1785} \approx
--2.71 \end{alignedat} $$
+-2.71 \end{alignedat}
+$$
 
 If $\alpha = 0.05$, then $z_{\alpha/2} = 1.96$ and we reject $H_0$, thereby
 rejecting independence.
@@ -775,25 +854,33 @@ rejecting independence.
 
 Let's look at the same sequence of PRNs:
 
-$$ .41 \quad .68 \quad .89 \quad .84 \quad .74 \quad .91 \quad .55 \quad .71
-\quad .36 \quad .30 \quad .09 $$
+$$
+.41 \quad .68 \quad .89 \quad .84 \quad .74 \quad .91 \quad .55 \quad .71
+\quad .36 \quad .30 \quad .09
+$$
 
 Let's transform our sequence of PRNs into one of plusses and minuses, where a
 plus sign indicates that $R_i \geq 0.5$, and a minus sign indicates that $R_i <
 0.5$:
 
-$$ -+++++++---... $$
+$$
+-+++++++---...
+$$
 
 Here are the associated runs - there are three in total - demarcated by commas:
 
-$$ -,+++++++,--- $$
+$$
+-,+++++++,---
+$$
 
 If $n$ is large (say, $\geq 20$), and the $R_j$'s are indeed independent, then
 the number of runs, $B$, is again approximately normal, with the following
 parameters:
 
-$$ B \approx \text{Nor}\left(\frac{2n_1n_2}{n} + \frac{1}{2},
-\frac{2n_1n_2(2n_1n_2 - n)}{n^2(n-1)}\right) $$
+$$
+B \approx \text{Nor}\left(\frac{2n_1n_2}{n} + \frac{1}{2},
+\frac{2n_1n_2(2n_1n_2 - n)}{n^2(n-1)}\right)
+$$
 
 Note that $n_1$ refers to the number of observations greater than or equal to
 the mean and $n_2 = n - n_1$.
@@ -801,21 +888,27 @@ the mean and $n_2 = n - n_1$.
 Let's transform $B$ into a standard normal random variable, $Z_0$, which we
 accomplish with the following manipulation:
 
-$$ Z_0 = \frac{B - E[B]}{\sqrt{\text{Var}(B)}} $$
+$$
+Z_0 = \frac{B - E[B]}{\sqrt{\text{Var}(B)}}
+$$
 
 Again, we reject $H_0$ if the absolute value of $Z_0$ is greater than the
 $\alpha/2$ standard normal quantile:
 
-$$ f(Z_0) = \left\{ \begin{matrix} \text{Reject } H_0 & |Z_0| > z_{\alpha/2} \\
+$$
+f(Z_0) = \left\{ \begin{matrix} \text{Reject } H_0 & |Z_0| > z_{\alpha/2} \\
     \text{Accept } H_0 & |Z_0| \leq z_{\alpha/2}
-  \end{matrix} \right. $$
+  \end{matrix} \right.
+$$
 
 ### Above and Below the Mean Example
 
 Consider the following $+/-$ sequence of $n=40$ observations:
 
-$$ \begin{aligned} -+++++++---++-+----- \\
---++----++--+-+--++- \end{aligned} $$
+$$
+\begin{aligned} -+++++++---++-+----- \\
+--++----++--+-+--++- \end{aligned}
+$$
 
 In this case, we have $n_1 = 18$ observations above the mean and $n_2 = 22$
 observations below the mean, as well as $B=17$ runs. Without walking through the
@@ -823,9 +916,11 @@ algebra, we can compute that $B \approx \text{Nor}(20.3, 9.54)$.
 
 Let's compute $Z_0$:
 
-$$ \begin{alignedat}{1} Z_0 &= \frac{B - E[B]}{\sqrt{\text{Var}(B)}} \\[3ex] &=
+$$
+\begin{alignedat}{1} Z_0 &= \frac{B - E[B]}{\sqrt{\text{Var}(B)}} \\[3ex] &=
 \frac{17 - 20.3}{\sqrt{9.54}} \\[3ex] &\approx \frac{-3.3}{3.0887} \approx -1.07
-\end{alignedat} $$
+\end{alignedat}
+$$
 
 If $\alpha = 0.05$, then $z_{\alpha/2} = 1.96$, and we fail to reject $H_0$.
 Therefore, we can treat the observations in this sequence as being independent.
@@ -848,36 +943,46 @@ are uncorrelated, $\rho$ should be zero.
 
 A good estimator for $\rho$ is given by:
 
-$$ \hat\rho \equiv \left(\frac{12}{n-1}\sum_{k=1}^{n-1}R_kR_{1+k}\right) - 3 $$
+$$
+\hat\rho \equiv \left(\frac{12}{n-1}\sum_{k=1}^{n-1}R_kR_{1+k}\right) - 3
+$$
 
 In particular, if $n$ is large, and $H_0$ is true:
 
-$$ \hat\rho \approx \text{Nor}\left(0, \frac{13n- 19}{(n-1)^2}\right) $$
+$$
+\hat\rho \approx \text{Nor}\left(0, \frac{13n- 19}{(n-1)^2}\right)
+$$
 
 Let's transform $\hat{\rho}$ into a standard normal random variable, $Z_0$,
 which we accomplish with the following manipulation:
 
-$$ Z_0 = \frac{\hat\rho - E[\hat\rho]}{\sqrt{\text{Var}(\hat\rho)}} =
-\frac{\hat\rho}{\sqrt{\text{Var}(\hat\rho)}} $$
+$$
+Z_0 = \frac{\hat\rho - E[\hat\rho]}{\sqrt{\text{Var}(\hat\rho)}} =
+\frac{\hat\rho}{\sqrt{\text{Var}(\hat\rho)}}
+$$
 
 We reject $H_0$ if the absolute value of $Z_0$ is greater than the $\alpha/2$
 standard normal quantile:
 
-$$ f(Z_0) = \left\{ \begin{matrix} \text{Reject } H_0 & |Z_0| > z_{\alpha/2} \\
+$$
+f(Z_0) = \left\{ \begin{matrix} \text{Reject } H_0 & |Z_0| > z_{\alpha/2} \\
     \text{Accept } H_0 & |Z_0| \leq z_{\alpha/2}
-  \end{matrix} \right. $$
+  \end{matrix} \right.
+$$
 
 ### Example
 
 Consider the following $n=30$ PRNs:
 
-$$ \begin{aligned} 0.29 \quad 0.38 \quad 0.46 \quad 0.29 \quad 0.69 \quad 0.73
+$$
+\begin{aligned} 0.29 \quad 0.38 \quad 0.46 \quad 0.29 \quad 0.69 \quad 0.73
 \quad 0.80 \quad 0.74 \quad 0.99 \quad 0.74 \\
 0.88 \quad 0.66 \quad 0.56 \quad 0.41 \quad 0.35 \quad 0.22 \quad 0.18 \quad
 0.05 \quad 0.25 \quad 0.36 \\
 0.39 \quad 0.45 \quad 0.50 \quad 0.62 \quad 0.76 \quad 0.81 \quad 0.97 \quad
 0.72 \quad 0.11 \quad 0.55 \\
-\end{aligned} $$
+\end{aligned}
+$$
 
 After some algebra, we get $\hat\rho = 0.950$ and $\text{Var}(\hat\rho) =
 0.441$. Notice how high our correlation estimator is; we might expect a robust
@@ -885,8 +990,10 @@ rejection of the null hypothesis.
 
 Let's compute $Z_0$:
 
-$$ \begin{alignedat}{1} Z_0 &= \frac{\hat\rho}{\sqrt{\text{Var}(B)}} \\[3ex] &=
-\frac{0.950}{\sqrt{0.441}} \approx 1.43 \end{alignedat} $$
+$$
+\begin{alignedat}{1} Z_0 &= \frac{\hat\rho}{\sqrt{\text{Var}(B)}} \\[3ex] &=
+\frac{0.950}{\sqrt{0.441}} \approx 1.43 \end{alignedat}
+$$
 
 If $\alpha = 0.05$, then $z_{\alpha/2} = 1.96$, and we fail to reject $H_0$.
 Therefore, we can treat the observations in this sequence as being independent.

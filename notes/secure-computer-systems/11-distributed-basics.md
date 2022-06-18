@@ -172,7 +172,6 @@ Statements 1 and 2 are requests that are being made to read a file. Statements
 someone trusted. Statements 4 and 6 are statements about certification,
 certificate authorities are trusted entities and we discuss them more later.
 
-<!-- markdownlint-disable-next-line MD049 -->
 Remember that $\text{K}_\text{abadi} \implies \text{Abadi}$ means
 "$\text{K}_\text{abadi}$ speaks for $\text{Abadi}$".
 
@@ -237,8 +236,10 @@ says C $\implies$ A".
 
 An example might look something like:
 
-$$ ( K_\text{Bob} \implies \text{Bob}) \wedge (K_\text{Bob} \text{ says } (C
-\implies \text{Bob})) $$
+$$
+( K_\text{Bob} \implies \text{Bob}) \wedge (K_\text{Bob} \text{ says } (C
+\implies \text{Bob}))
+$$
 
 From this it is true that $C \implies \text{Bob}$. This works because $(
 K_\text{Bob} \implies \text{Bob}) \supset (K_\text{Bob} \text{ says s} \supset

@@ -30,7 +30,9 @@ expression for the total delay that combines the individual pieces.
 The goal is to generate a random variable with a cdf, $F(x)$, of the following
 form:
 
-$$ F(x) = \sum_{j=1}^\infty p_jF_j(x) $$
+$$
+F(x) = \sum_{j=1}^\infty p_jF_j(x)
+$$
 
 In plain English, we want to generate a random variable whose cdf is a linear
 combination of other, "easier" cdf's, the $F_j$'s. Note that $p_j > 0$ and the
@@ -54,14 +56,18 @@ Let's look at a proof that $X$ has cdf $F(x)$. First, we know that the cdf of
 $X$, by definition, is $P(X \leq x)$. Additionally, by the law of total
 probability:
 
-$$ P(X \leq x) = \sum_{j=1}^\infty P(X \leq x | J=j)P(J=j) $$
+$$
+P(X \leq x) = \sum_{j=1}^\infty P(X \leq x | J=j)P(J=j)
+$$
 
 Now, we expressed $P(J=j)$ as $p_j$, and we know that $P(X \leq x|J=j)$ is equal
 to $F_j$. Therefore:
 
-$$ \begin{alignedat}{1} P(X \leq x) &= \sum_{j=1}^\infty P(X \leq x | J=j)P(J=j)
+$$
+\begin{alignedat}{1} P(X \leq x) &= \sum_{j=1}^\infty P(X \leq x | J=j)P(J=j)
 \\
-&= \sum_{j=1}^\infty F_j(x)p_j = F(x) \end{alignedat} $$
+&= \sum_{j=1}^\infty F_j(x)p_j = F(x) \end{alignedat}
+$$
 
 ### Example
 
@@ -69,12 +75,14 @@ Consider the [Laplace
 distribution](https://en.wikipedia.org/wiki/Laplace_distribution), with the
 following pdf and cdf:
 
-$$ f(x) \equiv \left\{ \begin{matrix} \frac{1}{2}e^x, & x < 0 \\
+$$
+f(x) \equiv \left\{ \begin{matrix} \frac{1}{2}e^x, & x < 0 \\
     \frac{1}{2}e^{-x}, & x > 0 \\
   \end{matrix} \right. \quad \text{and} \quad F(x) \equiv \left\{ \begin{matrix}
   \frac{1}{2}e^x, & x < 0 \\
     1 - \frac{1}{2}e^{-x}, & x > 0 \\
-  \end{matrix} \right. \quad $$
+  \end{matrix} \right. \quad
+$$
 
 Note that the pdf and cdf look similar to those for exponential random
 variables, except that $x$ is allowed to be less than zero and the exponential
@@ -84,25 +92,33 @@ exponential distribution reflected off the $y$-axis.
 Let's decompose this $X$ into a "negative exponential" and regular exponential
 distributions:
 
-$$ F_1(x) \equiv \left\{ \begin{matrix} e^x, & x < 0 \\
+$$
+F_1(x) \equiv \left\{ \begin{matrix} e^x, & x < 0 \\
     1, & x > 0 \\
   \end{matrix} \right. \quad \text{and} \quad F_2(x) \equiv \left\{
   \begin{matrix} 0, & x < 0 \\
     1 - e^{-x}, & x > 0 \\
-  \end{matrix} \right. \quad $$
+  \end{matrix} \right. \quad
+$$
 
 If we multiply each CDF here by one-half and sum them together, we get a Laplace
 random variable:
 
-$$ F(x) = \frac{1}{2}F_1(x) + \frac{1}{2}F_2(x) $$
+$$
+F(x) = \frac{1}{2}F_1(x) + \frac{1}{2}F_2(x)
+$$
 
 Let's look at both cases. When $x < 0$:
 
-$$ F(x) = \frac{1}{2}e^x + \frac{1}{2}(0) = \frac{1}{2}e^x $$
+$$
+F(x) = \frac{1}{2}e^x + \frac{1}{2}(0) = \frac{1}{2}e^x
+$$
 
 When $x > 0$:
 
-$$ F(x) = \frac{1}{2}(1) + \frac{1}{2}(1-e^{-x}) = 1 - \frac{1}{2}e^x $$
+$$
+F(x) = \frac{1}{2}(1) + \frac{1}{2}(1-e^{-x}) = 1 - \frac{1}{2}e^x
+$$
 
 As we can see, the composed cdf matches the expected cdf, both for $x > 0$ and
 $x < 0$.
@@ -112,9 +128,11 @@ $F_2(x)$ the other half of the time. Correspondingly, we'll use inverse
 transform to solve $F_1(X) = e^X = U$ for $X$ half the time and we'll solve $F_2
 = 1-e^{-X} = U$ for the other half. Consider:
 
-$$ X \leftarrow \left\{ \begin{matrix} \ln(U), & \text{w/ probability } 1/2 \\
+$$
+X \leftarrow \left\{ \begin{matrix} \ln(U), & \text{w/ probability } 1/2 \\
     -\ln(U), & \text{w/ probability } 1/2 \\
-  \end{matrix} \right. $$
+  \end{matrix} \right.
+$$
 
 Precisely, we transform our uniform into an exponential with probability
 one-half and a negative exponential with probability negative one-half.
@@ -129,8 +147,10 @@ special-case algorithm used to generate standard normal random variables.
 If $U_1, U_2$ are iid $\mathcal (0,1)$, then the following quantities are iid
 Nor(0,1):
 
-$$ \begin{alignedat}{1} Z_1 &= \sqrt{-2\ln{(U_1)}}\cos(2\pi U_2) \\
-Z_2 &= \sqrt{-2\ln{(U_1)}}\sin(2\pi U_2) \end{alignedat} $$
+$$
+\begin{alignedat}{1} Z_1 &= \sqrt{-2\ln{(U_1)}}\cos(2\pi U_2) \\
+Z_2 &= \sqrt{-2\ln{(U_1)}}\sin(2\pi U_2) \end{alignedat}
+$$
 
 > Note that we must perform the trig calculations in radians! In degrees, $2\pi
 > U$ is a very small quantity, and resulting $Z_1$ and $Z_2$ will *not* be iid
@@ -142,24 +162,34 @@ We've mentioned before that if we square a standard normal random variable, we
 get a chi-squared random variable with one degree of freedom. If we add $n$
 chi-squared randoms, we get a chi-squared with $n$ degrees of freedom:
 
-$$ Z^2_1 + Z^2_2 \sim \chi^2(1) + \chi^2(1) \sim \chi^2(2) $$
+$$
+Z^2_1 + Z^2_2 \sim \chi^2(1) + \chi^2(1) \sim \chi^2(2)
+$$
 
 Meanwhile, let's consider the sum of $Z^2_1$ and $Z^2_2$ algebraically:
 
-$$ Z^2_1 + Z^2_2 = -2\ln(U_1)(\cos^2(2\pi U_2) + \sin^2(2\pi U_2)) $$
+$$
+Z^2_1 + Z^2_2 = -2\ln(U_1)(\cos^2(2\pi U_2) + \sin^2(2\pi U_2))
+$$
 
 Remember from trig class the $\sin^2(x) + \cos^2(x) = 1$, so:
 
-$$ Z^2_1 + Z^2_2 = -2\ln(U_1) $$
+$$
+Z^2_1 + Z^2_2 = -2\ln(U_1)
+$$
 
 Remember also how we transform exponential random variables:
 
-$$ X = \frac{-1}{\lambda}\ln U \sim \text{Exp}(\lambda) $$
+$$
+X = \frac{-1}{\lambda}\ln U \sim \text{Exp}(\lambda)
+$$
 
 All this to say, we just demonstrated that $Z^2_1 + Z^2_2 \sim \text{Exp}(1/2)$.
 Furthermore, and more interestingly, we just proved that:
 
-$$ \chi^2(2) \sim \text{Exp}(1/2) $$
+$$
+\chi^2(2) \sim \text{Exp}(1/2)
+$$
 
 Let's look at another example. Suppose we take $Z_1/Z_2$. One standard normal
 divided by another is a Cauchy random variable, and also a t(1) random variable.
@@ -171,8 +201,10 @@ divided by another is a Cauchy random variable, and also a t(1) random variable.
 
 Moreover:
 
-$$ Z_2/Z_1 = \frac{\sqrt{-2\ln{(U_1)}}\cos(2\pi
-U_2)}{\sqrt{-2\ln{(U_1)}}\sin(2\pi U_2)} = \tan(2\pi U_2) $$
+$$
+Z_2/Z_1 = \frac{\sqrt{-2\ln{(U_1)}}\cos(2\pi
+U_2)}{\sqrt{-2\ln{(U_1)}}\sin(2\pi U_2)} = \tan(2\pi U_2)
+$$
 
 Thus, we've just proven that $\tan(2\pi U) \sim \text{Cauchy}$. Likewise, we can
 take $Z_1/Z_2$, which proves additionally that $\cot(2\pi U) \sim
@@ -180,7 +212,9 @@ take $Z_1/Z_2$, which proves additionally that $\cot(2\pi U) \sim
 
 Furthermore:
 
-$$ Z_2^2 / Z_1^2 = \tan^2(2\pi U) \sim t^2(1) \sim F(1,1) $$
+$$
+Z_2^2 / Z_1^2 = \tan^2(2\pi U) \sim t^2(1) \sim F(1,1)
+$$
 
 ### Polar Method
 
@@ -190,13 +224,17 @@ is slightly faster than Box-Muller.
 First, we generate two uniforms, $U_1, U_2 \overset{\text{iid}}{\sim} \mathcal
 U(0,1)$. Next, let's perform the following transformation:
 
-$$ \begin{alignedat}{1} V_i &= 2U_i - 1, i = 1,2 \\
-W &= V_1^2 + V_2^2 \end{alignedat} $$
+$$
+\begin{alignedat}{1} V_i &= 2U_i - 1, i = 1,2 \\
+W &= V_1^2 + V_2^2 \end{alignedat}
+$$
 
 Finally, we use the acceptance-rejection method. If $W > 1$, we reject and
 return to sampling uniforms. Otherwise:
 
-$$ Y = \sqrt{-2\ln(W)/W} $$
+$$
+Y = \sqrt{-2\ln(W)/W}
+$$
 
 We accept $Z_i \leftarrow V_iY,i=1,2$. As it turns out, $Z_1$ and $Z_2$ are iid
 Nor(0,1). This method is slightly faster than Box-Muller because it avoids
@@ -221,7 +259,9 @@ $\mathcal U(0,1)$?
 
 The answer is yes! Since the $X_i$'s are iid, we have:
 
-$$ G(y) = 1 - P(Y > y) = 1 - P(\min_iX_i > y) $$
+$$
+G(y) = 1 - P(Y > y) = 1 - P(\min_iX_i > y)
+$$
 
 In English, the cdf of $Y$ is $P(Y \leq y)$, which is equivalent to the
 complement: $1 - P(Y > y)$. Since $Y = \min_i X_i$, $G(y) = 1 - P(\min_i X_i >
@@ -230,89 +270,119 @@ y)$.
 Now, since the minimum $X_i$ is greater than $Y$, then all of the $X_i$'s must
 be greater than $Y$:
 
-$$ \begin{alignedat}{1} G(y) &= 1 - P(\text{all } X_i\text{'s} > y) \\
-&= 1 - [P(X_1 > y) * P(X_2 > y) * ... * P(X_n > y)] \end{alignedat} $$
+$$
+\begin{alignedat}{1} G(y) &= 1 - P(\text{all } X_i\text{'s} > y) \\
+&= 1 - [P(X_1 > y) * P(X_2 > y) * ... * P(X_n > y)] \end{alignedat}
+$$
 
 Since the $X_i$'s are iid, $P(X_i > y) = P(X_1 > y)$. Therefore:
 
-$$ \begin{alignedat}{1} G(y) &= 1 - [P(X_1 > y) * P(X_1 > y) * ... * P(X_1 > y)]
+$$
+\begin{alignedat}{1} G(y) &= 1 - [P(X_1 > y) * P(X_1 > y) * ... * P(X_1 > y)]
 \\
-&= 1 - [P(X_1 > y)]^n \end{alignedat} $$
+&= 1 - [P(X_1 > y)]^n \end{alignedat}
+$$
 
 Finally, note that $F(y) = X \leq y$. Therefore, $1 - F(y) = P(X > y)$, so:
 
-$$ G(y) = 1 - [1- F(y)]^n $$
+$$
+G(y) = 1 - [1- F(y)]^n
+$$
 
 At this point, we can use inverse transform to express $Y$ in terms of $U$:
 
-$$ \begin{alignedat}{1} U &= 1 - [1- F(Y)]^n \\
+$$
+\begin{alignedat}{1} U &= 1 - [1- F(Y)]^n \\
 [1- F(Y)]^n &= 1 - U \\
 1 - F(Y) &= (1-U)^{1/n}\\
-Y &= F^{-1}(1 - (1-U)^{1/n}) \end{alignedat} $$
+Y &= F^{-1}(1 - (1-U)^{1/n}) \end{alignedat}
+$$
 
 ### Example
 
 Suppose $X_1,...X_n \sim \text{Exp}(\lambda)$. Then:
 
-$$ \begin{alignedat}{1} G(y) &= 1 - (1 - (1 - e^{-\lambda y}))^n \\
-&= 1 - e^{-n\lambda y} \end{alignedat} $$
+$$
+\begin{alignedat}{1} G(y) &= 1 - (1 - (1 - e^{-\lambda y}))^n \\
+&= 1 - e^{-n\lambda y} \end{alignedat}
+$$
 
 So, $Y = \min_iX_i \sim \text{Exp}(n\lambda)$. If we apply inverse transform we
 get:
 
-$$ Y = \frac{-1}{n\lambda}\ln(U) $$
+$$
+Y = \frac{-1}{n\lambda}\ln(U)
+$$
 
 We can do the same kind of thing for $Z = \max_i X_i$. Let's try it! If $Z =
 \max_iX_i$, then we can express $H(z)$ as:
 
-$$ P(Z \leq z) = P(\max_iX_i \leq z) $$
+$$
+P(Z \leq z) = P(\max_iX_i \leq z)
+$$
 
 Now, since the maximum $X_i$ is less than or equal to $Z$, then all of the
 $X_i$'s must less than or equal to $Z$:
 
-$$ \begin{alignedat}{1} H(z) &= P(\text{all } X_i\text{'s} \leq z) \\
-&= [P(X_1 \leq z) * P(X_2 \leq z) * ... * P(X_n \leq z)] \end{alignedat} $$
+$$
+\begin{alignedat}{1} H(z) &= P(\text{all } X_i\text{'s} \leq z) \\
+&= [P(X_1 \leq z) * P(X_2 \leq z) * ... * P(X_n \leq z)] \end{alignedat}
+$$
 
 Since the $X_i$'s are iid, $P(X_i \leq z) = P(X_1 \leq z)$. Therefore:
 
-$$ \begin{alignedat}{1} H(z) &= [P(X_1 \leq z) *P(X_1 \leq z)* ... * P(X_1
+$$
+\begin{alignedat}{1} H(z) &= [P(X_1 \leq z) *P(X_1 \leq z)* ... * P(X_1
 \leq z)] \\
-&= [P(X_1 \leq z)]^n \end{alignedat} $$
+&= [P(X_1 \leq z)]^n \end{alignedat}
+$$
 
 Finally, note that $F(z) = X \leq z$. Therefore:
 
-$$ H(z) =F(z)^n $$
+$$
+H(z) =F(z)^n
+$$
 
 Suppose $X_1,...X_n \sim \text{Exp}(\lambda)$. Then:
 
-$$ H(z) = (1 - e^{-\lambda z})^n $$
+$$
+H(z) = (1 - e^{-\lambda z})^n
+$$
 
 Let's apply inverse transform:
 
-$$ \begin{alignedat}{1} U &= (1 - e^{-\lambda Z})^n \\
+$$
+\begin{alignedat}{1} U &= (1 - e^{-\lambda Z})^n \\
 U^{1/n} &= 1 - e^{-\lambda Z} \\
 e^{-\lambda Z} &= 1 - U^{1/n} \\
 -\lambda Z &= \ln(1 - U^{1/n}) \\
-Z &= \frac{-\ln(1 - U^{1/n})}{\lambda} \end{alignedat} $$
+Z &= \frac{-\ln(1 - U^{1/n})}{\lambda} \end{alignedat}
+$$
 
 ### Other Stuff
 
 If $Z_1, Z_2,...,Z_n$ are iid Nor(0,1), then the sum of the squares of the
 $Z_i$'s is a chi-squared random variable with $n$ degrees of freedom:
 
-$$ \sum_{i=1}^n Z^2_i \sim \chi^2(n) $$
+$$
+\sum_{i=1}^n Z^2_i \sim \chi^2(n)
+$$
 
 If $Z \sim \text{Nor}(0,1)$, and $Y \sim \chi^2(n)$, and $X$ and $Y$ are
 independent, then:
 
-$$ \frac{Z}{\sqrt{Y/n}} \sim t(n) $$
+$$
+\frac{Z}{\sqrt{Y/n}} \sim t(n)
+$$
 
 > Note that t(1) is the Cauchy distribution.
 
 If $X \sim \chi^2(n)$, and $Y \sim \chi^2(m)$, and $X$ and $Y$ are independent,
 then:
 
-$$ \frac{(X/n)}{(Y/n)} \sim F(n,m) $$
+$$
+\frac{(X/n)}{(Y/n)} \sim F(n,m)
+$$
 
 If we want to generate random variables from continuous empirical distributions,
 we'll have to settle for the `CONT` function in Arena for now.
@@ -331,32 +401,40 @@ the **bivariate normal distribution** with means $\mu_X = E[X]$ and $\mu_Y =
 E[Y]$, variances $\sigma^2_X = \text{Var}(X)$ and $\sigma^2_Y = \text{Var}(Y)$,
 and correlation $\rho = \text{Corr}(X,Y)$ if it has the following joint pdf:
 
-$$ f(x,y) = \frac{1}{2\pi \sigma_X
+$$
+f(x,y) = \frac{1}{2\pi \sigma_X
 \sigma_Y\sqrt{1-\rho^2}}\exp\left\{\frac{-\left[z^2_X(x) + z^2_Y(y) - 2 \rho
-z_X(x)z_Y(y)\right]}{2(1-\rho^2)}\right\} $$
+z_X(x)z_Y(y)\right]}{2(1-\rho^2)}\right\}
+$$
 
 Note the following definitions for $z_X(x)$ and $z_Y(y)$, which are standardized
 versions of the corresponding variables:
 
-$$ z_X(x) \equiv \frac{x - \mu_X}{\sigma_X}, \quad z_Y(y) \equiv \frac{y -
-\mu_Y}{\sigma_Y} $$
+$$
+z_X(x) \equiv \frac{x - \mu_X}{\sigma_X}, \quad z_Y(y) \equiv \frac{y -
+\mu_Y}{\sigma_Y}
+$$
 
 Let's contrast this pdf with the univariate normal pdf:
 
-$$ f(x) =
+$$
+f(x) =
 \frac{1}{\sigma\sqrt{2\pi}}\exp\left\{\frac{-1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right\}
 $$
 
 The fractions in front of the exponential looks similar in both cases. In fact,
 we could argue that the fraction for the univariate case might look like this:
 
-$$ \frac{1}{\sigma\sqrt{2\pi}\sqrt{1-\rho^2}} $$
+$$
+\frac{1}{\sigma\sqrt{2\pi}\sqrt{1-\rho^2}}
+$$
 
 In this case, however, $\text{Corr}(X, X) = 1$, so the expression involving
 $\rho^2$ reduces to one. All this to say, the bivariate case expands on the
 univariate case by incorporating another $\sigma\sqrt{2\pi}$ term. Consider:
 
-$$ \begin{alignedat}{1} f(x,y) &= \frac{1}{\sigma_X \sqrt{2\pi} \sigma_Y
+$$
+\begin{alignedat}{1} f(x,y) &= \frac{1}{\sigma_X \sqrt{2\pi} \sigma_Y
 \sqrt{2\pi}\sqrt{1-\rho^2}}\exp\{\cdots\} \\
 &= \frac{1}{2\pi\sigma_X \sigma_Y \sqrt{1-\rho^2}}\exp\{\cdots\} \end{alignedat}
 $$
@@ -364,20 +442,25 @@ $$
 Now let's look at the expression inside the exponential. Consider again the
 exponential for the univariate case:
 
-$$ \exp\left\{\frac{-1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right\} $$
+$$
+\exp\left\{\frac{-1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right\}
+$$
 
 Again, we might argue that this expression contains a hidden term concerning
 $\rho$ that gets removed because the correlation of $X$ with itself is one:
 
-$$ \exp\left\{\frac{-1}{2(1-\rho)^2}\left(\frac{x-\mu}{\sigma}\right)^2\right\}
+$$
+\exp\left\{\frac{-1}{2(1-\rho)^2}\left(\frac{x-\mu}{\sigma}\right)^2\right\}
 $$
 
 If we look at the bivariate case again, we see something that looks similar. We
 retain the $-1/2$ coefficient and we square standardized versions of $X$ and
 $Y$, although the standardization part is hidden away in $z_X$ and $z_Y$:
 
-$$ \exp\left\{\frac{-\left[z^2_X(x) + z^2_Y(y) - 2 \rho
-z_X(x)z_Y(y)\right]}{2(1-\rho^2)}\right\} $$
+$$
+\exp\left\{\frac{-\left[z^2_X(x) + z^2_Y(y) - 2 \rho
+z_X(x)z_Y(y)\right]}{2(1-\rho^2)}\right\}
+$$
 
 As we said, we can model heights and weights of people as a bivariate normal
 random variable because those two observations are correlated with one another.
@@ -397,10 +480,12 @@ distribution** with mean vector $\boldsymbol \mu = (\mu_1,...,\mu_k)^\top$ and
 $k \times k$ covariance matrix $\Sigma = (\sigma_{ij})$, if it has the following
 pdf:
 
-$$ f(\bold x) = \frac{1}{(2\pi)^{k/2}|\Sigma|^{1/2}} \exp\left\{-\frac{(\bold x
+$$
+f(\bold x) = \frac{1}{(2\pi)^{k/2}|\Sigma|^{1/2}} \exp\left\{-\frac{(\bold x
 
 - \boldsymbol \mu)^\top\Sigma^{-1}(\bold x - \boldsymbol \mu)}{2}\right\}, \quad
-x \in \mathbb{R}^k $$
+x \in \mathbb{R}^k
+$$
 
 Notice that the vector $\bold X$ and the vector $\boldsymbol \mu$ have the same
 dimensions: random variable $X_i$ has the expected value $\mu_i$.
@@ -418,12 +503,16 @@ generalization of the variance.
 
 Now let's look at the exponential expression. In one dimension, we computed:
 
-$$ \exp\left\{\frac{-1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right\} $$
+$$
+\exp\left\{\frac{-1}{2}\left(\frac{x-\mu}{\sigma}\right)^2\right\}
+$$
 
 In $k$ dimensions, we compute:
 
-$$ \exp\left\{-\frac{(\bold x - \boldsymbol \mu)^\top\Sigma^{-1}(\bold x -
-\boldsymbol \mu)}{2}\right\} $$
+$$
+\exp\left\{-\frac{(\bold x - \boldsymbol \mu)^\top\Sigma^{-1}(\bold x -
+\boldsymbol \mu)}{2}\right\}
+$$
 
 Here, $(\bold x - \boldsymbol \mu)^\top(\bold x - \boldsymbol \mu)$ corresponds
 to $(x - \mu)^2$, and $\Sigma^{-1}$ is the inverse of the covariance matrix,
@@ -434,8 +523,10 @@ normal distribution.
 
 The multivariate case has the following properties:
 
-$$ E[X_i] = \mu_i, \quad \text{Var}(X_i) = \sigma_{ii}, \text{Cov}(X_i, X_j) =
-\sigma_{ij} $$
+$$
+E[X_i] = \mu_i, \quad \text{Var}(X_i) = \sigma_{ii}, \text{Cov}(X_i, X_j) =
+\sigma_{ij}
+$$
 
 We can express a random variable coming from this distribution with the
 following notation: $\bold X \sim \text{Nor}_k(\boldsymbol{\mu}, \Sigma)$.
@@ -459,18 +550,23 @@ root" of the covariance matrix.
 It can be shown that $\bold X = \boldsymbol \mu + C \bold Z$ is multivariate
 normal with mean $\boldsymbol \mu$ and covariance matrix:
 
-$$ \Sigma \equiv E[(C\bold Z)(C \bold Z)^\top] = E[C \bold Z \bold Z^\top
-C^\top] = C(E[\bold Z \bold Z^\top])C^\top = CC^\top $$
+$$
+\Sigma \equiv E[(C\bold Z)(C \bold Z)^\top] = E[C \bold Z \bold Z^\top
+C^\top] = C(E[\bold Z \bold Z^\top])C^\top = CC^\top
+$$
 
 How do we find this magic matrix $C$? For $k = 2$, we can easily derive $C$:
 
-$$ C = \left( \begin{matrix} \sqrt{\sigma_{11}} & 0 \\
+$$
+C = \left( \begin{matrix} \sqrt{\sigma_{11}} & 0 \\
   \frac{\sigma_{12}}{\sqrt{\sigma_{11}}} & \sqrt{\sigma_{22} -
-  \frac{\sigma^2_{12}}{\sigma_{11}}} \end{matrix} \right) $$
+  \frac{\sigma^2_{12}}{\sigma_{11}}} \end{matrix} \right)
+$$
 
 Again, if we multiply $C$ by $C^\top$, we get the covariance matrix, $\Sigma$:
 
-$$ \begin{alignedat}{1} \Sigma &= CC^T \\
+$$
+\begin{alignedat}{1} \Sigma &= CC^T \\
 &= \left(\begin{matrix} \sqrt{\sigma_{11}} & 0 \\
   \frac{\sigma_{12}}{\sqrt{\sigma_{11}}} & \sqrt{\sigma_{22} -
   \frac{\sigma^2_{12}}{\sigma_{11}}} \end{matrix} \right) \times
@@ -478,14 +574,17 @@ $$ \begin{alignedat}{1} \Sigma &= CC^T \\
   \frac{\sigma_{12}}{\sqrt{\sigma_{11}}} \\
   0 & \sqrt{\sigma_{22} - \frac{\sigma^2_{12}}{\sigma_{11}}} \end{matrix}
   \right) \\[4ex] &= \left(\begin{matrix} \sigma_{11} & \sigma_{12} \\
-  \sigma_{12} & \sigma_{22} \end{matrix} \right) \end{alignedat} $$
+  \sigma_{12} & \sigma_{22} \end{matrix} \right) \end{alignedat}
+$$
 
 Here's how we generate $\bold X$. Since $\bold X = \boldsymbol \mu + C \bold Z$,
 if we carry the vector addition and matrix multiplication out, we have:
 
-$$ \begin{alignedat}{1} X_1 &= \mu_1 + \sqrt{\sigma_{11}}Z_1 + 0Z_1 \\
+$$
+\begin{alignedat}{1} X_1 &= \mu_1 + \sqrt{\sigma_{11}}Z_1 + 0Z_1 \\
 X_2 &= \mu_2 +  \frac{\sigma_{12}}{\sqrt{\sigma_{11}}}Z_1 + \sqrt{\sigma_{22} -
-\frac{\sigma^2_{12}}{\sigma_{11}}}Z_2 \end{alignedat} $$
+\frac{\sigma^2_{12}}{\sigma_{11}}}Z_2 \end{alignedat}
+$$
 
 Here's the algorithm for computing a $k$-dimensional Cholesky matrix, $C$.
 
@@ -496,7 +595,9 @@ variable $\bold X = \boldsymbol \mu + C \bold Z$. First, we generate $k$ iid
 Nor(0,1) uniforms, $Z_1, Z_2,...,Z_k$. Next, we set $X_i$ equal to the following
 expression:
 
-$$ X_i \leftarrow \mu_i + \sum_{j=1}^i c_{ij}Z_j, i = 1,2,...,k $$
+$$
+X_i \leftarrow \mu_i + \sum_{j=1}^i c_{ij}Z_j, i = 1,2,...,k
+$$
 
 Note that the sum we take above is nothing more than the sum of the standard
 normals multiplied by the $i$th row in $\Sigma$.
@@ -534,8 +635,10 @@ $i$.
 We can denote the day-to-day transition probabilities with the following
 equation:
 
-$$ P_{jk} = P(\text{state } k \text{ on day } i + 1 | \text{ state } j \text{ on
-day } i), \quad j,k = 0,1 $$
+$$
+P_{jk} = P(\text{state } k \text{ on day } i + 1 | \text{ state } j \text{ on
+day } i), \quad j,k = 0,1
+$$
 
 In other words, $P_{jk}$ refers to the probability of experiencing state $X = k$
 on day $i+1$, given that we experienced state $X = j$ on day $i$. For example,
@@ -545,9 +648,11 @@ rained today.
 Suppose that we know the various transition probabilities, and we have the
 following probability state matrix:
 
-$$ P = \begin{pmatrix} P_{00} & P_{01} \\
+$$
+P = \begin{pmatrix} P_{00} & P_{01} \\
   P_{10} & P_{11} \end{pmatrix} = \begin{pmatrix} 0.7 & 0.3 \\
-  0.4 & 0.6 \end{pmatrix} $$
+  0.4 & 0.6 \end{pmatrix}
+$$
 
 Remember that state zero is rain and state one is sun. Therefore, $P_{00} = 0.7$
 means that the probability that we have rain on day $i+1$ given that we had rain
@@ -562,8 +667,10 @@ state could be equivalent to the current state).
 Suppose it rains on Monday, and we want to simulate the rest of the week. We
 will fill out the following table:
 
-$$ \begin{array}{ccccc} \text{day} & P(R|X_{i-1}) & U_i & U_i < P_{\cdot 0}? &
-\text{R/S} \\ \hline \text{M} & - & - & - & \text{R} \end{array} $$
+$$
+\begin{array}{ccccc} \text{day} & P(R|X_{i-1}) & U_i & U_i < P_{\cdot 0}? &
+\text{R/S} \\ \hline \text{M} & - & - & - & \text{R} \end{array}
+$$
 
 Let's talk about the columns. Obviously, the first column refers to the day of
 the week. The column titled $P(\text{R} | X_{i-1})$ refers to the probability of
@@ -577,9 +684,11 @@ the uniform is less than or equal to the transition probability.
 
 Let's see what happens on Tuesday:
 
-$$ \begin{array}{ccccc} \text{day} & P(R|X_{i-1}) & U_i & U_i < P_{\cdot 0}? &
+$$
+\begin{array}{ccccc} \text{day} & P(R|X_{i-1}) & U_i & U_i < P_{\cdot 0}? &
 \text{R/S} \\ \hline \text{M} & - & - & - & \text{R} \\
-  \text{Tu} & P_{00} = 0.7  & 0.62 & \text{Y} & \text{R} \end{array} $$
+  \text{Tu} & P_{00} = 0.7  & 0.62 & \text{Y} & \text{R} \end{array}
+$$
 
 Here, we are looking at the probability of transitioning from a rainy day to
 another rainy day. If we look up that particular probability in our state
@@ -589,10 +698,12 @@ Since $0.62 < 0.7$, we say that it will rain on Tuesday.
 
 Let's see what happens on Wednesday:
 
-$$ \begin{array}{ccccc} \text{day} & P(R|X_{i-1}) & U_i & U_i < P_{\cdot 0}? &
+$$
+\begin{array}{ccccc} \text{day} & P(R|X_{i-1}) & U_i & U_i < P_{\cdot 0}? &
 \text{R/S} \\ \hline \text{M} & - & - & - & \text{R} \\
   \text{Tu} & P_{00} = 0.7  & 0.62 & \text{Y} & \text{R} \\
-  \text{W} & P_{00} = 0.7  & 0.03 & \text{Y} & \text{R} \end{array} $$
+  \text{W} & P_{00} = 0.7  & 0.03 & \text{Y} & \text{R} \end{array}
+$$
 
 Similarly, we are looking at the probability of again transitioning from a rainy
 day to another rainy day, so our transition probability is still $P_{00} = 0.7$.
@@ -601,11 +712,13 @@ will rain on Wednesday.
 
 Let's see what happens on Thursday:
 
-$$ \begin{array}{ccccc} \text{day} & P(R|X_{i-1}) & U_i & U_i < P_{\cdot 0}? &
+$$
+\begin{array}{ccccc} \text{day} & P(R|X_{i-1}) & U_i & U_i < P_{\cdot 0}? &
 \text{R/S} \\ \hline \text{M} & - & - & - & \text{R} \\
   \text{Tu} & P_{00} = 0.7  & 0.62 & \text{Y} & \text{R} \\
   \text{W} & P_{00} = 0.7  & 0.03 & \text{Y} & \text{R} \\
-  \text{Th} & P_{00} = 0.7  & 0.77 & \text{N} & \text{S} \end{array} $$
+  \text{Th} & P_{00} = 0.7  & 0.77 & \text{N} & \text{S} \end{array}
+$$
 
 Here, we have the same transition probability as previously, but our uniform,
 $U_i = 0.77$, happens to be larger than our transition probability: $0.77 >
@@ -613,13 +726,15 @@ $U_i = 0.77$, happens to be larger than our transition probability: $0.77 >
 
 Finally, let's look at Friday:
 
-$$ \begin{array}{ccccc} \text{day} & P(R|X_{i-1}) & U_i & U_i < P_{\cdot 0}? &
+$$
+\begin{array}{ccccc} \text{day} & P(R|X_{i-1}) & U_i & U_i < P_{\cdot 0}? &
 \text{R/S} \\ \hline \text{M} & - & - & - & \text{R} \\
   \text{Tu} & P_{00} = 0.7  & 0.62 & \text{Y} & \text{R} \\
   \text{W} & P_{00} = 0.7  & 0.03 & \text{Y} & \text{R} \\
   \text{Th} & P_{00} = 0.7  & 0.77 & \text{N} & \text{S} \\
   \text{F} & P_{10} = 0.4  & 0.91 & \text{N} & \text{S} \\
-\end{array} $$
+\end{array}
+$$
 
 On Friday, we have a new transition probability. This time, we are looking at
 the probability of rain given sun, and $P_{10} = 0.4$. Again we draw our
@@ -637,7 +752,9 @@ Let's look at how we generate the arrival times. Note that we set $T_0
 \leftarrow 0$ to initialize the process at time zero. From there, we can compute
 the $i$th arrival time, $T_i$, as:
 
-$$ T_i \leftarrow T_{i-1} - \frac{1}{\lambda}\ln U_i, \quad i \geq 1 $$
+$$
+T_i \leftarrow T_{i-1} - \frac{1}{\lambda}\ln U_i, \quad i \geq 1
+$$
 
 In other words, the next arrival time equals the previous arrival time, plus an
 exponential random variable referring to the interarrival time. Even more
@@ -667,7 +784,9 @@ Here's the algorithm. First, we generate $n$ iid $\mathcal U(0,1)$ uniforms,
 $U_1,...,U_n$. Next, we sort them: $U_{(1)} < U_{(2)} < ... < U_{(n)}$. Finally,
 we transform them to lie on the interval $[a,b]$:
 
-$$ T_i \leftarrow a + (b-a)U_{(i)} $$
+$$
+T_i \leftarrow a + (b-a)U_{(i)}
+$$
 
 ## Nonhomogeneous Poisson Processes
 
@@ -688,7 +807,9 @@ during $[0,t]$.
 Consider the following theorem to describe the number of arrivals from an NHPP
 between time $s$ and time $t$:
 
-$$ N(s+t) - N(s) \sim \text{Poisson}\left(\int_s^{s+t} \lambda(u)du\right) $$
+$$
+N(s+t) - N(s) \sim \text{Poisson}\left(\int_s^{s+t} \lambda(u)du\right)
+$$
 
 ### Example
 
@@ -699,14 +820,18 @@ be exactly four arrivals between times $t=1$ and $t=2$.
 From the equation above, we can see that the number of arrivals in this time
 interval is:
 
-$$ N(2) - N(1) \sim \text{Pois}\left(\int_1^{2} t^2dt\right) \sim
-\text{Pois}(7/3) $$
+$$
+N(2) - N(1) \sim \text{Pois}\left(\int_1^{2} t^2dt\right) \sim
+\text{Pois}(7/3)
+$$
 
 Since the number of arrivals is $X \sim \text{Pois}(7/3)$, we can calculate the
 $P(X = 4)$ using the pmf, $f(x)$:
 
-$$ f(x) = \frac{e^{-\lambda}(\lambda)^x}{x!} = \frac{e^{-7/3}(7/3)^4}{4!} =
-0.120 $$
+$$
+f(x) = \frac{e^{-\lambda}(\lambda)^x}{x!} = \frac{e^{-7/3}(7/3)^4}{4!} =
+0.120
+$$
 
 ### Incorrect NHPP Algorithm
 
@@ -722,7 +847,9 @@ We initialize the algorithm with $T_0 \leftarrow 0; i \leftarrow 0$. To generate
 the $i$th arrival, we first sample $U \sim \mathcal U(0,1)$, and then we perform
 the following computation:
 
-$$ T_{i+1} \leftarrow T_i - \frac{1}{\lambda(T_i)}\ln U$$
+$$
+T_{i+1} \leftarrow T_i - \frac{1}{\lambda(T_i)}\ln U
+$$
 
 Note that, instead of multiplying by $-1 / \lambda$, we multiply by $-1 /
 \lambda(T_i)$, which is the arrival rate at the time of the previous arrival.
@@ -752,7 +879,9 @@ the line $y = \lambda^\star$ drawn below.
 From there, we will generate *potential* arrivals at that maximum rate
 $\lambda^\star$:
 
-$$ T_{i+1} = T_1 -  \frac{-1}{\lambda^\star}\ln U $$
+$$
+T_{i+1} = T_1 -  \frac{-1}{\lambda^\star}\ln U
+$$
 
 We can see the potential arrivals in dotted purple below.
 
@@ -773,11 +902,15 @@ initialize $t \leftarrow T_i$, and then we iterate. We generate two iid
 Unif(0,1) random variables, $U$ and $V$, and then we generate a potential
 arrival:
 
-$$ t \leftarrow t -  \frac{-1}{\lambda^\star}\ln U $$
+$$
+t \leftarrow t -  \frac{-1}{\lambda^\star}\ln U
+$$
 
 We keep generating $U$ and $V$ until this condition holds:
 
-$$ V \leq \lambda(t)/\lambda^\star $$
+$$
+V \leq \lambda(t)/\lambda^\star
+$$
 
 In other words, we only keep the potential arrival with probability
 $\lambda(t)/\lambda^\star$. After we accept $t$, we set $i$ to $i+1$, and $T_i$
@@ -845,7 +978,9 @@ moving average** processes (ARMA), which have standard-normal noise, and
 A **first-order moving average process**, or MA(1), is a popular time series for
 modeling and detecting trends. This process is defined as follows:
 
-$$ Y_i = \epsilon_i + \theta\epsilon_{i-1}, \quad i = 1,2,..., $$
+$$
+Y_i = \epsilon_i + \theta\epsilon_{i-1}, \quad i = 1,2,...,
+$$
 
 Here, $\theta$ is a constant, and the $\epsilon_i$ terms are typically iid
 Nor(0,1) - in practice, they can be iid anything - and they are independent of
@@ -857,57 +992,74 @@ $Y_i$ and $Y_{i-1}$ pairs are correlated.
 
 Let's derive the variance of $Y_i$. Remember, that:
 
-$$ \text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y) + 2\text{Cov}(X,Y) $$
+$$
+\text{Var}(X + Y) = \text{Var}(X) + \text{Var}(Y) + 2\text{Cov}(X,Y)
+$$
 
 Let's consider $Y_i = \epsilon_i + \theta\epsilon_{i-1}$:  
 
-$$ \text{Var}(\epsilon_i + \theta\epsilon_{i-1}) = \text{Var}(\epsilon_i) +
+$$
+\text{Var}(\epsilon_i + \theta\epsilon_{i-1}) = \text{Var}(\epsilon_i) +
 \text{Var}(\theta\epsilon_{i-1}) + 2\text{Cov}(\epsilon_i,\theta\epsilon_{i-1})
-$$  
+$$
 
 Now, we know that successive $\epsilon_i$'s are independent, so the covariance
 is zero:  
 
-$$ \text{Var}(\epsilon_i + \theta\epsilon_{i-1}) = \text{Var}(\epsilon_i) +
-\text{Var}(\theta\epsilon_{i-1}) $$
+$$
+\text{Var}(\epsilon_i + \theta\epsilon_{i-1}) = \text{Var}(\epsilon_i) +
+\text{Var}(\theta\epsilon_{i-1})
+$$
 
 Furthermore, we know that $\text{Var}(aX) = a^2\text{Var}(X)$, so:
 
-$$ \text{Var}(\epsilon_i + \theta\epsilon_{i-1}) = \text{Var}(\epsilon_i) +
-\theta^2\text{Var}(\epsilon_{i-1}) $$
+$$
+\text{Var}(\epsilon_i + \theta\epsilon_{i-1}) = \text{Var}(\epsilon_i) +
+\theta^2\text{Var}(\epsilon_{i-1})
+$$
 
 Finally, since the $\epsilon_i$'s are Nor(0,1), they both have variance one,
 leaving us with:
 
-$$ \text{Var}(\epsilon_i + \theta\epsilon_{i-1}) = 1 + \theta^2 $$
+$$
+\text{Var}(\epsilon_i + \theta\epsilon_{i-1}) = 1 + \theta^2
+$$
 
 Now, let's look at the covariance between successive $Y_i, Y_{i+1}$ pairs.
 Here's a covariance property:
 
-$$ \begin{alignedat}{1} & \text{Cov}(aX + bY, cW + dV) = \\
+$$
+\begin{alignedat}{1} & \text{Cov}(aX + bY, cW + dV) = \\
 & ac\text{Cov}(X,W) + ad\text{Cov}(X,V) + bc\text{Cov}(Y,W) + bd\text{Cov}(Y,V)
-\end{alignedat} $$
+\end{alignedat}
+$$
 
 So:
 
-$$ \begin{alignedat}{1} & \text{Cov}(\epsilon_i + \theta\epsilon_{i-1},
+$$
+\begin{alignedat}{1} & \text{Cov}(\epsilon_i + \theta\epsilon_{i-1},
 \epsilon_{i+1} + \theta\epsilon_i) = \\
 & \text{Cov}(\epsilon_i, \epsilon_{i+1}) +
 \theta\text{Cov}(\epsilon_i,\epsilon_i) +
 \theta\text{Cov}(\epsilon_{i-1},\epsilon_{i+1}) +
-\theta^2\text{Cov}(\epsilon_{i-1},\epsilon_i) \end{alignedat} $$
+\theta^2\text{Cov}(\epsilon_{i-1},\epsilon_i) \end{alignedat}
+$$
 
 Since the $\epsilon_i$'s are independent, we know that $\text{Cov}(\epsilon_i,
 \epsilon_j) = 0, i \neq j$. So:
 
-$$ \text{Cov}(\epsilon_i + \theta\epsilon_{i-1}, \epsilon_{i+1} +
-\theta\epsilon_i) = \theta\text{Cov}(\epsilon_i,\epsilon_i) $$
+$$
+\text{Cov}(\epsilon_i + \theta\epsilon_{i-1}, \epsilon_{i+1} +
+\theta\epsilon_i) = \theta\text{Cov}(\epsilon_i,\epsilon_i)
+$$
 
 We also know that $\text{Cov}(X,X) = \text{Var}(X)$, and, since $\epsilon_i \sim
 \text{Nor}(0,1)$, $\text{Var}(\epsilon_i) = 1$. So:
 
-$$ \text{Cov}(\epsilon_i + \theta\epsilon_{i-1}, \epsilon_{i+1} +
-\theta\epsilon_i) = \theta $$
+$$
+\text{Cov}(\epsilon_i + \theta\epsilon_{i-1}, \epsilon_{i+1} +
+\theta\epsilon_i) = \theta
+$$
 
 We can also demonstrate, using the above formula, that $\text{Cov}(Y_i, Y_{i+k})
 = 0, k \geq 2$.
@@ -928,7 +1080,9 @@ Now let's look at a **first-order autoregressive process**, or AR(1), which is
 used to model many different real-world processes. The AR(1) process is defined
 as:
 
-$$ Y_i = \phi Y_{i-1} + \epsilon_i, i =1,2,..., $$
+$$
+Y_i = \phi Y_{i-1} + \epsilon_i, i =1,2,...,
+$$
 
 In order for this process to remain
 [stationary](https://en.wikipedia.org/wiki/Stationary_process), we need to
@@ -939,7 +1093,9 @@ Unlike the MA(1) process, non-consecutive observations in the AR(1) process have
 non-zero correlation. Specifically, the covariance function between $Y_i$ and
 $Y_{i+k}$ is as follows:
 
-$$ \text{Cov}(Y_i, Y_{i+k}) = \phi^{|k|}, k = 0, \pm 1, \pm 2 $$
+$$
+\text{Cov}(Y_i, Y_{i+k}) = \phi^{|k|}, k = 0, \pm 1, \pm 2
+$$
 
 The correlations start out large for consecutive observations and decrease as
 $k$ increases, but they never quite become zero; there is always some
@@ -957,12 +1113,16 @@ get $Y_1 = \phi Y_0 + \epsilon_1$.  Then, we can generate $\epsilon_2 \sim
 
 Remember that:
 
-$$ aX \sim \text{Nor}(a\mu , a^2\sigma^2), \quad X \sim \text{Nor}(0,1) $$
+$$
+aX \sim \text{Nor}(a\mu , a^2\sigma^2), \quad X \sim \text{Nor}(0,1)
+$$
 
 So:
 
-$$ \sqrt{1-\phi^2}\epsilon_i \sim \text{Nor}(0, 1-\phi^2), \quad \epsilon_i \sim
-\text{Nor}(0,1) $$
+$$
+\sqrt{1-\phi^2}\epsilon_i \sim \text{Nor}(0, 1-\phi^2), \quad \epsilon_i \sim
+\text{Nor}(0,1)
+$$
 
 Here are the plots of three AR(1) processes, each parameterized with a different
 value of $\phi$.
@@ -975,8 +1135,10 @@ The ARMA($p$,$q$) process is an obvious generalization of the MA(1) and AR(1)
 processes, which consists of a $p$th order AR process and a $q$th order MA
 process, which we will define as:
 
-$$ Y_i = \sum_{j=1}^p = \phi_j Y_{i-j} + \epsilon_i  + \sum_{j=1}^q
-\theta_j\epsilon_{i-j}, \quad i = 1,2,..., $$
+$$
+Y_i = \sum_{j=1}^p = \phi_j Y_{i-j} + \epsilon_i  + \sum_{j=1}^q
+\theta_j\epsilon_{i-j}, \quad i = 1,2,...,
+$$
 
 In the first sum, we can see the $p$ autoregressive components, and, in the
 second sum, we can see the $q$ moving average components.
@@ -990,9 +1152,11 @@ processes are used in a variety of forecasting and modeling applications.
 An **exponential autoregressive process**, or EAR, is an autoregressive process
 that has exponential, not normal, noise. Here's the definition:
 
-$$ Y_i = \begin{cases} \phi Y_{i-1}, & \text{w.p. } \phi \\
+$$
+Y_i = \begin{cases} \phi Y_{i-1}, & \text{w.p. } \phi \\
 \phi Y_{i-1} + \epsilon_i, & \text{w.p. } 1 - \phi \\
-\end{cases} \quad i = 1,2,..., $$
+\end{cases} \quad i = 1,2,...,
+$$
 
 Here we need to ensure that $0 \leq \phi < 1$, $Y_0 \sim \text{Exp}(1)$, and the
 $\epsilon_i$'s are iid Exp(1) random variables.
@@ -1000,7 +1164,9 @@ $\epsilon_i$'s are iid Exp(1) random variables.
 Believe it or not, the EAR(1) has the same covariance function as the AR(1),
 except that the bounds of $\phi$ are different:
 
-$$ \text{Cov}(Y_i, Y_{i+k}) = \phi^{|k|}, 0 \leq \phi < 1 $$
+$$
+\text{Cov}(Y_i, Y_{i+k}) = \phi^{|k|}, 0 \leq \phi < 1
+$$
 
 Let's look at a plot of an EAR(1) process with $\phi = 0$. These observations
 are iid exponential, and if we were to make a histogram of these observations,
@@ -1021,7 +1187,9 @@ A random variable $X$ has the [Pareto
 distribution](https://en.wikipedia.org/wiki/Pareto_distribution) with parameters
 $\lambda > 0$ and $\beta > 0$ if it has the cdf:
 
-$$ F_X(x) = 1 - (\lambda/x)^\beta, x \geq \lambda $$
+$$
+F_X(x) = 1 - (\lambda/x)^\beta, x \geq \lambda
+$$
 
 This distribution has a very fat tail. In other words, its pdf approaches zero
 (its cdf approaches one) much more slowly than the normal distribution.
@@ -1029,7 +1197,9 @@ This distribution has a very fat tail. In other words, its pdf approaches zero
 To obtain the ARP process, let's first start off with a regular AR(1) process
 with normal noise:
 
-$$ Y_i = \rho Y_{i-1} + \epsilon_i, \quad i = 1,2,..., $$
+$$
+Y_i = \rho Y_{i-1} + \epsilon_i, \quad i = 1,2,...,
+$$
 
 Recall that we need to ensure that $-1 < \rho < 1$, $Y_0 \sim \text{Nor}(0,1)$,
 and that the $\epsilon_i$'s are iid $\text{Nor}(0, 1 - \rho^2)$. Note that that
@@ -1043,8 +1213,10 @@ their own cdf, $\Phi(\cdot)$ to obtain Unif(0,1) random variables: $U_i =
 Now, we can feed the correlated $U_i$'s into the inverse of the Pareto cdf to
 obtain correlated Pareto observations:
 
-$$ X_i = F_X^{-1}(U_i) = F_X^{-1}(\Phi(Y_i)) = \frac{\lambda}{[1 -
-\Phi(Y_i)]^{1/\beta}}, \quad i = 1,2,..., $$
+$$
+X_i = F_X^{-1}(U_i) = F_X^{-1}(\Phi(Y_i)) = \frac{\lambda}{[1 -
+\Phi(Y_i)]^{1/\beta}}, \quad i = 1,2,...,
+$$
 
 ### DEMO
 
@@ -1108,7 +1280,9 @@ equation for generating a series of waiting times where we don't need to worry
 about the exponential assumptions. Here's how we generate the $(i+1)$st queue
 time:
 
-$$ W^Q_{i+1} = \max\{W^Q_{i} + S_{i} - I_{i+1}, 0\} $$
+$$
+W^Q_{i+1} = \max\{W^Q_{i} + S_{i} - I_{i+1}, 0\}
+$$
 
 This expression makes sense. If the $i$th customer waited a long time, we expect
 the $(i+1)$st customer to wait a long time. Similarly, if the $i$th customer has
@@ -1120,7 +1294,9 @@ course, wait times cannot be negative.
 We can express the total time in the system for customer $i$ as $W_i^Q + S_i$.
 Here's how we generate $W^Q_{i+1}$:
 
-$$ W_{i+1} = \max\{W_i - I_{i+1}, 0\} + S_{i+1} $$
+$$
+W_{i+1} = \max\{W_i - I_{i+1}, 0\} + S_{i+1}
+$$
 
 Customer $i+1$ has to wait until customer $i$ clears out of the system, which
 occurs in $W_i - I_{i+1}$ time. Then, customer $i+1$ must remain in the system
@@ -1177,8 +1353,10 @@ How do we get Brownian motion? Let's let $Y_1, Y_2,...,Y_n$ be any sequence of
 iid random variables with mean zero and variance one. [Donsker's Central Limit
 Theorem](https://en.wikipedia.org/wiki/Donsker%27s_theorem) says that:
 
-$$ \frac{1}{\sqrt{n}} \sum_{i=1}^{\lfloor nt \rfloor} Y_i \overset{\text d}{\to}
-\mathcal{W}(t), \text{ as } n \to \infty $$
+$$
+\frac{1}{\sqrt{n}} \sum_{i=1}^{\lfloor nt \rfloor} Y_i \overset{\text d}{\to}
+\mathcal{W}(t), \text{ as } n \to \infty
+$$
 
 > Remember that $\overset{\text d}{\to}$ denotes convergence in distribution as
 > $n$ gets big and $\lfloor \cdot \rfloor$ denotes the floor or "round down"
@@ -1203,9 +1381,11 @@ simply sample $Y_i \sim \text{Nor}(0,1)$.
 Let's construct some Brownian motion. First, we pick some "large" value of $n$
 and start with $\mathcal{W}(0)=0$. Then:
 
-$$ \mathcal{W}\left(\frac{i}{n}\right) = \mathcal{W}\left(\frac{i - 1}{n}\right)
+$$
+\mathcal{W}\left(\frac{i}{n}\right) = \mathcal{W}\left(\frac{i - 1}{n}\right)
 
-- \frac{Y_i}{\sqrt{n}} $$
+- \frac{Y_i}{\sqrt{n}}
+$$
 
 ### Miscellaneous Properties of Brownian Motion
 
@@ -1216,7 +1396,9 @@ The covariance between two points in a Brownian motion is the minimum of the two
 times: $\text{Cov}(\mathcal{W}(s), \mathcal{W}(t)) = \min(s,t)$. We can use this
 result to prove that the area under $\mathcal{W}(t)$ from zero to one is normal:
 
-$$ \int_0^1 \mathcal{W}(t)dt \sim \text{Nor}(0, \frac{1}{3}) $$
+$$
+\int_0^1 \mathcal{W}(t)dt \sim \text{Nor}(0, \frac{1}{3})
+$$
 
 A **Brownian bridge**, $\mathcal{B}(t)$, is conditioned Brownian motion such
 that $\mathcal{W}(0) = \mathcal{W}(1) = 0$. Brownian bridges are useful in
@@ -1224,7 +1406,9 @@ financial analysis. The covariance structure for a Brownian bridge is
 $\text{Cov}(\mathcal{B}(s), \mathcal{B}(t)) = \min(s,t) - st$. Finally, the area
 under $\mathcal{B}(t)$ from zero to one is normal:
 
-$$ \int_0^1 \mathcal{B}(t)dt \sim \text{Nor}(0, \frac{1}{12}) $$
+$$
+\int_0^1 \mathcal{B}(t)dt \sim \text{Nor}(0, \frac{1}{12})
+$$
 
 ### Geometric Brownian Motion
 
@@ -1232,8 +1416,10 @@ Now let's talk about geometric Brownian motion, which is particularly useful in
 financial analysis. We can model a stock price, for example, with the following
 process:
 
-$$ S(t) = S(0)\exp\left\{\left(\mu - \frac{\sigma^2}{2}\right)t +
-\sigma\mathcal{W}(t)\right\}, \quad t \geq 0 $$
+$$
+S(t) = S(0)\exp\left\{\left(\mu - \frac{\sigma^2}{2}\right)t +
+\sigma\mathcal{W}(t)\right\}, \quad t \geq 0
+$$
 
 Let's unpack some of these terms. Of course, $\mathcal{W}(t)$ is the Brownian
 motion, which provides the randomness in the stock price. The term $\sigma$
@@ -1264,7 +1450,9 @@ share using the option when we can just go to the market and buy it for less.
 The question then becomes: what is a fair price to pay for an option? The value,
 $V$ of an option is:
 
-$$ V = e^{-rT}E[(S(T) - k)^+] $$
+$$
+V = e^{-rT}E[(S(T) - k)^+]
+$$
 
 The expression $S(T) - k$ is the profit we make from exercising an option at
 time $T$, which we bought for $k$ dollars. Since we never consider taking a
@@ -1300,16 +1488,20 @@ the Black-Sholes equation.
 Let $\phi(\cdot)$ and $\Phi(\cdot)$ denote the Nor(0,1) pdf and cdf
 respectively. Moreover, let's define a constant, $b$:
 
-$$ b \equiv \frac{rT - \frac{\sigma^2 T}{2} - \ln(k / S(0))}{\sigma\sqrt T} $$
+$$
+b \equiv \frac{rT - \frac{\sigma^2 T}{2} - \ln(k / S(0))}{\sigma\sqrt T}
+$$
 
 The Black-Sholes European call option value is:
 
-$$ \begin{alignedat}{1} & e^{-rT}E[S(T) - k]^+ \\
+$$
+\begin{alignedat}{1} & e^{-rT}E[S(T) - k]^+ \\
 & = e^{-rT}E\left[S(0)\exp\left\{\left(\mu - \frac{\sigma^2}{2})T +
 \sigma\mathcal{W}(T)\right\} - k\right)\right]^+ \\
 & = e^{-rT}\int_{-\infty}^\infty \left[S(0)\exp\left\{\left(r -
 \frac{\sigma^2}{2})T + \sigma\sqrt T z \right\} - k\right)\right]^+ \phi(z)dz \\
-&= S(0) \Phi(b+\sigma\sqrt{T}) - ke^{-rT}\Phi(b) \end{alignedat} $$
+&= S(0) \Phi(b+\sigma\sqrt{T}) - ke^{-rT}\Phi(b) \end{alignedat}
+$$
 
 ### DEMO
 

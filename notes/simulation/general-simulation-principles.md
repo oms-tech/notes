@@ -337,15 +337,18 @@ Let's look at a simple example of the next-event time advance mechanism. We will
 consider a single server system containing a FIFO queue that will process
 exactly ten customers. The arrival and service times for these customers are:
 
-$$ \begin{array}{c|cccccccccc} \hline \text{customer} & 1 & 2 & 3 & 4 & 5 & 6 &
+$$
+\begin{array}{c|cccccccccc} \hline \text{customer} & 1 & 2 & 3 & 4 & 5 & 6 &
 7 & 8 & 9 & 10 \\
 \hline \text{arrival time} & 1 & 3 & 4 & 10 & 17 & 18 & 19 & 20 & 27 & 29 \\
 \hline \text{service time} & 5 & 4 & 1 & 3 & 2 & 1 & 4 & 7 & 3 & 1 \\
-\hline \end{array} $$
+\hline \end{array}
+$$
 
 Now, let's see how the simulation unfolds.
 
-$$ \begin{array}{c|cc|c|c|cc} \text{Clock} & && \text{Queue} & \text{FEL} &
+$$
+\begin{array}{c|cc|c|c|cc} \text{Clock} & && \text{Queue} & \text{FEL} &
 \text{busy} & \text{time in} \\
 t & L_Q(t) & B(t) & \text{(cust, arr time)} & \text{(event time, event type)} &
 \text{time} & \text{sys} \\
@@ -356,7 +359,8 @@ t & L_Q(t) & B(t) & \text{(cust, arr time)} & \text{(event time, event type)} &
 6 & 1 & 1 & \empty & \text{(10, 2D), (10, 4A)} & 5 & 10 \\
 10 & 0 & 1 & \empty & \text{(10, 4A), (11, 3D)} & 9 & 18 \\
 \vdots \\
-\end{array} $$
+\end{array}
+$$
 
 In the first column, we see the simulation clock, which we represent with the
 variable $t$. In the second column, we see the system state, which contains two

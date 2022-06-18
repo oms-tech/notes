@@ -525,18 +525,28 @@ What is the Sharpe ratio of this strategy?
 
 Let's recall our formula for the Sharpe ratio:
 
-$$ S = K \times \frac{mean(R_p - R_f)}{\sigma_{R_p}} $$
+$$
+S = K \times \frac{mean(R_p - R_f)}{\sigma_{R_p}}
+$$
 
 Given that $R_p = 0.001$ on average, $R_f = 0.0002$ on average, and $\sigma{R_p}
 = 0.001$, with a daily sample rate:
 
-$$ S = \sqrt{252} \times \frac{0.001 - 0.0002}{0.001} $$
+$$
+S = \sqrt{252} \times \frac{0.001 - 0.0002}{0.001}
+$$
 
-$$ S = \sqrt{252} \times \frac{0.0008}{0.001} $$
+$$
+S = \sqrt{252} \times \frac{0.0008}{0.001}
+$$
 
-$$ S = \sqrt{252} \times 0.8 $$
+$$
+S = \sqrt{252} \times 0.8
+$$
 
-$$ S \approx 12.7 $$
+$$
+S \approx 12.7
+$$
 
 ## Optimizers: Building a Parameterized Model
 
@@ -1008,7 +1018,9 @@ Consider a company that pays a dividend of \$2 per year. Given a discount rate o
 The present value, $PV$, of a company is equal to the future value, $FV$,
 divided by the discount rate, $DR$. Given $FV = 2$ and $DR = 0.04$,
 
-$$ PV = \frac{\$2}{0.04} = \$50 $$
+$$
+PV = \frac{\$2}{0.04} = \$50
+$$
 
 ### Compute Company Value Quiz
 
@@ -1079,16 +1091,24 @@ Stock B decreases by 2%. What is the return on this portfolio?
 
 Remember the formula to calculate portfolio return.
 
-$$ r_p(t) = \sum_i^n{w_i r_i(t)} $$
+$$
+r_p(t) = \sum_i^n{w_i r_i(t)}
+$$
 
 If we plug in the weights and returns for Stock A and Stock B, we can compute a
 portfolio return of 1.25%.
 
-$$ r_p(t) = (0.75 \times 1) + (-0.25 \times -2) $$
+$$
+r_p(t) = (0.75 \times 1) + (-0.25 \times -2)
+$$
 
-$$ r_p(t) = 0.75 + 0.5 $$
+$$
+r_p(t) = 0.75 + 0.5
+$$
 
-$$ r_p(t) = 1.25 $$
+$$
+r_p(t) = 1.25
+$$
 
 ### Compare Alpha and Beta Quiz
 
@@ -1205,42 +1225,68 @@ weights be for stock A and stock B so that we can minimize market risk?
 
 We need to solve the following equation.
 
-$$ 0 = 0.01w_A + 0.02w_B $$
+$$
+0 = 0.01w_A + 0.02w_B
+$$
 
-$$ w_A = -2w_B $$
+$$
+w_A = -2w_B
+$$
 
 We also know that the sum of the absolute values $w_A$ and $w_B$ should equal
 one.
 
-$$ |w_A| + |w_B| = 1 $$
+$$
+|w_A| + |w_B| = 1
+$$
 
 If we substitute $-2w_B$ for $w_A$, we can solve for $w_B$.
 
-$$ |-2w_b| + |w_b| = 1 $$
+$$
+|-2w_b| + |w_b| = 1
+$$
 
-$$ |-3w_b| = 1 $$
+$$
+|-3w_b| = 1
+$$
 
-$$ |w_b| = \frac{1}{3} $$
+$$
+|w_b| = \frac{1}{3}
+$$
 
 However, since we want to short B, $w_B$ is actually $\frac{-1}{3}$, not
 $\frac{1}{3}$. We can now solve for $w_A$.
 
-$$ |w_A| + |w_B| = 1 $$
+$$
+|w_A| + |w_B| = 1
+$$
 
-$$ |w_A| + |-\frac{1}{3}| = 1 $$
+$$
+|w_A| + |-\frac{1}{3}| = 1
+$$
 
-$$ |w_B| = \frac{2}{3} $$
+$$
+|w_B| = \frac{2}{3}
+$$
 
 If we plug these two weights back into our original equation, we can verify that
 we do get an overall $\beta_p$ of 0.
 
-$$ \beta_p = 0.01w_A + 0.02w_B $$
+$$
+\beta_p = 0.01w_A + 0.02w_B
+$$
 
-$$ \beta_p = (0.01 \times 0.66) + (0.02 \times -0.33) $$
+$$
+\beta_p = (0.01 \times 0.66) + (0.02 \times -0.33)
+$$
 
-$$ \beta_p = 0.66 - 0.66 $$
+$$
+\beta_p = 0.66 - 0.66
+$$
 
-$$ \beta_p = 0 $$
+$$
+\beta_p = 0
+$$
 
 ## Technical Analysis
 
@@ -1429,8 +1475,10 @@ Since we are using a biased coin, we have a 51% chance of winning 1000 tokens
 and a 49% chance of losing 1000 tokens. If we multiply this out, we see that our
 expected return is 20 tokens.
 
-$$ \mathbb{E} = 0.51 \times 1000 + 0.49 \times -1000 \\= (0.51 - 0.49) \times
-1000 \\= (0.02) \times 1000 \\ =20 $$
+$$
+\mathbb{E} = 0.51 \times 1000 + 0.49 \times -1000 \\= (0.51 - 0.49) \times
+1000 \\= (0.02) \times 1000 \\ =20
+$$
 
 What is the expected return in the multi-bet case, where we bet 1000 tokens
 across 1000 different tables?
@@ -1446,12 +1494,13 @@ respectively - but the amount we stand to win or lose on any bet is only one
 dollar. Since we are placing 1000 bets, our overall expected value is 1000 times
 the expected value of any individual bet.
 
-$$ \mathbb{E} = 1000 \times (0.51 \times 1 + 0.49 \times -1) \\= (0.51 - 0.49)
-\times 1000 \\= (0.02) \times 1000 \\ =20 $$
+$$
+\mathbb{E} = 1000 \times (0.51 \times 1 + 0.49 \times -1) \\= (0.51 - 0.49)
+\times 1000 \\= (0.02) \times 1000 \\ =20
+$$
 
 Notice that for both the single-bet and multi-bet scenarios, the expected return
-
-- the reward - is precisely the same. To understand why the multi-bet setup is a
+\- the reward - is precisely the same. To understand why the multi-bet setup is a
 better choice, we have to also consider the risk inherent in each scenario.
 
 ### Coin-Flip Casino: Reward/Risk Quiz
@@ -1503,25 +1552,39 @@ Let's step through the math. Since Buffett and Simons both have the same
 information ratio, we can set the equation for $IR_B$ equal to the equation for
 $IR_S$.
 
-$$ IC_B \times \sqrt{B_B} = IC_S \times \sqrt{B_S} $$
+$$
+IC_B \times \sqrt{B_B} = IC_S \times \sqrt{B_S}
+$$
 
 Furthermore, we know that Simons's IC is 1/1000th Buffett's IC.
 
-$$ IC_B \times \sqrt{B_B} = \frac{IC_B \times \sqrt{B_S}}{1000} $$
+$$
+IC_B \times \sqrt{B_B} = \frac{IC_B \times \sqrt{B_S}}{1000}
+$$
 
 We can manipulate this equation to isolate $B_S$.
 
-$$ 1000 = \frac{IC_B \times \sqrt{B_S}}{IC_B \times \sqrt{B_B}} $$
+$$
+1000 = \frac{IC_B \times \sqrt{B_S}}{IC_B \times \sqrt{B_B}}
+$$
 
-$$ 1000 = \frac{\sqrt{B_S}}{\sqrt{B_B}} $$
+$$
+1000 = \frac{\sqrt{B_S}}{\sqrt{B_B}}
+$$
 
-$$ 1000 \times \sqrt{B_B} = \sqrt{B_S} $$
+$$
+1000 \times \sqrt{B_B} = \sqrt{B_S}
+$$
 
-$$ 1000000 \times B_B = B_S $$
+$$
+1000000 \times B_B = B_S
+$$
 
 Since we know that $B_B = 120$, we can solve for $B_S$.
 
-$$ 1000000 \times 120 = B_S = 120,000,000 $$
+$$
+1000000 \times 120 = B_S = 120,000,000
+$$
 
 ## Portfolio Optimization and the Efficient Frontier
 
@@ -1698,4 +1761,6 @@ T_c[s,a,s_n]$, where $n$ is the size of $S$, the state space.
 
 Altogether, we have the following equation:
 
-$$ T[s,a,s'] = \frac{T_c[s,a,s']}{\sum_{i}^{n}T_c[s,a,s_i]} $$
+$$
+T[s,a,s'] = \frac{T_c[s,a,s']}{\sum_{i}^{n}T_c[s,a,s_i]}
+$$

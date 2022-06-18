@@ -34,7 +34,9 @@ We can leverage a Q-table to determine $\pi$. For a particular state, $s$, we
 can consult the Q-table and, across all possible actions, $A$, return the
 particular action, $a$, such that $Q[s,a]$ is as large possible. Formally,
 
-$$ \pi(s) = argmax_a(Q[s,a]), a \in A $$
+$$
+\pi(s) = argmax_a(Q[s,a]), a \in A
+$$
 
 Note the syntax of $argmax$. The solution to the equation $a = argmax_i(f(i))$
 is the value of $i$ that maximizes $f(i)$.
@@ -96,7 +98,9 @@ Q-value for the seen state and taken action: $Q[s,a]$. The second part concerns
 an improved estimate, $E$, of the Q-value. To combine the two, we introduce a
 new variable: $\alpha$.
 
-$$ Q'[s,a] = (1 - \alpha) \times Q[s,a] + \alpha \times E $$
+$$
+Q'[s,a] = (1 - \alpha) \times Q[s,a] + \alpha \times E
+$$
 
 We refer to $\alpha$ as the **learning rate**. It can take on any value between
 0 and 1; typically, we use 0.2. Smaller values of $\alpha$ place more weight on
@@ -108,7 +112,9 @@ When we talk about the improved estimate, $E$, for the Q-value, we are talking
 about the sum of the current reward, $r$, and the future rewards, $f$. Remember
 that we have to discount future rewards, which we do with $\gamma$.
 
-$$ Q'[s,a] = (1 - \alpha) \times Q[s,a] + \alpha \times (r + \gamma \times f) $$
+$$
+Q'[s,a] = (1 - \alpha) \times Q[s,a] + \alpha \times (r + \gamma \times f)
+$$
 
 Similar to $\alpha$, $\gamma$ usually ranges from 0 to 1. A low value of
 $\gamma$ corresponds to a high discount rate and means that we value later
@@ -121,8 +127,10 @@ Q-value for the new state, $s'$. That is, the future reward for taking action
 $a$ in state $s$ is that action, $a'$, that maximizes the Q-value with regard to
 state $s'$.
 
-$$ Q'[s,a] = (1 - \alpha) \times Q[s,a] + \alpha \times (r + \gamma \times Q[s',
-argmax_{a'}(Q[s', a'])]) $$
+$$
+Q'[s,a] = (1 - \alpha) \times Q[s,a] + \alpha \times (r + \gamma \times Q[s',
+argmax_{a'}(Q[s', a'])])
+$$
 
 ## Two Finer Points
 

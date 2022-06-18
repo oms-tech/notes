@@ -34,8 +34,10 @@ selection* (CS) if we achieve our goal.
 For specified constants, $P^*$ and $\delta^*$, where $\delta^\star> 0$ and $1/k
 < P^\star< 1$ we require:
 
-$$ P(\text{CS}) \geq P^\star\quad \text{whenever} \quad \mu_{[k]} - \mu_{[k -
-1]} \geq \delta^*, \quad (1) $$
+$$
+P(\text{CS}) \geq P^\star\quad \text{whenever} \quad \mu_{[k]} - \mu_{[k -
+1]} \geq \delta^*, \quad (1)
+$$
 
 We want the probability of correct selection to be at least $P^*$, which we
 specify according to our sensitivity. Moreover, $P^*$ is in the range $(1/k,
@@ -128,7 +130,9 @@ Once we have $n$, we will take a random sample of $n$ observations $Y_{ij},
 
 We then calculate the $k$ sample means:
 
-$$ \bar Y_i = \sum_{j=1}^n Y_{ij}/n, \quad (1 \leq i \leq k) $$
+$$
+\bar Y_i = \sum_{j=1}^n Y_{ij}/n, \quad (1 \leq i \leq k)
+$$
 
 We will select the population that yields the largest sample mean, $\bar Y_{[k]}
 = \max\{\bar Y_1,..., \bar Y_k\}$ as the one associated with $\mu_{[k]}$.
@@ -150,18 +154,24 @@ observations.
 If we don't want to use the table, we can directly calculate $n$ using a
 multivariate normal quantile:
 
-$$ n = \left\lceil 2\left(\sigma Z^{(1 - P^*)}_{k-1,1/2} / \delta^\star\right)^2
-\right\rceil $$
+$$
+n = \left\lceil 2\left(\sigma Z^{(1 - P^*)}_{k-1,1/2} / \delta^\star\right)^2
+\right\rceil
+$$
 
 Let's remember our probability requirement:
 
-$$ P(\text{CS}) \geq P^\star\quad \text{whenever} \quad \mu_{[k]} - \mu_{[k -
-1]} \geq \delta^* $$
+$$
+P(\text{CS}) \geq P^\star\quad \text{whenever} \quad \mu_{[k]} - \mu_{[k -
+1]} \geq \delta^*
+$$
 
 The value of $n$ satisfies the above requirement for any vector of unknown
 means, $\boldsymbol \mu$, having the following configuration:
 
-$$ \mu_{[1]} = \mu_{[k-1]} = \mu_{[k]} - \delta^* $$
+$$
+\mu_{[1]} = \mu_{[k-1]} = \mu_{[k]} - \delta^*
+$$
 
 This configuration is known as the slippage, or least-favorable, configuration.
 All of the inferior means are the same, and the best mean is $\delta^*$ better
@@ -174,14 +184,18 @@ Let's look at a proof of how we calculate $n$. Let's start by defining $P^*$ as
 the probability of correct selection given that we are in the least-favorable
 configuration:
 
-$$ P^\star= P(\text{CS}|\text{LF}) $$
+$$
+P^\star= P(\text{CS}|\text{LF})
+$$
 
 The correct selection is that population that has the true best mean. We can
 only make the correct selection if the sample mean corresponding to the true
 best mean is bigger than all the other sample means. Assuming the true best
 population is the $k$th one:
 
-$$ P^\star= P\{\bar Y_i < \bar Y_k, i = 1,...,k-1|\text{LF}\} $$
+$$
+P^\star= P\{\bar Y_i < \bar Y_k, i = 1,...,k-1|\text{LF}\}
+$$
 
 If we select population $k$, we better make sure that its sample mean is larger
 than the sample means from all other competing populations.
@@ -190,29 +204,37 @@ Let's standardize the right-hand side of the inequality by subtracting its true
 mean, $\mu_k$, whatever that may be, and dividing by its variance, $\sigma^2 /
 n$. Of course, we have to apply the same transformation to the left-hand side:
 
-$$ P^\star= P\left\{\frac{\bar Y_i - \mu_k}{\sqrt{\sigma^2 / n}} < \frac{\bar
-Y_k - \mu_k}{\sqrt{\sigma^2 / n}}, i = 1,...,k-1 \Big| \text{LF} \right\} $$
+$$
+P^\star= P\left\{\frac{\bar Y_i - \mu_k}{\sqrt{\sigma^2 / n}} < \frac{\bar
+Y_k - \mu_k}{\sqrt{\sigma^2 / n}}, i = 1,...,k-1 \Big| \text{LF} \right\}
+$$
 
 We know that the right-hand side of the inequality is a standard normal random
 variable. Let's call that $x$ now.  We can condition it out by integrating over
 all $x$. Notice that we have to include the standard normal pdf, $\phi(x)$, in
 this integration:
 
-$$ P^\star= \int_{\mathbb{R}} P\left\{\frac{\bar Y_i - \mu_k}{\sqrt{\sigma^2 /
-n}} < x, i = 1,...,k-1 \Big| \text{LF} \right\}\phi(x) dx $$
+$$
+P^\star= \int_{\mathbb{R}} P\left\{\frac{\bar Y_i - \mu_k}{\sqrt{\sigma^2 /
+n}} < x, i = 1,...,k-1 \Big| \text{LF} \right\}\phi(x) dx
+$$
 
 Now, let's standardize the right-hand side of the inequality. We can't just
 subtract by $\mu_i$ since we are already subtracting by $\mu_k$, so we have to
 add an adjustment factor on the right-hand side:
 
-$$ P^\star= \int_{\mathbb{R}} P\left\{\frac{\bar Y_i - \mu_i}{\sqrt{\sigma^2 /
-n}} < x + \frac{\sqrt{n}\delta^*}{\sigma}, i = 1,...,k-1 \right\}\phi(x) dx $$
+$$
+P^\star= \int_{\mathbb{R}} P\left\{\frac{\bar Y_i - \mu_i}{\sqrt{\sigma^2 /
+n}} < x + \frac{\sqrt{n}\delta^*}{\sigma}, i = 1,...,k-1 \right\}\phi(x) dx
+$$
 
 Now we are dealing with the cdf of a standard normal random variable, by
 definition. Therefore:
 
-$$ P^\star= \int_{\mathbb{R}} \Phi^{k-1}\left(x +
-\frac{\sqrt{n}\delta^*}{\sigma}\right)\phi(x) dx $$
+$$
+P^\star= \int_{\mathbb{R}} \Phi^{k-1}\left(x +
+\frac{\sqrt{n}\delta^*}{\sigma}\right)\phi(x) dx
+$$
 
 Since the observations are independent, and we have $k-1$ of them, we have to
 multiply the expression together $k-1$ times. That's why we have the
@@ -220,7 +242,9 @@ $\Phi^{k-1}$ notation.
 
 If we set $h = (\sqrt{n} + \delta^*) / \sigma$, then:
 
-$$ P^\star= \int_{\mathbb{R}} \Phi^{k-1}(x+h)\phi(x) dx $$
+$$
+P^\star= \int_{\mathbb{R}} \Phi^{k-1}(x+h)\phi(x) dx
+$$
 
 Finally, we solve numerically for $h$ and set $n = \lceil (h\sigma /
 \delta^*)^2\rceil$.
@@ -342,8 +366,10 @@ As in previous lessons, we will again specify a formal probability requirement.
 For specified constants, $(P^*, \Delta^*)$, where $\Delta^\star> 0$ and $1/k <
 P^\star< 1$, we require:
 
-$$ P(\text{CS}) \geq P^\star\quad \text{whenever} \quad \mu_{[k]} - \mu_{[k -
-1]} \geq \Delta^*, \quad $$
+$$
+P(\text{CS}) \geq P^\star\quad \text{whenever} \quad \mu_{[k]} - \mu_{[k -
+1]} \geq \Delta^*, \quad
+$$
 
 This requirement states that whenever there is a large difference between the
 best and second-best system - greater than or equal to $\Delta^*$ - we want to
@@ -362,7 +388,9 @@ Next, we take a sample of $n$ observations, $X_{ij} (1 \leq j \leq n)$, in a
 single stage from each population $(1 \leq i \leq k)$. From there, we calculate
 the $k$ sample sums:
 
-$$ Y_{in} = \sum_{j=1}^n X_{ij} $$
+$$
+Y_{in} = \sum_{j=1}^n X_{ij}
+$$
 
 In plain English, $Y_{in}$ represents the number of successes from the $i$th
 population under study. We then select the treatment that yielded the largest
@@ -378,8 +406,10 @@ to meet this requirement.
 
 Suppose that, at the end of sampling, we have the following success counts:
 
-$$ Y_{1,212} = 70 \quad Y_{2,212} = 145 \quad Y_{3,212} = 95 \quad Y_{4,212} =
-102 $$
+$$
+Y_{1,212} = 70 \quad Y_{2,212} = 145 \quad Y_{3,212} = 95 \quad Y_{4,212} =
+102
+$$
 
 Then we select population two as best.
 
@@ -419,7 +449,9 @@ This procedure involves a new probability requirement. For specified $(P^*,
 \theta^*)$, with $1/k < P^\star< 1$ and $\theta^\star> 1$, we require
 $P(\text{CS}) \geq P^*$ whenever the odds ratio:
 
-$$ \frac{p_{[k]} / (1 - p_{[k]})}{p_{[k-1]} / (1 - p_{[k-1]})} \geq \theta^* $$
+$$
+\frac{p_{[k]} / (1 - p_{[k]})}{p_{[k-1]} / (1 - p_{[k-1]})} \geq \theta^*
+$$
 
 Here, we are taking the ratio of the odds that the $k$th population is the best
 over the odds that the $k-1$th population is the best. Whenever that ratio is
@@ -438,16 +470,22 @@ the vector might look like $(0,1,1,1,0)$.
 
 Next, we compute the population sums so far:
 
-$$ Y_{im} = \sum_{j=1}^m X_{ij}, \quad (1 \leq i \leq k) $$
+$$
+Y_{im} = \sum_{j=1}^m X_{ij}, \quad (1 \leq i \leq k)
+$$
 
 Then, we order the sums:
 
-$$ Y_{[1]m} \leq \cdots \leq Y_{[k]m} $$
+$$
+Y_{[1]m} \leq \cdots \leq Y_{[k]m}
+$$
 
 We stop at stage $m$ if the following inequality holds:
 
-$$ Z_m \equiv \sum_{i=1}^{k-1} (1 / \theta^*)^{Y_{[k]m} - Y_{[i]m}} \leq
-\frac{1-P^*}{P^*} $$
+$$
+Z_m \equiv \sum_{i=1}^{k-1} (1 / \theta^*)^{Y_{[k]m} - Y_{[i]m}} \leq
+\frac{1-P^*}{P^*}
+$$
 
 If the difference $Y_{[k]m} - Y_{[i]m}$ is large, for all $i$, then $1 /
 \theta^*$ raised to that power will be small, and the summation is likely to be
@@ -460,14 +498,16 @@ the population yielding $Y_{[k]N}$ as the one associated with $p_{[k]}$.
 For example, let $k = 3$ and $(P^*, \theta^*) = (0.75, 2)$. Suppose we obtain
 the following sequence of vector-observations using $\mathcal B_{\text{BKS}}$:
 
-$$ \begin{array}{c|ccc|ccc|c} m & X_{1m} & X_{2m} & X_{3m} & Y_{1m} & Y_{2m} &
+$$
+\begin{array}{c|ccc|ccc|c} m & X_{1m} & X_{2m} & X_{3m} & Y_{1m} & Y_{2m} &
 Y_{3m} & Z_m \\ \hline 1 & 1 & 0 & 1 & 1 & 0 & 1 & 1.5 \\
 2 & 0 & 1 & 1 & 1 & 1 & 2 & 1.0 \\
 3 & 0 & 1 & 1 & 1 & 2 & 3 & 0.75 \\
 4 & 0 & 0 & 1 & 1 & 2 & 4 & 0.375 \\
 5 & 1 & 1 & 1 & 2 & 3 & 5 & 0.375 \\
 6 & 1 & 0 & 1 & 3 & 3 & 6 & 0.25 \\
-\end{array} $$
+\end{array}
+$$
 
 Given $P^\star= 0.75$, we stop when $Z_m \leq (1-0.75)/0.75 = 1/3$. After the $N
 = 6$ round of sampling, we get $Z_6 = 0.25 \leq 1/3$, and we choose the
@@ -507,8 +547,10 @@ Let's look at a definition. Suppose we have a $k$-variate discrete vector random
 variable $\bold Y = (Y_1, Y_2,...,Y_k)$ with the following probability mass
 function:
 
-$$ P\{Y_1 = y_1, Y_2 = y_2,...,Y_k = y_k\} =
-\frac{n!}{\prod_{i=1}^ky_i!}\prod_{i=1}^k p^{y_i}_i $$
+$$
+P\{Y_1 = y_1, Y_2 = y_2,...,Y_k = y_k\} =
+\frac{n!}{\prod_{i=1}^ky_i!}\prod_{i=1}^k p^{y_i}_i
+$$
 
 If $Y$ has the probability mass function, then $\bold Y$ has the multinomial
 distribution with parameters $n$ and $\bold p = (p_1,...,p_k)$, where
@@ -522,7 +564,9 @@ violet. Therefore $\bold p = (3/6, 2/6, 1/6)$. Let's toss the die $n=5$ times.
 Then the probability of observing exactly three reds, no blues, and two violets
 is:
 
-$$ P\{\bold Y = (3,0,2)\} = \frac{5!}{3!0!2!}(3/6)^3(2/6)^0(1/6)^2 = 0.03472 $$
+$$
+P\{\bold Y = (3,0,2)\} = \frac{5!}{3!0!2!}(3/6)^3(2/6)^0(1/6)^2 = 0.03472
+$$
 
 Now suppose that we did not know the probabilities for red, blue, and violet,
 and we want to select the most probable color. Using the selection rule, we
@@ -532,12 +576,14 @@ randomization to break ties.
 Let $\bold Y = (Y_r, Y_b, Y_v)$ denote the number of occurrences of (red, blue,
 violet) in five trials. The probability we correctly select red is:
 
-$$ \begin{alignedat}{1} & P\{\text{red wins in 5 trials}\} \\
+$$
+\begin{alignedat}{1} & P\{\text{red wins in 5 trials}\} \\
 & = P\{Y_r > Y_b, Y_r > Y_v\} + 0.5P\{Y_r = Y_b, Y_r > Y_v\} \\
 & \quad + 0.5P\{Y_r = Y_b, Y_r > Y_v\} \\
 & = P\{\bold Y = (5,0,0), (4,1,0), (4,0,1), (3,2,0), (3,1,1), (3,0,2)\} \\ &
 \quad + 0.5P\{\bold Y = (2,2,1)\} + 0.5P\{\bold Y = (2,1,2)\} \\
-\end{alignedat} $$
+\end{alignedat}
+$$
 
 Notice that we have a coefficient of 0.5 in front of the cases where red ties
 because we randomly break two-way ties, selecting each color with a probability
@@ -547,7 +593,8 @@ We can list the outcomes favorable to a correct selection of red, along with the
 associated probabilities (calculated using the multinomial pmf above),
 randomizing in case of ties:
 
-$$ \begin{array}{c|c} \text{Outcome} & \text{Contribution} \\
+$$
+\begin{array}{c|c} \text{Outcome} & \text{Contribution} \\
 \text{(red, blue, violet)} & \text{to } P\{\text{red wins in 5 trials}\} \\
 \hline (5,0,0) & 0.03125 \\
 (4,1,0) & 0.10417 \\
@@ -556,7 +603,8 @@ $$ \begin{array}{c|c} \text{Outcome} & \text{Contribution} \\
 (3,1,1) & 0.13889 \\
 (3,0,2) & 0.03472 \\
 (2,2,1) & (0.5)(0.13889) \\
-(2,1,2) & (0.5)(0.06944) \\ \hline & 0.60416 \end{array} $$
+(2,1,2) & (0.5)(0.06944) \\ \hline & 0.60416 \end{array}
+$$
 
 As we can see, in this case, the probability of correct selection is 0.6042,
 given $n=5$ observations. We can increase the probability of correct selection
@@ -601,7 +649,9 @@ We will survey many people and count up the number of times they select each
 category. The cumulative sum for category $i$ after we take $m$ multinomial
 observations is:
 
-$$ Y_{im} = \sum_{j = 1}^m X_{ij} $$
+$$
+Y_{im} = \sum_{j = 1}^m X_{ij}
+$$
 
 The ordered $Y_{im}$'s are $Y_{[1]m} \leq \cdots \leq Y_{[k]m}$. We select the
 candidate associated with $Y_{[k]m}$ as being associated with $p_{[k]}$.
@@ -611,8 +661,10 @@ and we say that a correct selection is made if the goal is achieved. For
 specified $(P^*, \theta^*)$, where $1/k < P^\star< 1$ and $\theta^\star> 1$, we
 have the following probability requirement:
 
-$$ P(\text{CS}) \geq P^\star\quad\text{whenever}\quad p_{[k]} / p_{[k-1]} \geq
-\theta^* $$
+$$
+P(\text{CS}) \geq P^\star\quad\text{whenever}\quad p_{[k]} / p_{[k-1]} \geq
+\theta^*
+$$
 
 When the ratio of the best category to the second-best category eclipses a
 certain $\theta^*$ that we specify, we want to ensure that we make the right
@@ -636,8 +688,10 @@ The $n$-values are computed so that $\mathcal M_{\text{BEM}}$ achieves
 $P(\text{CS}) \geq P^*$ when the cell probabilities $\bold p$ are in the
 least-favorable configuration:
 
-$$ p_{[1]} = p_{[k-1]} = 1/(\theta^\star+ k - 1), p_{[k]} = \theta^\star/
-(\theta^\star+ k - 1) $$
+$$
+p_{[1]} = p_{[k-1]} = 1/(\theta^\star+ k - 1), p_{[k]} = \theta^\star/
+(\theta^\star+ k - 1)
+$$
 
 In this configuration, the best category is ahead of all of the other categories
 by a factor of exactly $\theta$, and the other $p_i$'s are all identical.

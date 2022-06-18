@@ -549,12 +549,18 @@ produces random error.
 In this example, we are going to use simulation to integrate the function $f(x)
 = \sin(\pi x)$ from 0 to 1. Of course, we could compute this integral directly:
 
-$$ \int \sin(\pi x) = \frac{-\cos(\pi x)}{\pi} $$
+$$
+\int \sin(\pi x) = \frac{-\cos(\pi x)}{\pi}
+$$
 
-$$ \int_0^1 \sin(\pi x) = \frac{-\cos(\pi)}{\pi} - (\frac{-\cos(0)}{\pi}) $$
+$$
+\int_0^1 \sin(\pi x) = \frac{-\cos(\pi)}{\pi} - (\frac{-\cos(0)}{\pi})
+$$
 
-$$ \int_0^1 \sin(\pi x) = \frac{1}{\pi} + \frac{1}{\pi} = \frac{2}{\pi} \approx
-0.6366 $$
+$$
+\int_0^1 \sin(\pi x) = \frac{1}{\pi} + \frac{1}{\pi} = \frac{2}{\pi} \approx
+0.6366
+$$
 
 However, we are going to use simulation to approximate the integral using a
 pre-calculus methodology: rectangles. With this technique, we draw $n$
@@ -803,7 +809,9 @@ how they work.
 We start with an integer seed value, $X_0$, and we generate the next value in
 the sequence according to the following formula:
 
-$$ X_i = aX_{i - 1} \bmod{m} $$
+$$
+X_i = aX_{i - 1} \bmod{m}
+$$
 
 Remember that "mod" refers to the modulus function, which, for positive
 integers, is essentially the remainder function. For example, $7 \bmod 4 = 3$,
@@ -816,35 +824,59 @@ Notice that these generators produce integer values. To normalize these values -
 that is, compress them into the range $[0,1)$ - we divide them by $m$. In other
 words:
 
-$$ U_i = \frac{X_i}{m} $$
+$$
+U_i = \frac{X_i}{m}
+$$
 
 Let's look at an example. Suppose that $X_0 = 4$ and our generator function is:
 
-$$ X_i = 5X_{i - 1} \bmod(7) $$
+$$
+X_i = 5X_{i - 1} \bmod(7)
+$$
 
 Let's calculate a few values in this sequence.
 
-$$ X_1 = 5X_0 \bmod(7) = 20 \bmod 7 = 6 $$
+$$
+X_1 = 5X_0 \bmod(7) = 20 \bmod 7 = 6
+$$
 
-$$ X_2 = 5X_1 \bmod(7) = 30 \bmod 7 = 2 $$
+$$
+X_2 = 5X_1 \bmod(7) = 30 \bmod 7 = 2
+$$
 
-$$ X_3 = 5X_2 \bmod(7) = 10 \bmod 7 = 3 $$
+$$
+X_3 = 5X_2 \bmod(7) = 10 \bmod 7 = 3
+$$
 
-$$ X_4 = 5X_3 \bmod(7) = 15 \bmod 7 = 1 $$
+$$
+X_4 = 5X_3 \bmod(7) = 15 \bmod 7 = 1
+$$
 
-$$ X_5 = 5X_4 \bmod(7) = 5 \bmod 7 = 5 $$
+$$
+X_5 = 5X_4 \bmod(7) = 5 \bmod 7 = 5
+$$
 
 We can normalize these values by dividing by $m$.
 
-$$ U_1 = \frac{X_1}{m} = \frac{6}{7} $$
+$$
+U_1 = \frac{X_1}{m} = \frac{6}{7}
+$$
 
-$$ U_2 = \frac{X_2}{m} = \frac{2}{7} $$
+$$
+U_2 = \frac{X_2}{m} = \frac{2}{7}
+$$
 
-$$ U_3 = \frac{X_3}{m} = \frac{3}{7} $$
+$$
+U_3 = \frac{X_3}{m} = \frac{3}{7}
+$$
 
-$$ U_4 = \frac{X_4}{m} = \frac{1}{7} $$
+$$
+U_4 = \frac{X_4}{m} = \frac{1}{7}
+$$
 
-$$ U_5 = \frac{X_1}{m} = \frac{1}{7} $$
+$$
+U_5 = \frac{X_1}{m} = \frac{1}{7}
+$$
 
 This generator is bad. The values that we get are clearly not uniformly
 distributed; indeed, it is impossible to produce a value outside of the set $\{
@@ -853,7 +885,9 @@ distributed; indeed, it is impossible to produce a value outside of the set $\{
 
 Here is a better generator:
 
-$$ X_i = 16807X_{i-1} \mod(2^{31} - 1) $$
+$$
+X_i = 16807X_{i-1} \mod(2^{31} - 1)
+$$
 
 This generator has specific properties that make it robust, including long
 "cycle times": the sequences does not repeat frequently. While this generator
@@ -873,7 +907,9 @@ For example, we can apply the following transform to convert $R$ from a uniform
 random variable to an exponential random variable, using the [inverse transform
 method](https://en.wikipedia.org/wiki/Inverse_transform_sampling]):
 
-$$ \frac{-\ln(R)}{\lambda}  \sim Exp(\lambda) $$
+$$
+\frac{-\ln(R)}{\lambda}  \sim Exp(\lambda)
+$$
 
 There are more sophisticated methods available, such as the [Box-Muller
 method](https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform) for

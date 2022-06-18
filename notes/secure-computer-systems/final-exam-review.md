@@ -198,8 +198,10 @@ conditions with the same QID as hers.
 
 Here's the formula for differential privacy -
 
-$$\frac{P[K(D)\text{ in }S]}{P[K(D')\text{ in }S]} \leq e^{\epsilon} \approx 1 +
-\epsilon$$
+$$
+\frac{P[K(D)\text{ in }S]}{P[K(D')\text{ in }S]} \leq e^{\epsilon} \approx 1 +
+\epsilon
+$$
 
 If $\epsilon$ = .1 than we have a 10% higher chance of a successful inference
 attack.

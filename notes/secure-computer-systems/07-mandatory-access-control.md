@@ -203,27 +203,35 @@ There is a policy that says what roles can be activated for a user.
 
 ### RBAC formalisms
 
-$$ U = \text{The set of users} \\
+$$
+U = \text{The set of users} \\
 R= \text{The set of roles} \\
 P= \text{The set of permissions} \\
-S= \text{The set of sessions} $$
+S= \text{The set of sessions}
+$$
 
 Now we define the **Permission Assignment \(PA\)** and the **User role
 Assignment \(UA\)**.
 
-$$ \text{PA} \subseteq R \times P \\
-\text{UA} \subseteq U \times R $$
+$$
+\text{PA} \subseteq R \times P \\
+\text{UA} \subseteq U \times R
+$$
 
 This product is called the Cartesian product. $A \times B$ is the set of all
 pairs \(a, b\) where $a \in A, b\in B$.
 
 The roles for a session $s$ are given by
 
-$$ \text{roles}(s) = \{r|(user(s),r) \in \text{UA}\} $$
+$$
+\text{roles}(s) = \{r|(user(s),r) \in \text{UA}\}
+$$
 
 The permissions
 
-$$ \bigcup\limits_{r \in \text{roles}(s)} \{p | (r, p) \in PA\} $$
+$$
+\bigcup\limits_{r \in \text{roles}(s)} \{p | (r, p) \in PA\}
+$$
 
 ## RBAC Hierarchy and Implementation
 
@@ -259,7 +267,8 @@ users.
 
 Some notation
 
-$$ |U| = \text{ number of users } \\
+$$
+|U| = \text{ number of users } \\
 |R| = \text{ number of roles } \\ |O| = \text{ number of objects } \\
 $$
 
@@ -269,11 +278,15 @@ If all permissions are assigned through RBAC then we use the previously
 discussed Permission Assignment \(PA\) and the User role Assignment \(UA\). So
 the size of the policy file is the sum of the size of PA and UA. This is -
 
-$$ |R| \cdot |O| + |U| \cdot |R| = |R| \cdot (|O|+|U|) $$
+$$
+|R| \cdot |O| + |U| \cdot |R| = |R| \cdot (|O|+|U|)
+$$
 
 If the number of roles is relatively small, then
 
-$$ |R| \cdot (|O|+|U|) < |U| \cdot |O| $$
+$$
+|R| \cdot (|O|+|U|) < |U| \cdot |O|
+$$
 
 and the policy file is smaller than the ACM without RBAC. Small is simple,
 simple is better.

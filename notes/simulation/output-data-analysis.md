@@ -135,7 +135,9 @@ variance.
 
 Let's look at the expected value of the sample mean, $\bar Y_n$:
 
-$$ E[\bar Y_n] = \frac{1}{n}\sum_{i=1}^n E[Y_i] $$
+$$
+E[\bar Y_n] = \frac{1}{n}\sum_{i=1}^n E[Y_i]
+$$
 
 Since $E[Y_i] = \mu$, $E[\bar Y_n] = \mu$. Therefore, the sample mean is still
 unbiased for $\mu$. We already knew this: the sample mean is always unbiased for
@@ -144,47 +146,61 @@ $\mu$, regardless of whether they are correlated with one another.
 
 Now let's consider the covariance function, which we define as $R_k$:
 
-$$ R_k \equiv \text{Cov}(Y_i, Y_{i+k}) $$
+$$
+R_k \equiv \text{Cov}(Y_i, Y_{i+k})
+$$
 
 We also know that, by definition, the variance of a random variable is equal to
 the covariance of that random variable with itself:
 
-$$ \text{Var}(X) = \text{Cov}(X,X) $$
+$$
+\text{Var}(X) = \text{Cov}(X,X)
+$$
 
 Thus, we can create an expression for the variance of the sample mean:
 
-$$ \text{Var}(\bar Y_n) = \text{Cov}(\bar Y_n, \bar Y_n) $$
+$$
+\text{Var}(\bar Y_n) = \text{Cov}(\bar Y_n, \bar Y_n)
+$$
 
 We can re-express the covariance of the sample mean using the definition of the
 sample mean. Notice that we have two summation expressions, and we divide by $n$
 twice:
 
-$$ \text{Var}(\bar Y_n) = \frac{1}{n^2} \sum_{i=1}^n\sum_{j=1}^n \text{Cov}(Y_i,
-Y_j) $$
+$$
+\text{Var}(\bar Y_n) = \frac{1}{n^2} \sum_{i=1}^n\sum_{j=1}^n \text{Cov}(Y_i,
+Y_j)
+$$
 
 By definition of $R_k$, we can replace $\text{Cov}(Y_i, Y_j)$ with $R_{|i-j|}$:
 
-$$ \text{Var}(\bar Y_n) = \frac{1}{n^2} \sum_{i=1}^n\sum_{j=1}^n R_{|i-j|} \quad
-(1) $$
+$$
+\text{Var}(\bar Y_n) = \frac{1}{n^2} \sum_{i=1}^n\sum_{j=1}^n R_{|i-j|} \quad
+(1)
+$$
 
 Notice that we take the absolute value of $i-j$ to prevent a negative value for
 $k$. After a bunch of algebra, equation $(1)$ simplifies to a single summation
 expression:
 
-$$ \text{Var}(\bar Y_n) = \frac{1}{n} \left[R_0 + 2\sum_{k=1}^{n-1}\left(1 -
-\frac{k}{n}\right)R_k\right] \quad (2) $$
+$$
+\text{Var}(\bar Y_n) = \frac{1}{n} \left[R_0 + 2\sum_{k=1}^{n-1}\left(1 -
+\frac{k}{n}\right)R_k\right] \quad (2)
+$$
 
 How did we get from $(1)$ to $(2)$? Let's take all of the $(Y_i, Y_j)$ pairs and
 build an $n \times n$ covariance matrix.
 
-$$ \begin{pmatrix} R_0 & R_1 & R_2 & \cdots & R_{n-3} & R_{n-2} & R_{n-1} \\
+$$
+\begin{pmatrix} R_0 & R_1 & R_2 & \cdots & R_{n-3} & R_{n-2} & R_{n-1} \\
 R_1 & R_0 & R_1 & \cdots & R_{n-4} & R_{n-3} & R_{n-2} \\
 R_2 & R_1 & R_0 & \cdots & R_{n-5} & R_{n-4} & R_{n-3} \\
 & & \vdots & \vdots & \vdots & & & \\
 R_{n-3} & R_{n-4} & R_{n-5} & \cdots & R_0 & R_1 & R_2 \\
 R_{n-2} & R_{n-3} & R_{n-4} & \cdots & R_1 & R_0 & R_1 \\
 R_{n-1} & R_{n-2} & R_{n-3} & \cdots & R_2 & R_1 & R_0 \\
-\end{pmatrix} $$
+\end{pmatrix}
+$$
 
 Let's look at the first row. These values correspond to $(Y_1, Y_j)$ pairs. For
 instance, the first cell in the row is the $(Y_1, Y_1)$ pair, which, using the
@@ -208,19 +224,25 @@ Equation $(2)$ above is very important because it relates the variance of the
 sample mean to the covariances of the process. With this in mind, let's define a
 new quantity, $\sigma^2_n$, which is $n$ times the variance of the sample mean:
 
-$$ \sigma^2_n \equiv n\text{Var}(\bar Y_n) = R_0 + 2\sum_{k=1}^{n-1}\left(1 -
-\frac{k}{n}\right)R_k $$
+$$
+\sigma^2_n \equiv n\text{Var}(\bar Y_n) = R_0 + 2\sum_{k=1}^{n-1}\left(1 -
+\frac{k}{n}\right)R_k
+$$
 
 We can also define the related **variance parameter**, $\sigma^2$, which is the
 limit of $\sigma^2_n$ as $n$ goes to infinity:
 
-$$ \sigma^2 \equiv \lim_{n \to \infty} \sigma^2_n =^\star R_0 + 2
-\sum_{k=1}^\infty R_k = \sum_{k=-\infty}^\infty R_k $$
+$$
+\sigma^2 \equiv \lim_{n \to \infty} \sigma^2_n =^\star R_0 + 2
+\sum_{k=1}^\infty R_k = \sum_{k=-\infty}^\infty R_k
+$$
 
 Note that, as $n$ goes to infinity, the $k / n$ term goes to zero so:
 
-$$ R_0 + 2\sum_{k=1}^{n-1}\left(1 - \frac{k}{n}\right)R_k \to R_0 +
-2\sum_{k=1}^{\infty}R_k $$
+$$
+R_0 + 2\sum_{k=1}^{n-1}\left(1 - \frac{k}{n}\right)R_k \to R_0 +
+2\sum_{k=1}^{\infty}R_k
+$$
 
 > The weird $=^\star$ notation means that the equality holds only if the $R_k$
 > terms decrease to 0 quickly as $k \to \infty$.
@@ -246,21 +268,29 @@ shortly.
 
 The first-order autoregressive process is defined by:
 
-$$ Y_i = \phi Y_{i-1} + \epsilon_i, \quad i = 1,2,..., $$
+$$
+Y_i = \phi Y_{i-1} + \epsilon_i, \quad i = 1,2,...,
+$$
 
 Note that $-1 < \phi < 1$, $Y_0 \sim \text{Nor}(0,1)$, and the $\epsilon_i$'s
 are iid $\text{Nor}(0, 1-\phi^2)$ random variables that are independent of
 $Y_0$. The $Y_i$'s are all Nor(0,1) and the covariance function is defined as:
 
-$$ R_k = \phi^{|k|} $$
+$$
+R_k = \phi^{|k|}
+$$
 
 Let's apply the definition of $\sigma^2$:
 
-$$ \sigma^2 = \sum_{k=-\infty}^\infty \phi^{|k|} $$
+$$
+\sigma^2 = \sum_{k=-\infty}^\infty \phi^{|k|}
+$$
 
 After some algebra, we get the following result:
 
-$$ \sigma^2 = \frac{1 + \phi}{1 - \phi} $$
+$$
+\sigma^2 = \frac{1 + \phi}{1 - \phi}
+$$
 
 Note that $\sigma^2 \neq 1 = \text{Var}(Y_1)$. As an example, if $\phi = 0.9$,
 then $\sigma^2 = 19$. We need to collect nineteen correlated observations to
@@ -270,7 +300,9 @@ have the information that we would get from just one iid observation.
 
 Let's remember the formula for the sample variance:
 
-$$ S_Y^2 \equiv \frac{1}{n-1} \sum_{i=1}^n (Y_i - \bar Y_n)^2 $$
+$$
+S_Y^2 \equiv \frac{1}{n-1} \sum_{i=1}^n (Y_i - \bar Y_n)^2
+$$
 
 If $Y_1, Y_2,...,Y_n$ are iid, then $S^2_Y$ is unbiased for $R_0 =
 \text{Var}(Y_1)$. Moreover, $S^2_Y$ is also unbiased for $\sigma^2_n =
@@ -285,66 +317,85 @@ mean $\mu$, and correlated with covariance function $R_k$.
 
 Let's get the expected value of $S^2_Y$:
 
-$$ \begin{alignedat}{1} E[S^2_Y] &= \frac{1}{n-1} E\left[\sum_{i=1}^n(Y_i - \bar
+$$
+\begin{alignedat}{1} E[S^2_Y] &= \frac{1}{n-1} E\left[\sum_{i=1}^n(Y_i - \bar
 Y_n)^2\right] \\
 &= \frac{1}{n-1} E\left[\sum_{i=1}^nY_i^2 - n\bar Y_n^2\right] \end{alignedat}
 $$
 
 Note that, since the $Y_i$'s are identically distributed, $E[Y_i] = E[Y_1]$:
 
-$$ \begin{alignedat}{1} E[S^2_Y] &= \frac{1}{n-1} E\left[\sum_{i=1}^nY_1^2 -
+$$
+\begin{alignedat}{1} E[S^2_Y] &= \frac{1}{n-1} E\left[\sum_{i=1}^nY_1^2 -
 n\bar Y_n^2\right] \\
 &= \frac{1}{n-1} E\left[nY_1^2 - n\bar Y_n^2\right] \\[2ex] & = \frac{n}{n-1}
-E[Y_1^2] - E[\bar Y_n^2] \end{alignedat} $$
+E[Y_1^2] - E[\bar Y_n^2] \end{alignedat}
+$$
 
 Now, let's remember that $\text{Var}(X) = E[X^2] - E[X]^2$. Therefore:
 
-$$ \begin{alignedat}{1} E[S^2_Y] &= \frac{n}{n-1} E[Y_1^2] - E[\bar Y_n^2] \\
+$$
+\begin{alignedat}{1} E[S^2_Y] &= \frac{n}{n-1} E[Y_1^2] - E[\bar Y_n^2] \\
 &= \frac{n}{n-1} \left[\left\{\text{Var}(Y_1) + (E[Y_1]^2\right\} -
-\left\{\text{Var}(\bar Y_n) + (E[\bar Y_n]^2\right\}\right] \end{alignedat} $$
+\left\{\text{Var}(\bar Y_n) + (E[\bar Y_n]^2\right\}\right] \end{alignedat}
+$$
 
 Since $\mu = E[Y_1] = E[\bar Y_n]$, then:
 
-$$ \begin{alignedat}{1} E[S^2_Y] &= \frac{n}{n-1} \left[\left\{\text{Var}(Y_1) +
+$$
+\begin{alignedat}{1} E[S^2_Y] &= \frac{n}{n-1} \left[\left\{\text{Var}(Y_1) +
 (E[Y_1]^2\right\} - \left\{\text{Var}(\bar Y_n) + (E[\bar Y_n]^2\right\}\right]
 \\
 &= \frac{n}{n-1} \left[\text{Var}(Y_1) - \text{Var}(\bar Y_n)\right]
-\end{alignedat} $$
+\end{alignedat}
+$$
 
 Let's assume that the $R_k$'s are greater than zero. Remember equation $(2)$
 from above:
 
-$$ \text{Var}(\bar Y_n) = \frac{1}{n} \left[R_0 + 2\sum_{k=1}^{n-1}\left(1 -
-\frac{k}{n}\right)R_k\right] \quad (2) $$
+$$
+\text{Var}(\bar Y_n) = \frac{1}{n} \left[R_0 + 2\sum_{k=1}^{n-1}\left(1 -
+\frac{k}{n}\right)R_k\right] \quad (2)
+$$
 
 Given that $R_0 = \text{Var}(Y_1)$, we can rewrite the expected value of the
 sample variance as:
 
-$$ E[S^2_Y] = \frac{n}{n-1}\left\{R_0 - \frac{1}{n}\left[R_0 + 2
-\sum_{k=1}^{n-1}\left(1-\frac{k}{n}\right)R_k\right]\right\} $$
+$$
+E[S^2_Y] = \frac{n}{n-1}\left\{R_0 - \frac{1}{n}\left[R_0 + 2
+\sum_{k=1}^{n-1}\left(1-\frac{k}{n}\right)R_k\right]\right\}
+$$
 
 Let's simplify:
 
-$$ E[S^2_Y] = R_0 - \frac{2}{n-1} \sum_{k=1}^{n-1}\left(1-\frac{k}{n}\right)R_k
+$$
+E[S^2_Y] = R_0 - \frac{2}{n-1} \sum_{k=1}^{n-1}\left(1-\frac{k}{n}\right)R_k
 $$
 
 If the $R_k$'s are positive, which we expect them to be since the $Y_i$'s are
 correlated, then:
 
-$$ \frac{2}{n-1} \sum_{k=1}^{n-1}\left(1-\frac{k}{n}\right)R_k > 0 $$
+$$
+\frac{2}{n-1} \sum_{k=1}^{n-1}\left(1-\frac{k}{n}\right)R_k > 0
+$$
 
 Therefore:
 
-$$ E[S^2_Y] < R_0 $$
+$$
+E[S^2_Y] < R_0
+$$
 
 In turn:
 
-$$ R_0 \ll \sigma^2_n = R_0 + 2\sum_{k=1}^{n-1}\left(1 - \frac{k}{n}\right)R_k
+$$
+R_0 \ll \sigma^2_n = R_0 + 2\sum_{k=1}^{n-1}\left(1 - \frac{k}{n}\right)R_k
 $$
 
 Collecting these results shows that:
 
-$$ E[S^2_Y] < \text{Var}(Y_1) \ll n \text{Var}(\bar Y_n) $$
+$$
+E[S^2_Y] < \text{Var}(Y_1) \ll n \text{Var}(\bar Y_n)
+$$
 
 As a result, we should not use $S^2_Y / n$ to estimate $\text{Var}(\bar Y_n)$.
 What happens if we do use it?
@@ -352,7 +403,9 @@ What happens if we do use it?
 Let's look at the classical $100(1 - \alpha)$ CI for the mean $\mu$ of iid
 normal observations with unknown variance:
 
-$$ \mu \in \bar Y_n \pm t_{a/2, n-1}\sqrt{S^2_Y/n} $$
+$$
+\mu \in \bar Y_n \pm t_{a/2, n-1}\sqrt{S^2_Y/n}
+$$
 
 Since we just showed that $E[S^2_Y] \ll \text{Var}(\bar Y_n)$, the CI will have
 true coverage $\ll 1 - \alpha$. Our confidence interval will have much less
@@ -396,7 +449,8 @@ discrete observations. For example, we might be taking observations at the bank,
 and we might want to estimate the average waiting time for a customer. Let's
 call the expected value of the sample mean $\theta$. Therefore:
 
-$$ \theta \equiv E[\bar Y_m], \quad \bar Y_m \equiv \frac{1}{m}\sum_{i=1}^m Y_i
+$$
+\theta \equiv E[\bar Y_m], \quad \bar Y_m \equiv \frac{1}{m}\sum_{i=1}^m Y_i
 $$
 
 By definition, $\bar Y_m$ is an unbiased estimator for $\theta$ because $E[\bar
@@ -420,7 +474,9 @@ number seed.
 
 We denote the sample mean from replication $i$ by:
 
-$$ Z_i \equiv \frac{1}{m} \sum_{j=1}^m Y_{i,j} $$
+$$
+Z_i \equiv \frac{1}{m} \sum_{j=1}^m Y_{i,j}
+$$
 
 Note that $Y_{i,j}$ is observation $j = 1,2,...,m$ from replication $i =
 1,2,...,r$. Put another way, $Y_{i,j}$ is customer $j$'s waiting time in
@@ -435,13 +491,17 @@ $Z_1, Z_2,...,Z_r$ are iid random variables.
 We can define the grand sample mean, $\bar Z_r$, as the mean of the replication
 means:
 
-$$ \bar Z_r \equiv \frac{1}{r} \sum_{i=1}^r Z_i $$
+$$
+\bar Z_r \equiv \frac{1}{r} \sum_{i=1}^r Z_i
+$$
 
 The obvious point estimator for $\text{Var}(\bar Y_m) = \text{Var}(Z_i)$ is the
 sample variance of the $Z_i$'s, because those observations are iid. Let's
 remember the definition of the sample variance:
 
-$$ S^2_Z \equiv \frac{1}{r-1} \sum_{i=1}^r (Z_i - \bar Z_r)^2 $$
+$$
+S^2_Z \equiv \frac{1}{r-1} \sum_{i=1}^r (Z_i - \bar Z_r)^2
+$$
 
 Note that the forms of $S^2_Z$ and $S^2_Y$, which we shouldn't use, resemble
 each other. But, since the replication sample means are iid, $S^2_Z$ is usually
@@ -454,12 +514,16 @@ limit theorem tells us that the replicate sample means, $Z_1, Z_2, ..., Z_r$,
 are approximately iid Nor($\theta, \text{Var}(Z_1))$. From that result, we can
 see that the $S^2_Z$ is approximately distributed as a $\chi^2$ random variable:
 
-$$ S^2_Z \approx \frac{\text{Var}(Z_1)\chi^2(r-1)}{r-1} $$
+$$
+S^2_Z \approx \frac{\text{Var}(Z_1)\chi^2(r-1)}{r-1}
+$$
 
 From there, we have the approximate independent replications $100(1-\alpha)\%$
 two-sided confidence interval for $\theta$:
 
-$$ \theta \in \bar Z_r \pm t_{\alpha/2, r-1}\sqrt{S^2_Z  / r} $$
+$$
+\theta \in \bar Z_r \pm t_{\alpha/2, r-1}\sqrt{S^2_Z  / r}
+$$
 
 Let's recap what we did. We took $r$ replications of $m$ correlated
 observations, which we then transformed into $r$ iid $Z_i$'s. From there, we
@@ -473,15 +537,19 @@ Suppose we want to estimate the expected average waiting time for the first $m =
 replications, each initialized empty and idle and consisting of $5000$ waiting
 times. Consider the following replicate means:
 
-$$ \begin{array}{c|ccccc} i & 1 & 2 & 3 & 4 & 5 \\ \hline Z_i & 3.2 & 4.3 & 5.1
-& 4.2 & 4.6 \end{array} $$
+$$
+\begin{array}{c|ccccc} i & 1 & 2 & 3 & 4 & 5 \\ \hline Z_i & 3.2 & 4.3 & 5.1
+& 4.2 & 4.6 \end{array}
+$$
 
 If we plug and chug, we can see that $\bar Z_5 = 4.28$ and $S^2_Z = 0.487$.  If
 $\alpha = 0.05$, the corresponding t-quantile is $t_{0.025, 4} = 2.78$, which
 gives us the following 95% confidence interval for the expected average waiting
 time for the first 5000 customers:
 
-$$ \theta \in 4.28 \pm (2.78) \sqrt{0.487 / 5} = [3.41, 5.15] $$
+$$
+\theta \in 4.28 \pm (2.78) \sqrt{0.487 / 5} = [3.41, 5.15]
+$$
 
 ## Finite-Horizon Extensions
 
@@ -496,16 +564,22 @@ If we want a smaller confidence interval, we need to run more replications.
 Let's recall the approximate independent replications $100(1-\alpha)\%$
 two-sided confidence interval for $\theta$:
 
-$$ \theta \in \bar Z_r \pm t_{\alpha/2, r-1}\sqrt{S^2_Z / r} $$
+$$
+\theta \in \bar Z_r \pm t_{\alpha/2, r-1}\sqrt{S^2_Z / r}
+$$
 
 We can define the *half-length* of the current confidence interval as the term
 to the right of the plus-minus sign. We'll call that $H$:
 
-$$ H \equiv t_{\alpha/2,r-1}\sqrt{S^2_Z / r} $$
+$$
+H \equiv t_{\alpha/2,r-1}\sqrt{S^2_Z / r}
+$$
 
 Suppose we would like our confidence interval to have half-length $\epsilon$:
 
-$$ \epsilon \equiv t_{\alpha/2,r^\star-1}\sqrt{S^2_Z / r^\star} $$
+$$
+\epsilon \equiv t_{\alpha/2,r^\star-1}\sqrt{S^2_Z / r^\star}
+$$
 
 Note here that we are holding the variance estimator fixed based on the current
 number of replications - we can't look into the future. We need to find some
@@ -513,32 +587,42 @@ $r^\star > r$ such that our confidence interval is sufficiently narrow.
 
 Let's solve the equation for the desired half-length for $r^\star$:
 
-$$ \begin{alignedat}{1} \epsilon &= t_{\alpha/2,r^\star-1}\sqrt{S^2_Z / r^\star}
+$$
+\begin{alignedat}{1} \epsilon &= t_{\alpha/2,r^\star-1}\sqrt{S^2_Z / r^\star}
 \\
 \epsilon^2 &= \frac{t^2_{\alpha/2,r^\star-1}S^2_Z}{r^\star}  \\
 r^\star &= \frac{t^2_{\alpha/2,r^\star-1}S^2_Z}{\epsilon^2}  \\
-\end{alignedat} $$
+\end{alignedat}
+$$
 
 As we increase the degrees of freedom, the corresponding value of the
 $t$-quantile
 [decreases](https://www.statisticshowto.com/tables/t-distribution-table/).
 Therefore, since $r^\star > r$:
 
-$$ t^2_{\alpha/2,r^\star-1} < t^2_{\alpha/2,r-1} $$
+$$
+t^2_{\alpha/2,r^\star-1} < t^2_{\alpha/2,r-1}
+$$
 
 So:
 
-$$ r^\star = \frac{t^2_{\alpha/2,r^\star-1}S^2_Z}{\epsilon^2}  <
-\frac{t^2_{\alpha/2,r-1}S^2_Z}{\epsilon^2} $$
+$$
+r^\star = \frac{t^2_{\alpha/2,r^\star-1}S^2_Z}{\epsilon^2}  <
+\frac{t^2_{\alpha/2,r-1}S^2_Z}{\epsilon^2}
+$$
 
 With a little algebra, we can see that:
 
-$$ H^2r = t^2_{\alpha/2,r-1}S^2_Z $$
+$$
+H^2r = t^2_{\alpha/2,r-1}S^2_Z
+$$
 
 So:
 
-$$ r^\star = \frac{t^2_{\alpha/2,r^\star-1}S^2_Z}{\epsilon^2}  <
-\frac{t^2_{\alpha/2,r-1}S^2_Z}{\epsilon^2} = (H/\epsilon)^2r $$
+$$
+r^\star = \frac{t^2_{\alpha/2,r^\star-1}S^2_Z}{\epsilon^2}  <
+\frac{t^2_{\alpha/2,r-1}S^2_Z}{\epsilon^2} = (H/\epsilon)^2r
+$$
 
 Using this expression, we can set $r^\star = (H/\epsilon)^2r$, run $r^\star - r$
 more replications, and re-calculate the confidence interval using all $r^\star$
@@ -553,7 +637,9 @@ replications by a factor of $x^2$.
 
 The **p-quantile** of a random variable, $W$, having cdf $F(w)$ is defined as:
 
-$$ \xi \equiv \min \{w|F(w) \geq p\} $$
+$$
+\xi \equiv \min \{w|F(w) \geq p\}
+$$
 
 If $W$ is continuous, then $\xi_p$ is the unique value such that $F(\xi_p) = p$
 and $F^{-1}(p) = \xi_p$.
@@ -562,10 +648,12 @@ For example, let's suppose that we have a random variable $W \sim
 \text{Exp}(\lambda)$. We know that $W$ has the cdf $F(w) = 1 - e^{-\lambda w}$.
 Therefore:
 
-$$ \begin{alignedat}{1} p &= 1 - e^{-\lambda \xi_p} \\
+$$
+\begin{alignedat}{1} p &= 1 - e^{-\lambda \xi_p} \\
 1 - p &= e^{-\lambda \xi_p} \\
 \ln(1-p) &= -\lambda \xi_p \\
-\frac{-1}{\lambda} \ln(1-p) &= \xi_p \end{alignedat} $$
+\frac{-1}{\lambda} \ln(1-p) &= \xi_p \end{alignedat}
+$$
 
 We can use the method of independent replications to obtain confidence intervals
 for quantiles. For example, let $W_i$ denote the maximum waiting time that some
@@ -575,7 +663,9 @@ during replication $i$ of a simulation, $i = 1,2,...,r$.
 Let's order the iid $W_i$'s: $W_{(1)} \leq W_{(2)} \leq \cdots \leq W_{(r)}$.
 Then, the typical point estimator for the quantile $\xi_p$ is:
 
-$$ \widehat \xi_p \equiv W_{(\lfloor rp+ 0.5\rfloor)} $$
+$$
+\widehat \xi_p \equiv W_{(\lfloor rp+ 0.5\rfloor)}
+$$
 
 In layman's terms, we retrieve the $W_i$ that is larger than $rp$ other $W_i$'s.
 Since we are using order statistics, we can just retrieve, essentially, the
@@ -590,33 +680,45 @@ interval will turn out to be of the form $\xi_p \in [W_{(j)}, W_{(k)}]$.
 
 Let's remember that, by definition:
 
-$$ P(W_i \leq \xi_p) = p $$
+$$
+P(W_i \leq \xi_p) = p
+$$
 
 As a result, we can think about  a single $W_i \leq \xi_p$ event as a Bern($p$)
 trial. If we define a random variable, $A$, as the number of $W_i$'s that are
 less than or equal to $\xi_p$, then:
 
-$$ A \sim \text{Bin}(r,p) $$
+$$
+A \sim \text{Bin}(r,p)
+$$
 
 The event $\{j \leq A \leq k-1 \}$ means that between $j$ and $k-1$ of the
 $W_i$'s are $\leq \xi_p$. This event is equivalent to the following expression
 involving the order statistics $W_{(j)}$ and $W_{(i)}$:
 
-$$ \left\{(\xi_p \geq W_{(j)}) \text{ and } (\xi_p < W_{(k)})\right\} $$
+$$
+\left\{(\xi_p \geq W_{(j)}) \text{ and } (\xi_p < W_{(k)})\right\}
+$$
 
 Therefore:
 
-$$ P(W_{(j)} \leq \xi_p < W_{(k)}) = P(j \leq A \leq k-1) $$
+$$
+P(W_{(j)} \leq \xi_p < W_{(k)}) = P(j \leq A \leq k-1)
+$$
 
 We have a binomial expression that is equivalent to the expression on the right
 above:
 
-$$ P(j \leq A \leq k-1) = \sum_{l=j}^{k-1}\binom{r}{l}p^l(1-p)^{r-l} $$
+$$
+P(j \leq A \leq k-1) = \sum_{l=j}^{k-1}\binom{r}{l}p^l(1-p)^{r-l}
+$$
 
 This binomial expression is approximately equal to:
 
-$$ \Phi\left(\frac{k - 0.5 - rp}{\sqrt{rp(1-p)}}\right) - \Phi\left(\frac{j -
-0.5 - rp}{\sqrt{rp(1-p)}}\right) $$
+$$
+\Phi\left(\frac{k - 0.5 - rp}{\sqrt{rp(1-p)}}\right) - \Phi\left(\frac{j -
+0.5 - rp}{\sqrt{rp(1-p)}}\right)
+$$
 
 Note that $\Phi(\cdot)$ is the Nor(0,1) cdf, the 0.5 terms are continuity
 corrections, and the approximation requires that $rp, r(1-p) \geq 5$.
@@ -624,20 +726,26 @@ corrections, and the approximation requires that $rp, r(1-p) \geq 5$.
 To get the approximate $100(1-\alpha)\%$ confidence interval of the form $\xi_p
 \in [W_{(j)}, W_{(k)}]$, we need to find $j$ and $k$ such that:
 
-$$ \Phi\left(\frac{k - 0.5 - rp}{\sqrt{rp(1-p)}}\right) - \Phi\left(\frac{j -
-0.5 - rp}{\sqrt{rp(1-p)}}\right) \geq 1 - \alpha $$
+$$
+\Phi\left(\frac{k - 0.5 - rp}{\sqrt{rp(1-p)}}\right) - \Phi\left(\frac{j -
+0.5 - rp}{\sqrt{rp(1-p)}}\right) \geq 1 - \alpha
+$$
 
 How do we choose $j$ and $k$? We can set:
 
-$$ \frac{j - 0.5 - rp}{\sqrt{rp(1-p)}} = -z_{\alpha/2}, \quad \frac{k - 0.5 -
-rp}{\sqrt{rp(1-p)}} = z_{\alpha/2} $$
+$$
+\frac{j - 0.5 - rp}{\sqrt{rp(1-p)}} = -z_{\alpha/2}, \quad \frac{k - 0.5 -
+rp}{\sqrt{rp(1-p)}} = z_{\alpha/2}
+$$
 
 After some algebra:
 
-$$ \begin{aligned} j = \left\lfloor rp + 0.5 -
+$$
+\begin{aligned} j = \left\lfloor rp + 0.5 -
  z_{\alpha/2}\sqrt{rp(1-p)}\right\rfloor \\
 k = \left\lceil rp + 0.5 + z_{\alpha/2}\sqrt{rp(1-p)}\right\rceil \\  
-\end{aligned} $$
+\end{aligned}
+$$
 
 > Remember that we need the floor and ceiling function here because $j$ and $k$
 > must be integers.
@@ -650,12 +758,16 @@ Note that if we want to get reasonably small half-lengths for "extreme" ($\geq
 Let's suppose that we want a $95\%$ confidence interval for $\xi_{0.9}$ and
 we've made $r = 1000$ replications. The point estimator for $\xi_{0.9}$ is:
 
-$$ \widehat \xi_{0.9} = W_{(\lfloor1000(0.9) + 0.5\rfloor)} = W_{(900)} $$
+$$
+\widehat \xi_{0.9} = W_{(\lfloor1000(0.9) + 0.5\rfloor)} = W_{(900)}
+$$
 
 With the confidence interval in mind, let's compute $j$ and $k$:
 
-$$ j = \left\lfloor 900.5 - 1.96\sqrt{90}\right\rfloor = 881, \quad k =
-\left\lfloor 900.5 + 1.96\sqrt{90}\right\rfloor = 920, $$
+$$
+j = \left\lfloor 900.5 - 1.96\sqrt{90}\right\rfloor = 881, \quad k =
+\left\lfloor 900.5 + 1.96\sqrt{90}\right\rfloor = 920,
+$$
 
 As a result, the $95\%$ confidence interval for the quantile is $[W_{(881)},
 W_{(920)}]$, and the point estimator is $W_{(900)}$.
@@ -783,18 +895,24 @@ other words, we need to provide an estimate for $\text{Var}(\bar Y_n)$.
 Instead of estimating $\text{Var}(\bar Y_n)$ directly, we can estimate the
 variance parameter, which is basically equivalent:
 
-$$ \sigma^2 \equiv \lim_{n \to \infty} n\text{Var}(\bar Y_n) $$
+$$
+\sigma^2 \equiv \lim_{n \to \infty} n\text{Var}(\bar Y_n)
+$$
 
 Remember that, if the observations are correlated, then $n\text{Var}(\bar Y_n)$
 is equal to the following:
 
-$$ n\text{Var}(\bar Y_n) = R_0 + 2 \sum_{k=1}^{n-1} \left(1 -
-\frac{k}{n}\right)R_k $$
+$$
+n\text{Var}(\bar Y_n) = R_0 + 2 \sum_{k=1}^{n-1} \left(1 -
+\frac{k}{n}\right)R_k
+$$
 
 If the $R_k$'s decrease quickly as $k \to \infty$, then $\sigma^2$ is just the
 sum of the covariances:
 
-$$ \sigma^2 = \sum_{k=-\infty}^\infty R_k $$
+$$
+\sigma^2 = \sum_{k=-\infty}^\infty R_k
+$$
 
 The quantity $\sigma^2$ shows up all over the place, from simulation output
 analysis to Brownian motions to financial engineering applications, and more.
@@ -803,13 +921,15 @@ For example, consider a MA(1) process, $Y_{i+1} = \theta\epsilon_i +
 \epsilon_{i+1}$, where the $\epsilon_i$'s are iid Nor(0,1). We determined that
 $R_0 = 1+ \theta^2$, $R_{\pm} = \theta$, and $R_k = 0$. Therefore:
 
-$$ \begin{alignedat}{1} \sigma^2 &= \lim_{n \to \infty}\left[R_0 + 2
+$$
+\begin{alignedat}{1} \sigma^2 &= \lim_{n \to \infty}\left[R_0 + 2
 \sum_{k=1}^{n-1} \left(1 - \frac{k}{n}\right)R_k\right] \\ &= \lim_{n \to
 \infty}\left[(1 + \theta^2) + 2\theta\left(1-\frac{1}{n}\right) + 2
 \sum_{k=2}^{n-1}0\right] \\
 &= \lim_{n \to \infty}\left[(1 + \theta^2) + 2\theta-\frac{2\theta}{n}\right] \\
 &= \lim_{n \to \infty}\left[(1 + \theta)^2 -\frac{2\theta}{n}\right]  \\
-&= (1+\theta)^2 \end{alignedat} $$
+&= (1+\theta)^2 \end{alignedat}
+$$
 
 As another example, consider an AR(1) process, $Y_{i+1} = \phi Y_i +
 \epsilon_{i+1}$, where the $\epsilon_i$'s are iid $\text{Nor}(0, 1-\phi^2)$, $-1
@@ -847,7 +967,9 @@ observations across batches as being independent.
 The $i$th batch mean is the sample mean of the $m$ observations from batch $i =
 1,2,...,b$:
 
-$$ \bar Y_{i,m} \equiv \frac{1}{m} \sum_{j=1}^m Y_{(i-1)m + j} $$
+$$
+\bar Y_{i,m} \equiv \frac{1}{m} \sum_{j=1}^m Y_{(i-1)m + j}
+$$
 
 Batch $i$ begins at observation $Y_{(i-1)m + 1}$ and ends at $Y_{(i-1)m + m =
 im}$. If we divide the $m$ observations by $m$, we have computed the sample
@@ -855,15 +977,19 @@ mean.
 
 The batch means are correlated for small $m$, but, for large $m$:
 
-$$ \bar Y_{1,m},...,\bar Y_{b,m} \overset{\text{iid}}{\approx} \text{Nor}(\mu,
-\text{Var}(\bar Y_{i,m})) \approx \text{Nor}(\mu, \sigma^2 /m) $$
+$$
+\bar Y_{1,m},...,\bar Y_{b,m} \overset{\text{iid}}{\approx} \text{Nor}(\mu,
+\text{Var}(\bar Y_{i,m})) \approx \text{Nor}(\mu, \sigma^2 /m)
+$$
 
 Similar to the method of independent replications, we can define the **batch
 means estimator** for $\sigma^2 = \lim_{n \to \infty} n \text{Var}(\bar Y_n) =
 \lim_{m \to \infty} m \text{Var}(\bar Y_{1,m})$ as:
 
-$$ \widehat V_B \equiv \frac{m}{b-1} \sum_{i=1}^b \left(\bar Y_{i,m} - \bar
-Y_n\right)^2 $$
+$$
+\widehat V_B \equiv \frac{m}{b-1} \sum_{i=1}^b \left(\bar Y_{i,m} - \bar
+Y_n\right)^2
+$$
 
 We can see that $\widehat V_B$ looks a lot like the sample variance of the batch
 means. Notice the $m$ in the numerator. Since we defined $\sigma^2$ as the limit
@@ -871,12 +997,16 @@ of $m \text{Var}(\bar Y_{1,m})$, we need to include the $m$ in the estimator. We
 can also see that $\widehat V_B$ is also approximately distributed as a $\chi^2$
 random variable:
 
-$$ \widehat V_B \approx \frac{\sigma^2\chi^2(b-1)}{b-1} $$
+$$
+\widehat V_B \approx \frac{\sigma^2\chi^2(b-1)}{b-1}
+$$
 
 How good is $\widehat V_B$ as an estimator for $\sigma^2$?  Let's look at the
 expected value:
 
-$$ E[\widehat V_B] \doteq  \frac{\sigma^2}{b-1} E[\chi^2(b-1)] $$
+$$
+E[\widehat V_B] \doteq  \frac{\sigma^2}{b-1} E[\chi^2(b-1)]
+$$
 
 Since $E[\chi^2(b-1)] = b-1$, then $E[\widehat V_B] = \sigma^2$, so $\widehat
 V_B$ is asymptotically unbiased for $\sigma^2$ as the batch size $m \to \infty$.
@@ -892,19 +1022,25 @@ not output analysis as a whole.
 
 Let's recall the batch means estimator for $\sigma^2$:
 
-$$ \widehat V_B \equiv \frac{m}{b-1} \sum_{i=1}^b (\bar Y_{i,m} - \bar Y_n)^2 $$
+$$
+\widehat V_B \equiv \frac{m}{b-1} \sum_{i=1}^b (\bar Y_{i,m} - \bar Y_n)^2
+$$
 
 Here, $m$ is the batch size, and $b$ is the number of batches, $n$ is the sample
 size, $\bar Y_{i,m}$ is the $i$th batch mean, and $\bar Y_n$ is the sample mean.
 As we saw last time, $\widehat V_B$ is approximately distributed as a $\chi^2$
 random variable:
 
-$$ \widehat V_B \approx \frac{\sigma^2\chi^2(b-1)}{b-1} $$
+$$
+\widehat V_B \approx \frac{\sigma^2\chi^2(b-1)}{b-1}
+$$
 
 How good is $\widehat V_B$ as an estimator of $\sigma^2$? Let's look at its mean
 and variance. As we saw last time:
 
-$$ E[\widehat V_B] \doteq \frac{\sigma^2}{b-1}E[\chi^2(b-1)] = \sigma^2 $$
+$$
+E[\widehat V_B] \doteq \frac{\sigma^2}{b-1}E[\chi^2(b-1)] = \sigma^2
+$$
 
 Since the estimator's expected value equals the value it estimates, $\widehat
 V_B$ is asymptotically unbiased for $\sigma^2$ as $m \to \infty$.
@@ -914,7 +1050,9 @@ V_B$ is asymptotically unbiased for $\sigma^2$ as $m \to \infty$.
 It turns out that we can come up with a more precise definition for the expected
 value of $\widehat V_B$:
 
-$$ E[\widehat V_B] = \sigma^2 + \frac{\gamma(b+1)}{mb} + o(1/m) $$
+$$
+E[\widehat V_B] = \sigma^2 + \frac{\gamma(b+1)}{mb} + o(1/m)
+$$
 
 We don't particularly care about the $o$ function, as it goes to zero faster
 than $1/m$ as $m$ gets big.
@@ -926,23 +1064,30 @@ decreases as the batch size, $m$, gets big.
 Let's look at the definition of $\gamma$, which is a function of the
 covariances:
 
-$$ \gamma \equiv -2 \sum_{k=1}^\infty kR_k $$
+$$
+\gamma \equiv -2 \sum_{k=1}^\infty kR_k
+$$
 
 Let's look at the variance of our estimator:
 
-$$ \text{Var}(\widehat V_B) \doteq \frac{\sigma^4}{(b-1)^2}
-\text{Var}(\chi^2(b-1)) = \frac{2\sigma^4}{b-1} $$
+$$
+\text{Var}(\widehat V_B) \doteq \frac{\sigma^4}{(b-1)^2}
+\text{Var}(\chi^2(b-1)) = \frac{2\sigma^4}{b-1}
+$$
 
 ### Mean-Squared Error of $\widehat V_B$
 
 These facts immediately imply that, for large $m$ and $b$:
 
-$$ \text{MSE}(\widehat V_B) = \text{Bias}^2 + \text{Var} \doteq
-\left(\frac{\gamma(b+1)}{mb}\right)^2 +  \frac{2\sigma^4}{b-1} $$
+$$
+\text{MSE}(\widehat V_B) = \text{Bias}^2 + \text{Var} \doteq
+\left(\frac{\gamma(b+1)}{mb}\right)^2 +  \frac{2\sigma^4}{b-1}
+$$
 
 Of course, for large $b$, $b - 1 \approx b +1 \approx b$, so:
 
-$$ \text{MSE}(\widehat V_B) \doteq \frac{\gamma^2}{m^2} +  \frac{2\sigma^4}{b}
+$$
+\text{MSE}(\widehat V_B) \doteq \frac{\gamma^2}{m^2} +  \frac{2\sigma^4}{b}
 $$
 
 Our goal is to find the best choice of $b$ and $m$, subject to the constraint $n
@@ -951,35 +1096,47 @@ Our goal is to find the best choice of $b$ and $m$, subject to the constraint $n
 Let's fix $b$ for now and find the appropriate value for $m$. To do so, lets
 take $m = cn^\delta$, where $c >0$ and $0 < \delta < 1$.
 
-$$ \text{MSE}(\widehat V_B) \doteq \frac{\gamma^2}{c^2n^{2\delta}} +
-\frac{2\sigma^4}{b} $$
+$$
+\text{MSE}(\widehat V_B) \doteq \frac{\gamma^2}{c^2n^{2\delta}} +
+\frac{2\sigma^4}{b}
+$$
 
 We know that $b = n / m$ so:
 
-$$ b = n / cn^\delta = n^{1-\delta} / c $$
+$$
+b = n / cn^\delta = n^{1-\delta} / c
+$$
 
 Therefore:
 
-$$ \text{MSE}(\widehat V_B) \doteq \frac{\gamma^2}{c^2n^{2\delta}} +
-\frac{2c\sigma^4}{n^{1-\delta}} $$
+$$
+\text{MSE}(\widehat V_B) \doteq \frac{\gamma^2}{c^2n^{2\delta}} +
+\frac{2c\sigma^4}{n^{1-\delta}}
+$$
 
 If we choose any $\delta \neq 1/3$, one of the two terms will converge to zero
 more slowly than the other. If we choose $\delta = 1/3$, both terms will
 converge to zero by $n^{2/3}$. Therefore:
 
-$$ \text{MSE}(\widehat V_B) \doteq \frac{1}{n^{2/3}} \left[ \frac{\gamma^2}{c^2}
+$$
+\text{MSE}(\widehat V_B) \doteq \frac{1}{n^{2/3}} \left[ \frac{\gamma^2}{c^2}
 
-- 2c\sigma^4\right ] $$
+- 2c\sigma^4\right ]
+$$
 
 If we minimize the above expression with respect to $c$, we get the "optimal"
 batch size:
 
-$$ m^\star \equiv (\gamma^2n/\sigma^4)^{1/3} $$
+$$
+m^\star \equiv (\gamma^2n/\sigma^4)^{1/3}
+$$
 
 Furthermore, if we plug in $m^\star$ back into the mean-squared error equation,
 we get the optimal mean-squared error:
 
-$$ \text{MSE}^\star(\hat V_B) \equiv 3(\gamma\sigma^4 /n)^{2/3} $$
+$$
+\text{MSE}^\star(\hat V_B) \equiv 3(\gamma\sigma^4 /n)^{2/3}
+$$
 
 Unfortunately, $\sigma^2$ and $\gamma$ are not known in practice and must be
 estimated somehow to produce a concrete value for $m^\star$ and
@@ -994,7 +1151,9 @@ means $\bar Y_{1,m},...,\bar Y_{b,m} \overset{\text{iid}}{\approx}
 \text{Nor}(\mu, \sigma^2 / m)$ for large $m$, we have the following approximate
 $100(1-\alpha)\%$ confidence interval for $\mu$:
 
-$$ \mu \in \bar Y_n \pm t_{\alpha/2, b-1} \sqrt{\widehat V_B / n} $$
+$$
+\mu \in \bar Y_n \pm t_{\alpha/2, b-1} \sqrt{\widehat V_B / n}
+$$
 
 This result is very similar to the confidence interval we saw with the method of
 independent replications. The difference is that the method of batch means
@@ -1010,16 +1169,20 @@ same numbers carry through the example if we note that $S^2_Z / r = \widehat V_B
 
 Let's define the half-length of the confidence interval as:
 
-$$ H \equiv t_{\alpha/2, b-1}\sqrt{\bar V_B / n} $$
+$$
+H \equiv t_{\alpha/2, b-1}\sqrt{\bar V_B / n}
+$$
 
 As $m \to \infty$, we can show that:
 
-$$ \sqrt{mb} H \approx \sigma t_{\alpha/2, b-1} \frac{\chi(b-1)}{\sqrt{b-1}}
+$$
+\sqrt{mb} H \approx \sigma t_{\alpha/2, b-1} \frac{\chi(b-1)}{\sqrt{b-1}}
 \newline[2ex] \sqrt{mb}E[H] \to \sigma t_{\alpha/2, b-1}
 \sqrt{\frac{2}{b-1}}\frac{\Gamma(\frac{b}{2})}{\Gamma\frac{b-1}{2}}
 \newline[2ex] mb \text{Var}(H) \to \sigma^2t^2_{\alpha/2, b-1} \left\{ 1 -
 \frac{2}{b-1}
-\left[\frac{\Gamma(\frac{b}{2})}{\Gamma(\frac{b-1}{2})}\right]^2\right\} $$
+\left[\frac{\Gamma(\frac{b}{2})}{\Gamma(\frac{b-1}{2})}\right]^2\right\}
+$$
 
 > Note that we are working with the $\chi$ distribution here, not our familiar
 > $\chi^2$ distribution.
@@ -1067,16 +1230,20 @@ independent replications for steady-state analysis.
 
 Suppose that we have the following **overlapping batches**:
 
-$$ \begin{matrix} Y_1 &  Y_2 & Y_3 & Y_4 & \cdots & Y_m \\
+$$
+\begin{matrix} Y_1 &  Y_2 & Y_3 & Y_4 & \cdots & Y_m \\
 &  Y_2 & Y_3 & Y_4 & Y_5 & \cdots & Y_m & Y_{m+1} \\
 & &  Y_3 & Y_4 & Y_5 & Y_6 \cdots & Y_m & Y_{m+1} & Y_{m+2} \\
 & & &  \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
-\end{matrix} $$
+\end{matrix}
+$$
 
 Let's look at the formula for the overlapping batch means:
 
-$$ \bar Y^\text O_{i,m} = \frac{1}{m} \sum_{j=i}^{i+m-1}Y_j, \quad i =
-1,2,...,n-m+1 $$
+$$
+\bar Y^\text O_{i,m} = \frac{1}{m} \sum_{j=i}^{i+m-1}Y_j, \quad i =
+1,2,...,n-m+1
+$$
 
 We can see, for example, that if $i=1$, the corresponding batch mean averages
 observations $Y_1,...,Y_m$. For $i=1$, the batch mean averages
@@ -1086,14 +1253,18 @@ As we might expect, the overlapping batch means are highly correlated. No
 problem! The overlapping batch means estimator for $\mu$ is $\bar Y_n$ and the
 estimator for $\sigma^2 = \lim_{n\to\infty} n \text{Var}(\bar Y_n)$ is:
 
-$$ \widehat V_{\text{O}} = \frac{m}{n - m + 1} \sum_{i=1}^{n - m + 1} (\bar
-Y^\text{O}_{i,m} - \bar Y_n)^2 $$
+$$
+\widehat V_{\text{O}} = \frac{m}{n - m + 1} \sum_{i=1}^{n - m + 1} (\bar
+Y^\text{O}_{i,m} - \bar Y_n)^2
+$$
 
 As the run length, $n$, and the batch size, $m$, get large:
 
-$$ \frac{E[\widehat V_{\text{O}}]}{E[\widehat V_B]} \to 1, \quad
+$$
+\frac{E[\widehat V_{\text{O}}]}{E[\widehat V_B]} \to 1, \quad
 \frac{\text{Var}(\widehat V_{\text{O}})}{\text{Var}(\widehat V_B)} \to
-\frac{2}{3} $$
+\frac{2}{3}
+$$
 
 What this result tells us is that the expected value of both variance estimators
 approaches $\sigma^2$, but the variance of the overlapping batch means estimator
@@ -1107,13 +1278,16 @@ identical to what is known as Bartlett's *spectral estimator* for $\sigma^2$.
 
 For large $m$ and $b = n/m$, it can be shown that:
 
-$$ \widehat V_{\text{O}} \approx \sigma^2\chi^2(d)/d, \quad d = \frac{3}{2}(b-1)
+$$
+\widehat V_{\text{O}} \approx \sigma^2\chi^2(d)/d, \quad d = \frac{3}{2}(b-1)
 $$
 
 From this result, we can see that we get $50\%$ more degrees of freedom than in
 regular batch means. We have the corresponding confidence interval:
 
-$$ \mu \in \bar Y_n \pm t_{\alpha / 2, d} \sqrt{\widehat V_{\text{O}}/n} $$
+$$
+\mu \in \bar Y_n \pm t_{\alpha / 2, d} \sqrt{\widehat V_{\text{O}}/n}
+$$
 
 Here's a recommendation: for large $m$ and $n/m$, use overlapping batch means
 instead of batch means!

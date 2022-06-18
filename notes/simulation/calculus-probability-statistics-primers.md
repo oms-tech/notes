@@ -33,8 +33,10 @@ for any integer $x$. Here is a
 If $f(x)$ is continuous, then the **derivative** at $x$ - assuming that it
 exists and is well-defined for any $x$ - is:
 
-$$ \frac{d}{dx} f(x) \equiv f'(x) \equiv \lim_{h \to\ 0} \frac{f(x + h) -
-f(x)}{h} $$
+$$
+\frac{d}{dx} f(x) \equiv f'(x) \equiv \lim_{h \to\ 0} \frac{f(x + h) -
+f(x)}{h}
+$$
 
 Note that we also refer to the derivative at $x$ as the instantaneous slope at
 $x$. The expression $f(x + h) - f(x)$ represents the "rise", and $h$ represents
@@ -57,20 +59,28 @@ Now let's look at some well-known properties of derivatives. The derivative of a
 function times a constant value is equal to the derivative of the function times
 the constant:
 
-$$ \left[af(x)\right]' = af'(x) $$
+$$
+\left[af(x)\right]' = af'(x)
+$$
 
 The derivative of the sum of two functions is equal to the sum of the
 derivatives of the functions:
 
-$$ \left[f(x) + g(x)\right]' = f'(x) + g'(x) $$
+$$
+\left[f(x) + g(x)\right]' = f'(x) + g'(x)
+$$
 
 The derivative of the product of two functions follows this rule:
 
-$$ \left[f(x)g(x)\right]' = f'(x)g(x) + g'(x)f(x) $$
+$$
+\left[f(x)g(x)\right]' = f'(x)g(x) + g'(x)f(x)
+$$
 
 The derivative of the quotient of two functions follows this rule:
 
-$$ \left[\frac{f(x)}{g(x)}\right]' = \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)} $$
+$$
+\left[\frac{f(x)}{g(x)}\right]' = \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)}
+$$
 
 We can remember this quotient rule with the following pneumonic, referring to
 the numerator as "hi" and the denominator as "lo": "lo dee hi minus hi dee lo
@@ -78,7 +88,9 @@ over lo lo".
 
 Finally, the derivative of the composition of two functions follows this rule:
 
-$$ \left[f(g(x))\right]' = f'(g(x))g'(x) $$
+$$
+\left[f(g(x))\right]' = f'(g(x))g'(x)
+$$
 
 ### Example 1
 
@@ -88,21 +100,33 @@ our initial derivative rules, we know that $f'(x) = 2x$ and $g'(x) =
 
 Let's calculate the derivative of the product of $f(x)$ and $g(x)$:
 
-$$ \left[f(x)g(x)\right]' = f'(x)g(x) + g'(x)f(x) $$
+$$
+\left[f(x)g(x)\right]' = f'(x)g(x) + g'(x)f(x)
+$$
 
-$$ \left[f(x)g(x)\right]' = 2x\ln{x} + \frac{x^2}{x} = 2x\ln{x} + x $$
+$$
+\left[f(x)g(x)\right]' = 2x\ln{x} + \frac{x^2}{x} = 2x\ln{x} + x
+$$
 
 Let's calculate the derivative of the quotient of $f(x)$ and $g(x)$:
 
-$$ \left[\frac{f(x)}{g(x)}\right]' = \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)} $$
+$$
+\left[\frac{f(x)}{g(x)}\right]' = \frac{g(x)f'(x) - f(x)g'(x)}{g^2(x)}
+$$
 
-$$ \left[\frac{f(x)}{g(x)}\right]' = \frac{2x\ln{x} - x}{\ln^2{x}} $$
+$$
+\left[\frac{f(x)}{g(x)}\right]' = \frac{2x\ln{x} - x}{\ln^2{x}}
+$$
 
 Let's calculate the derivative of the composition $f(g(x))$:
 
-$$ \left[f(g(x))\right]' = f'(g(x))g'(x) $$
+$$
+\left[f(g(x))\right]' = f'(g(x))g'(x)
+$$
 
-$$ \left[f(g(x))\right]' = \frac{2\ln(x)}{x} $$
+$$
+\left[f(g(x))\right]' = \frac{2\ln(x)}{x}
+$$
 
 The expression $f'(g(x))$ might look tricky at first. Remember that $f(x) =
 x^2$, so $f'(x) = 2x$. Thus, $f'(g(x)) = 2g(x) = 2\ln(x)$.
@@ -136,33 +160,55 @@ Consider the function $f(x) = e^{2x} + e^{-x}$. We want to find a point, $x_0$,
 that minimizes $f$. Let's first compute the derivative, using the composition
 rule for each term:
 
-$$ f'(x) = \left[e^{2x} + e^{-x}\right]' = 2e^{2x} - e^{-x} $$
+$$
+f'(x) = \left[e^{2x} + e^{-x}\right]' = 2e^{2x} - e^{-x}
+$$
 
 Let's find $x_0$ such that $f'(x_0) = 0$.
 
-$$ 2e^{2x} - e^{-x} = 0 $$
+$$
+2e^{2x} - e^{-x} = 0
+$$
 
-$$ 2e^{2x} = e^{-x} $$
+$$
+2e^{2x} = e^{-x}
+$$
 
-$$ \frac{e^{-x}}{e^{2x}} = 2 $$
+$$
+\frac{e^{-x}}{e^{2x}} = 2
+$$
 
-$$ \ln(\frac{e^{-x}}{e^{2x}}) = \ln(2) $$
+$$
+\ln(\frac{e^{-x}}{e^{2x}}) = \ln(2)
+$$
 
-$$ \ln(e^{-x}) - \ln({e^{2x}}) = \ln(2) $$
+$$
+\ln(e^{-x}) - \ln({e^{2x}}) = \ln(2)
+$$
 
-$$ -x - 2x = \ln(2) $$
+$$
+-x - 2x = \ln(2)
+$$
 
-$$ -3x = \ln(2) $$
+$$
+-3x = \ln(2)
+$$
 
-$$ x = \frac{\ln(2)}{-3} \approx -0.231 $$
+$$
+x = \frac{\ln(2)}{-3} \approx -0.231
+$$
 
 Now, let's calculate $f^{\prime\prime}(x)$:
 
-$$ f^{\prime\prime}(x) = \left[2e^{2x} - e^{-x}\right]' = 4e^{2x} + e^{-x} $$
+$$
+f^{\prime\prime}(x) = \left[2e^{2x} - e^{-x}\right]' = 4e^{2x} + e^{-x}
+$$
 
 Let's plug in $x_0$:
 
-$$ f^{\prime\prime}(-0.231) = 4e^{2 \times -0.231} + e^{0.231}\approx 3.78 $$
+$$
+f^{\prime\prime}(-0.231) = 4e^{2 \times -0.231} + e^{0.231}\approx 3.78
+$$
 
 Since this value is positive, $f(x_0)$ is a minimum. Furthermore, since $e^x >
 0$ for all $x$, $f^{\prime\prime}(x) > 0$ for all $x$. This means that $f(x_0)$
@@ -197,33 +243,55 @@ Consider the function $f(x) = e^{2x} + e^{-x}$. We want to find a point, $x_0$,
 that minimizes $f$. Let's first compute the derivative, using the composition
 rule for each term:
 
-$$ f'(x) = \left[e^{2x} + e^{-x}\right]' = 2e^{2x} - e^{-x} $$
+$$
+f'(x) = \left[e^{2x} + e^{-x}\right]' = 2e^{2x} - e^{-x}
+$$
 
 Let's find $x_0$ such that $f'(x_0) = 0$.
 
-$$ 2e^{2x} - e^{-x} = 0 $$
+$$
+2e^{2x} - e^{-x} = 0
+$$
 
-$$ 2e^{2x} = e^{-x} $$
+$$
+2e^{2x} = e^{-x}
+$$
 
-$$ \frac{e^{-x}}{e^{2x}} = 2 $$
+$$
+\frac{e^{-x}}{e^{2x}} = 2
+$$
 
-$$ \ln(\frac{e^{-x}}{e^{2x}}) = \ln(2) $$
+$$
+\ln(\frac{e^{-x}}{e^{2x}}) = \ln(2)
+$$
 
-$$ \ln(e^{-x}) - \ln({e^{2x}}) = \ln(2) $$
+$$
+\ln(e^{-x}) - \ln({e^{2x}}) = \ln(2)
+$$
 
-$$ -x - 2x = \ln(2) $$
+$$
+-x - 2x = \ln(2)
+$$
 
-$$ -3x = \ln(2) $$
+$$
+-3x = \ln(2)
+$$
 
-$$ x = \frac{\ln(2)}{-3} \approx -0.231 $$
+$$
+x = \frac{\ln(2)}{-3} \approx -0.231
+$$
 
 Now, let's calculate $f^{\prime\prime}(x)$:
 
-$$ f^{\prime\prime}(x) = \left[2e^{2x} - e^{-x}\right]' = 4e^{2x} + e^{-x} $$
+$$
+f^{\prime\prime}(x) = \left[2e^{2x} - e^{-x}\right]' = 4e^{2x} + e^{-x}
+$$
 
 Let's plug in $x_0$:
 
-$$ f^{\prime\prime}(-0.231) = 4e^{2 \times -0.231} + e^{0.231}\approx 3.78 $$
+$$
+f^{\prime\prime}(-0.231) = 4e^{2 \times -0.231} + e^{0.231}\approx 3.78
+$$
 
 Since this value is positive, $f(x_0)$ is a minimum. Furthermore, since $e^x >
 0$ for all $x$, $f^{\prime\prime}(x) > 0$ for all $x$. This means that $f(x_0)$
@@ -278,7 +346,9 @@ $x_0$, for the solution of $g(x)$. If $g(x)$ has a derivative that isn't too
 flat near the solution, then we can iteratively refine our estimate of the
 solution using the following sequence:
 
-$$ x_{i+1} = x_i - \frac{g(x_i)}{g'(x_i)} $$
+$$
+x_{i+1} = x_i - \frac{g(x_i)}{g'(x_i)}
+$$
 
 We continue iterating until the sequence appears to converge.
 
@@ -287,21 +357,33 @@ We continue iterating until the sequence appears to converge.
 Let's try out Newton's method for $g(x) = x^2 - 2$. We can re-express the
 sequence above as follows:
 
-$$ x_{i+1} = x_i - \frac{x_i^2 - 2}{2x_i} $$
+$$
+x_{i+1} = x_i - \frac{x_i^2 - 2}{2x_i}
+$$
 
-$$ x_{i+1} = x_i - (\frac{x_i}{2} - \frac{1}{x_i}) $$
+$$
+x_{i+1} = x_i - (\frac{x_i}{2} - \frac{1}{x_i})
+$$
 
-$$ x_{i+1} = \frac{x_i}{2} + \frac{1}{x_i} $$
+$$
+x_{i+1} = \frac{x_i}{2} + \frac{1}{x_i}
+$$
 
 Let's start with a bad guess, $x_0 = 1$. Then:
 
-$$ x_1 = \frac{x_0}{2} + \frac{1}{x_0} = \frac{1}{2} + \frac{1}{1} = 1.5 $$
+$$
+x_1 = \frac{x_0}{2} + \frac{1}{x_0} = \frac{1}{2} + \frac{1}{1} = 1.5
+$$
 
-$$ x_2 = \frac{x_1}{2} + \frac{1}{x_1} = \frac{1.5}{2} + \frac{1}{1.5} \approx
-1.4167 $$
+$$
+x_2 = \frac{x_1}{2} + \frac{1}{x_1} = \frac{1.5}{2} + \frac{1}{1.5} \approx
+1.4167
+$$
 
-$$ x_3 = \frac{x_2}{2} + \frac{1}{x_2} = \frac{1.4167}{2} + \frac{1}{1.4167}
-\approx 1.4142 $$
+$$
+x_3 = \frac{x_2}{2} + \frac{1}{x_2} = \frac{1.4167}{2} + \frac{1}{1.4167}
+\approx 1.4142
+$$
 
 After just three iterations, we have approximated $\sqrt{2}$ to four decimal
 places!
@@ -322,21 +404,33 @@ calculus](https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus) states
 that if $f(x)$ is continuous, then the area under the curve for $x \in [a, b]$
 is given by the **definite integral**:
 
-$$ \int^b_a f(x)dx \equiv F(x) \Big|^b_a \equiv F(b) - F(a) $$
+$$
+\int^b_a f(x)dx \equiv F(x) \Big|^b_a \equiv F(b) - F(a)
+$$
 
 ### Friends of Mine
 
 Let's look at some indefinite integrals:
 
-$$ \int x^kdx = \frac{x^{k + 1}}{k+ 1} + C, k \neq -1 $$
+$$
+\int x^kdx = \frac{x^{k + 1}}{k+ 1} + C, k \neq -1
+$$
 
-$$ \int \frac{dx}{x} = \ln|x| + C $$
+$$
+\int \frac{dx}{x} = \ln|x| + C
+$$
 
-$$ \int e^xdx = e^x + C $$
+$$
+\int e^xdx = e^x + C
+$$
 
-$$ \int cos(x)dx = sin(x) + C $$
+$$
+\int cos(x)dx = sin(x) + C
+$$
 
-$$ \int \frac{dx}{1 + x^2} = \arctan(x) + C $$
+$$
+\int \frac{dx}{1 + x^2} = \arctan(x) + C
+$$
 
 Note that $C$ is a constant value. Consider a function $f(x)$. Since the
 derivative of a constant value is zero, $f'(x) = \left[f(x) + C\right]'$. When
@@ -347,33 +441,45 @@ Let's look at some well-known properties of definite integrals.
 
 The integral of a function from $a$ to $a$ is zero:
 
-$$ \int_a^a f(x)dx = 0 $$
+$$
+\int_a^a f(x)dx = 0
+$$
 
 The integral of a function from $a$ to $b$ is the negative of the integral from
 $b$ to $a$:
 
-$$ \int_a^b f(x)dx = -\int_b^a f(x)dx $$
+$$
+\int_a^b f(x)dx = -\int_b^a f(x)dx
+$$
 
 Given a third point, $c$, the integral of a function from $a$ to $b$ is the sum
 of the integrals from $a$ to $c$ and $c$ to $b$:
 
-$$ \int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx $$
+$$
+\int_a^b f(x)dx = \int_a^c f(x)dx + \int_c^b f(x)dx
+$$
 
 Furthermore, the integral of a sum is the sum of the integrals:
 
-$$ \int \left[f(x) + g(x) \right]dx = \int f(x)dx + \int g(x)dx $$
+$$
+\int \left[f(x) + g(x) \right]dx = \int f(x)dx + \int g(x)dx
+$$
 
 Similar to the product rule for derivatives, we integrate products using
 [integration by parts](https://en.wikipedia.org/wiki/Integration_by_parts):
 
-$$ \int f(x)g'(x)dx = f(x)g(x) - \int g(x)f'(x)dx $$
+$$
+\int f(x)g'(x)dx = f(x)g(x) - \int g(x)f'(x)dx
+$$
 
 Similar to the chain rule for derivatives, we integrate composed functions using
 the [substitution
 rule](https://en.wikipedia.org/wiki/Integration_by_substitution), substituting
 $u$ for $g(x)$:
 
-$$ \int f(g(x))g'(x)dx = \int f(u)du, \text{ where } u = g(x) $$
+$$
+\int f(g(x))g'(x)dx = \int f(u)du, \text{ where } u = g(x)
+$$
 
 ### Example
 
@@ -382,59 +488,83 @@ the integral of $f(x)g'(x)dx$ from $[0, 1]$.
 
 We know, via integration by parts, that:
 
-$$ \int_0^1 f(x)g'(x)dx = f(x)g(x)\Big|_0^1 - \int_0^1 g(x)f'(x)dx $$
+$$
+\int_0^1 f(x)g'(x)dx = f(x)g(x)\Big|_0^1 - \int_0^1 g(x)f'(x)dx
+$$
 
 Notice that we need to take the integral of $g'(x)$. We can calculate this using
 u-substitution. Let $a(x) = 2x$ and $b(x) = e^x$. Then, using the substitution
 rule above:
 
-$$ \int b(a(x))a'(x)dx = \int b(u)du, \text{ where } u = a(x) $$
+$$
+\int b(a(x))a'(x)dx = \int b(u)du, \text{ where } u = a(x)
+$$
 
 Note that $a'(x) = 2$, and $b(a(x)) = b(2x) = e^{2x} = g'(x)$. Thus,
 
-$$ \int 2g'(x)dx = \int e^udu, \text{ where } u = a(x) $$
+$$
+\int 2g'(x)dx = \int e^udu, \text{ where } u = a(x)
+$$
 
 Divide both sides by two:
 
-$$ \int g'(x)dx = \frac{1}{2}\int e^udu, \text{ where } u = a(x) $$
+$$
+\int g'(x)dx = \frac{1}{2}\int e^udu, \text{ where } u = a(x)
+$$
 
 Integrate:
 
-$$ g(x) + C = \frac{1}{2} e^u + C, \text{ where } u = a(x) $$
+$$
+g(x) + C = \frac{1}{2} e^u + C, \text{ where } u = a(x)
+$$
 
 Subtract $C$ from both sides and substitute:
 
-$$ g(x) = \frac{1}{2} e^{2x} $$
+$$
+g(x) = \frac{1}{2} e^{2x}
+$$
 
 Now that we know $g(x)$, let's return to our integration by parts:
 
-$$ \int_0^1 f(x)g'(x)dx = f(x)g(x)\Big|_0^1 - \int_0^1 g(x)f'(x)dx $$
+$$
+\int_0^1 f(x)g'(x)dx = f(x)g(x)\Big|_0^1 - \int_0^1 g(x)f'(x)dx
+$$
 
 Let's substitute in the appropriate values for $f(x)$, $f'(x)$ and $g(x)$:
 
-$$ \int_0^1 xe^{2x}dx = \frac{1}{2} xe^{2x}\Big|_0^1 - \int_0^1 \frac{1}{2}
-e^{2x}dx $$
+$$
+\int_0^1 xe^{2x}dx = \frac{1}{2} xe^{2x}\Big|_0^1 - \int_0^1 \frac{1}{2}
+e^{2x}dx
+$$
 
 Let's pull out the $\frac{1}{2}$:
 
-$$ \int_0^1 xe^{2x}dx = \frac{1}{2} \left(xe^{2x}\Big|_0^1 - \int_0^1
-e^{2x}dx\right) $$
+$$
+\int_0^1 xe^{2x}dx = \frac{1}{2} \left(xe^{2x}\Big|_0^1 - \int_0^1
+e^{2x}dx\right)
+$$
 
 Of course, we already know how to integrate $e^{2x}$:
 
-$$ \int_0^1 xe^{2x}dx = \frac{1}{2} \left(xe^{2x}\Big|_0^1 -
-\frac{1}{2}e^{2x}\Big|_0^1\right) $$
+$$
+\int_0^1 xe^{2x}dx = \frac{1}{2} \left(xe^{2x}\Big|_0^1 -
+\frac{1}{2}e^{2x}\Big|_0^1\right)
+$$
 
 Now, let's solve:
 
-$$ \int_0^1 xe^{2x}dx = \frac{1}{2} \left(\left(e^{2} - \frac{1}{2}e^{2}\right)
-
-- \left(0 - \frac{1}{2}e^0\right)\right) $$
-
-$$ \int_0^1 xe^{2x}dx = \frac{1}{2} \left(\frac{e^{2}}{2} + \frac{1}{2}\right)
+$$
+\int_0^1 xe^{2x}dx = \frac{1}{2} \left(\left(e^{2} - \frac{1}{2}e^{2}\right) -
+\left(0 - \frac{1}{2}e^0\right)\right)
 $$
 
-$$ \int_0^1 xe^{2x}dx = \frac{e^{2}}{4} + \frac{1}{4} $$
+$$
+\int_0^1 xe^{2x}dx = \frac{1}{2} \left(\frac{e^{2}}{2} + \frac{1}{2}\right)
+$$
+
+$$
+\int_0^1 xe^{2x}dx = \frac{e^{2}}{4} + \frac{1}{4}
+$$
 
 ### Taylor and Maclaurin Series
 
@@ -444,23 +574,32 @@ $\frac{d^k}{dx^k}f(x)$. By convention, $f^{(0)}(x) = f(x)$.
 The **Taylor series expansion** of $f(x)$ about a point $a$ is given by the
 following infinite sum:
 
-$$ f(x) = \sum_{k = 0}^\infty \frac{f^{(k)}(a)(x - a)^k}{k!} $$
+$$
+f(x) = \sum_{k = 0}^\infty \frac{f^{(k)}(a)(x - a)^k}{k!}
+$$
 
 The **Maclaurin series expansion** of $f(x)$ is simply the Taylor series about
 $a = 0$:
 
-$$ f(x) = \sum_{k = 0}^\infty \frac{f^{(k)}(0) \times x^k}{k!} $$
+$$
+f(x) = \sum_{k = 0}^\infty \frac{f^{(k)}(0) \times x^k}{k!}
+$$
 
 ### Maclaurin Friends
 
 Let's look at some familiar Maclaurin series:
 
-$$ \sin(x) = \sum_{k = 0}^\infty \frac{-1^{k + 1} \times x^{2k + 1}}{(2k + 1)!}
+$$
+\sin(x) = \sum_{k = 0}^\infty \frac{-1^{k + 1} \times x^{2k + 1}}{(2k + 1)!}
 $$
 
-$$ \cos(x) = \sum_{k = 0}^\infty \frac{-1^{k} \times x^{2k}}{(2k)!} $$
+$$
+\cos(x) = \sum_{k = 0}^\infty \frac{-1^{k} \times x^{2k}}{(2k)!}
+$$
 
-$$ e^x = \sum_{k = 0}^\infty \frac{x^{k}}{k!} $$
+$$
+e^x = \sum_{k = 0}^\infty \frac{x^{k}}{k!}
+$$
 
 ### While We're At It
 
@@ -470,17 +609,23 @@ helpful to know.
 The sum of all the integers between 1 and $n$ is given by the following
 equation:
 
-$$ \sum_{k = 1}^\infty k = \frac{n(n + 1)}{2} $$
+$$
+\sum_{k = 1}^\infty k = \frac{n(n + 1)}{2}
+$$
 
 Similarly, if we want to add the sum of the squares of all the integers between
 1 and $n$, we can use this equation:
 
-$$ \sum_{k = 1}^\infty k^2 = \frac{n(n + 1)(2n + 1)}{6} $$
+$$
+\sum_{k = 1}^\infty k^2 = \frac{n(n + 1)(2n + 1)}{6}
+$$
 
 Finally, if we want to sum all of the powers of $p$, and $-1 < p < 1$, we can
 use this equation:
 
-$$ \sum_{k = 0}^\infty p^k = \frac{1}{1 - p} $$
+$$
+\sum_{k = 0}^\infty p^k = \frac{1}{1 - p}
+$$
 
 ### L'Hôspital's Rule
 
@@ -488,15 +633,21 @@ Occasionally, we run into trouble when we encounter indeterminate ratios of the
 form $0/0$ or $\infty/\infty$. L'Hôspital's Rule states that, when $\lim_{x \to
 a}f(x)$ and $\lim_{x \to a}g(x)$ both go to zero or both go to infinity, then:
 
-$$ \lim_{x \to a}\frac{f(x)}{g(x)} = \lim_{x \to a}\frac{f'(x)}{g'(x)} $$
+$$
+\lim_{x \to a}\frac{f(x)}{g(x)} = \lim_{x \to a}\frac{f'(x)}{g'(x)}
+$$
 
 For example, consider the following limit:
 
-$$ \lim_{x \to 0}\frac{\sin(x)}{x} $$
+$$
+\lim_{x \to 0}\frac{\sin(x)}{x}
+$$
 
 As $x \to 0$, $\sin(x) \to 0$. Thus, we can apply L'Hôspital's Rule:
 
-$$ \lim_{x \to 0}\frac{\sin(x)}{x} = \lim_{x \to 0}\frac{\cos(x)}{1} = 1 $$
+$$
+\lim_{x \to 0}\frac{\sin(x)}{x} = \lim_{x \to 0}\frac{\cos(x)}{1} = 1
+$$
 
 ## Integration Computer Exercises (OPTIONAL)
 
@@ -515,14 +666,18 @@ $i$th rectangle.
 The sum of the areas of the rectangles approximates the area under $f(x)$ from
 $a$ to $b$, which is equal to the integral of $f(x)$ from $a$ to $b$:
 
-$$ \int_a^b f(x)dx \approx \sum_{i = 1}^{n}\left[f(x_i)\Delta x)\right] $$
+$$
+\int_a^b f(x)dx \approx \sum_{i = 1}^{n}\left[f(x_i)\Delta x)\right]
+$$
 
 We can simplify the right-hand side of the equation by pulling the $\Delta x$
 term out in front of the sum and substituting in the appropriate values for
 $x_i$:
 
-$$ \sum_{i = 1}^{n}\left[f(x_i)\Delta x)\right] = \frac{b - a}{n} \sum_{i =
-1}^{n} f\left(a + \frac{i(b-a)}{n}\right) \approx \int_a^b f(x)dx $$
+$$
+\sum_{i = 1}^{n}\left[f(x_i)\Delta x)\right] = \frac{b - a}{n} \sum_{i =
+1}^{n} f\left(a + \frac{i(b-a)}{n}\right) \approx \int_a^b f(x)dx
+$$
 
 As $n \to \infty$, this approximation becomes an equality.
 
@@ -531,22 +686,30 @@ As $n \to \infty$, this approximation becomes an equality.
 Suppose we have a function, $f(x) = \sin((\pi x) / 2)$, which we would like to
 integrate from $0$ to $1$. In other words, we want to compute:
 
-$$ \int_0^1\sin\left(\frac{\pi x}{2}\right) $$
+$$
+\int_0^1\sin\left(\frac{\pi x}{2}\right)
+$$
 
 We can approximate the area under this curve using the following formula:
 
-$$ \int_a^b f(x)dx \approx \frac{b - a}{n} \sum_{i = 1}^{n} f\left(a +
-\frac{i(b-a)}{n}\right) $$
+$$
+\int_a^b f(x)dx \approx \frac{b - a}{n} \sum_{i = 1}^{n} f\left(a +
+\frac{i(b-a)}{n}\right)
+$$
 
 Let's plug in $a = 0$ and $b = 1$:
 
-$$ \int_0^1 f(x)dx \approx \frac{1}{n} \sum_{i = 1}^{n}
-f\left(\frac{i}{n}\right) $$
+$$
+\int_0^1 f(x)dx \approx \frac{1}{n} \sum_{i = 1}^{n}
+f\left(\frac{i}{n}\right)
+$$
 
 Finally, let's replace $f$:
 
-$$ \int_0^1 f(x)dx \approx  \frac{1}{n} \sum_{i = 1}^{n} \sin\left(\frac{\pi
-i}{2n}\right) $$
+$$
+\int_0^1 f(x)dx \approx  \frac{1}{n} \sum_{i = 1}^{n} \sin\left(\frac{\pi
+i}{2n}\right)
+$$
 
 For $n = 100$, this sum calculates out to approximately $0.6416$, which is
 pretty close to the true answer of $2/\pi \approx 0.6366$. For $n = 1000$, our
@@ -555,50 +718,62 @@ estimate improves to approximately $0.6371$.
 ### Trapezoid Rule
 
 Here we are going to perform the same type of numerical integration, but we are
-going to use the trapezoid rule instead of the rectangle rule/Reimann sum. Under
+going to use the trapezoid rule instead of the rectangle rule/Riemann sum. Under
 this rule:
 
-$$ \int_a^b f(x)dx \approx \left[\frac{f(x_0)}{2} + \sum_{i = 1}^{n - 1} f(x_i)
-
-- \frac{f(x_n)}{2} \right]\Delta x $$
+$$
+\int_a^b f(x)dx \approx \left[\frac{f(x_0)}{2} + \sum_{i = 1}^{n - 1} f(x_i) -
+\frac{f(x_n)}{2} \right]\Delta x
+$$
 
 Substituting $a$ and $b$ simplifies the right-hand side of the formula:
 
-$$ \int_a^b f(x)dx \approx \frac{b - a}{n} \left[\frac{f(a)}{2} + \sum_{i =
- 1}^{n - 1} f\left(a + \frac{i(b-a)}{n}\right) + \frac{f(b)}{2}\right] $$
+$$
+\int_a^b f(x)dx \approx \frac{b - a}{n} \left[\frac{f(a)}{2} + \sum_{i =
+ 1}^{n - 1} f\left(a + \frac{i(b-a)}{n}\right) + \frac{f(b)}{2}\right]
+$$
 
 ### Example 2
 
 Suppose we have a function, $f(x) = \sin((\pi x) / 2)$, which we would like to
 integrate from $0$ to $1$. In other words, we want to compute:
 
-$$ \int_0^1\sin\left(\frac{\pi x}{2}\right) $$
+$$
+\int_0^1\sin\left(\frac{\pi x}{2}\right)
+$$
 
 We can approximate the area under this curve using the following formula:
 
-$$ \int_a^b f(x)dx \approx \frac{b - a}{n} \left[\frac{f(a)}{2} + \sum_{i =
-1}^{n - 1} f\left(a + \frac{i(b-a)}{n}\right) + \frac{f(b)}{2}\right] $$
+$$
+\int_a^b f(x)dx \approx \frac{b - a}{n} \left[\frac{f(a)}{2} + \sum_{i =
+1}^{n - 1} f\left(a + \frac{i(b-a)}{n}\right) + \frac{f(b)}{2}\right]
+$$
 
 Let's plug in $a = 0$ and $b = 1$:
 
-$$ \int_0^1 f(x)dx \approx \frac{1}{n} \left[\frac{f(0)}{2} + \sum_{i = 1}^{n -
-1} f\left(\frac{i}{n}\right) + \frac{f(1)}{2}\right] $$
+$$
+\int_0^1 f(x)dx \approx \frac{1}{n} \left[\frac{f(0)}{2} + \sum_{i = 1}^{n -
+1} f\left(\frac{i}{n}\right) + \frac{f(1)}{2}\right]
+$$
 
 Let's replace $f$:
 
-$$ \int_0^1 f(x)dx \approx \frac{1}{n} \left[\frac{\sin(0)}{2} + \sum_{i = 1}^{n
-
-- 1} \sin\left(\frac{\pi i}{2n}\right) + \frac{\sin(\pi / 2)}{2}\right] $$
+$$
+\int_0^1 f(x)dx \approx \frac{1}{n} \left[\frac{\sin(0)}{2} + \sum_{i = 1}^{n -
+1} \sin\left(\frac{\pi i}{2n}\right) + \frac{\sin(\pi / 2)}{2}\right]
+$$
 
 Finally, let's evaluate and simplify:
 
-$$ \int_0^1 f(x)dx \approx \frac{1}{n} \left[\sum_{i = 1}^{n - 1}
-\sin\left(\frac{\pi i}{2n}\right) + \frac{1}{2}\right] $$
+$$
+\int_0^1 f(x)dx \approx \frac{1}{n} \left[\sum_{i = 1}^{n - 1}
+\sin\left(\frac{\pi i}{2n}\right) + \frac{1}{2}\right]
+$$
 
 For $n = 100$, this sum calculates out to approximately $0.63661$, which is very
 close to the true answer of $2/\pi \approx 0.63662$. Note that, even when $n =
-1000$, the Reimann estimation was not this precise;  indeed, integration via the
-trapezoid rule often converges faster than the Reimann approach.
+1000$, the Riemann estimation was not this precise;  indeed, integration via the
+trapezoid rule often converges faster than the Riemann approach.
 
 ### Monte Carlo Approximation
 
@@ -607,32 +782,42 @@ of numbers, $U_1, U_2, ..., U_n$, sampled randomly from a uniform $(0, 1)$
 distribution. If so, it can be shown that we can approximate the integral of
 $f(x)$ from $a$ to $b$ according to the following formula:
 
-$$ \int_a^b f(x)dx \approx \frac{b - a}{n} \sum_{i = 1}^n f(a + U_i(b - a)) $$
+$$
+\int_a^b f(x)dx \approx \frac{b - a}{n} \sum_{i = 1}^n f(a + U_i(b - a))
+$$
 
-Note that this looks a lot like the Reimann integral summation. The difference
+Note that this looks a lot like the Riemann integral summation. The difference
 is that these rectangles are not adjacent, but rather scattered randomly between
 $a$ and $b$. As $n \to \infty$, the approximation converges to an equality, and
-it does so about as quickly as the Reimann approach.
+it does so about as quickly as the Riemann approach.
 
 ### Example 3
 
 Suppose we have a function, $f(x) = \sin((\pi x) / 2)$, which we would like to
 integrate from $0$ to $1$. In other words, we want to compute:
 
-$$ \int_0^1\sin\left(\frac{\pi x}{2}\right) $$
+$$
+\int_0^1\sin\left(\frac{\pi x}{2}\right)
+$$
 
 We can approximate the area under this curve using the following formula:
 
-$$ \int_a^b f(x)dx \approx \frac{b - a}{n} \sum_{i = 1}^n f(a + U_i(b - a)) $$
+$$
+\int_a^b f(x)dx \approx \frac{b - a}{n} \sum_{i = 1}^n f(a + U_i(b - a))
+$$
 
 Let's plug in $a = 0$ and $b = 1$:
 
-$$ \int_0^1 f(x)dx \approx \frac{1}{n} \sum_{i = 1}^n f(U_i) $$
+$$
+\int_0^1 f(x)dx \approx \frac{1}{n} \sum_{i = 1}^n f(U_i)
+$$
 
 Let's replace $f$:
 
-$$ \int_0^1 f(x)dx \approx \frac{1}{n} \sum_{i = 1}^n \sin\left(\frac{\pi
-U_i}{2}\right) $$
+$$
+\int_0^1 f(x)dx \approx \frac{1}{n} \sum_{i = 1}^n \sin\left(\frac{\pi
+U_i}{2}\right)
+$$
 
 Here is some python code for how we might simulate this:
 
@@ -677,7 +862,9 @@ The probability of some event, $A$, given some other event, $B$, equals the
 probability of the intersection of $A$ and $B$, divided by the probability of
 $B$. In other words, the **conditional probability** of $A$ given $B$ is:
 
-$$ P(A|B) = \frac{P(A \cap B)}{P(B)} $$
+$$
+P(A|B) = \frac{P(A \cap B)}{P(B)}
+$$
 
 Note that we assume that $P(B) > 0$ so we can avoid any division-by-zero errors.
 
@@ -698,14 +885,18 @@ in four chance that the roll is three. Thus, the probability is $1/4$.
 
 We can also use the conditional probability equation to calculate $P(A|B)$:
 
-$$ P(A | B) = \frac{P(A \cap B)}{P(B)} $$
+$$
+P(A | B) = \frac{P(A \cap B)}{P(B)}
+$$
 
 Let's calculate $P(A \cap B)$. There are six possible rolls total, and $A$ and
 $B$ share one of them. Therefore, $P(A \cap B) = 1/6$. Now, let's calculate
 $P(B)$. There are six possible rolls total, and $B$ contains four of them, so
 $P(B) = 4/6$. As a result:
 
-$$ P(A | B) = \frac{P(A \cap B)}{P(B)} = \frac{1/6}{4/6} = \frac{1}{4} $$
+$$
+P(A | B) = \frac{P(A \cap B)}{P(B)} = \frac{1/6}{4/6} = \frac{1}{4}
+$$
 
 Note that $P(A | B) \neq P(A)$. $P(A) = 1/2$. Prior information changes
 probabilities.
@@ -738,7 +929,9 @@ six possible rolls, $P(B) = 1/6$.
 Out of all thirty-six possible dice rolls, only one meets both criteria: rolling
 a four followed by a three. As a result:
 
-$$ P(A \cap B) = P((4, 3)) = \frac{1}{36} = P(A)P(B) $$
+$$
+P(A \cap B) = P((4, 3)) = \frac{1}{36} = P(A)P(B)
+$$
 
 Because of this equality, we can conclude that $A$ and $B$ are independent
 events.
@@ -761,7 +954,8 @@ $X$ is the random variable, and $x$ is the observation we are interested in.
 Consider our $X$ above. What is the probability that the sum of two dice rolls
 takes on any of the possible values?
 
-$$ P(X = x) = \left\{ \begin{array}{ll} 1/36 \quad \text{ if } x = 2 \\
+$$
+P(X = x) = \left\{ \begin{array}{ll} 1/36 \quad \text{ if } x = 2 \\
             2/36 \quad \text{ if } x = 3 \\
             \vdots \\
             6/36 \quad \text{ if } x = 7 \\
@@ -786,7 +980,8 @@ function, $f(x) = P(X = x)$. Note that, necessarily, $\sum_xf(x) = 1$.
 For example, flip two coins. Let $X$ be the number of heads. We can define the
 pmf, $f(x)$ as:
 
-$$ f(x) = \left\{ \begin{array}{ll} 1/4 \quad \text{ if } x = 0\\
+$$
+f(x) = \left\{ \begin{array}{ll} 1/4 \quad \text{ if } x = 0\\
             1/2 \quad \text{ if } x = 1 \\
             1/4 \quad \text{ if } x = 2 \\
             0 \quad\quad \text{ otherwise }
@@ -820,7 +1015,8 @@ uncountably infinite number of real numbers in this range, and the probability
 that I pick any particular value is zero. The pdf, $f(x)$, for this continuous
 random variable is
 
-$$ f(x) = \left\{ \begin{array}{ll} 1/4 \quad \text{ if } 3 \leq x \leq 7\\
+$$
+f(x) = \left\{ \begin{array}{ll} 1/4 \quad \text{ if } 3 \leq x \leq 7\\
             0 \quad\quad \text{ otherwise }
         \end{array}
     \right.
@@ -855,7 +1051,8 @@ For a random variable, $X$, either discrete or continuous, the **cumulative
 distribution function** (cdf), $F(x)$ is the probability that $X \leq x$. In
 other words,
 
-$$ F(x) \equiv P(X \leq x) = \left\{ \begin{array}{ll} \sum_{y \leq x}f(y) \quad
+$$
+F(x) \equiv P(X \leq x) = \left\{ \begin{array}{ll} \sum_{y \leq x}f(y) \quad
 \text{ if } X \text{ is discrete } \\ \\
             \int_{-\infty}^xf(y)dy \quad \text{ if } X \text{ is continuous }
         \end{array}
@@ -873,7 +1070,8 @@ Additionally, if $X$ is continuous, then $F'(x) = f(x)$.
 Let's look at a discrete example. Flip two coins and let $X$ be the number of
 heads. $X$ has the following cdf:
 
-$$ F(x) = \left\{ \begin{array}{ll} 0 \quad\quad \text{ if } X < 0 \\
+$$
+F(x) = \left\{ \begin{array}{ll} 0 \quad\quad \text{ if } X < 0 \\
             1/4 \quad \text{ if } 0 \leq X < 1 \\
             3/4 \quad \text{ if } 1 \leq X < 2 \\
             1 \quad\quad \text{ if } X \geq 2 \\
@@ -917,7 +1115,8 @@ then $X = \lceil{10(0.73)}\rceil = \lceil{7.3}\rceil = 8$.
 Let's look at another discrete random variable. Consider the following pmf,
 $f(x)$ for $X$:
 
-$$ f(x) \equiv P(X = x) = \left\{ \begin{array}{ll} 0.25 \quad \text{ if } x
+$$
+f(x) \equiv P(X = x) = \left\{ \begin{array}{ll} 0.25 \quad \text{ if } x
 -2\\
             0.10 \quad \text{ if } x = 3 \\
             0.65 \quad \text{ if } x = 4.2 \\
@@ -931,11 +1130,13 @@ use the **inverse transform method**.
 
 Consider the following table:
 
-$$ \begin{array}{c|c|c|c} x & f(x) & P(X \leq x) & \text{Unif}(0,1) \\ \hline -2
+$$
+\begin{array}{c|c|c|c} x & f(x) & P(X \leq x) & \text{Unif}(0,1) \\ \hline -2
 & 0.25 & 0.25 & [0.00, 0.25] \\
 3 & 0.1 & 0.35 & (0.25, 0.35] \\
 4.2 & 0.65 & 1.00 & (0.35, 1.00) \\
-\end{array} $$
+\end{array}
+$$
 
 In this first column, we see the three discrete values that $X$ can take: $\{-2,
 3, 4.2\}$. In the second column, we see the values for $f(x) = P(X = x)$ as
@@ -987,15 +1188,25 @@ cdf of $X$ is given by the function $F(x) = 1 - e^{-\lambda x}, x > 0$.
 Correspondingly, $F(X) = 1 - e^{-\lambda X}$. However, we also know, according
 to the theorem, $F(X) = U$, so $1 - e^{-\lambda X} = U$. Let's solve for $X$:
 
-$$ 1 - e^{-\lambda X} = U $$
+$$
+1 - e^{-\lambda X} = U
+$$
 
-$$ -e^{-\lambda X} = U - 1 $$
+$$
+-e^{-\lambda X} = U - 1
+$$
 
-$$ e^{-\lambda X} = 1 - U $$
+$$
+e^{-\lambda X} = 1 - U
+$$
 
-$$ -\lambda X = \ln(1 - U) $$
+$$
+-\lambda X = \ln(1 - U)
+$$
 
-$$ X = \frac{-\ln(1 - U)}{\lambda} \sim \text{Exp}(\lambda) $$
+$$
+X = \frac{-\ln(1 - U)}{\lambda} \sim \text{Exp}(\lambda)
+$$
 
 What's the point? Computer programs give us one particular type of randomness.
 When we use `RAND()` in Excel, or `random.random` in Python, we always get a
@@ -1019,7 +1230,9 @@ Alternatively, we can use an algorithm to generate *pseudo-random numbers*
 *appear* to be iid $\text{Unif}(0,1)$. Pick a *seed* integer, $X_0$, and
 calculate:
 
-$$ X_i = 16087X_{i - 1} \bmod{2^{31} - 1}, \quad i = 1, 2,... $$
+$$
+X_i = 16087X_{i - 1} \bmod{2^{31} - 1}, \quad i = 1, 2,...
+$$
 
 > Note that we saw this random number generator (RNG) in a previous lesson.
 
@@ -1027,7 +1240,9 @@ A given value of $X_i$ exists on $[0, 2^{31} - 1)$. To transform a given $X_i$
 into the corresponding $R_i$, which exists on $[0, 1)$, we use the following
 formula:
 
-$$ R_i = X_i /(2^{31} - 1), \quad i = 1, 2,... $$
+$$
+R_i = X_i /(2^{31} - 1), \quad i = 1, 2,...
+$$
 
 Here is how we might program this RNG in Python:
 
@@ -1068,7 +1283,8 @@ LOTUS, which we will learn about soon.
 
 The **expected value** (or mean), of a random variable, $X$ is defined as:
 
-$$ E[X] = \left\{ \begin{array}{ll} \sum_x x f(x) \quad \text{ if X is
+$$
+E[X] = \left\{ \begin{array}{ll} \sum_x x f(x) \quad \text{ if X is
 discrete}\\
             \int_{\mathbb{R}} x f(x) \quad \text{ if X is continuous}
         \end{array}
@@ -1088,7 +1304,8 @@ given to that value.
 Suppose that $X \sim \text{Bernoulli}(p)$. Then, $X = 1$ with probability $p$
 and $X = 0$ with probability $q = 1 - p$. In other words,
 
-$$ X = \left\{ \begin{array}{ll} 1 \quad \text{with prob. } p \\
+$$
+X = \left\{ \begin{array}{ll} 1 \quad \text{with prob. } p \\
             0 \quad \text{with prob. } q = 1 - p
         \end{array}
     \right.
@@ -1097,14 +1314,17 @@ $$
 What is $E[X]$? Since $X$ is a discrete random variable, we take the weighted
 average of the discrete values:
 
-$$ E[X] = \sum_x x f(x) = (1 \times p) + (0 \times q) = p $$
+$$
+E[X] = \sum_x x f(x) = (1 \times p) + (0 \times q) = p
+$$
 
 ### Uniform (Continuous) Example
 
 Suppose that we have a random variable $X \sim \text{Unif}(a, b)$. This random
 variable has the following pdf:
 
-$$ f(x) = \left\{ \begin{array}{ll} \frac{1}{b-a} \quad \text{if } a < x < b \\
+$$
+f(x) = \left\{ \begin{array}{ll} \frac{1}{b-a} \quad \text{if } a < x < b \\
             0 \quad\quad \text{otherwise}
         \end{array}
     \right.
@@ -1117,25 +1337,45 @@ If we integrate $f(x)$ over $\mathbb{R}$, we get $E[X]$. Note that we really
 only need to integrate over $(a, b)$ because $f(x)$ evaluates to 0 everywhere
 else:
 
-$$ E[X] = \int_{\mathbb{R}}x f(x)dx $$
+$$
+E[X] = \int_{\mathbb{R}}x f(x)dx
+$$
 
-$$ E[X] = 0 + \int_a^b x f(x)dx + 0 $$
+$$
+E[X] = 0 + \int_a^b x f(x)dx + 0
+$$
 
-$$ E[X] = \int_a^b \frac{x}{b - a}dx $$
+$$
+E[X] = \int_a^b \frac{x}{b - a}dx
+$$
 
-$$ E[X] = \frac{1}{b-a}\int_a^b xdx $$
+$$
+E[X] = \frac{1}{b-a}\int_a^b xdx
+$$
 
-$$ E[X] = \frac{1}{b-a}\left(\frac{x^2}{2}\right)\Big|^b_a $$
+$$
+E[X] = \frac{1}{b-a}\left(\frac{x^2}{2}\right)\Big|^b_a
+$$
 
-$$ E[X] = \frac{1}{b-a}\left(\frac{b^2}{2} - \frac{a^2}{2}\right) $$
+$$
+E[X] = \frac{1}{b-a}\left(\frac{b^2}{2} - \frac{a^2}{2}\right)
+$$
 
-$$ E[X] = \frac{1}{b-a}\left(\frac{b^2 - a^2}{2}\right) $$
+$$
+E[X] = \frac{1}{b-a}\left(\frac{b^2 - a^2}{2}\right)
+$$
 
-$$ E[X] = \frac{b^2 - a^2}{2(b-a)} $$
+$$
+E[X] = \frac{b^2 - a^2}{2(b-a)}
+$$
 
-$$ E[X] = \frac{(b - a)(b + a)}{2(b-a)} $$
+$$
+E[X] = \frac{(b - a)(b + a)}{2(b-a)}
+$$
 
-$$ E[X] = \frac{(b + a)}{2} $$
+$$
+E[X] = \frac{(b + a)}{2}
+$$
 
 This result makes sense. Given a random uniform sampling over a range $(a, b)$,
 the expected value or weighted mean lies in the middle of the range: $(a + b) /
@@ -1146,7 +1386,8 @@ the expected value or weighted mean lies in the middle of the range: $(a + b) /
 Suppose that we have a random variable, $X \sim \text{Exponential}(\lambda)$.
 This random variable has the following pdf:
 
-$$ f(x) = \left\{ \begin{array}{ll} \lambda e^{-\lambda x} \quad \text{if } x >
+$$
+f(x) = \left\{ \begin{array}{ll} \lambda e^{-\lambda x} \quad \text{if } x >
 0 \\
             0 \quad\quad\quad \text{otherwise}
         \end{array}
@@ -1157,8 +1398,10 @@ If we integrate $f(x)$ over $\mathbb{R}$, we get $E[X]$. Note that we really
 only need to integrate over $(0, \infty)$ because $f(x)$ is undefined for $x
 \leq 0$:
 
-$$ E[X] = \int_{\mathbb{R}} x f(x)dx = \int_0^{\infty} x \lambda e^{-\lambda
-x}dx = \frac{1}{\lambda} $$
+$$
+E[X] = \int_{\mathbb{R}} x f(x)dx = \int_0^{\infty} x \lambda e^{-\lambda
+x}dx = \frac{1}{\lambda}
+$$
 
 Computing this integral is left as an exercise to the reader. I am not typing
 out this whole thing.
@@ -1169,7 +1412,8 @@ Let's look at the **Law of the Unconscious Statistician** (LOTUS). This theorem
 gives us the expected value of some arbitrary function, $h(X)$, applied to a
 random variable, $X$. In short,
 
-$$ E[h(X)] = \left\{ \begin{array}{ll} \sum_x h(x)f(x) \quad \text{ if X is
+$$
+E[h(X)] = \left\{ \begin{array}{ll} \sum_x h(x)f(x) \quad \text{ if X is
 discrete}\\
             \int_{\mathbb{R}} h(x)f(x) \quad \text{ if X is continuous}
         \end{array}
@@ -1183,7 +1427,8 @@ $h(X) = X^2$ or $h(X) = 1/X$ or $h(X) = \sin(X)$ or $h(X) = \ln(X)$.
 
 Suppose $X$ is a discrete random variable with the following pmf:
 
-$$ f(x) = \left\{ \begin{array}{ll} 0.3 \quad \text{ if } x = 2\\
+$$
+f(x) = \left\{ \begin{array}{ll} 0.3 \quad \text{ if } x = 2\\
             0.6 \quad \text{ if } x = 3 \\
             0.1 \quad \text{ if } x = 4 \\
             0 \quad\quad \text{ otherwise }
@@ -1194,29 +1439,43 @@ $$
 Suppose we have a function $h(X) = X^3$. We can calculate $E[h(X)] = E[X^3]$ as
 follows:
 
-$$ E[X^3] = \sum_x x^3 f(x) = 2^3(0.3) + 3^3(0.6) + 4^3(0.1) = 25 $$
+$$
+E[X^3] = \sum_x x^3 f(x) = 2^3(0.3) + 3^3(0.6) + 4^3(0.1) = 25
+$$
 
 ### Continuous Example 1
 
 Suppose we have a random variable $X \sim \text{Unif}(0, 2)$. $X$ has the
 following pdf:
 
-$$ f(x) = \left\{ \begin{array}{ll} 0.5 \quad 0 < x < 2 0 \quad\quad \text{
-otherwise } \end{array} \right. $$
+$$
+f(x) = \left\{ \begin{array}{ll} 0.5 \quad 0 < x < 2 0 \quad\quad \text{
+otherwise } \end{array} \right.
+$$
 
 Suppose we have a function $h(X) = X^n$. We can calculate $E[h(X)] = E[X^n]$ by
 integrating $h(x)f(x)dx$ over the real line, although since we are dealing with
 a uniform distribution, we only need to integrate from 0 to 2:
 
-$$ E[X^n] = \int_{\mathbb{R}} x^n f(x)dx $$
+$$
+E[X^n] = \int_{\mathbb{R}} x^n f(x)dx
+$$
 
-$$ E[X^n] = 0 + \int_0^2 \frac{x^n}{2}dx + 0 $$
+$$
+E[X^n] = 0 + \int_0^2 \frac{x^n}{2}dx + 0
+$$
 
-$$ E[X^n] = \frac{x^{n+1}}{2(n + 1)} \Big|_0^2 $$
+$$
+E[X^n] = \frac{x^{n+1}}{2(n + 1)} \Big|_0^2
+$$
 
-$$ E[X^n] = \frac{2^{n+1}}{2(n + 1)} - 0 $$
+$$
+E[X^n] = \frac{2^{n+1}}{2(n + 1)} - 0
+$$
 
-$$ E[X^n] = \frac{2^{n}}{n + 1} $$
+$$
+E[X^n] = \frac{2^{n}}{n + 1}
+$$
 
 ### Moment, Variance, and Standard Deviation
 
@@ -1249,34 +1508,45 @@ variance of $X$.
 Suppose we have a random variable $X \sim \text{Bernoulli}(p)$. Recall that
 $E[X] = p$. Via LOTUS, we know that:
 
-$$ E[X^2] = \sum_x x^2 f(x) = p $$
+$$
+E[X^2] = \sum_x x^2 f(x) = p
+$$
 
 Given $E[X^2]$, we can calculate the variance of $X$:
 
-$$ \text{Var}(X) = E[X^2] - E[X]^2 = p - p^2 = p(1 - p) $$
+$$
+\text{Var}(X) = E[X^2] - E[X]^2 = p - p^2 = p(1 - p)
+$$
 
 ### Continuous Example 2
 
 Suppose we have a random variable $X \sim \text{Exp}(\lambda)$. By LOTUS,
 
-$$ E[X^n] = \int_0^\infty x^n \lambda e^{-\lambda x} dx = \frac{n!}{\lambda^n}
+$$
+E[X^n] = \int_0^\infty x^n \lambda e^{-\lambda x} dx = \frac{n!}{\lambda^n}
 $$
 
 Given $E[X^n]$, we can calculate the variance of $X$ using $E[X^2]$ and $E[X]$:
 
-$$ \text{Var}(X) = E[X^2] - E[X]^2 = \frac{2}{\lambda^2} -
-\left(\frac{1}{\lambda}\right)^2 = \frac{1}{\lambda^2} $$
+$$
+\text{Var}(X) = E[X^2] - E[X]^2 = \frac{2}{\lambda^2} -
+\left(\frac{1}{\lambda}\right)^2 = \frac{1}{\lambda^2}
+$$
 
 ### Theorem
 
 Let's consider the following theorem, which shows that expectation is a linear
 function. In other words:
 
-$$ E[aX + b] = aE[X] + b $$
+$$
+E[aX + b] = aE[X] + b
+$$
 
 Variance works slightly differently:
 
-$$ \text{Var}(aX + b) = a^2 \text{Var}(X) $$
+$$
+\text{Var}(aX + b) = a^2 \text{Var}(X)
+$$
 
 Note that for variance, the $b$ goes away, and this elimination makes sense. If
 we have a random variable and we shift if by some constant factor $b$, we
@@ -1286,10 +1556,14 @@ haven't changed how much it is spread out, only where it is centered.
 
 Consider a random variable $X \sim \text{Exp}(3)$. Then:
 
-$$ E[-2X + 7] = -2E[X] + 7 = -2 \times \frac{1}{3} + 7 = \frac{19}{3} $$
+$$
+E[-2X + 7] = -2E[X] + 7 = -2 \times \frac{1}{3} + 7 = \frac{19}{3}
+$$
 
-$$ \text{Var}(-2X + 7) = (-2)^2\text{Var}(X) = 4 \times \frac{1}{9} =
-\frac{4}{9} $$
+$$
+\text{Var}(-2X + 7) = (-2)^2\text{Var}(X) = 4 \times \frac{1}{9} =
+\frac{4}{9}
+$$
 
 ### Moment Generating Functions (Bonus)
 
@@ -1302,7 +1576,8 @@ $X$.
 Consider a random variable $X \sim \text{Bernoulli}(p)$. Remember the pmf for
 $X$:
 
-$$ X = \left\{ \begin{array}{ll} 1 \quad \text{with prob. } p \\
+$$
+X = \left\{ \begin{array}{ll} 1 \quad \text{with prob. } p \\
             0 \quad \text{with prob. } q = 1 - p
         \end{array}
     \right.
@@ -1310,24 +1585,36 @@ $$
 
 We can use LOTUS to find $M_X(t)$:
 
-$$ M_X(t) = E[e^{tX}] = \sum_x e^{tx} f(x) = e^t \times p + e^0 \times q = pe^t
+$$
+M_X(t) = E[e^{tX}] = \sum_x e^{tx} f(x) = e^t \times p + e^0 \times q = pe^t
 
-- q $$
+- q
+$$
 
 ### Exponential Example
 
 Consider a random variable $X \sim \text{Exp}(\lambda)$, which has a pdf $f(x) =
 \lambda e^{-\lambda x}, x > 0$. Again we can use LOTUS to find $M_X(t)$:
 
-$$ M_X(t) = \int_{\mathbb{R}} e^{tx}f(x)dx $$
+$$
+M_X(t) = \int_{\mathbb{R}} e^{tx}f(x)dx
+$$
 
-$$ M_X(t) = \int_0^\infty e^{tx} \lambda e^{-\lambda x}dx $$
+$$
+M_X(t) = \int_0^\infty e^{tx} \lambda e^{-\lambda x}dx
+$$
 
-$$ M_X(t) = \lambda \int_0^\infty e^{tx} e^{-\lambda x}dx $$
+$$
+M_X(t) = \lambda \int_0^\infty e^{tx} e^{-\lambda x}dx
+$$
 
-$$ M_X(t) = \lambda \int_0^\infty e^{(t - \lambda)x}dx $$
+$$
+M_X(t) = \lambda \int_0^\infty e^{(t - \lambda)x}dx
+$$
 
-$$ M_X(t) = \frac{\lambda}{\lambda - t}, \text{ if } \lambda > t $$
+$$
+M_X(t) = \frac{\lambda}{\lambda - t}, \text{ if } \lambda > t
+$$
 
 Note that if $\lambda \leq t$, then the definite integral goes to infinity, so
 we have to set the constraint that $\lambda > t$.
@@ -1338,7 +1625,9 @@ Why do we care about the moment generating function? Well, under certain
 technical assumptions, the $k$th moment of $X$ is a function of the moment
 generating function. Specifically,
 
-$$ E[X^k] = \frac{d^k}{dt^k}M_x(t)\Big|_{t = 0} \quad k = 1, 2, ... $$
+$$
+E[X^k] = \frac{d^k}{dt^k}M_x(t)\Big|_{t = 0} \quad k = 1, 2, ...
+$$
 
 In other words, the $k$th moment of $X$ is equal to the $k$th derivative of the
 mgf (with respect to $t$), evaluated at $t = 0$.
@@ -1352,32 +1641,54 @@ Consider a random variable $X \sim \text{Exp}(\lambda)$, which has an mgf
 $M_X(t) = \lambda / (\lambda - t), \lambda > t$. Let's generate the first moment
 of $X$, which is just the expected value, $E[X]$:
 
-$$ E[X] = \frac{d}{dt}M_X(t)\Big|_{t = 0} $$
+$$
+E[X] = \frac{d}{dt}M_X(t)\Big|_{t = 0}
+$$
 
-$$ E[X] = \frac{d}{dt}\frac{\lambda}{\lambda - t}\Big|_{t = 0} $$
+$$
+E[X] = \frac{d}{dt}\frac{\lambda}{\lambda - t}\Big|_{t = 0}
+$$
 
-$$ E[X] = \frac{\lambda}{(\lambda - t)^2}\Big|_{t = 0} $$
+$$
+E[X] = \frac{\lambda}{(\lambda - t)^2}\Big|_{t = 0}
+$$
 
-$$ E[X] = \frac{\lambda}{\lambda^2} = \frac{1}{\lambda} $$
+$$
+E[X] = \frac{\lambda}{\lambda^2} = \frac{1}{\lambda}
+$$
 
 Let's calculate the second moment of $X$, $E[X^2]$:
 
-$$ E[X] = \frac{d^2}{dt^2}M_X(t)\Big|_{t = 0} $$
+$$
+E[X] = \frac{d^2}{dt^2}M_X(t)\Big|_{t = 0}
+$$
 
-$$ E[X] = \frac{d^2}{dt^2}\frac{\lambda}{\lambda - t}\Big|_{t = 0} $$
+$$
+E[X] = \frac{d^2}{dt^2}\frac{\lambda}{\lambda - t}\Big|_{t = 0}
+$$
 
-$$ E[X] = \frac{d}{dt}\frac{\lambda}{(\lambda - t)^2}\Big|_{t = 0} $$
+$$
+E[X] = \frac{d}{dt}\frac{\lambda}{(\lambda - t)^2}\Big|_{t = 0}
+$$
 
-$$ E[X] = \frac{\lambda \times 2(\lambda - t)}{(\lambda - t)^4}\Big|_{t = 0} $$
+$$
+E[X] = \frac{\lambda \times 2(\lambda - t)}{(\lambda - t)^4}\Big|_{t = 0}
+$$
 
-$$ E[X] = \frac{2\lambda}{(\lambda - t)^3}\Big|_{t = 0} $$
+$$
+E[X] = \frac{2\lambda}{(\lambda - t)^3}\Big|_{t = 0}
+$$
 
-$$ E[X] = \frac{2\lambda}{\lambda^3} = \frac{2}{\lambda^2} $$
+$$
+E[X] = \frac{2\lambda}{\lambda^3} = \frac{2}{\lambda^2}
+$$
 
 Given the second moment of $X$, we can calculate the variance of $X$:
 
-$$ \text{Var}(X) = E[X^2] - (E[X])^2 = \frac{2}{\lambda^2} - \frac{1}{\lambda^2}
-= \frac{1}{\lambda^2} $$
+$$
+\text{Var}(X) = E[X^2] - (E[X])^2 = \frac{2}{\lambda^2} - \frac{1}{\lambda^2}
+= \frac{1}{\lambda^2}
+$$
 
 ## Functions of a Random Variable
 
@@ -1405,7 +1716,8 @@ Here are some basic examples, which we won't prove now:
 Let $X$ denote the number of heads seen from two coin tosses. We know that $X$
 has the following pmf, $f(x)$:
 
-$$ f(x) = \left\{ \begin{array}{ll} 1/4, \quad \text{ if } x = 0 \\
+$$
+f(x) = \left\{ \begin{array}{ll} 1/4, \quad \text{ if } x = 0 \\
             1/2, \quad \text{ if } x = 1 \\
             1/4, \quad \text{ if } x = 2
         \end{array}
@@ -1414,7 +1726,8 @@ $$
 
 How do we compute the pmf, $g(y)$, for $Y = X^3 - X$? Let's map $x$ to $y$:
 
-$$ y = x^3 - x = \left\{ \begin{array}{ll} 0, \quad \text{ if } x = 0 \\
+$$
+y = x^3 - x = \left\{ \begin{array}{ll} 0, \quad \text{ if } x = 0 \\
             0, \quad \text{ if } x = 1 \\
             6, \quad \text{ if } x = 2
         \end{array}
@@ -1425,7 +1738,8 @@ With this correspondence between $x$ and $y$, we can now relate $f(x)$ to
 $g(y)$. For example, $g(0) = P(Y = 0) = P(X = 0) + P(X = 1) = 3/4$. Similarly,
 $g(6) = P(Y = 6) = P(X = 2) = 1/4$. Thus, we have the pmf for $Y$:
 
-$$ g(y) = \left\{ \begin{array}{ll} 3/4, \quad \text{ if } y = 0 \\
+$$
+g(y) = \left\{ \begin{array}{ll} 3/4, \quad \text{ if } y = 0 \\
             1/4, \quad \text{ if } y = 6
         \end{array}
     \right.
@@ -1439,28 +1753,41 @@ pdf of $Y = X^2$.
 First, let's find the cdf of $Y$, $G(y)$. Remember that, for a given value of
 $y$, the cdf at $y$ is equal to the pdf of all $Y \leq y$. In other words:
 
-$$ G(y) = P(Y \leq y) $$
+$$
+G(y) = P(Y \leq y)
+$$
 
 Let's substitute $X^2 = Y$:
 
-$$ G(y) = P(X^2 \leq y) $$
+$$
+G(y) = P(X^2 \leq y)
+$$
 
 Note that we only know about $X$, not $X^2$, so we take the square root, and
 rearrange the inequality:
 
-$$ G(y) = P(-\sqrt{y} \leq X \leq \sqrt{y}) $$
+$$
+G(y) = P(-\sqrt{y} \leq X \leq \sqrt{y})
+$$
 
 By definition, this probability equals the integral of the pdf of $X$ between
 these two bounds, so we integrate.
 
-$$ G(y) = \int_{-\sqrt{y}}^{\sqrt{y}} |x|dx $$
-
-$$ G(y) = \int_{-\sqrt{y}}^{0} -xdx + \int_{0}^{\sqrt{y}} xdx $$
-
-$$ G(y) = \frac{-x^2}{2} \Big|_{-\sqrt{y}}^0 + \frac{x^2}{2} \Big|_0^{\sqrt{y}}
+$$
+G(y) = \int_{-\sqrt{y}}^{\sqrt{y}} |x|dx
 $$
 
-$$ G(y) = 0 + \frac{y}{2} + \frac{y}{2} - 0 = y, \quad 0 < y < 1 $$
+$$
+G(y) = \int_{-\sqrt{y}}^{0} -xdx + \int_{0}^{\sqrt{y}} xdx
+$$
+
+$$
+G(y) = \frac{-x^2}{2} \Big|_{-\sqrt{y}}^0 + \frac{x^2}{2} \Big|_0^{\sqrt{y}}
+$$
+
+$$
+G(y) = 0 + \frac{y}{2} + \frac{y}{2} - 0 = y, \quad 0 < y < 1
+$$
 
 Note that since $x$ is constrained to $[-1, 1]$, $y = x^2$ is constrained to
 $(0, 1)$.
@@ -1468,7 +1795,8 @@ $(0, 1)$.
 Remember, the pdf is the derivative of the cdf: $g(y) = G'(y) = 1$. Note that
 because of the constraint on $y$:
 
-$$ g(y) = \left\{ \begin{array}{ll} 1, \quad 0 < y < 1 \\
+$$
+g(y) = \left\{ \begin{array}{ll} 1, \quad 0 < y < 1 \\
             0, \quad \text{otherwise}
         \end{array}
     \right.
@@ -1487,21 +1815,29 @@ variable: $F(X) \sim \text{Unif}(0, 1)$.
 
 Let $Y = F(X)$. Then the cdf of $Y$ is, by definition:
 
-$$ P(Y \leq y) $$
+$$
+P(Y \leq y)
+$$
 
 Let's plug in what $Y$ equals:
 
-$$ P(Y \leq y) = P(F(X) \leq y) $$
+$$
+P(Y \leq y) = P(F(X) \leq y)
+$$
 
 We only know about $X$, not $F(X)$. Let's apply $F^{-1}$ to both sides of the
 inequality to free up the $X$:
 
-$$ P(Y \leq y) = P(F^{-1}(F(X)) \leq F^{-1}(y)) = P(X \leq F^{-1}(y)) $$
+$$
+P(Y \leq y) = P(F^{-1}(F(X)) \leq F^{-1}(y)) = P(X \leq F^{-1}(y))
+$$
 
 Remember, $F(x) = P(X \leq x)$. Correspondingly, $P(X \leq F^{-1}(y)) =
 F(F^{-1}(y))$:
 
-$$ P(Y \leq y) = F(F^{-1}(y)) = y $$
+$$
+P(Y \leq y) = F(F^{-1}(y)) = y
+$$
 
 We have just shown that the cdf of $Y = F(X)$ is equal to $y$. The pdf, given
 that cdf, is 1, which is the pdf for a $\text{Unif}(0, 1)$ random variable.
@@ -1516,20 +1852,32 @@ to use the inverse transform method to do this.
 Suppose that $X \sim \text{Exp}(\lambda)$, with cdf $F(x) = 1 - e^{-\lambda x},
 x \geq 0$. The inverse transform theorem implies that:
 
-$$ F(X) = 1 - e^{-\lambda X} \sim \text{Unif}(0,1) $$
+$$
+F(X) = 1 - e^{-\lambda X} \sim \text{Unif}(0,1)
+$$
 
 Let $U \sim \text{Unif}(0, 1)$. Since $F(X)$ is uniform, we can set $F(X) = U$.
 Now, we can solve for $X$:
 
-$$ F(X) = 1 - e^{-\lambda X} = U $$
+$$
+F(X) = 1 - e^{-\lambda X} = U
+$$
 
-$$ 1 - e^{-\lambda X} = U $$
+$$
+1 - e^{-\lambda X} = U
+$$
 
-$$ 1 - U = e^{-\lambda X}U $$
+$$
+1 - U = e^{-\lambda X}U
+$$
 
-$$ \ln(1 - U) = -\lambda X $$
+$$
+\ln(1 - U) = -\lambda X
+$$
 
-$$ \frac{-\ln(1 - U)}{\lambda} = X \sim \text{Exp}(\lambda) $$
+$$
+\frac{-\ln(1 - U)}{\lambda} = X \sim \text{Exp}(\lambda)
+$$
 
 Again, we have just demonstrated how we can transform a random variable from one
 distribution, $U \sim \text{Unif}(0, 1)$, into a random variable from another
@@ -1544,7 +1892,9 @@ Suppose we have a random variable $X$ with the [Weibull
 distribution](https://en.wikipedia.org/wiki/Weibull_distribution). $X$ has the
 following cdf:
 
-$$ F(x) = 1 - e^{-(\lambda x)^\Beta}, x > 0 $$
+$$
+F(x) = 1 - e^{-(\lambda x)^\Beta}, x > 0
+$$
 
 > Note that if we set $\Beta = 1$, we have the cdf for $X \sim \text{Exp}$ as a
 > special case.
@@ -1552,32 +1902,47 @@ $$ F(x) = 1 - e^{-(\lambda x)^\Beta}, x > 0 $$
 Under the inverse transform method, we can set $F(X) = U$ and then solve for
 $X$:
 
-$$ U = 1 - e^{-(\lambda X)^\Beta} $$
+$$
+U = 1 - e^{-(\lambda X)^\Beta}
+$$
 
-$$ 1 - U = e^{-(\lambda X)^\Beta} $$
+$$
+1 - U = e^{-(\lambda X)^\Beta}
+$$
 
-$$ \ln(1 - U) = -(\lambda X)^\Beta $$
+$$
+\ln(1 - U) = -(\lambda X)^\Beta
+$$
 
-$$ \left[\ln(1 - U)\right]^{1/\Beta} = -\lambda X $$
+$$
+\left[\ln(1 - U)\right]^{1/\Beta} = -\lambda X
+$$
 
-$$ X = \frac{1}{\lambda}\left[\ln(1 - U)\right]^{1/\Beta} $$
+$$
+X = \frac{1}{\lambda}\left[\ln(1 - U)\right]^{1/\Beta}
+$$
 
 ### Bonus Theorem
 
 Here's another way to get the pdf of $Y = h(X)$ for some continuous function
 $h$. The cdf of $Y$ is:
 
-$$ F_Y(y) = P(Y \leq y) = P(h(X) \leq y) = P(X \leq h^{-1}(y)) $$
+$$
+F_Y(y) = P(Y \leq y) = P(h(X) \leq y) = P(X \leq h^{-1}(y))
+$$
 
 Remember, $F_X(x) = P(X \leq x)$. Correspondingly, $P(X \leq h^{-1}(y)) =
 F_X(h^{-1}(y))$. In other words,
 
-$$ f_Y(y) = \frac{d}{dy}F_Y(y) = \frac{d}{dy} F_X(h^{-1}(y)) $$
+$$
+f_Y(y) = \frac{d}{dy}F_Y(y) = \frac{d}{dy} F_X(h^{-1}(y))
+$$
 
 Taking advantage of the fact that the derivative of the cdf is the pdf, we can
 compute the derivative using the chain rule:
 
-$$ \frac{d}{dy} F_X(h^{-1}(y)) = f_X(h^{-1}(y)) \Big|\frac{d}{dy}h^{-1}(y)\Big|
+$$
+\frac{d}{dy} F_X(h^{-1}(y)) = f_X(h^{-1}(y)) \Big|\frac{d}{dy}h^{-1}(y)\Big|
 $$
 
 Since the pdf has to be greater than or equal to zero, we have to take the
@@ -1587,24 +1952,33 @@ two terms is always 0 or positive.
 Armed with this result, we can prove LOTUS. Remember the definition for the
 expected value of a random variable, $Y$:
 
-$$ E[Y] = \int_{\mathbb{R}} y f_Ydy $$
+$$
+E[Y] = \int_{\mathbb{R}} y f_Ydy
+$$
 
 Remember, we have an expression for $f_Y$:
 
-$$ f_Y(y) = f_X(h^{-1}(y)) \Big|\frac{d}{dy}h^{-1}(y)\Big| $$
+$$
+f_Y(y) = f_X(h^{-1}(y)) \Big|\frac{d}{dy}h^{-1}(y)\Big|
+$$
 
 Thus:
 
-$$ E[Y] = \int_{\mathbb{R}} y f_X(h^{-1}(y)) \Big|\frac{d}{dy}h^{-1}(y)\Big| dy
+$$
+E[Y] = \int_{\mathbb{R}} y f_X(h^{-1}(y)) \Big|\frac{d}{dy}h^{-1}(y)\Big| dy
 $$
 
 Take it on faith that this expression simplifies to:
 
-$$ E[Y] = \int_{\mathbb{R}} y f_X(h^{-1}(y)) dh^{-1}(y) $$
+$$
+E[Y] = \int_{\mathbb{R}} y f_X(h^{-1}(y)) dh^{-1}(y)
+$$
 
 If we set $x = h^{-1}(y)$, then you get LOTUS:
 
-$$ E[Y] = \int_{\mathbb{R}} h(x) f_X(x)dx $$
+$$
+E[Y] = \int_{\mathbb{R}} h(x) f_X(x)dx
+$$
 
 ## Jointly Distributed Random Variables
 
@@ -1620,7 +1994,9 @@ customers will be correlated with each other.
 Let's consider two random variables, $X$ and $Y$, interacting together - think
 height and weight. We can define the **joint cdf** of $X$ and $Y$ as:
 
-$$ F(x, y) \equiv P(X \leq x, Y \leq y), \quad \text{for all } x, y $$
+$$
+F(x, y) \equiv P(X \leq x, Y \leq y), \quad \text{for all } x, y
+$$
 
 The **marginal cdf** of $X$ is the cdf of $X$, regardless of $Y$: $F_X(x) = F(x,
 \infty)$. Similarly, the marginal cdf of $Y$ is $F_Y(y) = F(\infty, y)$.
@@ -1651,10 +2027,12 @@ Consider the following table, with gives the joint pmf, $f(x,y)$ along with the
 accompanying marginal pmfs, $f_X(x)$ and $f_Y(y)$ for two random variables, $X$
 and $Y$:
 
-$$ \begin{array}{c|ccc|c} f(x, y) & X = 2 & X = 3 & X = 4 & f_Y(y)  \\ \hline Y
+$$
+\begin{array}{c|ccc|c} f(x, y) & X = 2 & X = 3 & X = 4 & f_Y(y)  \\ \hline Y
 = 4 & 0.3 & 0.2 & 0.1 & 0.6  \\
 Y = 6 & 0.1 & 0.2 & 0.1 & 0.4 \\ \hline f_X(x) & 0.4 & 0.4 & 0.2 & 0.1 \\  
-\end{array} $$
+\end{array}
+$$
 
 The possible values for $X$ are 2, 3, and 4, and the possible values of $Y$ are
 4 and 6. The numbers in the interior of the table give the joint pmf for the
@@ -1685,8 +2063,10 @@ possible $(x, y)$ pairs.
 Just as we saw with the marginal pmfs previously, we can calculate the
 **marginal pdfs** of $X$ and $Y$ as:
 
-$$ f_X(x) = \int_{\mathbb{R}} f(x,y)dy, \quad f_Y(y) = \int_{\mathbb{R}}
-f(x,y)dx $$
+$$
+f_X(x) = \int_{\mathbb{R}} f(x,y)dy, \quad f_Y(y) = \int_{\mathbb{R}}
+f(x,y)dx
+$$
 
 Note that this construction matches the marginal pmf for the discrete variables.
 The marginal pdf for $X$, $f_X(x)$ equals the sum of the probabilities of $f(x,
@@ -1698,7 +2078,9 @@ equals the sum of the probabilities of $f(x, y)$, over all values of $x$.
 Suppose we have two random variables, $X$ and $Y$, whose joint pdf is the
 following:
 
-$$ f(x,y) = \frac{21}{4}x^2y, \quad x^2 \leq y \leq 1 $$
+$$
+f(x,y) = \frac{21}{4}x^2y, \quad x^2 \leq y \leq 1
+$$
 
 Note the limits of $x$ and $y$: $x^2 \leq y \leq 1$. Limits like these have
 ramifications when it comes to independence, which we are going to talk about
@@ -1706,57 +2088,85 @@ shortly.
 
 Let's take a look at the marginal pdfs, $f_X(x)$ and $f_Y(y)$. First, $f_X(x)$:
 
-$$ f_X(x) = \int_{\mathbb{R}} f(x,y)dy $$
+$$
+f_X(x) = \int_{\mathbb{R}} f(x,y)dy
+$$
 
 Note that, since we are integrating with respect to $y$, the limits of
 integration become the limits of $y$. In other words, we integrate from $x^2$ to
 1:
 
-$$ f_X(x) = \int_{x^2}^1 \frac{21}{4}x^2ydy $$
+$$
+f_X(x) = \int_{x^2}^1 \frac{21}{4}x^2ydy
+$$
 
 Now, since we are integrating with respect to $y$, the expression $21x^2 / 4$ is
 a constant, which can move outside the integral:
 
-$$ f_X(x) = \frac{21}{4}x^2 \int_{x^2}^1 ydy $$
+$$
+f_X(x) = \frac{21}{4}x^2 \int_{x^2}^1 ydy
+$$
 
 Let's complete the integration:
 
-$$ f_X(x) = \frac{21}{4}x^2 \frac{y^2}{2} \Big|_{x^2}^1 $$
+$$
+f_X(x) = \frac{21}{4}x^2 \frac{y^2}{2} \Big|_{x^2}^1
+$$
 
-$$ f_X(x) = \frac{21}{4}x^2 \left(\frac{1}{2} - \frac{x^4}{2}\right) $$
+$$
+f_X(x) = \frac{21}{4}x^2 \left(\frac{1}{2} - \frac{x^4}{2}\right)
+$$
 
-$$ f_X(x) = \frac{21}{8}x^2 \left(1 - x^4\right) $$
+$$
+f_X(x) = \frac{21}{8}x^2 \left(1 - x^4\right)
+$$
 
 Note that since $x^2 \leq y \leq 1$, $f_X(x)$ is only defined for $-1 \leq x
 \leq 1$. If $|x| >1$, then $x^2 > 1 > y$, which breaks the inequality.
 
 Now, let's find $f_Y(y)$:
 
- $$ f_Y(y) = \int_{\mathbb{R}} f(x,y)dx $$
+$$
+f_Y(y) = \int_{\mathbb{R}} f(x,y)dx
+$$
 
 Note that, since we are integrating with respect to $x$, the limits of
 integration become the limits of $x$. In other words, since $x^2 \leq y$, then
 $-\sqrt{y} \leq x \leq \sqrt{y}$, which become our new limits of integration:
 
-$$ f_Y(y) = \int_{-\sqrt{y}}^{\sqrt{y}} \frac{21}{4}x^2ydx $$
+$$
+f_Y(y) = \int_{-\sqrt{y}}^{\sqrt{y}} \frac{21}{4}x^2ydx
+$$
 
 Because we are integrating with respect to $x$, the expression $21y / 4$ is a
 constant, which can move outside the integral:
 
-$$ f_Y(y) = \frac{21}{4}y \int_{-\sqrt{y}}^{\sqrt{y}} x^2dx $$
+$$
+f_Y(y) = \frac{21}{4}y \int_{-\sqrt{y}}^{\sqrt{y}} x^2dx
+$$
 
 Let's complete the integration:
 
-$$ f_Y(y) = \frac{21}{4}y \frac{x^3}{3}\Big|_{-\sqrt{y}}^{\sqrt{y}} $$
+$$
+f_Y(y) = \frac{21}{4}y \frac{x^3}{3}\Big|_{-\sqrt{y}}^{\sqrt{y}}
+$$
 
-$$ f_Y(y) = \frac{21}{4}y \left(\frac{(\sqrt{y})^3}{3} -
-\frac{(-\sqrt{y})^3}{3}\right) $$
+$$
+f_Y(y) = \frac{21}{4}y \left(\frac{(\sqrt{y})^3}{3} -
+\frac{(-\sqrt{y})^3}{3}\right)
+$$
 
-$$ f_Y(y) = \frac{21}{4}y \left(\frac{y^{3/2}}{3} + \frac{y^{3/2}}{3}\right) $$
+$$
+f_Y(y) = \frac{21}{4}y \left(\frac{y^{3/2}}{3} + \frac{y^{3/2}}{3}\right)
+$$
 
-$$ f_Y(y) = \frac{21}{4}y \left(\frac{2y^{3/2}}{3}\right) $$
+$$
+f_Y(y) = \frac{21}{4}y \left(\frac{2y^{3/2}}{3}\right)
+$$
 
-$$ f_Y(y) = \frac{42}{12}y^{5/2} = \frac{7}{2}y^{5/2} $$
+$$
+f_Y(y) = \frac{42}{12}y^{5/2} = \frac{7}{2}y^{5/2}
+$$
 
 Remember the limits: $x^2 \leq y \leq 1$. Since $x^2$ cannot be negative, and
 $y$ cannot be greater than one, $f_Y(y)$ is only defined for $0 \leq y \leq 1$.
@@ -1797,15 +2207,25 @@ in the continuous case, $\int_{\mathbb{R}} f(y|x)dy = 1$, for any $x$.
 For example, suppose $f(x,y) = 21x^2y/4$ for $x^2 \leq y \leq 1$. We can
 calculate $f(y|x)$ using $f(x)$ and $f_X(x)$, which we calculated previously:
 
-$$ f(y|x) = \frac{f(x,y)}{f_X(x)} $$
+$$
+f(y|x) = \frac{f(x,y)}{f_X(x)}
+$$
 
-$$ f(y|x) = \frac{\frac{21}{4}x^2y}{\frac{21}{8}x^2(1-x^4)} $$
+$$
+f(y|x) = \frac{\frac{21}{4}x^2y}{\frac{21}{8}x^2(1-x^4)}
+$$
 
-$$ f(y|x) = \frac{\frac{21}{4}y}{\frac{21}{8}(1-x^4)} $$
+$$
+f(y|x) = \frac{\frac{21}{4}y}{\frac{21}{8}(1-x^4)}
+$$
 
-$$ f(y|x) = \frac{\frac{21}{4}}{\frac{21}{8}}\frac{y}{(1-x^4)} $$
+$$
+f(y|x) = \frac{\frac{21}{4}}{\frac{21}{8}}\frac{y}{(1-x^4)}
+$$
 
-$$ f(y|x) = \frac{2y}{1-x^4}, \quad x^2 \leq y \leq 1 $$
+$$
+f(y|x) = \frac{2y}{1-x^4}, \quad x^2 \leq y \leq 1
+$$
 
 Note that the final equation contains both the variables $x$ and $y$. We are
 querying about $y$, and we have information about $x$ - that's the whole "given
@@ -1822,20 +2242,26 @@ regarding IBM stock.
 Let's prove this theorem. Remember the formula for the conditional pdf, $f(y |
 x)$:
 
-$$ f(y|x) = \frac{f(x,y)}{f_X(x)} $$
+$$
+f(y|x) = \frac{f(x,y)}{f_X(x)}
+$$
 
 Remember that if $X$ and $Y$ are independent, then $f(x,y) = f_X(x)f_Y(y)$. So:
 
-$$ f(y|x) = \frac{f_X(x)f_Y(y)}{f_X(x)} = f_Y(y). \quad \square $$
+$$
+f(y|x) = \frac{f_X(x)f_Y(y)}{f_X(x)} = f_Y(y). \quad \square
+$$
 
 ### Conditional Expectation
 
 If we can compute the conditional pdf/pmf $f(y|x)$, then we can compute the
 **conditional expection** of $Y$ given $X = x$ as the following:
 
-$$ E[Y|X = x] = \left\{\begin{matrix} \sum_yyf(y|x) & \text{discrete} \\
+$$
+E[Y|X = x] = \left\{\begin{matrix} \sum_yyf(y|x) & \text{discrete} \\
  \int_{\mathbb{R}} yf(y|x)dy & \text{continuous}
-\end{matrix}\right. $$
+\end{matrix}\right.
+$$
 
 Conditional expectation is very important as it allows us to update our
 expectation about $Y$ given information about $X$. For example, suppose that we
@@ -1849,16 +2275,26 @@ $E[Y]$.
 
 Let $f(x,y) = 21x^2y/4$, if $x^2 \leq y \leq 1$. Then:
 
-$$ E[Y|X] = \int_{\mathbb{R}} yf(y|x)dy $$
+$$
+E[Y|X] = \int_{\mathbb{R}} yf(y|x)dy
+$$
 
-$$ E[Y|X] = \int_{x^2}^1 \frac{2y^2}{1-x^4}dy $$
+$$
+E[Y|X] = \int_{x^2}^1 \frac{2y^2}{1-x^4}dy
+$$
 
-$$ E[Y|X] = \frac{2}{1-x^4}\int_{x^2}^1 y^2dy $$
+$$
+E[Y|X] = \frac{2}{1-x^4}\int_{x^2}^1 y^2dy
+$$
 
-$$ E[Y|X] = \frac{2}{1-x^4} \left(\frac{y^3}{3}\Big|_{x^2}^1\right) $$
+$$
+E[Y|X] = \frac{2}{1-x^4} \left(\frac{y^3}{3}\Big|_{x^2}^1\right)
+$$
 
-$$ E[Y|X] = \frac{2}{1-x^4} \left(\frac{1^3}{3} - \frac{x^6}{3}\right) =
-\frac{2}{3} \times \frac{1-x^6}{1-x^4} $$
+$$
+E[Y|X] = \frac{2}{1-x^4} \left(\frac{1^3}{3} - \frac{x^6}{3}\right) =
+\frac{2}{3} \times \frac{1-x^6}{1-x^4}
+$$
 
 Note that the conditional expectation is a function of $x$, which makes sense:
 prior information about $x$ changes the expected value of $Y$, and the degree to

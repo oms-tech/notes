@@ -14,8 +14,10 @@ In this lesson, we are going to solve a differential equation by hand.
 If $f(x)$ is continuous, then the **derivative** at $x$ - assuming that it
 exists and is well-defined for any $x$ - is:
 
-$$ \frac{d}{dx} f(x) \equiv f'(x) \equiv \lim_{h \to\ 0} \frac{f(x + h) -
-f(x)}{h} $$
+$$
+\frac{d}{dx} f(x) \equiv f'(x) \equiv \lim_{h \to\ 0} \frac{f(x + h) -
+f(x)}{h}
+$$
 
 Note that we also refer to the derivative at $x$ as the instantaneous slope at
 $x$. The expression $f(x + h) - f(x)$ represents the "rise", and $h$ represents
@@ -24,11 +26,15 @@ approaches the instantaneous slope at $(x, f(x))$.
 
 Thus, for small $h$:
 
-$$ f'(x) \approx \frac{f(x+h) - f(x)}{h} $$
+$$
+f'(x) \approx \frac{f(x+h) - f(x)}{h}
+$$
 
 We can manipulate this expression to get the following approximation:
 
-$$ f(x+h) \approx f(x) + hf'(x) $$
+$$
+f(x+h) \approx f(x) + hf'(x)
+$$
 
 ### Example
 
@@ -42,32 +48,44 @@ method](https://en.wikipedia.org/wiki/Euler_method).
 Let's approximate $f(x+h)$, using the relationship between $f(x)$ and $f'(x)$
 from the differential equation:
 
-$$ f(x+h) \approx f(x) + hf'(x) = f(x) +2hf(x) = (1 + 2h)f(x) $$
+$$
+f(x+h) \approx f(x) + hf'(x) = f(x) +2hf(x) = (1 + 2h)f(x)
+$$
 
 We can repeat this exercise for $f(x + 2h)$. First:
 
-$$ f(x + 2h) = f((x + h) + h) $$
+$$
+f(x + 2h) = f((x + h) + h)
+$$
 
 What do we know about $f((x+h) + h)$? Let's plug back in to our approximation
 for $f(x+h)$, using $x+h$ as $x$ and $h$ as $h$. Consider:
 
-$$ f((x+h) + h) \approx f(x + h) + hf'(x + h) \\[2ex] $$
+$$
+f((x+h) + h) \approx f(x + h) + hf'(x + h) \\[2ex]
+$$
 
 Recall the approximation for $f(x +h)$ that we just found, and remember that
 $f'(x) = 2f(x)$. So:
 
-$$ f((x+h) + h) \approx (1+2h)f(x) + 2hf(x + h) \\[2ex] $$
+$$
+f((x+h) + h) \approx (1+2h)f(x) + 2hf(x + h) \\[2ex]
+$$
 
 Again, we have an $f(x+h)$ term that we can substitute for:
 
-$$ \begin{alignedat}{1} f((x+h) + h) & \approx (1+2h)f(x) + 2h (1+2h)f(x)
+$$
+\begin{alignedat}{1} f((x+h) + h) & \approx (1+2h)f(x) + 2h (1+2h)f(x)
 \\[2ex] & \approx (1+2h)(1+2h)(fx) \\[2ex] & \approx (1+2h)^2(fx)
-\end{alignedat} $$
+\end{alignedat}
+$$
 
 If we go through this approximation again and again, we will see the following
 formula arise:
 
-$$ f(x + ih) \approx (1+2h)^if(x), \quad i = 0,1,2,..., $$
+$$
+f(x + ih) \approx (1+2h)^if(x), \quad i = 0,1,2,...,
+$$
 
 This strategy works well, although it may deteriorate as $i$ gets large since we
 are compounding approximations (and thus propagating approximation errors) as a
@@ -76,27 +94,35 @@ function of $i$.
 Now, If we plug in $x = 0, f(x = 0) = 10, h = 0.01$, to the generalized equation
 above, we have:
 
-$$ \begin{alignedat}{1} & f(0.01i) \approx 10(1.02)^i  \quad i = 0,1,2,..., \\
-& f(x) \approx 10(1.02)^x \quad x = 0, 0.01, 0.02,..., \end{alignedat} $$
+$$
+\begin{alignedat}{1} & f(0.01i) \approx 10(1.02)^i  \quad i = 0,1,2,..., \\
+& f(x) \approx 10(1.02)^x \quad x = 0, 0.01, 0.02,..., \end{alignedat}
+$$
 
 Now, the precise solution for this differential equation is $f(x) = 10e^{2x}$.
 We can use a Taylor series to express $e^y$:
 
-$$ e^y = \sum_{l=0}^\infty \frac{y^l}{l!} $$
+$$
+e^y = \sum_{l=0}^\infty \frac{y^l}{l!}
+$$
 
 Let's take the first two terms:
 
-$$ e^y \approx \sum_{l=0}^1 \frac{y^l}{l!} = 1 + y $$
+$$
+e^y \approx \sum_{l=0}^1 \frac{y^l}{l!} = 1 + y
+$$
 
 Note that $(1+y) \approx (1+y)^i$ for small values of both $y$ and $i$.
 
 Let's see how well the approximation performs as we increase $i$. Remember that,
 for any $i \in 0,1,2,...$, $x = ih = 0.01i$. Therefore:
 
-$$ \begin{array}{c|cccccc} x = ih = 0.01i & 0&0.01&0.02&0.03&\cdots& 0.10 \\
+$$
+\begin{array}{c|cccccc} x = ih = 0.01i & 0&0.01&0.02&0.03&\cdots& 0.10 \\
 \hline f(x) \approx 10(1.02)^i &10&10.20&10.40&10.61& \cdots & 12.19 \\
 f(x) = 10e^{2x} &10&10.20&10.41&10.62& \cdots & 12.21 \\
-\end{array} $$
+\end{array}
+$$
 
 As we can see, our approximation works quite well.
 
@@ -118,26 +144,34 @@ calculus](https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus) states
 that if $f(x)$ is continuous, then the area under the curve for $x \in [a, b]$
 is given by the definite integral:  
 
-$$ \int^b_a f(x)dx \equiv F(x) \Big|^b_a \equiv F(b) - F(a) $$
+$$
+\int^b_a f(x)dx \equiv F(x) \Big|^b_a \equiv F(b) - F(a)
+$$
 
 ### Monte Carlo Integration
 
 Let's integrate an arbitrary (continuous and well-defined) function, $g(x)$ from
 $a$ to $b$:
 
-$$ I = \int_a^b g(x)dx $$
+$$
+I = \int_a^b g(x)dx
+$$
 
 However, we'd like to integrate from $0$ to $1$ instead of from $a$ to $b$ for
 reasons that will make sense shortly. We can accomplish this limit change using
 the following substitution:
 
-$$ u = \frac{x-a}{b-a}; \quad \frac{du}{dx} = \frac{1}{b-a} $$
+$$
+u = \frac{x-a}{b-a}; \quad \frac{du}{dx} = \frac{1}{b-a}
+$$
 
 Thus, $g(x) = g(a + (b-a)u)$ and $dx = (b-a)du$. Additionally, and this is what
 gets us our limit change, when $x = a$, $u = 0$, and, when $x = b$, $u = 1$.
 Putting the whole thing together, we get:
 
-$$ I = \int_a^b g(x)dx = (b-a)\int_0^1g(a + (b-a)u)du $$
+$$
+I = \int_a^b g(x)dx = (b-a)\int_0^1g(a + (b-a)u)du
+$$
 
 Of course, we can often compute these types of integrals using the analytical
 methods we learned in calculus. Alternatively, we can use numerical methods like
@@ -149,15 +183,19 @@ integration.
 Suppose that we have a random sample, $U_1, U_2,..., \overset{\text{iid}}{\sim}
 \text{Unif}(0,1)$. Let's define a random variable, $I_i$, as:
 
-$$ I_i \equiv (b-a)g(a+(b-a)U_i),\quad i = 1,2,...,n $$
+$$
+I_i \equiv (b-a)g(a+(b-a)U_i),\quad i = 1,2,...,n
+$$
 
 Note that this expression looks precisely like the interior of the integral
 above, except that $g$ is evaluated at $U_i$, not $u$.
 
 Given our random sample, let's find the sample mean, $\bar{I}_n$:
 
-$$ \bar I_n \equiv \frac{1}{n}\sum_{i=1}^nI_i = \frac{b-a}{n}\sum_{i=1}^n
-g(a+(b-a)U_i) $$
+$$
+\bar I_n \equiv \frac{1}{n}\sum_{i=1}^nI_i = \frac{b-a}{n}\sum_{i=1}^n
+g(a+(b-a)U_i)
+$$
 
 What we'd like to do now is demonstrate that $\bar{I}_n$ is an effective
 estimator for $I$. We can appeal to the Law of Large Numbers, which says that if
@@ -166,24 +204,34 @@ a good estimator.
 
 Let's see if $\bar{I}_n$ is unbiased for $I$. First, we take the expected value:
 
-$$ E[\bar I_n] = E\left[ \frac{b-a}{n} \sum_{i=1}^n g(a+(b-a)U_i)\right] $$
+$$
+E[\bar I_n] = E\left[ \frac{b-a}{n} \sum_{i=1}^n g(a+(b-a)U_i)\right]
+$$
 
 Note that, since the $U_i$'s are iid, the summation and the $1/n$ cancel out:
 
-$$ E[\bar{I}_n] = (b-a)E[g(a+(b-a)U_i)] \\[2ex] $$
+$$
+E[\bar{I}_n] = (b-a)E[g(a+(b-a)U_i)] \\[2ex]
+$$
 
 Remember the Law of The Unconscious Statistician:
 
-$$ E[h(X)] = \int_{\mathbb{R}} h(x)f(x) $$
+$$
+E[h(X)] = \int_{\mathbb{R}} h(x)f(x)
+$$
 
 Therefore:
 
-$$ E[\bar I_n] = (b-a) \int_{\mathbb{R}} g(a+(b-a)u)f(u)du $$
+$$
+E[\bar I_n] = (b-a) \int_{\mathbb{R}} g(a+(b-a)u)f(u)du
+$$
 
 Notice that $f(u)$ is the pdf of the $\text{Unif}(0,1)$ distribution. This pdf
 is only defined over $[0,1]$ and is equal to $1$. So:
 
-$$ E[\bar{I}_n] = (b-a)\int_0^1g(a+(b-a)u)du = I $$
+$$
+E[\bar{I}_n] = (b-a)\int_0^1g(a+(b-a)u)du = I
+$$
 
 We can see that, since $E[\bar{I}_n] = I$, then $\bar{I}_n$ is an unbiased
 estimator for $I$. Additionally, it can be shown that $\text{Var}(I_n) =
@@ -197,36 +245,48 @@ large enough $n$.
 We can also approximate a confidence interval for $I$. Using the central limit
 theorem, we can see that:
 
-$$ \bar{I}_n \approx \text{Nor}(E[\bar{I}_n], \text{Var}(\bar{I}_n)) \sim
-\text{Nor}(I, \text{Var}(I_i) /n) $$
+$$
+\bar{I}_n \approx \text{Nor}(E[\bar{I}_n], \text{Var}(\bar{I}_n)) \sim
+\text{Nor}(I, \text{Var}(I_i) /n)
+$$
 
 This result suggests that a reasonable $100(1-\alpha)\%$ confidence interval for
 $I$ is:
 
-$$ I \in \bar I_n \pm z_{\alpha/2}\sqrt{S^2_I / n} $$
+$$
+I \in \bar I_n \pm z_{\alpha/2}\sqrt{S^2_I / n}
+$$
 
 Remember from the statistics boot camp that $z_{\alpha/2}$ is the standard
 normal quantile, parameterized by $\alpha$. Also remember that $S^2_I$ is the
 sample variance of the $I_i$'s, defined as:
 
-$$ S^2_I = \frac{1}{n-1} \sum_{i=1}^n(I_i - \bar{I}_n)^2 $$
+$$
+S^2_I = \frac{1}{n-1} \sum_{i=1}^n(I_i - \bar{I}_n)^2
+$$
 
 ### Example
 
 Suppose $I = \int_0^1\sin(\pi x)dx$. Let's start our approximation by taking the
 random sample $U_1, U_2, U_3, U_4 \overset{\text{iid}}{\sim} \text{Unif}(0,1)$:
 
-$$ U_1 = 0.79, \quad U_2 = 0.11, \quad U_3 = 0.68, \quad U_4 = 0.31 $$
+$$
+U_1 = 0.79, \quad U_2 = 0.11, \quad U_3 = 0.68, \quad U_4 = 0.31
+$$
 
 Let's define $I_i$ and reduce, taking note that $b=1$ and $a=0$:
 
-$$ I_i = (b-a)g(a+(b-a)U_i) = g(U_i) = \sin(\pi U_i) $$
+$$
+I_i = (b-a)g(a+(b-a)U_i) = g(U_i) = \sin(\pi U_i)
+$$
 
 Now let's compute the sample mean, $\bar{I}$, which we have previously
 demonstrated is a good estimator for $I$:
 
-$$ \bar I_n = \frac{1}{4}\sum_{i=1}^4 I_i = \frac{1}{4}\sum_{i=1}^4 \sin(\pi
-U_i) = 0.656 $$
+$$
+\bar I_n = \frac{1}{4}\sum_{i=1}^4 I_i = \frac{1}{4}\sum_{i=1}^4 \sin(\pi
+U_i) = 0.656
+$$
 
 Of course, we know that the precise value for $I$ is $2/\pi = 0.6366$, but our
 estimation is not far off. Though to be fair, we cheated in our selection from
@@ -235,11 +295,15 @@ the $\text{Unif}(0,1)$: notice how nice and spread out the values are.
 Now let's compute the approximate $95\%$ confidence interval for $I$. First,
 let's calculate the sample variance, $S^2_I$:
 
-$$ S^2_I = \frac{1}{n-1} \sum_{i=1}^n(I_i - \bar{I}_n)^2 = 0.0557 $$
+$$
+S^2_I = \frac{1}{n-1} \sum_{i=1}^n(I_i - \bar{I}_n)^2 = 0.0557
+$$
 
 Now, given $\alpha = 0.05$, we can compute the confidence interval:
 
-$$ I \in 0.656 \pm 1.96\sqrt{0.0057 / 4} = [0.596, 0.716] $$
+$$
+I \in 0.656 \pm 1.96\sqrt{0.0057 / 4} = [0.596, 0.716]
+$$
 
 This confidence interval is "fat", given that we created it from just four
 samples. Confidence intervals usually improve as $n$ increases, though sometimes
@@ -279,7 +343,9 @@ For this example, when $n=2000$, $\bar{I}_n = 0.6361 \approx I = 0.6366$.
 
 Let's try a slightly more complicated example that we can't integrate easily:
 
-$$ \int_0^1 \ln(u) \ln(1-u)du $$
+$$
+\int_0^1 \ln(u) \ln(1-u)du
+$$
 
 Consider the following spreadsheet, focusing only on the "Random Riemann Sum"
 section.
@@ -345,8 +411,10 @@ To simulate a dart toss, suppose we draw two random variables, $U_1, U_2
 represents the random position of the dart on the unit square. The dart lands in
 the inscribed circle if:
 
-$$ \left(U_1 - \frac{1}{2} \right)^2 + \left(U_2 - \frac{1}{2} \right)^2 \leq
-\frac{1}{4} $$
+$$
+\left(U_1 - \frac{1}{2} \right)^2 + \left(U_2 - \frac{1}{2} \right)^2 \leq
+\frac{1}{4}
+$$
 
 We can generate $n$ such pairs of uniforms and compute the proportion of those
 that satisfies this inequality. From there, we multiply by four, and we have
@@ -385,7 +453,9 @@ adding or removing a server.
 The interarrival time between customers $i - 1$ and $i$ is $I_i$. Customer $i$'s
 arrival, $A_i$, is the sum of all of the preceding interarrival times:
 
-$$ A_i = \sum_{j=1}^{i} I_j $$
+$$
+A_i = \sum_{j=1}^{i} I_j
+$$
 
 Customer $i$ starts service at time $T_i = \max(A_i, D_{i-1})$. In other words,
 customer $i$ is going to start service at either his arrival time, $A_i$, or
@@ -404,14 +474,16 @@ service starts plus the service time: $D_i = T_i + S_i$.
 
 Consider the following table of events:
 
-$$ \begin{array}{c|cc|ccc|c} i & I_i & A_i & T_i & W_i^Q & S_i & D_i \\ \hline 1
+$$
+\begin{array}{c|cc|ccc|c} i & I_i & A_i & T_i & W_i^Q & S_i & D_i \\ \hline 1
 & 3 & 3 & 3 & 0 & 7 & 10 \\
 2 & 1 & 4 & 10 & 6 & 6 & 16 \\
 3 & 2 & 6 & 16 & 10 & 4 & 20 \\
 4 & 4 & 10 & 20 & 10 & 6 & 26 \\
 5 & 5 & 15 & 26 & 11 & 1 & 27 \\
 6 & 5 & 20 & 27 & 7 & 2 & 29 \\
-\end{array} $$
+\end{array}
+$$
 
 Let's walk through a few customer journeys. Customer one has an interarrival
 time, $I_1 = 3$, and, assuming that we start the simulation at time $t=0$, he
@@ -437,7 +509,9 @@ time is drawn randomly at $S_3 = 4$ minutes, and he departs at $D_3 = 16 + 4 =
 We can compute the average waiting time for these six customers by taking the
 average of the $W^Q_i$'s:
 
-$$ \bar{W^Q_6} = \sum_{i=1}^6 W^Q_i = 7.33 $$
+$$
+\bar{W^Q_6} = \sum_{i=1}^6 W^Q_i = 7.33
+$$
 
 ### Average Number of Customers in the System
 
@@ -454,7 +528,8 @@ that the event occurred. The second column shows the name of the event(s) that
 occur at that time. The third column shows the number of people in the system,
 $L(t)$, after the event(s) occurs.
 
-$$ \begin{array}{ccc} \text{time } t & \text{event} & L(t) \\ \hline 0 &
+$$
+\begin{array}{ccc} \text{time } t & \text{event} & L(t) \\ \hline 0 &
 \text{simulation begins} & 0 \\
 3 & \text{customer 1 arrives} & 1 \\
 4 & \text{2 arrives} & 2 \\
@@ -466,7 +541,8 @@ $$ \begin{array}{ccc} \text{time } t & \text{event} & L(t) \\ \hline 0 &
 26 & \text{4 departs} & 2 \\
 27 & \text{5 departs} & 1 \\
 29 & \text{6 departs} & 0 \\
-\end{array} $$
+\end{array}
+$$
 
 Note that, as a technicality, the first event is the start of the simulation,
 which occurs at time $t=0$. There are no people in the system when the
@@ -510,7 +586,9 @@ begins service.
 We can formulate an equation for the average number of people in the system,
 $\bar{L}$:
 
-$$ \bar{L} = \frac{1}{29} \int_0^{29}L(t)dt = \frac{70}{29} $$
+$$
+\bar{L} = \frac{1}{29} \int_0^{29}L(t)dt = \frac{70}{29}
+$$
 
 How do we take the integral of such a "weird-looking" function, like $L(t)$? As
 it turns out, $L(t)$ is a step function, and we integrate a step function by
@@ -531,10 +609,12 @@ compute the total customer time in the system and divide that by the total time.
 We defined a customer's time in the system, $W_i$, as the difference between
 their arrival time and departure time: $W_i = D_i - A_i$. Therefore:
 
-$$ \begin{alignedat}{1} \bar{L} & = \frac{\text{total customer-time in
+$$
+\begin{alignedat}{1} \bar{L} & = \frac{\text{total customer-time in
 system}}{29} \\[2ex] & = \frac{\sum_{i=1}^6(D_i - A_i)}{29} \\[2ex] & = \frac{7
 
-- 12 + 14 + 16 + 12 + 9}{29} \\[2ex] & = \frac{70}{29} \end{alignedat} $$
+- 12 + 14 + 16 + 12 + 9}{29} \\[2ex] & = \frac{70}{29} \end{alignedat}
+$$
 
 ### Server Utilization
 
@@ -548,14 +628,16 @@ service for $26$ minutes, so the estimated server utilization is $\hat{\rho} =
 Let's do another example, using the same arrival and service times, but with a
 last-in-first-out (LIFO) structure instead of first-in-first-out (FIFO).
 
-$$ \begin{array}{c|cc|ccc|c} i & I_i & A_i & T_i & W_i^Q & S_i & D_i \\ \hline 1
+$$
+\begin{array}{c|cc|ccc|c} i & I_i & A_i & T_i & W_i^Q & S_i & D_i \\ \hline 1
 & 3 & 3 & 3 & 0 & 7 & 10 \\
 2 & 1 & 4 & 23 & 19 & 6 & 29 \\
 3 & 2 & 6 & 17 & 11 & 4 & 21 \\
 4 & 4 & 10 & 10 & 0 & 6 & 16 \\
 5 & 5 & 15 & 16 & 1 & 1 & 17 \\
 6 & 5 & 20 & 21 & 1 & 2 & 23 \\
-\end{array} $$
+\end{array}
+$$
 
 Compare this table with the previous: all of the $I_i$'s, $A_i$'s, and $S_i$'s
 are the same. However, in this example, customers at the end of the queue are
@@ -591,7 +673,7 @@ don't want to run complex simulations by hand.
 
 ### Description of (s, S)
 
-Let's suppose that a store sells some product at $\$d$ per unit. The inventory
+Let's suppose that a store sells some product at \$$d$ per unit. The inventory
 policy is to have a least $s$ units in stock at the start of each day. If the
 stock slips to less than $s$ by the end of the day, we place an order with our
 supplier to push our stock up to $S$ by the beginning of the next day.
@@ -607,20 +689,22 @@ Let $I_i$ denote the inventory we have in store at the *end* of day $i$, and let
 $Z_i$ denote the amount of inventory we order at the end of day $i$. Since we
 want to top off our inventory to $S$ units if $Z_i$ falls below $s$, then:
 
-$$ Z_i = \left\{\begin{matrix} S - I_i & \text{if } I_i < s \\
-0 & \text{otherwise} \end{matrix}\right. $$
+$$
+Z_i = \left\{\begin{matrix} S - I_i & \text{if } I_i < s \\
+0 & \text{otherwise} \end{matrix}\right.
+$$
 
 If an order is placed to the supplier at the end of day $i$, it costs the store
 $K + cZ_i$. We incur cost $K$ just for calling up the supplier and nagging them
 for more product. Additionally, we incur the unit cost $c$ $Z_i$ times; for
 example, if we have to order 17 items, this cost is $17c$.
 
-Moreover, we incur a cost of $\$h$/unit to hold unsold inventory overnight. We
+Moreover, we incur a cost of \$$h$/unit to hold unsold inventory overnight. We
 can think of this cost both in literal terms - refrigerating an item overnight
 costs a certain amount of electricity - or in terms of opportunity cost - had we
 not purchased that inventory, we could have put the money elsewhere.
 
-Finally, we incur a penalty cost of $\$p$/unit if demand can't be met. If we run
+Finally, we incur a penalty cost of \$$p$/unit if demand can't be met. If we run
 out of products and a customer cannot make a purchase, perhaps they get mad and
 damage the store or simply don't return to make purchases.
 
@@ -639,29 +723,36 @@ Let's translate this expression into a formal equation.
 First, what is the total sales revenue? Well, given demand $D_i$, we can make
 either $D_i$ sales, or we can sell out our entire inventory, whichever is
 smaller. For example, if the demand is 15 units, but we only have ten units in
-inventory, we can only sell ten units.  At $\$d$/unit, we can express this
+inventory, we can only sell ten units.  At \$$d$/unit, we can express this
 revenue as:
 
-$$ \text{Revenue} = d \min(D_i, \text{inventory at beginning of day }i) $$
+$$
+\text{Revenue} = d \min(D_i, \text{inventory at beginning of day }i)
+$$
 
 What is the ordering cost? If $I_i$ falls below $s$, it is $K + cZ_i$, where
 $Z_i = S - I_i$ and $c$ is the unit cost. Otherwise, the order cost is zero. In
 other words:
 
-$$ \text{Ordering Cost} = \left\{\begin{matrix} K + cZ_i & \text{if } I_i < s \\
-0 & \text{otherwise} \end{matrix}\right. $$
+$$
+\text{Ordering Cost} = \left\{\begin{matrix} K + cZ_i & \text{if } I_i < s \\
+0 & \text{otherwise} \end{matrix}\right.
+$$
 
-What is the holding cost? It's $\$h$/unit times the inventory we have at the end
+What is the holding cost? It's \$$h$/unit times the inventory we have at the end
 of day $i$, $I_i$:
 
-$$ \text{Holding Cost} = hI_i $$
+$$
+\text{Holding Cost} = hI_i
+$$
 
 What is the penalty cost? Well, if the inventory is greater than or equal to the
 demand, then our penalty cost is nothing: we've completely satisfied customer
-demand. Otherwise, we incur at penalty cost at $\$p$/unit for each product
+demand. Otherwise, we incur at penalty cost at \$$p$/unit for each product
 greater than our inventory demanded:
 
-$$ \text{Penalty Cost} = p\max(0, D_i - \text{inventory at beginning of day }i)
+$$
+\text{Penalty Cost} = p\max(0, D_i - \text{inventory at beginning of day }i)
 $$
 
 As a final piece, what is the inventory at the beginning of day $i$? It's merely
@@ -670,11 +761,13 @@ the end of that day: $Z_{i - 1}$.
 
 Thus, for a given day $i$, we express the total profit, $P_i$, as:
 
-$$ \begin{alignedat}{1} P_i = & d\min(D_i, I_{i-1} + Z_{i-1}) \\
+$$
+\begin{alignedat}{1} P_i = & d\min(D_i, I_{i-1} + Z_{i-1}) \\
 & - \left\{\begin{matrix} K + cZ_i & \text{if } I_i < s \\
 0 & \text{otherwise} \end{matrix}\right. \\
 & - hI_i \\
-& - p\max(0, D_i - (I_{i-1} + Z_{i-1})) \end{alignedat} $$
+& - p\max(0, D_i - (I_{i-1} + Z_{i-1})) \end{alignedat}
+$$
 
 ### Example
 
@@ -686,7 +779,8 @@ unit, and a penalty cost $p = 2$ per unit.
 Additionally, consider the following sequence of randomly generated
 $\lceil\text{Unif}(0,8)\rceil$ demands:
 
-$$ D_1 = 5 \\
+$$
+D_1 = 5 \\
 D_2 = 2 \\
 D_3 = 8 \\
 D_4 = 6 \\
@@ -699,7 +793,8 @@ Finally, let's suppose we start with an initial stock, $I_0 + Z_0 = 10$.
 Consider the following table, which tracks inventory, demand, orders, revenue,
 costs, and profit over six days:
 
-$$ \begin{array}{c|cccc|cccc|c} \text{Day} & \text{begin} &  &  & & \text{sales}
+$$
+\begin{array}{c|cccc|cccc|c} \text{Day} & \text{begin} &  &  & & \text{sales}
 & \text{order} & \text{hold} & \text{penalty} & \text{TOTAL} \\
 i & \text{stock} &  D_i & I_i &  Z_i & \text{rev} & \text{cost} & \text{cost} &
 \text{cost} & \text{rev} \\ \hline 1 & 10 & 5 & 5 & 0 & 50 & 0 & -5 & 0 & 45 \\
@@ -708,7 +803,8 @@ i & \text{stock} &  D_i & I_i &  Z_i & \text{rev} & \text{cost} & \text{cost} &
 4 & 10 & 6 & 4 & 0 & 60 & 0 & -4 & 0 & 56 \\
 5 & 4 & 2 & 2 & 8 & 20 & -34 & -2 & 0 & -16 \\
 6 & 10 & 1 & 9 & 0 & 10 & 0 & -9 & 0 & 1 \\
-\end{array} $$
+\end{array}
+$$
 
 On day one, we start with ten units in stock, and we experience a demand for
 five units. Therefore, our inventory at the end of the day, $I_1$, equals $5$.
@@ -765,7 +861,8 @@ then $X = \lceil{10(0.73)}\rceil = \lceil{7.3}\rceil = 8$.
 Let's look at another discrete random variable. Consider the following pmf,
 $f(x)$ for $X$:
 
-$$ f(x) \equiv P(X = x) = \left\{ \begin{matrix} 0.25 & \text{if } x -2\\
+$$
+f(x) \equiv P(X = x) = \left\{ \begin{matrix} 0.25 & \text{if } x -2\\
             0.10 & \text{if } x = 3 \\
             0.65 & \text{if } x = 4.2 \\
             0 & \text{otherwise}
@@ -834,11 +931,13 @@ cdf of $X$ is given by the function $F(x) = 1 - e^{-\lambda x}, x > 0$.
 Correspondingly, $F(X) = 1 - e^{-\lambda X}$. However, we also know, according
 to the theorem, $F(X) = U$, so $1 - e^{-\lambda X} = U$. Let's solve for $X$:
 
-$$ \begin{alignedat}{1} 1 - e^{-\lambda X} & = U \\
+$$
+\begin{alignedat}{1} 1 - e^{-\lambda X} & = U \\
 -e^{-\lambda X} & = U - 1 \\
 e^{-\lambda X} & = 1 - U \\
 -\lambda X & = \ln(1 - U) \\
-X & = \frac{-\ln(1 - U)}{\lambda} \sim \text{Exp}(\lambda) \end{alignedat} $$
+X & = \frac{-\ln(1 - U)}{\lambda} \sim \text{Exp}(\lambda) \end{alignedat}
+$$
 
 What's the point? Computer programs give us one particular type of randomness.
 When we use `RAND()` in Excel, or `random.random` in Python, we always get a
@@ -862,13 +961,17 @@ Alternatively, we can use an algorithm to generate *pseudo-random numbers*
 *appear* to be iid $\text{Unif}(0,1)$. Pick a *seed* integer, $X_0$, and
 calculate:
 
-$$ X_i = 16087X_{i - 1} \bmod{2^{31} - 1}, \quad i = 1, 2,... $$
+$$
+X_i = 16087X_{i - 1} \bmod{2^{31} - 1}, \quad i = 1, 2,...
+$$
 
 A given value of $X_i$ exists on $[0, 2^{31} - 1)$. To transform a given $X_i$
 into the corresponding $R_i$, which exists on $[0, 1)$, we use the following
 formula:
 
-$$ R_i = X_i /(2^{31} - 1), \quad i = 1, 2,... $$
+$$
+R_i = X_i /(2^{31} - 1), \quad i = 1, 2,...
+$$
 
 Here is how we might program this RNG in Python:
 
@@ -907,12 +1010,16 @@ the `RAND()` function. In the second column, we apply the inverse transform
 method to transform these uniforms into exponential random variables using the
 following equation, which we derived earlier:
 
-$$ X_i = \frac{-\ln(1 - U_i)}{\lambda} \sim \text{Exp}(\lambda) $$
+$$
+X_i = \frac{-\ln(1 - U_i)}{\lambda} \sim \text{Exp}(\lambda)
+$$
 
 Note that since we are looking at exponential random variables for which
 $\lambda = 1$, the transformation equation simplifies:
 
-$$ X_i = -\ln(1 - U_i) \sim \text{Exp}(1) $$
+$$
+X_i = -\ln(1 - U_i) \sim \text{Exp}(1)
+$$
 
 On the right-hand side of the spreadsheet, we have constructed a histogram using
 the exponential random variables with bins of width $0.1$ going from $[0.0,
@@ -932,11 +1039,13 @@ discrete-event scenarios, such as an MM1 queue.
 ### Stock Portfolio
 
 We are going to simulate a fake stock portfolio consisting of six stocks from
-different sectors. We will start out with $\$5000$ worth of each stock, and a
+different sectors. We will start out with \$5,000 worth of each stock, and a
 stock increases or decreases in value each year according to this expression:
 
-$$ \text{Previous Value } \times \max\left[0, \text{Nor}(\mu_i, \sigma_i^2)
-\times \text{Nor}(1, (0.2)^2) \right] $$
+$$
+\text{Previous Value } \times \max\left[0, \text{Nor}(\mu_i, \sigma_i^2)
+\times \text{Nor}(1, (0.2)^2) \right]
+$$
 
 The first normal term describes the behavior of stock $i$. For example, if we
 are looking at a telecommunications stock, we might expect this stock to
@@ -985,7 +1094,7 @@ portfolio value in the bottom-left cell, and we see a chart plotting the
 portfolio performance below.
 
 Our portfolio performed excellently for this particular simulation: starting
-with $\$30000$ and ending with $\$85454$ marks an almost $200\%$ return.
+with \$30,000 and ending with \$85,454 marks an almost $200\%$ return.
 
 Notice that both the yearly performances of the individual stocks, as well as
 the yearly market performances, are normal random variables. If we rerun the
@@ -993,12 +1102,12 @@ simulation, these values will change, and we should expect to see a different
 overall portfolio performance.
 
 Let's look at a second simulation. We did even better this time, returning
-$\$92289$ on a $\$30000$ investment.
+\$92,289 on a \$30,000 investment.
 
 ![](https://assets.omscs-notes.com/images/notes/simulation/2020-09-12-22-35-59.png)
 
 Let's look at a final example. This time, we lost money. We started with
-$\$30000$ and lost more than a third, ending at $\$18789$.
+\$30,000 and lost more than a third, ending at \$18,789.
 
 ![](https://assets.omscs-notes.com/images/notes/simulation/2020-09-12-22-38-27.png)
 

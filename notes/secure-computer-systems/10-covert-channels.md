@@ -164,9 +164,10 @@ process and the low process.
 The pump tracks the moving average of the Ack time from high to pump, and gives
 the low process an Ack with the same average but with randomly generated times.
 
-<!-- markdownlint-disable-next-line MD049 -->
-$$ \text{AvgTime}_\text{HP}(\text{moving average}) \approx
-\text{AvgTime}_\text{PL} $$
+$$
+\text{AvgTime}_\text{HP}(\text{moving average}) \approx
+\text{AvgTime}_\text{PL}
+$$
 
 The ack time is stochastic from the pump to the low process. Sometimes the pump
 will have to ack before the high process acks to ensure the averages. Sometimes
