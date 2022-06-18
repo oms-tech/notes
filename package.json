@@ -7,13 +7,28 @@
     "build": "next build",
     "start": "next start",
     "eslint": "next lint",
-    "premarkdownlint": "echo '🧹 Running markdown lint 🧹'",
-    "markdownlint": "markdownlint . --dot --ignore node_modules",
-    "markdownlint:fix": "markdownlint . --dot --fix --ignore node_modules"
+    "premarkdownlint": "echo '🧹 Linting markdown 🧹'",
+    "markdownlint": "remark notes --quiet --frail"
   },
   "pre-commit": [
     "markdownlint"
   ],
+  "remarkConfig": {
+    "plugins": [
+      "remark-frontmatter",
+      "remark-math",
+      "remark-preset-lint-consistent",
+      "remark-preset-lint-recommended",
+      [
+        "remark-lint-list-item-indent",
+        "space"
+      ],
+      [
+        "remark-lint-heading-style",
+        "atx"
+      ]
+    ]
+  },
   "dependencies": {
     "@types/glob": "^7.2.0",
     "glob": "^8.0.3",
@@ -41,9 +56,11 @@
     "autoprefixer": "^10.4.7",
     "eslint": "8.16.0",
     "eslint-config-next": "12.1.6",
-    "markdownlint-cli": "^0.31.1",
     "postcss": "^8.4.14",
     "pre-commit": "^1.2.2",
+    "remark-cli": "^10.0.1",
+    "remark-preset-lint-consistent": "^5.1.1",
+    "remark-preset-lint-recommended": "^6.1.2",
     "tailwindcss": "^3.0.24",
     "typescript": "4.7.2"
   }

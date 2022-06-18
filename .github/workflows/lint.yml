@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Install markdownlint-cli
-        run: yarn add -D markdownlint-cli
+      - name: Install dependencies
+        run: yarn install
       - name: Lint Markdown
         run: yarn run markdownlint

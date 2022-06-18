@@ -243,16 +243,16 @@ noise, and returns the results.
 
 ![](https://assets.omscs-notes.com/images/notes/secure-computer-systems/module13/DP.png)
 
-Some notation is introduced P[K(D) in S] which means that someone can determine
+Some notation is introduced P\[K(D) in S\] which means that someone can determine
 a health condition for a person Alice. D is a database with Alice's data and D'
 is a database without Alice's data. The basic idea is that we shouldn't be able
 to distinguish between D and D' in terms of how useful they are to an attacker.
 
 Some notation is introduced:
 
-P[K(D) in S] is the probability of an attacker being able to figure out some
+P\[K(D) in S\] is the probability of an attacker being able to figure out some
 information of interest about Alice with database D under a differential privacy
-scheme K. P[K(D') in S] is the probability of the attacker being able to figure
+scheme K. P\[K(D') in S\] is the probability of the attacker being able to figure
 out this thing if Alice's data is not in the database. With good differential
 privacy these numbers should be similar.
 

@@ -102,11 +102,11 @@ Below statement 1 can be paraphrased as
 > dominating class c' will be able to view the value as it is and see the same
 > class as the user in class c.
 >
->If the value **is** null for a user in class c, then maybe the user in
->dominating class c' will get to see the actual value. If they do get to see the
->actual value they will also see the actual class associated with the element.
->The actual class of the value will be greater than the key's class, since it
->was previously censored.
+> If the value **is** null for a user in class c, then maybe the user in
+> dominating class c' will get to see the actual value. If they do get to see the
+> actual value they will also see the actual class associated with the element.
+> The actual class of the value will be greater than the key's class, since it
+> was previously censored.
 
 Statement 2 is saying that a tuple is in the relation having the class of the
 tuple.

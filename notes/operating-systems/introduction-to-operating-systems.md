@@ -14,7 +14,7 @@ consists of:
 - Physical Memory
 - Network Interfaces (Ethernet/Wifi Card)
 - GPU
-- Storage Devices (Disk, Flash drives [USB])
+- Storage Devices (Disk, Flash drives \[USB\])
 
 In addition, a computing system can have higher level applications. These are
 the "programs" that we use every day on our computer:

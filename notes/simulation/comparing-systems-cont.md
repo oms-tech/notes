@@ -63,9 +63,8 @@ right population.
 Obviously, the probability of correct selection depends on the differences
 $\mu_i - \mu_j$, the sample size, $n$, and $\boldsymbol \sigma^2$.
 
-Parameter configurations $\boldsymbol \mu$ satisfying the constraint $\mu_{[k]}
-
-- \mu_{[k-1]} \geq \delta^*$ are in the **preference zone** for correct
+Parameter configurations $\boldsymbol \mu$ satisfying the constraint
+$\mu_{[k]} - \mu_{[k-1]} \geq \delta^*$ are in the **preference zone** for correct
 selection. For example, if $\mu_{[k]} = 5$, $\mu_{[k-1]} = 3$, and
 $\delta^\star= 1$, then the $\boldsymbol \mu$ containing this $\mu_{[k]}$ and
 $\mu_{[k-1]}$ would be in the preference zone.

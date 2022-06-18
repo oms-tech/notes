@@ -155,8 +155,8 @@ staff_u:staff_r:staff_t:**s0-s15:c0.c1023**
 The sensitivity levels can be s0 through s15 and are totally ordered, meaning
 that all sensitivity levels are either less than, greater than, or equal to, s15
 > s0. The compartments are separated by periods or commas and represent a
-subset. Subsets are partially ordered, meaning that some subsets are not less
-than, greater than, or equal to each other.
+> subset. Subsets are partially ordered, meaning that some subsets are not less
+> than, greater than, or equal to each other.
 
 ### Order of Security Enforcement
 
