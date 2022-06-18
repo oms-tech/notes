@@ -738,9 +738,8 @@ $$
 
 What is $E[X]$? Well, we can integrate the pdf from $-1$ to $1$, or we can
 understand that the expected value of a uniform random variable is the average
-of the bounds of the distribution. That's a long way of saying that $E[X] =(-1 +
-
-1) / 2 = 0$.
+of the bounds of the distribution. That's a long way of saying that
+$E[X] =(-1 + 1) / 2 = 0$.
 
 Now, what is $E[X^3]$? We can apply LOTUS:
 

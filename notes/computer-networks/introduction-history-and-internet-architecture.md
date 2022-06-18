@@ -671,7 +671,7 @@ communicated to routers/switches by the dissemination plane. Their work
 investigates an extreme design point where the decision logic is completely
 separated from distributed protocols. The 4D group argues that technology trends
 toward ever-more powerful, reliable, and inexpensive computing platforms make
-their design point attractive in practice. [Greenberg 2005]
+their design point attractive in practice. \[Greenberg 2005\]
 
 ### Redesigning the Internet architecture to offer better accountability
 

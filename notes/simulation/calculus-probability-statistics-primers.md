@@ -973,9 +973,9 @@ countably infinite, then $X$ is a **discrete random variable**. The
 **probability mass function** (pmf) of a discrete random variable is given by a
 function, $f(x) = P(X = x)$. Note that, necessarily, $\sum_xf(x) = 1$.
 
->By countably infinite, we mean that there could be an infinite number of
->possible values for $x$, but they have a one-to-one correspondence with the
->integers.
+> By countably infinite, we mean that there could be an infinite number of
+> possible values for $x$, but they have a one-to-one correspondence with the
+> integers.
 
 For example, flip two coins. Let $X$ be the number of heads. We can define the
 pmf, $f(x)$ as:
@@ -1488,9 +1488,8 @@ $\text{Var}(X) = E[(X - E[X])^2]$. From the equation, we can see that the
 variance of $X$ is the expected value of the squared deviation of $X$ from its
 mean.
 
-Let's break it down from the inside out. $E[X]$ is the expected value of $X$. $X
-
-- E[X]$ captures how far the $X$ tends to deviate from the mean. That deviation
+Let's break it down from the inside out. $E[X]$ is the expected value of $X$.
+$X - E[X]$ captures how far the $X$ tends to deviate from the mean. That deviation
 could be positive or negative, so we square it to make it positive. Finally, we
 take the average over all the squared deviances to compute the variance.
 

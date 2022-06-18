@@ -420,7 +420,7 @@ various sources:
      data during the disruption period.
 
 2. BGP Control Plane Data: The BGP updates were obtained from two major sources
-   - Route Views Project [59] and RIPE NCC's Routing Information Service (RIS).
+   - Route Views Project \[59\] and RIPE NCC's Routing Information Service (RIS).
    Along with BGP updates, a periodic dump of snapshot of the control plane
    table was also used to track the reachability of a prefix during the period
    of disruption. The start and end time of the outage was also determined by

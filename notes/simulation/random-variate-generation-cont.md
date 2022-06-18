@@ -194,10 +194,10 @@ $$
 Let's look at another example. Suppose we take $Z_1/Z_2$. One standard normal
 divided by another is a Cauchy random variable, and also a t(1) random variable.
 
->As an aside, we can see how Cauchy random variables take on such a wide range
->of values. Suppose the normal in the denominator is very close to zero, and the
->normal in the numerator is further from zero. In that case, the quotient can
->take on very large positive and negative values.
+> As an aside, we can see how Cauchy random variables take on such a wide range
+> of values. Suppose the normal in the denominator is very close to zero, and the
+> normal in the numerator is further from zero. In that case, the quotient can
+> take on very large positive and negative values.
 
 Moreover:
 

@@ -100,11 +100,11 @@ using threads for signal handling instead of changing masks before
 entering/after exiting a mutex:
 
 > The additional overhead in taking an interrupt  
-is about 40 SPARC instructions. The savings in the mutex enter/exit path is
-about 12 instructions. However, mutex operations are much more frequent than
-interrupts, so there is a net gain in time cost, as long as interrupts don't
-block too frequently. The work to convert an interrupt into a "real" thread is
-performed only when there is lock contention.
+> is about 40 SPARC instructions. The savings in the mutex enter/exit path is
+> about 12 instructions. However, mutex operations are much more frequent than
+> interrupts, so there is a net gain in time cost, as long as interrupts don't
+> block too frequently. The work to convert an interrupt into a "real" thread is
+> performed only when there is lock contention.
 
 ## What happens during a user-kernel mode crossing?
 
