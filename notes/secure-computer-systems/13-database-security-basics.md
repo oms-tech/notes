@@ -258,8 +258,10 @@ privacy these numbers should be similar.
 
 Our measure of privacy is $\epsilon$, which is bounding the inequality -
 
-$$\frac{P[K(D)\text{ in }S]}{P[K(D')\text{ in }S]} \leq e^{\epsilon} \approx 1 +
-\epsilon$$
+$$
+\frac{P[K(D)\text{ in }S]}{P[K(D')\text{ in }S]} \leq e^{\epsilon} \approx 1 +
+\epsilon
+$$
 
 ### Implementing Differential Privacy
 

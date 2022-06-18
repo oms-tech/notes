@@ -135,12 +135,16 @@ either. Technically, this is a conditional probability.
 Generally, for $k$ possible birthdays and $n$ individuals in the room, we can
 calculate the $p$ as:
 
-$$ p = (1 / k)^n \times (k! / (k - n)!) $$
+$$
+p = (1 / k)^n \times (k! / (k - n)!)
+$$
 
 We can steadily increase $n$ to determine when $p$ dips below 0.5. For $k = 365$
 and $n = 23$, we see that:
 
-$$ p = (1 / 365)^{23} \times (365! / (365 - 23)!) = 0.492703 $$
+$$
+p = (1 / 365)^{23} \times (365! / (365 - 23)!) = 0.492703
+$$
 
 Since $p$ is the probability that no birthdays overlap, the probability that one
 or more birthdays overlap is $1 - p = 0.507297$.

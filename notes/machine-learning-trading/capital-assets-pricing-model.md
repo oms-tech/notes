@@ -21,19 +21,25 @@ We can stipulate that the sum of the weights of each investment equals one; in
 other words, our portfolio allocations must add to 100%. Formally, given $n$
 investments, where $w_i$ represents the weight of the investment in asset $i$,
 
-$$ \sum_i^n{w_i} = 1.0 $$
+$$
+\sum_i^n{w_i} = 1.0
+$$
 
 However, not all weights need to be positive. For example, if we short GOOG, our
 allocation might be -0.2 instead of 0.2. We can refine the constraint above as
 follows.
 
-$$ \sum_i^n{|w_i|} = 1.0 $$
+$$
+\sum_i^n{|w_i|} = 1.0
+$$
 
 For a given day, $t$, we can calculate the daily return of the portfolio,
 $r_p(t)$, as the weighted sum of the daily returns of each of the assets on day
 $t$.
 
-$$ r_p(t) = \sum_i^n{w_i r_i(t)} $$
+$$
+r_p(t) = \sum_i^n{w_i r_i(t)}
+$$
 
 ## Portfolio Return Quiz
 
@@ -52,16 +58,24 @@ Stock B decreases by 2%. What is the return on this portfolio?
 
 Remember the formula to calculate portfolio return.
 
-$$ r_p(t) = \sum_i^n{w_i r_i(t)} $$
+$$
+r_p(t) = \sum_i^n{w_i r_i(t)}
+$$
 
 If we plug in the weights and returns for Stock A and Stock B, we can compute a
 portfolio return of 1.25%.
 
-$$ r_p(t) = (0.75 \times 1) + (-0.25 \times -2) $$
+$$
+r_p(t) = (0.75 \times 1) + (-0.25 \times -2)
+$$
 
-$$ r_p(t) = 0.75 + 0.5 $$
+$$
+r_p(t) = 0.75 + 0.5
+$$
 
-$$ r_p(t) = 1.25 $$
+$$
+r_p(t) = 1.25
+$$
 
 ## The Market Portfolio
 
@@ -88,7 +102,9 @@ Formally, given a total market capitalization $M_{total}$ of all of the stocks
 in the index, the weight of an individual stock with a market capitalization of
 $M_{individual}$ is
 
-$$ \frac{M_{individual}}{M_{total}} $$
+$$
+\frac{M_{individual}}{M_{total}}
+$$
 
 Some stocks have surprisingly large weightings. For example, Apple and Exxon
 each comprise about 5% of the S&P 500, and the 10 largest companies account for
@@ -100,7 +116,9 @@ one-tenth of one percent.
 The core of the **capital assets pricing model** (CAPM) is captured in the
 following equation.
 
-$$ r_i(t) = \beta_ir_m(t) + \alpha_i(t) $$
+$$
+r_i(t) = \beta_ir_m(t) + \alpha_i(t)
+$$
 
 The return, $r_i$, for an individual stock, $i$, on a particular day, $t$, is
 equal to some stock-specific factor, $\beta_i$, times the return on the market,
@@ -191,7 +209,9 @@ stocks.
 Let's consider active and passive investing with regard to the CAPM equation,
 listed below.
 
-$$ r_i(t) = \beta_ir_m(t) + \alpha_i(t) $$
+$$
+r_i(t) = \beta_ir_m(t) + \alpha_i(t)
+$$
 
 Both active managers and passive managers agree with the first part of this
 equation; in other words, they agree that how a stock moves each day is most
@@ -221,22 +241,30 @@ Suppose now that instead of looking at just one stock, we want to consider an
 entire portfolio. Recall that for a particular stock, $i$, it's return,
 $r_i(t)$, on an particular day, $t$, is equal to
 
-$$ r_i(t) = \beta_ir_m(t) + \alpha_i(t) $$
+$$
+r_i(t) = \beta_ir_m(t) + \alpha_i(t)
+$$
 
 To compute the return for the entire portfolio, $r_p(t)$, we compute the return
 for each stock, $i$, multiplied by the weight, $w_i$, of that stock in the
 portfolio, and sum over all the stocks in the portfolio.
 
-$$ r_p(t) = \sum_i{w_i(\beta_ir_m(t) + \alpha_i(t))} $$
+$$
+r_p(t) = \sum_i{w_i(\beta_ir_m(t) + \alpha_i(t))}
+$$
 
 We can calculate the $\beta$ for the overall portfolio, $\beta_p$, as the
 weighted sum of the individual $\beta$ values for each stock.
 
-$$ \beta_p = \sum_i{w_i\beta_i} $$
+$$
+\beta_p = \sum_i{w_i\beta_i}
+$$
 
 We can simplify the equation for $r_p(t)$ by plugging in $\beta_p$.
 
-$$ r_p(t) = \beta_pr_m(t) + \alpha_p(t) $$
+$$
+r_p(t) = \beta_pr_m(t) + \alpha_p(t)
+$$
 
 Notice that we also have an $\alpha_p(t)$ term, which is ostensibly derived as a
 weighted sum of the individual $\alpha_i(t)$ terms. However, since CAPM tells us
@@ -247,7 +275,9 @@ An active portfolio manager doesn't believe that $\alpha$ is a random variable
 centered at zero. As a result, they incorporate the weighted sum of individual
 stock $\alpha$ values into the $r_p(t)$ calculation.
 
-$$ r_p(t) = \beta_pr_m(t) + \sum_i{w_i\alpha_i(t)} $$
+$$
+r_p(t) = \beta_pr_m(t) + \sum_i{w_i\alpha_i(t)}
+$$
 
 ## Implications of CAPM Quiz
 
@@ -275,7 +305,9 @@ Remember that CAPM dictates that the return of a portfolio, $r_p(t)$ depends on
 three things: the $\beta_p$ and $\alpha_p(t)$ of the portfolio, and the market
 return, $r_m(t)$.
 
-$$ r_p(t) = \beta_pr_m(t) + \alpha_p(t) $$
+$$
+r_p(t) = \beta_pr_m(t) + \alpha_p(t)
+$$
 
 The first point to remember is that CAPM says that $\alpha$ is a random variable
 with an expected value of zero. This assertion excludes smart $\alpha$ selection

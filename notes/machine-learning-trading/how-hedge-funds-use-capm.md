@@ -40,21 +40,29 @@ and stock B falls 1% below the market.
 
 Consider the returns of stock A, using the CAPM equation.
 
-$$ r_A = \beta_Ar_m + \alpha_A $$
+$$
+r_A = \beta_Ar_m + \alpha_A
+$$
 
 Since the market returned 0%, the equation simplifies.
 
-$$ r_A = \alpha_A $$
+$$
+r_A = \alpha_A
+$$
 
 Since $\alpha_A$ is 0.01, our return is 1% of \$50, or \$0.50.
 
 Now, consider the returns of stock B, using the CAPM equation.
 
-$$ r_B = \beta_Br_m + \alpha_B $$
+$$
+r_B = \beta_Br_m + \alpha_B
+$$
 
 Again, since the market returned 0%, the equation simplifies.
 
-$$ r_B = \alpha_B $$
+$$
+r_B = \alpha_B
+$$
 
 Since both $\alpha_B$ and our investment in stock B are negative, we actually
 made a profit: -1% of -\$50, or \$0.50.
@@ -128,20 +136,28 @@ product of $\beta_i$ and the return on the market, $r_m$, plus $\alpha_i$. The
 value of $r_p$ is the sum of each $r_i$ multiplied by its corresponding weight,
 $w_i$.
 
-$$ r_p = \sum_iw_i(\beta_ir_m + \alpha_i) $$
+$$
+r_p = \sum_iw_i(\beta_ir_m + \alpha_i)
+$$
 
 Let's expand this sum, considering our two stocks, A and B, from before.
 
-$$ r_p = (w_A\beta_A + w_B\beta_B)r_m + w_A\alpha_A + w_B\alpha_B $$
+$$
+r_p = (w_A\beta_A + w_B\beta_B)r_m + w_A\alpha_A + w_B\alpha_B
+$$
 
 Stock A has a $\beta$ of 1.0 and an $\alpha$ of 0.01. Stock B has a $\beta$ of
 2.0 and an $\alpha$ of -0.01. Our portfolio has a 50% investment in stock A and
 a -50% investment in stock B. Let's plug these values into the CAPM equation.
 
-$$ r_p = (0.5 \times 1.0 - 0.5 \times 2.0)r_m + 0.5 \times 0.01 - 0.5 \times
--0.01 $$
+$$
+r_p = (0.5 \times 1.0 - 0.5 \times 2.0)r_m + 0.5 \times 0.01 - 0.5 \times
+-0.01
+$$
 
-$$ r_p = 0.01 - 0.5r_m $$
+$$
+r_p = 0.01 - 0.5r_m
+$$
 
 Using the CAPM, we have determined that our expected return for this portfolio
 is equal to 1% minus one-half of the market return.
@@ -149,13 +165,21 @@ is equal to 1% minus one-half of the market return.
 We can double-check this result by plugging in the market return from one of our
 previous examples. Let's look at the case where the market went up 10%.
 
-$$ r_p = 0.01 - 0.5r_m $$
+$$
+r_p = 0.01 - 0.5r_m
+$$
 
-$$ r_p = 0.01 - (0.5 \times 0.1) $$
+$$
+r_p = 0.01 - (0.5 \times 0.1)
+$$
 
-$$ r_p = 0.01 - 0.05 $$
+$$
+r_p = 0.01 - 0.05
+$$
 
-$$ r_p = -0.04 $$
+$$
+r_p = -0.04
+$$
 
 Remember how we arrived at the 1% portfolio $\alpha$. We researched the stocks
 that we selected for our portfolio and found information that led us to believe
@@ -172,7 +196,9 @@ individual $\beta_A$ and $\beta_B$ values to make this happen, we need to adjust
 our allocations instead. Essentially, we need to solve the following equation
 for $w_A$ and $w_B$.
 
-$$ 0 = w_A\beta_A + w_B\beta_B $$
+$$
+0 = w_A\beta_A + w_B\beta_B
+$$
 
 ## Allocations Remove Market Risk Quiz
 
@@ -188,42 +214,68 @@ weights be for stock A and stock B so that we can minimize market risk?
 
 We need to solve the following equation.
 
-$$ 0 = 0.01w_A + 0.02w_B $$
+$$
+0 = 0.01w_A + 0.02w_B
+$$
 
-$$ w_A = -2w_B $$
+$$
+w_A = -2w_B
+$$
 
 We also know that the sum of the absolute values $w_A$ and $w_B$ should equal
 one.
 
-$$ |w_A| + |w_B| = 1 $$
+$$
+|w_A| + |w_B| = 1
+$$
 
 If we substitute $-2w_B$ for $w_A$, we can solve for $w_B$.
 
-$$ |-2w_B| + |w_B| = 1 $$
+$$
+|-2w_B| + |w_B| = 1
+$$
 
-$$ |-3w_B| = 1 $$
+$$
+|-3w_B| = 1
+$$
 
-$$ |w_B| = \frac{1}{3} $$
+$$
+|w_B| = \frac{1}{3}
+$$
 
 However, since we want to short B, $w_B$ is actually $\frac{-1}{3}$, not
 $\frac{1}{3}$. We can now solve for $w_A$.
 
-$$ |w_A| + |w_B| = 1 $$
+$$
+|w_A| + |w_B| = 1
+$$
 
-$$ |w_A| + |-\frac{1}{3}| = 1 $$
+$$
+|w_A| + |-\frac{1}{3}| = 1
+$$
 
-$$ |w_A| = \frac{2}{3} $$
+$$
+|w_A| = \frac{2}{3}
+$$
 
 If we plug these two weights back into our original equation, we can verify that
 we do get an overall $\beta_p$ of 0.
 
-$$ \beta_p = 0.01w_A + 0.02w_B $$
+$$
+\beta_p = 0.01w_A + 0.02w_B
+$$
 
-$$ \beta_p = (0.01 \times 0.66) + (0.02 \times -0.33) $$
+$$
+\beta_p = (0.01 \times 0.66) + (0.02 \times -0.33)
+$$
 
-$$ \beta_p = 0.66 - 0.66 $$
+$$
+\beta_p = 0.66 - 0.66
+$$
 
-$$ \beta_p = 0 $$
+$$
+\beta_p = 0
+$$
 
 ## How Does It Work
 
@@ -234,18 +286,26 @@ examining.
 Let's look at the scenario where the market goes up 10%. Using weights $w_A =
 0.66$ and $w_B = -0.33$, we can use the CAPM to compute portfolio return.
 
-$$ r_p = w_A\beta_Ar_m + w_A\alpha_A + w_B\beta_Br_m + w_B\alpha_B $$
+$$
+r_p = w_A\beta_Ar_m + w_A\alpha_A + w_B\beta_Br_m + w_B\alpha_B
+$$
 
 Because of the work we have already done, we know that the sum of the components
 that consider market return equals zero, so we can drop them from the equation.
 
-$$ r_p = w_A\alpha_A + w_B\alpha_B $$
+$$
+r_p = w_A\alpha_A + w_B\alpha_B
+$$
 
 Let's plug in the appropriate variables.
 
-$$ r_p = 0.66 \times 0.01 + -0.33 \times -0.01 $$
+$$
+r_p = 0.66 \times 0.01 + -0.33 \times -0.01
+$$
 
-$$ r_p = 0.01 $$
+$$
+r_p = 0.01
+$$
 
 We can see that the expected return for our portfolio is 1%, *irrespective* of
 market movement.

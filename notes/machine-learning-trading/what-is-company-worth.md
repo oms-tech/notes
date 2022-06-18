@@ -99,7 +99,9 @@ future value of a promise of \$1 is \$1.
 Given an interest rate, $IR$ and a waiting period, $i$, measured in years, we
 can calculate $PV$ as follows.
 
-$$ PV = \frac{FV}{(1 + IR)^i} $$
+$$
+PV = \frac{FV}{(1 + IR)^i}
+$$
 
 Let's first consider the case of receiving a one-dollar bill right now. Since we
 don't have to wait, $i = 0$ and $PV = FV$. In other words, the payment is
@@ -109,11 +111,17 @@ Let's look at a different example. Suppose that the United States government
 offers a bond at a 1% interest rate. The present value of \$1, paid to us in one
 year, at a 1% interest rate is
 
-$$ PV = \frac{\$1}{(1 + 0.01)^1} $$
+$$
+PV = \frac{\$1}{(1 + 0.01)^1}
+$$
 
-$$ PV = \frac{\$1}{1.01} $$
+$$
+PV = \frac{\$1}{1.01}
+$$
 
-$$ PV \approx \$0.99 $$
+$$
+PV \approx \$0.99
+$$
 
 In other words, we should only buy this government bond if we have to pay \$0.99
 or less.
@@ -126,11 +134,17 @@ Professor Balch can only attract investors by offering a higher interest rate,
 such as 5%. The present value of \$1, paid to us in one year, at a 5% interest
 rate is
 
-$$ PV = \frac{\$1}{(1 + 0.05)^1} $$
+$$
+PV = \frac{\$1}{(1 + 0.05)^1}
+$$
 
-$$ PV = \frac{\$1}{1.05} $$
+$$
+PV = \frac{\$1}{1.05}
+$$
 
-$$ PV \approx \$0.95 $$
+$$
+PV \approx \$0.95
+$$
 
 In other words, if Professor Balch wants to attract us to buy his \$1 bond, he
 could only charge us \$0.95.
@@ -159,7 +173,9 @@ bond.
 We can also compute the present intrinsic value, $IV$, of the whole company by
 taking the sum of the present values of all dividends to be distributed.
 
-$$ IV = \sum_{i = 1}^\infty{\frac{FV}{(1 + IR)^i}} $$
+$$
+IV = \sum_{i = 1}^\infty{\frac{FV}{(1 + IR)^i}}
+$$
 
 While a bond issuer states the interest rate, $IR$, that a bond buyer is going
 to receive, the process works differently regarding dividends. Instead of
@@ -177,11 +193,15 @@ riskier upfront investment.
 
 Given a discount rate, $DR$, we can compute $IV$ as follows.
 
-$$ IV = \sum_{i = 1}^\infty{\frac{FV}{(1 + DR)^i}} $$
+$$
+IV = \sum_{i = 1}^\infty{\frac{FV}{(1 + DR)^i}}
+$$
 
 This infinite sum reduces to a simple expression.
 
-$$ IV = \frac{FV}{DR} $$
+$$
+IV = \frac{FV}{DR}
+$$
 
 Let's consider a company that generates a \$1 dividend. Suppose that, after much
 research, we decide that the risk level of an investment in this company is such
@@ -189,7 +209,9 @@ that we deserve future dividends at a 5% discount rate.
 
 The present value of this company is
 
-$$ \frac{\$1}{0.05} = \$20 $$
+$$
+\frac{\$1}{0.05} = \$20
+$$
 
 ## Intrinsic Value Quiz
 
@@ -205,7 +227,9 @@ Consider a company that pays a dividend of \$2 per year. Given a discount rate o
 The present value, $PV$, of a company is equal to the future value, $FV$,
 divided by the discount rate, $DR$. Given $FV = 2$ and $DR = 0.04$,
 
-$$ PV = \frac{\$2}{0.04} = \$50 $$
+$$
+PV = \frac{\$2}{0.04} = \$50
+$$
 
 ## Book Value
 

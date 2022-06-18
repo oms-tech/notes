@@ -21,7 +21,9 @@ breadth to create an estimate of performance. He developed a relationship called
 the **fundamental law of active portfolio management**, which relates
 performance, $P$, skill, $S$, and breadth, $B$, in the following equation.
 
-$$ P = S \times \sqrt{B} $$
+$$
+P = S \times \sqrt{B}
+$$
 
 We measure performance using a metric called the **information ratio**. The
 information ratio is very similar to the Sharpe ratio; however, the Sharpe ratio
@@ -98,11 +100,17 @@ Since we are using a biased coin, we have a 51% chance of winning 1000 tokens
 and a 49% chance of losing 1000 tokens. If we multiply this out, we see that our
 expected return is 20 tokens.
 
-$$ \mathbb{E} = 0.51 \times 1000 + 0.49 \times -1000 $$
+$$
+\mathbb{E} = 0.51 \times 1000 + 0.49 \times -1000
+$$
 
-$$ \mathbb{E} = (0.51 - 0.49) \times 1000 $$
+$$
+\mathbb{E} = (0.51 - 0.49) \times 1000
+$$
 
-$$ \mathbb{E} = 0.02 \times 1000 = 20 $$
+$$
+\mathbb{E} = 0.02 \times 1000 = 20
+$$
 
 What is the expected return in the multi-bet case, where we bet 1000 tokens
 across 1000 different tables?
@@ -118,11 +126,17 @@ respectively - but the amount we stand to win or lose on any bet is only one
 dollar. Since we are placing 1000 bets, our overall expected value is 1000 times
 the expected value of any individual bet.
 
-$$ \mathbb{E} = (0.51 \times 1 + 0.49 \times -1) \times 1000 $$
+$$
+\mathbb{E} = (0.51 \times 1 + 0.49 \times -1) \times 1000
+$$
 
-$$ \mathbb{E} = (0.51 - 0.49) \times 1000 $$
+$$
+\mathbb{E} = (0.51 - 0.49) \times 1000
+$$
 
-$$ \mathbb{E} = 0.02 \times 1000 = 20 $$
+$$
+\mathbb{E} = 0.02 \times 1000 = 20
+$$
 
 Notice that for both the single-bet and multi-bet scenarios, the expected return
 
@@ -199,7 +213,9 @@ As we saw, the risk-adjusted reward for the single-bet case, $RAR_{single}$, is
 0.63. Alternatively, the risk-adjusted reward for the 1000-bet case,
 $RAR_{multi}$, is 20. Notice the following relationship.
 
-$$ RAR_{multi} = RAR_{single} \times \sqrt{1000} $$
+$$
+RAR_{multi} = RAR_{single} \times \sqrt{1000}
+$$
 
 As we increase the number of bets that we place, the overall risk-adjusted
 reward increases with the square root of that number. Put another way, we can
@@ -209,7 +225,9 @@ single bet or by spreading our money out over more bets.
 This relationship is identical to the fundamental law of active portfolio
 management, which relates performance, skill, and breadth in the following way.
 
-$$ performance = skill \times \sqrt{breadth} $$
+$$
+performance = skill \times \sqrt{breadth}
+$$
 
 From this relationship, we can see that we can improve overall investment
 performance either by improving skill - how good we are at picking stocks - or
@@ -256,7 +274,9 @@ Recall that we use the CAPM equation to determine the return on a portfolio,
 $r_p$, for a particular day, $t$. Given a portfolio beta, $\beta_p$, a portfolio
 alpha for $t$, $\alpha_p(t)$, and the market return for $t$, $r_m(t)$, then
 
-$$ r_p(t) = \beta_pr_m(t) + \alpha_p(t) $$
+$$
+r_p(t) = \beta_pr_m(t) + \alpha_p(t)
+$$
 
 We can break this equation into two main components: a market component
 comprising $\beta_pr_m(t)$, and a skill component consisting of $\alpha_p(t)$.
@@ -269,7 +289,9 @@ risk-adjusted excess return.
 Formally, given a collection of $\alpha_p$ observations, $\Alpha$, we can
 calculate the information ratio of the portfolio, $IR_p$, as
 
-$$ IR_p = \frac{\overline{\Alpha}}{\sigma_{\Alpha}} $$
+$$
+IR_p = \frac{\overline{\Alpha}}{\sigma_{\Alpha}}
+$$
 
 We can derive the daily values of $\alpha_p$ by looking back at the daily
 portfolio returns and subtracting the market component, $\beta_pr_m(t)$.
@@ -295,7 +317,9 @@ Given an information coefficient, $IC$, and A breadth, $BR$, the fundamental law
 of active portfolio management states the following equation to calculate the
 information ratio, $IR$.
 
-$$ IR = IC \times \sqrt{BR} $$
+$$
+IR = IC \times \sqrt{BR}
+$$
 
 In other words, the performance of the fund is due to the stock-picking skill of
 the manager times the square root of the number of investments.
@@ -335,22 +359,36 @@ Let's step through the math. Since Buffett and Simons both have the same
 information ratio, we can set the equation for $IR_B$ equal to the equation for
 $IR_S$.
 
-$$ IC_B \times \sqrt{B_B} = IC_S \times \sqrt{B_S} $$
+$$
+IC_B \times \sqrt{B_B} = IC_S \times \sqrt{B_S}
+$$
 
 Furthermore, we know that Simons's IC is 1/1000th Buffett's IC.
 
-$$ IC_B \times \sqrt{B_B} = \frac{IC_B \times \sqrt{B_S}}{1000} $$
+$$
+IC_B \times \sqrt{B_B} = \frac{IC_B \times \sqrt{B_S}}{1000}
+$$
 
 We can manipulate this equation to isolate $B_S$.
 
-$$ 1000 = \frac{IC_B \times \sqrt{B_S}}{IC_B \times \sqrt{B_B}} $$
+$$
+1000 = \frac{IC_B \times \sqrt{B_S}}{IC_B \times \sqrt{B_B}}
+$$
 
-$$ 1000 = \frac{\sqrt{B_S}}{\sqrt{B_B}} $$
+$$
+1000 = \frac{\sqrt{B_S}}{\sqrt{B_B}}
+$$
 
-$$ 1000 \times \sqrt{B_B} = \sqrt{B_S} $$
+$$
+1000 \times \sqrt{B_B} = \sqrt{B_S}
+$$
 
-$$ 1000000 \times B_B = B_S $$
+$$
+1000000 \times B_B = B_S
+$$
 
 Since we know that $B_B = 120$, we can solve for $B_S$.
 
-$$ 1000000 \times 120 = B_S = 120,000,000 $$
+$$
+1000000 \times 120 = B_S = 120,000,000
+$$

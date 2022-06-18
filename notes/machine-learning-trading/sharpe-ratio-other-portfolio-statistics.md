@@ -202,7 +202,9 @@ metric. Additionally, a higher rate of risk-free return decreases our metric.
 Given a daily portfolio return $R_p$ and a daily risk-free rate of return $R_f$,
 we can formulate the Sharpe ratio $S$ as:
 
-$$ S = \frac{\mathbb{E}[R_p - R_f]}{\sigma(R_p - R_f)} $$
+$$
+S = \frac{\mathbb{E}[R_p - R_f]}{\sigma(R_p - R_f)}
+$$
 
 That is, the Sharpe ratio is the expected value of the difference of the
 portfolio return and the risk-free rate of return divided by the standard
@@ -216,7 +218,9 @@ Of course, to calculate the expected value going forward, we have to look back
 at the historical values. We can use the historical mean of the differences
 between $R_p$ and $R_f$ as the expected value going forward.
 
-$$ S = \frac{mean({R_p - R_f})}{\sigma(R_p - R_f)} $$
+$$
+S = \frac{mean({R_p - R_f})}{\sigma(R_p - R_f)}
+$$
 
 What is the risk-free rate? One value often used is the [London Inter-bank
 Offered Rate](https://en.wikipedia.org/wiki/Libor). Another value used is the
@@ -239,13 +243,21 @@ end the year with a value of 1.1.
 We need to find a number that equals 1.1 when multiplied to our balance each day
 in the 252-day trading year. In other words,
 
-$$ 1.1 = 1.0 * x^{252} $$
+$$
+1.1 = 1.0 * x^{252}
+$$
 
-$$ 1.1 = x^{252} $$
+$$
+1.1 = x^{252}
+$$
 
-$$ x = \sqrt[252]{1.1} $$
+$$
+x = \sqrt[252]{1.1}
+$$
 
-$$ x \approx 1.00038 $$
+$$
+x \approx 1.00038
+$$
 
 Of course, $x$ is the multiple. The daily risk-free rate is $(x-1) * 100$, or
 0.038%.
@@ -255,13 +267,17 @@ the standard deviation of a set of numbers is unaffected if each number is
 shifted by the same amount. As a result, we can simplify our formula for the
 Sharpe ratio:
 
-$$ S = \frac{mean({R_p - R_f})}{\sigma{R_p}} $$
+$$
+S = \frac{mean({R_p - R_f})}{\sigma{R_p}}
+$$
 
 Since many people have been using zero recently for the risk-free rate of
 return, we are going to follow suit. Our final, simplified Sharpe ratio formula
 is:
 
-$$ S = \frac{\bar{R}_p}{\sigma{R_p}} $$
+$$
+S = \frac{\bar{R}_p}{\sigma{R_p}}
+$$
 
 ## But Wait, There's More!
 
@@ -274,11 +290,15 @@ The Sharpe ratio was initially envisioned as an annual measure. As a result, if
 we are sampling at nonannual frequencies, we need to incorporate an adjustment
 factor.
 
-$$ SR_{annualized} = K * SR $$
+$$
+SR_{annualized} = K * SR
+$$
 
 where
 
-$$ K = \sqrt{sampling\_rate} $$
+$$
+K = \sqrt{sampling\_rate}
+$$
 
 As an example, there are 252 trading days in a year, so if we are using daily
 data, then $K = \sqrt{252}$. If are taking weekly samples, then $K = \sqrt{52}$.
@@ -290,7 +310,9 @@ at a daily rate, we set $K = \sqrt{252}$, not $K = \sqrt{85}$.
 Bringing it all together, given a daily portfolio return $R_p$ and a daily
 risk-free rate of return $R_f$, we can formulate the Sharpe ratio $S$ as:
 
-$$ S = \sqrt{252} * \frac{\bar{R}_p}{\sigma{R_p}} $$
+$$
+S = \sqrt{252} * \frac{\bar{R}_p}{\sigma{R_p}}
+$$
 
 ## What is the Sharpe Ratio Quiz
 
@@ -314,15 +336,25 @@ What is the Sharpe ratio of this strategy?
 
 Let's recall our formula for the Sharpe ratio:
 
-$$ S = K * \frac{mean(R_p - R_f)}{\sigma_{R_p}} $$
+$$
+S = K * \frac{mean(R_p - R_f)}{\sigma_{R_p}}
+$$
 
 Given that $R_p = 0.001$ on average, $R_f = 0.0002$ on average, and $\sigma{R_p}
 = 0.001$, with a daily sample rate:
 
-$$ S = \sqrt{252} * \frac{0.001 - 0.0002}{0.001} $$
+$$
+S = \sqrt{252} * \frac{0.001 - 0.0002}{0.001}
+$$
 
-$$ S = \sqrt{252} * \frac{0.0008}{0.001} $$
+$$
+S = \sqrt{252} * \frac{0.0008}{0.001}
+$$
 
-$$ S = \sqrt{252} * 0.8 $$
+$$
+S = \sqrt{252} * 0.8
+$$
 
-$$ S \approx 12.7 $$
+$$
+S \approx 12.7
+$$

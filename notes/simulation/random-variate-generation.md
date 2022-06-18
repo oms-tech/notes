@@ -20,32 +20,44 @@ random variable.
 We can prove the inverse transform method. Let $Y = F(X)$. Since $Y$ is a random
 variable, it has a cdf, which we can denote $G(y)$. By definition:
 
-$$ G(y) = P(Y \leq y) $$
+$$
+G(y) = P(Y \leq y)
+$$
 
 Since $Y = F(X)$:
 
-$$ G(y) = P(F(X) \leq y) $$
+$$
+G(y) = P(F(X) \leq y)
+$$
 
 Since $X$ is a continuous random variable, its cdf is continuous. Therefore, we
 can apply the inverse, $F^{-1}$, to both sides of the inequality:
 
-$$ G(y) = P(F^{-1}(F(X)) \leq F^{-1}(y)) $$
+$$
+G(y) = P(F^{-1}(F(X)) \leq F^{-1}(y))
+$$
 
 What is $F^{-1}(F(X))$? Simply, $X$:
 
-$$ G(y) = P(X \leq F^{-1}(y)) $$
+$$
+G(y) = P(X \leq F^{-1}(y))
+$$
 
 Notice that we have an expression of the form $P(X \leq x$), where $x =
 F^{-1}(y)$. We know, by definition, $F(x) = P(X \leq x)$, so:
 
-$$ G(y) = F(F^{-1}(y)) = y $$
+$$
+G(y) = F(F^{-1}(y)) = y
+$$
 
 In summary, the cdf of $Y$ is $G(y) = y$. If we take the derivative of the cdf
 to get the pdf, we see that $g(y) = 1$. Let's remember the pdf for a uniform
 random variable:
 
-$$ f(x) = \left\{ \begin{matrix} \frac{1}{b-a} & x \in [a,b] \\
-  0 & \text{otherwise} \end{matrix} \right. $$
+$$
+f(x) = \left\{ \begin{matrix} \frac{1}{b-a} & x \in [a,b] \\
+  0 & \text{otherwise} \end{matrix} \right.
+$$
 
 If $a = 0, b = 1$, then $f(x) = 1 = g(y)$. Therefore, $Y \sim \mathcal{U}(0,1)$.
 
@@ -84,12 +96,16 @@ this case, $F^{-1}(0.9) = 3$.
 
 Consider the $\mathcal{U}(a,b)$ distribution, which has the following cdf:
 
-$$ F(x) = \frac{x - a}{b - a}, \quad a \leq x \leq b $$
+$$
+F(x) = \frac{x - a}{b - a}, \quad a \leq x \leq b
+$$
 
 Let's set $F(X) = U$ and solve for $X$:
 
-$$ \begin{alignedat}{1} U &= \frac{X - a}{b - a} \\[2ex] (b - a)U &= X - a \\
-a + (b - a )U &= X \end{alignedat} $$
+$$
+\begin{alignedat}{1} U &= \frac{X - a}{b - a} \\[2ex] (b - a)U &= X - a \\
+a + (b - a )U &= X \end{alignedat}
+$$
 
 Intuitively, this result makes perfect sense. If we take a Unif(0,1) random
 variable, and multiply it by $b-a$, we end up with a Unif(0, $b-a$) random
@@ -100,18 +116,24 @@ variable.
 
 Consider the $\text{Exp}(\lambda)$ distribution, which has the following cdf:
 
-$$ F(x) = 1 - e^{-\lambda x}, x \geq 0 $$
+$$
+F(x) = 1 - e^{-\lambda x}, x \geq 0
+$$
 
 Let's set $F(X) = U$ and solve for $X$:
 
-$$ \begin{alignedat}{1} U &= 1 - e^{-\lambda X} \\
+$$
+\begin{alignedat}{1} U &= 1 - e^{-\lambda X} \\
 U - 1 &= e^{-\lambda X} \\
 \ln(U - 1) &= -\lambda X \\
-\frac{\ln(U - 1)}{-\lambda} &= X \end{alignedat} $$
+\frac{\ln(U - 1)}{-\lambda} &= X \end{alignedat}
+$$
 
 Also, we know that the expression $U-1$ is itself uniform, so we can simplify:
 
-$$ X = \frac{\ln(U)}{-\lambda} $$
+$$
+X = \frac{\ln(U)}{-\lambda}
+$$
 
 ## Inverse Transform Method - Continuous Examples
 
@@ -122,21 +144,27 @@ examples.
 
 Let's start with the Weibull distribution, which has the following cdf:
 
-$$ F(x) = 1 - e ^{(-\lambda x)^\beta} $$
+$$
+F(x) = 1 - e ^{(-\lambda x)^\beta}
+$$
 
 We can solve $F(X) = U$ for $X$:
 
-$$ \begin{alignedat}{1} U &= 1 - e ^{(-\lambda X)^\beta} \\
+$$
+\begin{alignedat}{1} U &= 1 - e ^{(-\lambda X)^\beta} \\
 1 - U &= e ^{(-\lambda X)^\beta} \\
 \ln(1 - U) &= -\lambda X^\beta \\
 \ln(1 - U)^{1/\beta} &= -\lambda X \\
 \frac{-1}{\lambda}\ln(1 - U)^{1/\beta} &= X \\
-\end{alignedat} $$
+\end{alignedat}
+$$
 
 As we saw before, we know that the expression $U-1$ is itself uniform, so we can
 simplify:
 
-$$ X = \frac{-1}{\lambda}\ln(U)^{1/\beta} $$
+$$
+X = \frac{-1}{\lambda}\ln(U)^{1/\beta}
+$$
 
 Notice that, if $\beta = 1$, $X = -\ln(U) / \lambda \sim \text{Exp}(\lambda)$.
 We say that the Weibull distribution *generalizes* the exponential distribution.
@@ -153,13 +181,17 @@ first approximation.
 Let's specifically consider the triangular(0,1,2) distribution, which has the
 following pdf:
 
-$$ f(x) = \left\{ \begin{matrix} x & 0 \leq x < 1 \\
-  2 - x & 1 \leq x \leq 2 \end{matrix} \right. $$
+$$
+f(x) = \left\{ \begin{matrix} x & 0 \leq x < 1 \\
+  2 - x & 1 \leq x \leq 2 \end{matrix} \right.
+$$
 
 If we integrate, we get the following cdf:
 
-$$ F(x) = \left\{ \begin{matrix} x^2 / 2 & 0 \leq x < 1 \\
-  1 - (x-2)^2 / 2 & 1 \leq x \leq 2 \end{matrix} \right. $$
+$$
+F(x) = \left\{ \begin{matrix} x^2 / 2 & 0 \leq x < 1 \\
+  1 - (x-2)^2 / 2 & 1 \leq x \leq 2 \end{matrix} \right.
+$$
 
 Since the cdf contains distinct expressions for different ranges of $x$, we need
 to transform each expression independently. How do we know which uniforms belong
@@ -174,12 +206,14 @@ and one.
 
 If $U \geq 1/2$, we solve the second expression for $X$:
 
-$$ \begin{alignedat}{1} U &= 1 - (X-2)^2 / 2 \\
+$$
+\begin{alignedat}{1} U &= 1 - (X-2)^2 / 2 \\
 1 - U &= (X-2)^2 / 2 \\
 2\ln(1 - U) &= (X-2)^2 \\
 \sqrt{2\ln(1 - U)} &= X-2 \\
 2 - \sqrt{2\ln(1 - U)} &= X \\
-\end{alignedat} $$
+\end{alignedat}
+$$
 
 Technically, we could have a $\pm$ in front of the square root, but it doesn't
 make sense to consider the positive root since $X$ must be between one and two.
@@ -250,12 +284,15 @@ Excel, we can execute this function: `NORMSINV(0.975)`.
 We can also use the following crude approximation for $Z$, which gives at least
 one decimal place of accuracy for $0.00134 \leq U \leq 0.98865$:
 
-$$ Z = \Phi^{-1}(U) \approx \frac{U^{0.135} - (1-U)^{0.135}}{0.1975} $$
+$$
+Z = \Phi^{-1}(U) \approx \frac{U^{0.135} - (1-U)^{0.135}}{0.1975}
+$$
 
 Here's a more accurate, albeit significantly more complicated, approximation,
 which has an absolute error $\leq 0.45 \times 10^{-3}$:
 
-$$ \begin{aligned} & Z = \text{sign}(U - 1/2)\left(t-  \frac{c_0 + c_1t +
+$$
+\begin{aligned} & Z = \text{sign}(U - 1/2)\left(t-  \frac{c_0 + c_1t +
 c_2t^2}{1 + d_1t + d_2t^2 + d_3t^3}\right) \\[2ex] & \text{where} \\[2ex] &
 \text{sign}(x) = \left\{ \begin{matrix} -1 & x < 0 \\
     0 & x = 0 \\
@@ -263,30 +300,39 @@ c_2t^2}{1 + d_1t + d_2t^2 + d_3t^3}\right) \\[2ex] & \text{where} \\[2ex] &
     \end{matrix}
   \right., \\[5ex] & t = \sqrt{-\ln[\min(U, 1-U)]^2}, \\[2ex] &c_0 = 2.515517,
 \quad c_1 = 0.802853, \quad 0.010328 \\
-&d_1 = 1.432788, \quad d_2 = 0.189269 \quad d_3 = 0.001308 \end{aligned} $$
+&d_1 = 1.432788, \quad d_2 = 0.189269 \quad d_3 = 0.001308 \end{aligned}
+$$
 
 ### Transforming Standard Normals to Other Normals
 
 Now, suppose we have $Z \sim \text{Nor}(0,1)$, and we want $X \sim
 \text{Nor}(\mu, \sigma^2)$. We can apply the following transformation:
 
-$$ X \leftarrow \mu + \sigma Z $$
+$$
+X \leftarrow \mu + \sigma Z
+$$
 
 > Note that we multiply $Z$ by $\sigma$, not $\sigma^2$!
 
 Let's look at an example. Suppose we want to generate $X \sim \text{Nor}(3,16)$,
 and we start with $U = 0.59$. We know that:
 
-$$ X = \mu + \sigma Z $$
+$$
+X = \mu + \sigma Z
+$$
 
 Remember that $Z = \Phi^{-1}(U)$:
 
-$$ X = \mu + \sigma \Phi^{-1}(U) = \mu + \sigma \Phi^{-1}(0.59) $$
+$$
+X = \mu + \sigma \Phi^{-1}(U) = \mu + \sigma \Phi^{-1}(0.59)
+$$
 
 If we compute $\Phi^{-1}(0.59)$, using one of the methods above, we get
 $\Phi^{-1}(0.59) = 0.2275$. Now we can plug and chug:
 
-$$ X = 3 + 4(0.2275) = 3.91 $$
+$$
+X = 3 + 4(0.2275) = 3.91
+$$
 
 ### Matlab Demonstration
 
@@ -345,9 +391,11 @@ The cdf, $F(x)$, takes on the value $1-p$ for $x = 0$ since $P(X \leq 0) = P(0)
 Let's construct a table to see how we might map the unit interval onto these two
 values of $X$:
 
-$$ \begin{array}{cccc} x & P(X = x) & F(x) & \mathcal{U}(0,1)\text{'s} \\ \hline
+$$
+\begin{array}{cccc} x & P(X = x) & F(x) & \mathcal{U}(0,1)\text{'s} \\ \hline
 0 & 1 - p & 1 - p & [0, 1 - p] \\
-1 & p & 1 & (1 - p, 1] \end{array} $$
+1 & p & 1 & (1 - p, 1] \end{array}
+$$
 
 Since $P(X = 0)$ occurs with probability $1-p$, we transform all uniforms on the
 range $[0, 1-p]$ to $X = 0$. This leaves a range of uniforms of width $p$, which
@@ -362,9 +410,11 @@ $X = 1$ instead of $X = 0$, which isn't a strict application of the inverse
 transform method. However, this approach slices the uniforms in a much more
 intuitive manner. Here's the table:
 
-$$ \begin{array}{cccc} x & P(X = x) & F(x) & \mathcal{U}(0,1)\text{'s} \\ \hline
+$$
+\begin{array}{cccc} x & P(X = x) & F(x) & \mathcal{U}(0,1)\text{'s} \\ \hline
 1 & p & 1 & [0, p] \\
-0 & 1 - p & 1 - p & (p, 1] \end{array} $$
+0 & 1 - p & 1 - p & (p, 1] \end{array}
+$$
 
 Here, we take $X = 1$ if $U \leq p$, which occurs with probability $p$, and we
 take $X = 0$ if $U > p$, which occurs with probability $1 - p$.
@@ -373,10 +423,12 @@ take $X = 0$ if $U > p$, which occurs with probability $1 - p$.
 
 Consider this slightly less-trivial pmf:
 
-$$ \begin{array}{cccc} x & P(X = x) & F(x) & \mathcal{U}(0,1)\text{'s} \\ \hline
+$$
+\begin{array}{cccc} x & P(X = x) & F(x) & \mathcal{U}(0,1)\text{'s} \\ \hline
 -1 & 0.6 & 0.6 & [0.0, 0.6] \\
 2.5 & 0.3 & 0.9 & (0.6, 0.9] \\
-4 & 0.1 & 1.0 & (0.9, 1.0] \end{array} $$
+4 & 0.1 & 1.0 & (0.9, 1.0] \end{array}
+$$
 
 Remember that, for a discrete distribution, $F(x_i) = P(X = x_i) + F(x_{i-1})$,
 where $F(x_0) = 0$. Correspondingly, the range of uniforms that maps to $x_i$ is
@@ -389,7 +441,9 @@ Sometimes, there's an easy way to avoid constructing a table. For example,
 consider the discrete uniform distribution over $\{1,2,...,n\}$, which has the
 following pmf:
 
-$$ P(X = k) = \frac{1}{n}, \quad k = 1,2,...,n $$
+$$
+P(X = k) = \frac{1}{n}, \quad k = 1,2,...,n
+$$
 
 We can think of this random variable as an $n$-sided die toss. How do we
 transform a Unif(0,1) correctly? If we take a real number between zero and one
@@ -408,23 +462,30 @@ success, with probability $p$.
 
 Accordingly, this distribution has the following pmf and cdf:
 
-$$ f(k) = q^{k-1}p, \quad F(k) = 1 - q^k, k = 1,2,..., $$
+$$
+f(k) = q^{k-1}p, \quad F(k) = 1 - q^k, k = 1,2,...,
+$$
 
 Let's set $F(X) = U$ and solve for $X$, finding the minimum $k$ such that $1 -
 q^k \geq U$. After some algebra, we see that:
 
-$$ X = \min[k : 1 - q^k \geq U] =
-\left\lceil\frac{\ln(1-U)}{\ln(1-p)}\right\rceil $$
+$$
+X = \min[k : 1 - q^k \geq U] =
+\left\lceil\frac{\ln(1-U)}{\ln(1-p)}\right\rceil
+$$
 
 As we've seen in the past, we can also replace $1-U$ with $U$:
 
-$$ X = \min[k : 1 - q^k \geq U] = \left\lceil\frac{\ln(U)}{\ln(1-p)}\right\rceil
+$$
+X = \min[k : 1 - q^k \geq U] = \left\lceil\frac{\ln(U)}{\ln(1-p)}\right\rceil
 $$
 
 For instance, if $p = 0.3$, and $U = 0.72$, we obtain:
 
-$$ X = \left\lceil\frac{\ln(1- U)}{\ln(1-p)}\right\rceil =
-\left\lceil\frac{\ln(0.28)}{\ln(0.7)}\right\rceil = 4 $$
+$$
+X = \left\lceil\frac{\ln(1- U)}{\ln(1-p)}\right\rceil =
+\left\lceil\frac{\ln(0.28)}{\ln(0.7)}\right\rceil = 4
+$$
 
 We can also generate a Geom($p$) random variable by counting Bern($p$) trials
 until we see a success. Suppose we want to generate $X \sim \text{Geom}(1/6)$.
@@ -444,11 +505,13 @@ one, generate a uniform, $U$, and then search the table to find $X = x_i =
 F^{-1}(U)$, such that $U \in (F(x_{i-1}), F(x_i)]$. Consider the following
 table:
 
-$$ \begin{array}{cccc} x & P(X = x) & F(x) & \mathcal{U}(0,1)\text{'s} \\ \hline
+$$
+\begin{array}{cccc} x & P(X = x) & F(x) & \mathcal{U}(0,1)\text{'s} \\ \hline
 x_1 & f(x_1) & F(x_1) & [0.0, F(x_1)] \\
 x_2 & f(x_2) & F(x_2) & (F(x_1), F(x_2)] \\
 x_3 & f(x_3) & F(x_3) & (F(x_2), F(x_3)] \\
-\vdots \end{array} $$
+\vdots \end{array}
+$$
 
 For example, if we generate a uniform in the range $(F(x_1), F(x_2)]$, we select
 $X = x_2$.
@@ -456,15 +519,19 @@ $X = x_2$.
 Let's look at a concrete example, in which we will generate $X \sim
 \text{Pois}(2)$, which has the following pmf:
 
-$$ f(x) = \frac{e^{-2}2^x}{x!}, \quad x = 0,1,2,... $$
+$$
+f(x) = \frac{e^{-2}2^x}{x!}, \quad x = 0,1,2,...
+$$
 
 We can construct the following table:
 
-$$ \begin{array}{cccc} x & P(X = x) & F(x) & \mathcal{U}(0,1)\text{'s} \\ \hline
+$$
+\begin{array}{cccc} x & P(X = x) & F(x) & \mathcal{U}(0,1)\text{'s} \\ \hline
 0 & 0.1353 & 0.1353 & [0.0, 0.1353] \\
 1 & 0.2706 & 0.4059 & (0.1353, 0.4059] \\
 2 & 0.2706 & 0.6765 & (0.4059, 0.6765] \\
-\vdots \end{array} $$
+\vdots \end{array}
+$$
 
 For example, if $U = 0.313$, then $X = 1$.
 
@@ -481,7 +548,9 @@ If we can't find a good theoretical distribution to model a certain random
 variable, or we don't have enough data, we can use the **empirical cdf** of the
 data, $X_1, X_2,...,X_n$:
 
-$$ \hat F_n(x) \equiv \frac{\text{number of } X_i\text{'s} \leq x}{n} $$
+$$
+\hat F_n(x) \equiv \frac{\text{number of } X_i\text{'s} \leq x}{n}
+$$
 
 Each $X_i$ has a probability $1/n$ of being drawn from our unknown continuous
 distribution. As a result, we can construct a cdf, $\hat F_n$, where $\hat
@@ -519,11 +588,13 @@ transform the empirical cdf into a continuous function by using linear
 interpolation between the $X_{(i)}$'s. Here is the corresponding interpolated
 cdf (which is not the true cdf even though we denote it as $F(x)$):
 
-$$ F(x) = \left\{ \begin{matrix} 0 & \text{if } x < X_{(1)} \\
+$$
+F(x) = \left\{ \begin{matrix} 0 & \text{if } x < X_{(1)} \\
     \frac{i - 1}{n - 1} + \frac{x - X_{(i)}}{(n-1)(X_{(n+1)} - X_{(i)})} &
     \text{if } X_{(i)} \leq x \leq X_{(i+1)}, \forall i \\
     1 & \text{if } x \geq X_{(n)}
-  \end{matrix} \right. $$
+  \end{matrix} \right.
+$$
 
 If $x$ is less than the first order statistic, then $F(x) = 0$. Given our
 current observations, we have no evidence that we will encounter a value smaller
@@ -536,7 +607,9 @@ U(0,1)$. Next, we set $P = (n-1)U$ and $I = \lceil P \rceil$. Note that $I$ is a
 discrete uniform random variable over $\{1,2,...,n\}$. Finally, we evaluate the
 following equation for $X$:
 
-$$ X = X_{(I)} + (P - I + 1)(X_{(I+1)} - X_{(I)}) $$
+$$
+X = X_{(I)} + (P - I + 1)(X_{(I+1)} - X_{(I)})
+$$
 
 Let's break down the above equation. $X_{(I)}$ corresponds to our random
 starting order statistic. The expression $P - I + 1$ turns out to be Unif(0,1):
@@ -548,10 +621,12 @@ statistic.
 For example, suppose $X_{(1)} = 1$, $X_{(2)} = 4$ and $X_{(3)} = 6$. If $U =
 0.73$, then $P = (n-1)U = 1.46$ and $I = \lceil P \rceil = 2$. Then:
 
-$$ \begin{alignedat}{1} X &= X_{(I)} + (P - I + 1)(X_{(I+1)} - X_{(I)}) \\
+$$
+\begin{alignedat}{1} X &= X_{(I)} + (P - I + 1)(X_{(I+1)} - X_{(I)}) \\
 &= X_{(2)} + (1.46 - 2 + 1)(X_{(3)} - X_{(2)}) \\
 &= 4 + (0.46)(6 - 4) \\
-&= 4.92 \end{alignedat} $$
+&= 4.92 \end{alignedat}
+$$
 
 Let's see what the linearly interpolated cdf looks like, shown below in orange.
 Notice that, between $X = 1$ and $X=6$, we have two line segments: one from $X =
@@ -572,16 +647,20 @@ Alternatively, we can write the interpolated cdf explicitly by using the
 equation we saw previously and enumerating the two $[X_{(i)}, X_{(i+1)}]$
 ranges:
 
-$$ F(x) = \left\{ \begin{matrix} 0 + \frac{x-1}{2(4-1)} & \text{if } 1 \leq x <
+$$
+F(x) = \left\{ \begin{matrix} 0 + \frac{x-1}{2(4-1)} & \text{if } 1 \leq x <
 4 \quad \text{(i = 1 case)} \\[2ex] \frac{1}{2} + \frac{x-4}{2(6-4)} & \text{if
   } 4 \leq x < 6 \quad \text{(i = 2 case)}  \\
-  \end{matrix} \right. $$
+  \end{matrix} \right.
+$$
 
 If we set $F(X) = U$ and solve for both cases, we have:
 
-$$ X = \left\{\begin{matrix} 1 + 6U & \text{if } U < 1/2 \\[2ex] 2 + 4U &
+$$
+X = \left\{\begin{matrix} 1 + 6U & \text{if } U < 1/2 \\[2ex] 2 + 4U &
 \text{if } U \geq 1/2  \\
-  \end{matrix} \right. $$
+  \end{matrix} \right.
+$$
 
 Again, if $U = 0.73$, then $X = 2 + 4(0.73) = 4.92$.
 
@@ -595,7 +674,9 @@ the convolution method.
 The term **convolution** refers to adding things up. For example, if we add up
 $n$ iid Bern($p$) random variables, we get a Binomial($n$, $p$) random variable:
 
-$$ Y = \sum_{i=1}^n (X_i \sim \text{Bern}(p)) \sim \text{Bin}(n,p) $$
+$$
+Y = \sum_{i=1}^n (X_i \sim \text{Bern}(p)) \sim \text{Bin}(n,p)
+$$
 
 We already know how to generate Bern($p$) random variables using the inverse
 transform method. Suppose we have a collection of uniforms, $U_1,...,U_n
@@ -637,28 +718,36 @@ Suppose $X_1,..., X_n \overset{\text{iid}}{\sim} \text{Exp}(\lambda)$. By
 definition, the sum of these exponential random variables forms an
 Erlang$_n$($\lambda$) random variable:
 
-$$ Y = \sum_{i=1}^n X_i \sim \text{Erlang}_n(\lambda) $$
+$$
+Y = \sum_{i=1}^n X_i \sim \text{Erlang}_n(\lambda)
+$$
 
 Let's use the inverse transform method with convolution to express $Y$ in terms
 of uniform random variables. First, let's remember how we transform uniforms
 into exponential random variables:
 
-$$ \begin{alignedat}{1} F(x) &= 1 - e^{-\lambda x} \\
+$$
+\begin{alignedat}{1} F(x) &= 1 - e^{-\lambda x} \\
 U &= 1 - e^{-\lambda X} \\
 \vdots \\
-X &= \frac{-1}{\lambda}\ln(U) \end{alignedat} $$
+X &= \frac{-1}{\lambda}\ln(U) \end{alignedat}
+$$
 
 Let's rewrite our summation expression to reflect this transformation:
 
-$$ Y = \sum_{i=1}^n X_i = \frac{-1}{\lambda}\sum_{i=1}^n \ln(U_i) $$
+$$
+Y = \sum_{i=1}^n X_i = \frac{-1}{\lambda}\sum_{i=1}^n \ln(U_i)
+$$
 
 Now, we can take advantage of the fact that $\ln(a) + \ln(b) = \ln(ab)$ and
 replace $n$ natural log invocations with just one. Why might we do this? Natural
 logarithms are expensive to evaluate on a computer, so we want to reduce them
 where possible. Consider the following manipulation:
 
-$$ Y = \sum_{i=1}^n \left[\frac{-1}{\lambda}\ln(U_i)\right] =
-\frac{-1}{\lambda}\ln\left(\prod_{i=1}^n U_i\right) $$
+$$
+Y = \sum_{i=1}^n \left[\frac{-1}{\lambda}\ln(U_i)\right] =
+\frac{-1}{\lambda}\ln\left(\prod_{i=1}^n U_i\right)
+$$
 
 ### Desert Island Nor(0,1) Approximate Generator
 
@@ -673,19 +762,25 @@ Let's choose $n=12$ and assume that it's "large enough". Then $Y \approx
 \text{Nor}(6, 1)$. If we subtract $6$ from $Y$, then the resulting mean is $0$,
 and we end up with a standard normal random variable:
 
-$$ Y - 6 = \sum_{i=1}^{12} U_i - 6 \approx \text{Nor}(0,1) $$
+$$
+Y - 6 = \sum_{i=1}^{12} U_i - 6 \approx \text{Nor}(0,1)
+$$
 
 ### Other Convolution-Related Tidbits
 
 If $X_1,...,X_n$ are iid Geom($p$) random variables, then the sum of the $X_i$'s
 is a negative binomial random variable:
 
-$$ \sum_{i=1}^{n} X_i \sim \text{NegBin}(n,p) $$
+$$
+\sum_{i=1}^{n} X_i \sim \text{NegBin}(n,p)
+$$
 
 If $Z_1,..., Z_n$ are iid Nor(0, 1) random variables, then sum of the squares of
 the $Z_i$'s is a $\chi^2$ random variable:
 
-$$ \sum_{i=1}^{n} Z_i^2 \sim \chi^2(n) $$
+$$
+\sum_{i=1}^{n} Z_i^2 \sim \chi^2(n)
+$$
 
 If $X_i,...,X_n$ are iid Cauchy random variables, then the sample mean, $\bar
 X$, is also a Cauchy random variable. We might think that $\bar X$ is normal for
@@ -852,8 +947,10 @@ Let's look at the constant, $c$. We define $c$, which we assume to be finite, as
 the integral of $t(x)$ over the real line, which we just said was greater than
 or equal to the corresponding integral of $f(x)$:
 
-$$ c \equiv \int_{\mathbb{R}} t(x)dx \geq \int_{\mathbb{R}} f(x)dx = 1, \quad c
-< \infty $$
+$$
+c \equiv \int_{\mathbb{R}} t(x)dx \geq \int_{\mathbb{R}} f(x)dx = 1, \quad c
+< \infty
+$$
 
 ### Theorem
 
@@ -926,63 +1023,89 @@ has pdf $f(x)$, indeed has pdf $f(x)$.
 
 Let $A$ be the acceptance event. The cdf of $X$ is, by definition:
 
-$$ P(X \leq x) $$
+$$
+P(X \leq x)
+$$
 
 Given that we have experienced $A$, we have set $Y = X$. As a result, we can
 express the cdf of $X$ with a conditional probability concerning $Y$ and $A$:
 
-$$ P(X \leq x) = P(Y \leq x | A) $$
+$$
+P(X \leq x) = P(Y \leq x | A)
+$$
 
 We can expand the conditional probability:
 
-$$ P(X \leq x) = P(Y \leq x | A) = \frac{P(A, Y \leq X)}{P(A)} \quad (1) $$
+$$
+P(X \leq x) = P(Y \leq x | A) = \frac{P(A, Y \leq X)}{P(A)} \quad (1)
+$$
 
 Now, what's the probability of the acceptance event, $A$, given $Y$? Well, from
 the definition of $A$, we see that:
 
-$$ P(A|Y=y) = P(U \leq g(Y)|Y=y) $$
+$$
+P(A|Y=y) = P(U \leq g(Y)|Y=y)
+$$
 
 Since $Y=y$, we can substitute $y$ for $Y$:
 
-$$ P(U \leq g(Y)|Y=y) = P(U \leq g(y)|Y=y) $$
+$$
+P(U \leq g(Y)|Y=y) = P(U \leq g(y)|Y=y)
+$$
 
 Earlier, we stated that $U$ and $Y$ are independent. As a result, information
 about $Y$ gives us no information about $U$, so:
 
-$$ P(U \leq g(y)|Y=y) = P(U \leq g(y)) $$
+$$
+P(U \leq g(y)|Y=y) = P(U \leq g(y))
+$$
 
 Additionally, we know that $U$ is uniform, so, by definition, $P(U \leq x) = x,
 0 \leq x \leq 1$. Since $g(y)$ also has a range of $[0,1]$, by definition, then:
 
-$$ P(U \leq g(y)) = g(y) \quad (2) $$
+$$
+P(U \leq g(y)) = g(y) \quad (2)
+$$
 
 Now let's consider the joint probability $P(A, Y \leq x)$. Here, we can use the
 law of total probability, also known as the standard conditioning argument:
 
-$$ P(A, Y \leq x) = \int_{-\infty}^\infty P(A, Y \leq x | Y=y)h(y)dy $$
+$$
+P(A, Y \leq x) = \int_{-\infty}^\infty P(A, Y \leq x | Y=y)h(y)dy
+$$
 
 We can express $Y \leq x$ directly in the limits of integration, instead of in
 the conditional probability expression inside the integral. If we integrate over
 all $y$, such that $-\infty \leq y \leq x$, then we are still only considering
 values of $Y$ such that $Y \leq x$:
 
-$$ P(A, Y \leq x) = \int_{-\infty}^x P(A | Y=y)h(y)dy $$
+$$
+P(A, Y \leq x) = \int_{-\infty}^x P(A | Y=y)h(y)dy
+$$
 
 We can substitute $t(y)/c = h(y)$:
 
-$$ P(A, Y \leq x) = \frac{1}{c}\int_{-\infty}^x P(A | Y=y)t(y)dy $$
+$$
+P(A, Y \leq x) = \frac{1}{c}\int_{-\infty}^x P(A | Y=y)t(y)dy
+$$
 
 We might remember, from result $(2)$ above, that $P(A|Y=y) = g(y)$. Therefore:
 
-$$ P(A, Y \leq x) = \frac{1}{c}\int_{-\infty}^x g(y)t(y)dy $$
+$$
+P(A, Y \leq x) = \frac{1}{c}\int_{-\infty}^x g(y)t(y)dy
+$$
 
 Also remember that, by definition, $g(y) = f(y)/t(x)$. Therefore:
 
-$$ P(A, Y \leq x) = \frac{1}{c}\int_{-\infty}^x f(y)dy \quad (3) $$
+$$
+P(A, Y \leq x) = \frac{1}{c}\int_{-\infty}^x f(y)dy \quad (3)
+$$
 
 If we let $x \to \infty$, then we have:
 
-$$ P(A) = \frac{1}{c}\int_{-\infty}^\infty f(y)dy $$
+$$
+P(A) = \frac{1}{c}\int_{-\infty}^\infty f(y)dy
+$$
 
 Notice that two things changed here. First, we changed the upper limit of
 integration from $x$ to $\infty$. Second, we changed the probability expression
@@ -992,11 +1115,15 @@ $P(A, Y \leq x) \to P(A)$.
 We know that $f(x)$ is a pdf, and the integral of a pdf over the real line is
 equal to one, so:
 
-$$ P(A) = \frac{1}{c}\int_{-\infty}^\infty f(y)dy = \frac{1}{c} \quad (4) $$
+$$
+P(A) = \frac{1}{c}\int_{-\infty}^\infty f(y)dy = \frac{1}{c} \quad (4)
+$$
 
 Together, facts $(1)$, $(3)$, and $(4)$ imply that:
 
-$$ P(X \leq x) = \frac{P(A, Y \leq x)}{P(A)} = \int_{-\infty}^x f(y)dy $$
+$$
+P(X \leq x) = \frac{P(A, Y \leq x)}{P(A)} = \int_{-\infty}^x f(y)dy
+$$
 
 Essentially, we have shown that the cdf of $X$ is equal to the integral of
 $f(y)$, from $-\infty$ to $x$. If we take the derivative of both sides, we see
@@ -1008,12 +1135,16 @@ There are two main issues here. First, we need the ability to sample $Y$ from
 $h(y)$ quickly since we can't sample $X$ from $f(x)$ easily. Second, $c$ must be
 small since the probability of the acceptance event is:
 
-$$ P(U \leq g(Y)) = \frac{1}{c} $$
+$$
+P(U \leq g(Y)) = \frac{1}{c}
+$$
 
 Now, $c$ is bounded by one from below - $f(x) = t(x), c = 1$ - so we want $c$ to
 be as close to one as possible. If so, then:
 
-$$ P(U \leq g(Y)) = \frac{1}{c} \approx 1 $$
+$$
+P(U \leq g(Y)) = \frac{1}{c} \approx 1
+$$
 
 If $c \approx 1$, then we accept almost every $Y$ we sample. If $c$ is very
 large, then $1/c$ is very small, and we will likely have to draw many $(U, Y)$
@@ -1065,7 +1196,9 @@ one.
 
 Finally, let's compute $g(x)$:
 
-$$ g(x) = \frac{f(x)}{t(x)} = \frac{60x^3(1-x)^2}{2.0736} $$
+$$
+g(x) = \frac{f(x)}{t(x)} = \frac{60x^3(1-x)^2}{2.0736}
+$$
 
 Let's look at a simple example. Let's draw two uniforms, $U = 0.13$ and $Y =
 0.25$. If we plug and chug, we see that $g(Y) \approx 0.25$. Therefore, $U \leq
@@ -1079,7 +1212,9 @@ Let's demo the acceptance-rejection example we looked at previously. We wanted
 to generate $X$ with pdf $f(x) = 60x^3(1-x)^2, 0 \leq x \leq 1$. Let's recall
 $g(x)$:
 
-$$ g(x) = \frac{f(x)}{t(x)} = \frac{60x^3(1-x)^2}{2.0736} $$
+$$
+g(x) = \frac{f(x)}{t(x)} = \frac{60x^3(1-x)^2}{2.0736}
+$$
 
 Additionally, remember that our acceptance event is $U \leq g(Y)$. Consider the
 following code:
@@ -1119,7 +1254,9 @@ generated values looks quite close to the graph of $f(x)$.
 In this example, we are going to generate a standard *half-normal* random
 variable, which has the following pdf:
 
-$$ f(x) = \frac{2}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}, \quad x \geq 0 $$
+$$
+f(x) = \frac{2}{\sqrt{2\pi}}e^{\frac{-x^2}{2}}, \quad x \geq 0
+$$
 
 This random variable closely resembles a standard normal random variable, except
 that we've "flipped" the negative portion of the distribution over the $y$-axis
@@ -1128,26 +1265,36 @@ and doubled $f(x)$, for all $x \geq 0$.
 We can use the following majorizing function, $t(x)$, as it is always greater
 than $f(x)$:
 
-$$ t(x) = \sqrt{\frac{2e}{\pi}}e^{-x} \geq f(x) $$
+$$
+t(x) = \sqrt{\frac{2e}{\pi}}e^{-x} \geq f(x)
+$$
 
 If we take the integral of $t(x)$ over the domain of $f(x)$, we get $c$:
 
-$$ c = \int_0^{\infty} t(x)dx = \sqrt{\frac{2e}{\pi}} $$
+$$
+c = \int_0^{\infty} t(x)dx = \sqrt{\frac{2e}{\pi}}
+$$
 
 Now, let's compute $h(x)$:
 
-$$ h(x) = \frac{t(x)}{c} = e^{-x} $$
+$$
+h(x) = \frac{t(x)}{c} = e^{-x}
+$$
 
 Let's remember the pdf for an exponential random variable:
 
-$$ f(x) = e^{-\lambda x} $$
+$$
+f(x) = e^{-\lambda x}
+$$
 
 We can see that $h(x)$ is simply the pdf of an Exp(1) random variable, which we
 can generate easily!
 
 Finally, let's look at $g(x)$:
 
-$$ g(x) = \frac{f(x)}{t(x)} = e^{-(x-1)^2/2} $$
+$$
+g(x) = \frac{f(x)}{t(x)} = e^{-(x-1)^2/2}
+$$
 
 To generate a half normal, we simply generate $U \sim \mathcal U(0,1)$ and $Y
 \sim \text{Exp}(1)$ and accept $Y$ if $U \leq g(Y)$.
@@ -1157,8 +1304,10 @@ simply have to "flip back" half of the $X$ values over the $y$-axis. Given $U
 \sim \mathcal U(0,1)$ and $X$ from the half-normal distribution, we can see
 that:
 
-$$ Z = \left\{ \begin{matrix} -X & U \leq 1/2 \\
-  X & U > 1/2 \end{matrix} \right. \sim \text{Nor}(0,1) $$
+$$
+Z = \left\{ \begin{matrix} -X & U \leq 1/2 \\
+  X & U > 1/2 \end{matrix} \right. \sim \text{Nor}(0,1)
+$$
 
 As always, we can generate a Nor($\mu$, $\sigma^2$) by applying the
 transformation $\mu + \sigma Z$.
@@ -1172,7 +1321,9 @@ a discrete random variable.
 
 The Poisson distribution has the following pmf:
 
-$$ P(X=n) = e^{-\lambda}\frac{\lambda^n}{n!}, \quad n = 0, 1,... $$
+$$
+P(X=n) = e^{-\lambda}\frac{\lambda^n}{n!}, \quad n = 0, 1,...
+$$
 
 We'll use a variation of the acceptance-rejection method here to generate a
 realization of $X$. The algorithm will go through a series of equivalent
@@ -1186,7 +1337,9 @@ arrivals $i-1$ and $i$.
 Like we said, $X=n$ if and only if we see exactly $n$ Pois($\lambda$) arrivals
 by $t = 1$. We can express this requirement as an inequality of sums:
 
-$$ X = n \iff \sum_{i=1}^n A_i \leq 1 < \sum_{i=1}^{n+1} A_i $$
+$$
+X = n \iff \sum_{i=1}^n A_i \leq 1 < \sum_{i=1}^{n+1} A_i
+$$
 
 In other words, the sum of the first $n$ interarrival times must be less than or
 equal to one, and, correspondingly, the sum of the first $n+1$ interarrival
@@ -1197,19 +1350,25 @@ We might recall that interarrival times from a Pois($\lambda$) are generated
 from an Exp($\lambda$) distribution, and we know how to transform uniforms into
 Exp($\lambda$) random variables:
 
-$$ X = n \iff \sum_{i=1}^n \left[\frac{-1}{\lambda}\ln U_i\right] \leq 1 <
-\sum_{i=1}^{n+1} \left[\frac{-1}{\lambda}\ln U_i\right] $$
+$$
+X = n \iff \sum_{i=1}^n \left[\frac{-1}{\lambda}\ln U_i\right] \leq 1 <
+\sum_{i=1}^{n+1} \left[\frac{-1}{\lambda}\ln U_i\right]
+$$
 
 As we saw previously, we can move the natural logarithm outside of the sum and
 convert the sum to a product: $\ln(a) + \ln(b) = \ln(ab)$. Consider:
 
-$$ X = n \iff \frac{-1}{\lambda}\ln\left(\prod_{i=1}^nU_i\right) \leq 1 <
-\frac{-1}{\lambda}\ln\left(\prod_{i=1}^{n+1}U_i\right) $$
+$$
+X = n \iff \frac{-1}{\lambda}\ln\left(\prod_{i=1}^nU_i\right) \leq 1 <
+\frac{-1}{\lambda}\ln\left(\prod_{i=1}^{n+1}U_i\right)
+$$
 
 Let's multiply through by $-\lambda$ - make sure to flip the inequalities when
 multiplying by a negative - and raise the whole thing by $e$:
 
-$$ X = n \iff \prod_{i=1}^nU_i \geq e^{-\lambda} > \prod_{i=1}^{n+1}U_i $$
+$$
+X = n \iff \prod_{i=1}^nU_i \geq e^{-\lambda} > \prod_{i=1}^{n+1}U_i
+$$
 
 To generate a Pois($\lambda$) random variable, we will generate $n+1$ uniforms
 until the above inequality holds, and then we'll set $X=n$.
@@ -1226,15 +1385,19 @@ increment $X$ by one. Once $p < a$, we return $X$.
 Let's obtain a Pois(2) random variable. We will sample uniforms until the
 following condition holds:
 
-$$ e^{-\lambda} = e^{-2} = 0.1353 > \prod_{i=1}^{n+1}U_i $$
+$$
+e^{-\lambda} = e^{-2} = 0.1353 > \prod_{i=1}^{n+1}U_i
+$$
 
 Consider the following table:
 
-$$ \begin{array}{cccc} n & U_{n+1} & \prod_{i=1}^{n+1}U_i & \text{Stop?} \\
+$$
+\begin{array}{cccc} n & U_{n+1} & \prod_{i=1}^{n+1}U_i & \text{Stop?} \\
 \hline 0 & 0.3911 & 0.3911 & \text{No} \\
 1 & 0.9451 & 0.3696 & \text{No} \\
 2 & 0.5033 & 0.1860 & \text{No} \\
-3 & 0.7003 & 0.1303 & \text{Yes} \end{array} $$
+3 & 0.7003 & 0.1303 & \text{Yes} \end{array}
+$$
 
 From our iterative sampling above, we see that we take $X=3$ since the
 inequality above holds for $n=3$.
@@ -1250,13 +1413,17 @@ $\lambda$, we can take a shortcut. When $\lambda \geq 20$, then $X$ is
 approximately Nor($\lambda$, $\lambda$). We can standardize $X$ to get a
 Nor(0,1) random variable:
 
-$$ \frac{X - \lambda}{\sqrt \lambda} \approx \text{Nor}(0,1) $$
+$$
+\frac{X - \lambda}{\sqrt \lambda} \approx \text{Nor}(0,1)
+$$
 
 Given this fact, we can use the following algorithm to generate a
 Pois($\lambda$) random variable. First, generate $Z$ from Nor(0,1). Next,
 return:
 
-$$ X = \max(0, \lfloor \lambda + \sqrt \lambda Z + 0.5\rfloor) $$
+$$
+X = \max(0, \lfloor \lambda + \sqrt \lambda Z + 0.5\rfloor)
+$$
 
 Let's walk through the above expression. The term $\sqrt \lambda Z$ turns our
 Nor(0,1) random variable into a Nor(0, $\lambda$) random variable. If we add

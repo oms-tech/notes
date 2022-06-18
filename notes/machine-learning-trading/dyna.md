@@ -106,7 +106,9 @@ T_c[s,a,s_n]$, where $n$ is the size of $S$, the state space.
 
 Altogether, we have the following equation:
 
-$$ T[s,a,s'] = \frac{T_c[s,a,s']}{\sum_{i}^{n}T_c[s,a,s_i]} $$
+$$
+T[s,a,s'] = \frac{T_c[s,a,s']}{\sum_{i}^{n}T_c[s,a,s_i]}
+$$
 
 ## Learning R
 
@@ -120,7 +122,9 @@ each real experience. Notice that this update equation is very similar to the
 Q-table update equation, incorporating the same learning rate, $\alpha$, that we
 used in that equation.
 
-$$ R'[s,a] = (1 - \alpha) \times R[s,a] + \alpha \times r $$
+$$
+R'[s,a] = (1 - \alpha) \times R[s,a] + \alpha \times r
+$$
 
 ## Dyna-Q Recap
 

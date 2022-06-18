@@ -232,7 +232,9 @@ We can now articulate the expression that we want to maximize. Given a horizon
 of size $n$, and note that $n$ can equal infinity, we want to maximize the
 expression
 
-$$ \sum_{i=1}^{n} r_i $$
+$$
+\sum_{i=1}^{n} r_i
+$$
 
 Remember from one of our earlier lessons where we talked about the present value
 and future value of money. One of the main points that we arrived at was that a
@@ -243,7 +245,9 @@ more valuable than a reward of one dollar tomorrow. We can reformulate our
 expression above to incorporate the discounting of future rewards. That is,
 given a discount rate, $\gamma$, we want to maximize
 
-$$ \sum_{i=1}^{\infty} \gamma^{i-1} \times r_i $$
+$$
+\sum_{i=1}^{\infty} \gamma^{i-1} \times r_i
+$$
 
 **Note**: this expression is almost identical to the expression we used to
 calculate the present value of all future corporate dividend payments.

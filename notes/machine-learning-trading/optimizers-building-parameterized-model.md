@@ -211,7 +211,9 @@ gradient descent just as effectively as they can solve one-dimensional problems.
 
 Let's look at a function that we have all seen before:
 
-$$ f(x) = mx + b $$
+$$
+f(x) = mx + b
+$$
 
 This function, which is also the equation for a line, has one argument, $x$, and
 two parameters: $m$ and $b$.
@@ -277,7 +279,9 @@ We want to use a minimizer to find the line that best fits this data, so we
 first have to define a function to minimize. We are going to use the *sum of
 squared error* function we saw above, namely:
 
-$$ E = \sum_i{e_i^2} $$
+$$
+E = \sum_i{e_i^2}
+$$
 
 Additionally, we have to give the minimizer our initial guess for $C_0$ and
 $C_1$, and we might choose the values one and zero, respectively. We would give

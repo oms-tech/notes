@@ -197,7 +197,9 @@ comparison.
 Generally, if we want to calculate the $n$-day momentum, $m$, at day $t$, using
 a sequence of prices, $p$, we can use the following formula.
 
-$$ m_t = \frac{p_t}{p_{t-n}} - 1 $$
+$$
+m_t = \frac{p_t}{p_{t-n}} - 1
+$$
 
 This formula gives us a number indicating how much the price of a stock has
 risen or fallen between day $t - n$ and day $t$. We typically see numbers for
@@ -251,11 +253,14 @@ them in our machine learning algorithms.
 Generally, if we want to calculate the $n$-day simple moving average, $SMA$, at
 day $t$, using a sequence of prices, $p$, we can use the following formula.
 
-$$ SMA_t = \frac{\sum_{i = (t - n)}^t{p_i}}{n} $$
+$$
+SMA_t = \frac{\sum_{i = (t - n)}^t{p_i}}{n}
+$$
 
 We can also quantify buy and sell signals.
 
-$$ f(SMA_{it}, p_i) = \left\{ \begin{array}{ll} Buy, & \quad
+$$
+f(SMA_{it}, p_i) = \left\{ \begin{array}{ll} Buy, & \quad
 \frac{SMA_{it}}{p_i} - 1 > 0 \\\\
             Sell, & \quad \frac{SMA_{it}}{p_i} - 1 < 0
         \end{array}
@@ -334,12 +339,16 @@ $t$, from a sequence of prices, $p$, using an $n$-day moving average, $SMA$, we
 can use the following formula. Note that $\sigma$ refers to the standard
 deviation.
 
-$$ BB_t = SMA_t \pm 2\sigma(p_{t - n:t}) $$
+$$
+BB_t = SMA_t \pm 2\sigma(p_{t - n:t})
+$$
 
 Additionally, we can look at the ratio, $r$, of the current price, less $SMA_t$,
 to the current Bollinger Band, $BB_t$.
 
-$$ r = \frac{p_t - SMA_t}{BB_t} $$
+$$
+r = \frac{p_t - SMA_t}{BB_t}
+$$
 
 We typically see values for $r$ between -1.0 and 1.0. In other words, the price
 rarely breaks out of the Bollinger Bands. Of course, this makes sense, as they
@@ -348,7 +357,8 @@ are placed two standard deviations outside of the mean.
 By comparing the value of $r$ over two consecutive days, $t - 1$ and $t$, we can
 quantify buy and sell signals.
 
-$$ f(r, t - 1, t) = \left\{ \begin{array}{ll} Buy, & \quad r_{t-1} < -1.0, r_{t}
+$$
+f(r, t - 1, t) = \left\{ \begin{array}{ll} Buy, & \quad r_{t-1} < -1.0, r_{t}
 > -1.0 \\\\
             Sell, & \quad r_{t-1} > 1.0, r_{t} < 1.0
         \end{array}
@@ -407,4 +417,6 @@ calculate the normalized values, $normed$, as follows. Note that
 $\overline{vals}$ refers to the mean of $vals$, and $\sigma_{vals}$ refers to
 the standard deviation of $vals$.
 
-$$ normed = \frac{vals - \overline{vals}}{\sigma_{vals}} $$
+$$
+normed = \frac{vals - \overline{vals}}{\sigma_{vals}}
+$$

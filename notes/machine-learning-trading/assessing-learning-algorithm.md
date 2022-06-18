@@ -127,7 +127,9 @@ point.
 Formally, given a model fit to $N$ data points, each with an error $e_i$, we can
 calculate RMSE as:
 
-$$ \sqrt{\frac{\sum_i{e_i^2}}{N}} $$
+$$
+\sqrt{\frac{\sum_i{e_i^2}}{N}}
+$$
 
 The RMSE formulation gives us an approximation of the average error, although it
 emphasizes larger errors slightly more than smaller ones.
