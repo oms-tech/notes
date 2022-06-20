@@ -924,8 +924,8 @@ $$
 \widehat{\sigma^2} = \frac{1}{n} \sum_{i=1}^n (X_i - \bar X)^2
 $$
 
-We just said that we couldn't take the square root of $S^2$ to estimate $
-\sigma$ in an unbiased way. However, we can use the square root of
+We just said that we couldn't take the square root of $S^2$ to estimate 
+$\sigma$ in an unbiased way. However, we can use the square root of
 $\widehat{\sigma^2}$ to get the MLE for $\sigma$.
 
 If we consider the 1:1 function $h(\theta) = +\sqrt\theta$, then the invariance
