@@ -1586,7 +1586,6 @@ We can use LOTUS to find $M_X(t)$:
 
 $$
 M_X(t) = E[e^{tX}] = \sum_x e^{tx} f(x) = e^t \times p + e^0 \times q = pe^t
-
 - q
 $$
 

@@ -151,8 +151,7 @@ Stock A has a $\beta$ of 1.0 and an $\alpha$ of 0.01. Stock B has a $\beta$ of
 a -50% investment in stock B. Let's plug these values into the CAPM equation.
 
 $$
-r_p = (0.5 \times 1.0 - 0.5 \times 2.0)r_m + 0.5 \times 0.01 - 0.5 \times
--0.01
+r_p = (0.5 \times 1.0 - 0.5 \times 2.0)r_m + 0.5 \times 0.01 - 0.5 \times - 0.01
 $$
 
 $$

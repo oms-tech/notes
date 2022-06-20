@@ -714,7 +714,6 @@ Suppose we have $X_1,...,X_n \overset{\text{iid}}{\sim} \text{Nor}(\mu,
 $$
 \begin{alignedat}{1} L(\mu, \sigma^2) &= \prod_{i=1}^n f(x_i) \\
 &= \prod_{i=1}^n \frac{1}{\sqrt{2\pi\sigma^2}}\exp\left\{-\frac{1}{2}\frac{(x_i
-
 - \mu)^2}{\sigma^2}\right\} \\
 &= \frac{1}{(2\pi\sigma^2)^{n/2}}\exp\left\{-\frac{1}{2}\sum_{i=1}^n\frac{(x_i -
 \mu)^2}{\sigma^2}\right\} \end{alignedat}
@@ -1083,7 +1082,6 @@ and $\bar X$:
 
 $$
 \begin{alignedat}{1} a &\approx \frac{\left(\frac{(1 - \bar X)^2\bar X}{S^2}
-
 - 1 + \bar X\right)\bar X}{1-\bar X} \\[3ex] &\approx \frac{\frac{(1 - \bar
 X)^2\bar X^2}{S^2} + \bar X^2 - \bar X }{1-\bar X} \\[3ex] &\approx \frac{(1 -
 \bar X)^2\bar X^2}{S^2(1 - \bar X)} + \frac{\bar X^2}{1 - \bar X} - \frac{\bar
@@ -1447,7 +1445,6 @@ $$
 
 Let's choose the appropriate $\chi^2$ quantile. We'll use $\alpha = 0.05$ and $v
 = k - 1 - s$. Since $s = 1$ - remember, we estimated $\lambda$ - then $v = 5 - 1
-
 - 1 = 3$. Therefore:
 
 $$

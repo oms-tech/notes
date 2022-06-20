@@ -1396,7 +1396,6 @@ $3 \times 6 \pmod{17} =  18 \pmod{17} = 1$.
 ![](https://assets.omscs-notes.com/images/notes/information-security/4A80521F-0882-4BAC-A178-7A72A29A1531.png)
 
 If $n = p \times q$ and $p$ and $q$ are prime, then $\phi(n) = (p - 1) \times (q
-
 - 1)$. For $n = 21$, $p = 3$ and $q = 7$, $\phi(n) = (3 - 1) \times (7 - 1) = 2
 \times 6 = 12$.
 

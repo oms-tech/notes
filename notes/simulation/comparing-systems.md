@@ -178,7 +178,6 @@ the usual confidence interval for the difference in the means is:
 
 $$
 \mu_x - \mu_y \in \bar X - \bar Y \pm t_{\alpha/2, \nu}\sqrt{\frac{S^2_X}{n}
-
 - \frac{S^2_Y}{m}}
 $$
 
@@ -290,7 +289,6 @@ $\mu_D$ and variance $\sigma^2_D$, where:
 
 $$
 \mu_D \equiv \mu_X - \mu_Y \newline \sigma_D^2 \equiv \sigma_X^2 + \sigma^2_Y
-
 - 2 \text{Cov}(X_i, Y_i)
 $$
 
@@ -599,7 +597,6 @@ following equation:
 $$
 \text{Var}\left(\frac{\widehat \theta_1 + \widehat \theta_2}{2}\right) =
 \frac{1}{4} \left[\text{Var}(\widehat \theta_1) + \text{Var}(\widehat \theta_2)
-
 - 2\text{Cov}(\widehat \theta_1, \widehat \theta_2)\right]
 $$
 

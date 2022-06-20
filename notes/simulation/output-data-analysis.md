@@ -1120,7 +1120,6 @@ converge to zero by $n^{2/3}$. Therefore:
 
 $$
 \text{MSE}(\widehat V_B) \doteq \frac{1}{n^{2/3}} \left[ \frac{\gamma^2}{c^2}
-
 - 2c\sigma^4\right ]
 $$
 

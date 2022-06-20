@@ -66,7 +66,6 @@ $$
 
 $$
 E[Y | X = x] = \frac{2}{3(1 - x^4)} y^3\Big|^1_{x^2} = \frac{2(1 - x^6)}{3(1
-
 - x^4)}
 $$
 
@@ -1361,7 +1360,6 @@ $$
 If $X \sim \text{Nor}(\mu, \sigma^2)$, then a linear function of $X$ is also
 normal: $aX + b \sim \text{Nor}\left(a\mu + b, a^2 \sigma^2\right)$.
 Interestingly, if we set $a = 1 / \sigma$ and $b = -\mu / \sigma$, then $Z = aX
-
 - b$ is:
 
 $$
@@ -2089,7 +2087,6 @@ $\sigma^2$ under a variety of assumptions.
 
 A $100(1-\alpha)\%$ two-sided **confidence interval** for an unknown parameter,
 $\theta$, is a random interval, $[L, U]$, such that $P(L \leq \theta \leq U) = 1
-
 - \alpha$.
 
 Here is an example of a confidence interval. We might say that we believe that

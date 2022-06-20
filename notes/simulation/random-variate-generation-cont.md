@@ -482,7 +482,6 @@ pdf:
 
 $$
 f(\bold x) = \frac{1}{(2\pi)^{k/2}|\Sigma|^{1/2}} \exp\left\{-\frac{(\bold x
-
 - \boldsymbol \mu)^\top\Sigma^{-1}(\bold x - \boldsymbol \mu)}{2}\right\}, \quad
 x \in \mathbb{R}^k
 $$
@@ -1383,7 +1382,6 @@ and start with $\mathcal{W}(0)=0$. Then:
 
 $$
 \mathcal{W}\left(\frac{i}{n}\right) = \mathcal{W}\left(\frac{i - 1}{n}\right)
-
 - \frac{Y_i}{\sqrt{n}}
 $$
 

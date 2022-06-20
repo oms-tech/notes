@@ -612,7 +612,6 @@ their arrival time and departure time: $W_i = D_i - A_i$. Therefore:
 $$
 \begin{alignedat}{1} \bar{L} & = \frac{\text{total customer-time in
 system}}{29} \\[2ex] & = \frac{\sum_{i=1}^6(D_i - A_i)}{29} \\[2ex] & = \frac{7
-
 - 12 + 14 + 16 + 12 + 9}{29} \\[2ex] & = \frac{70}{29} \end{alignedat}
 $$
 

@@ -385,7 +385,6 @@ value of one with probability $p$ and the value zero with probability $1 - p$.
 
 The cdf, $F(x)$, takes on the value $1-p$ for $x = 0$ since $P(X \leq 0) = P(0)
 = 1 - p$. For $x = 1$, $F(x) = 1$, since $P(X \leq 1) = P(X = 0) + P(X = 1) = 1
-
 - p + p = 1$.
 
 Let's construct a table to see how we might map the unit interval onto these two

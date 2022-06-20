@@ -93,7 +93,6 @@ $\phi(n) = \phi(p) \times \phi(q)$.
 ![](https://assets.omscs-notes.com/images/notes/information-security/4A80521F-0882-4BAC-A178-7A72A29A1531.png)
 
 If $n = p \times q$ and $p$ and $q$ are prime, then $\phi(n) = (p - 1) \times (q
-
 - 1)$. For $n = 21$, $p = 3$ and $q = 7$, $\phi(n) = (3 - 1) \times (7 - 1) = 2
 \times 6 = 12$.
 
@@ -270,7 +269,6 @@ in the field.
 
 In the Diffie-Hellman key exchange algorithm, there are two publicly known
 numbers $q$ and $\alpha$. $q$ is a large prime number - at least 300 digits long
-
 - and $\alpha$ is a small [primitive
 root](https://en.wikipedia.org/wiki/Primitive_root_modulo_n) of $q$.
 
