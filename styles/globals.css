@@ -15,6 +15,10 @@ a {
   box-sizing: border-box;
 }
 
+#__next {
+  height: 100%;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

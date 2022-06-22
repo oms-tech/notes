@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html>
+    <Html className="h-full">
       <Head>
         <link
           rel="stylesheet"
@@ -30,7 +30,7 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <body>
+      <body className="h-full">
         <Main />
         <NextScript />
       </body>
