@@ -147,11 +147,15 @@ const Note: NextPage<NoteProps> = ({
                   </div>
                 </Transition.Child>
                 <div className="flex-shrink-0 flex items-center px-4">
-                  <img
-                    className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-logo-indigo-300-mark-white-text.svg"
-                    alt="Workflow"
-                  />
+                  <div className="relative h-8 w-full">
+                    <Image
+                      src="https://tailwindui.com/img/logos/workflow-logo-indigo-300-mark-white-text.svg"
+                      alt="Workflow"
+                      layout="fill"
+                      objectPosition="left"
+                      objectFit="contain"
+                    />
+                  </div>
                 </div>
                 <div className="mt-5 flex-1 h-0 overflow-y-auto">
                   <nav className="px-2 space-y-1">
@@ -189,11 +193,15 @@ const Note: NextPage<NoteProps> = ({
         {/* Sidebar component, swap this element with another sidebar if you like */}
         <div className="flex flex-col flex-grow pt-5 bg-indigo-700 overflow-y-auto">
           <div className="flex items-center flex-shrink-0 px-4">
-            <img
-              className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-logo-indigo-300-mark-white-text.svg"
-              alt="Workflow"
-            />
+            <div className="relative h-8 w-full">
+              <Image
+                src="https://tailwindui.com/img/logos/workflow-logo-indigo-300-mark-white-text.svg"
+                alt="Workflow"
+                layout="fill"
+                objectPosition="left"
+                objectFit="contain"
+              />
+            </div>
           </div>
           <div className="mt-5 flex-1 flex flex-col">
             <nav className="flex-1 px-2 pb-4 space-y-1">
@@ -263,11 +271,14 @@ const Note: NextPage<NoteProps> = ({
                 <div>
                   <Menu.Button className="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     <span className="sr-only">Open user menu</span>
-                    <img
-                      className="h-8 w-8 rounded-full"
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      alt=""
-                    />
+                    <div className="relative h-8 w-8">
+                      <Image
+                        className="rounded-full"
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        alt=""
+                        layout="fill"
+                      />
+                    </div>
                   </Menu.Button>
                 </div>
                 <Transition
