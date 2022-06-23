@@ -8,9 +8,10 @@ import ReactMarkdown from "react-markdown";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkExtractFrontmatter from "remark-extract-frontmatter";
 import remarkReadingTime from "remark-reading-time";
+import remarkSlug from "remark-slug";
+import remarkToc from "@stefanprobst/remark-extract-toc";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
-import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -38,6 +39,8 @@ export const getStaticProps: GetStaticProps<NoteProps, NoteParams> = async ({
     .use(remarkFrontmatter)
     .use(remarkExtractFrontmatter, { yaml: parse })
     .use(remarkReadingTime, {})
+    .use(remarkSlug)
+    .use(remarkToc)
     .process(raw);
 
   if (!isNoteMetadata(data)) {
@@ -47,7 +50,13 @@ export const getStaticProps: GetStaticProps<NoteProps, NoteParams> = async ({
   return { props: { ...data, raw } };
 };
 
-const Note: NextPage<NoteProps> = ({ raw, course, title, readingTime }) => (
+const Note: NextPage<NoteProps> = ({
+  raw,
+  course,
+  title,
+  readingTime,
+  toc,
+}) => (
   <main>
     <div className="relative py-16 bg-white overflow-hidden">
       <div className="relative px-4 sm:px-6 lg:px-8">
@@ -66,7 +75,7 @@ const Note: NextPage<NoteProps> = ({ raw, course, title, readingTime }) => (
         </div>
         <div className="mt-6 prose prose-pre:p-0 prose-indigo prose-md text-gray-500 mx-auto">
           <ReactMarkdown
-            remarkPlugins={[remarkFrontmatter, remarkMath]}
+            remarkPlugins={[remarkFrontmatter, remarkMath, remarkSlug]}
             rehypePlugins={[
               [
                 rehypeKatex,
@@ -76,7 +85,6 @@ const Note: NextPage<NoteProps> = ({ raw, course, title, readingTime }) => (
                   minRuleThickness: 0.06,
                 },
               ],
-              rehypeSlug,
               [
                 rehypeAutolinkHeadings,
                 {
@@ -93,8 +101,7 @@ const Note: NextPage<NoteProps> = ({ raw, course, title, readingTime }) => (
                         [
                           s("path", {
                             fillRule: "evenodd",
-                            d:
-                              "M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z",
+                            d: "M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z",
                           }),
                         ]
                       ),
