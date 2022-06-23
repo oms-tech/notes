@@ -30,6 +30,7 @@
     ]
   },
   "dependencies": {
+    "@stefanprobst/remark-extract-toc": "^2.2.0",
     "@types/glob": "^7.2.0",
     "glob": "^8.0.3",
     "hastscript": "^7.0.2",
@@ -40,12 +41,12 @@
     "react-syntax-highlighter": "^15.5.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-katex": "^6.0.2",
-    "rehype-slug": "^5.0.1",
     "remark": "^14.0.2",
     "remark-extract-frontmatter": "^3.2.0",
     "remark-frontmatter": "^4.0.1",
     "remark-math": "^5.1.1",
-    "remark-reading-time": "^2.0.1"
+    "remark-reading-time": "^2.0.1",
+    "remark-slug": "^7.0.1"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.2",
