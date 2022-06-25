@@ -3,7 +3,7 @@ import { TocEntry } from "@stefanprobst/remark-extract-toc";
 
 export type NoteParams = { courseId: string; noteId: string };
 
-export interface NoteMetadata {
+export interface NoteMetadata extends NoteParams {
   course: string;
   title: string;
   readingTime: ReadTimeResults;

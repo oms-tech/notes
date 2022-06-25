@@ -30,7 +30,11 @@
     ]
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.5",
+    "@heroicons/react": "^1.0.6",
+    "@primer/octicons-react": "^17.3.0",
     "@stefanprobst/remark-extract-toc": "^2.2.0",
+    "@tailwindcss/forms": "^0.5.2",
     "@types/glob": "^7.2.0",
     "glob": "^8.0.3",
     "hastscript": "^7.0.2",
