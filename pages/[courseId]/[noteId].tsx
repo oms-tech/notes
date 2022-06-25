@@ -1,6 +1,7 @@
 import { parse } from "yaml";
 import { Fragment, useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
+import { MarkGithubIcon } from "@primer/octicons-react";
 import {
   BellIcon,
   CalendarIcon,
@@ -32,6 +33,12 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { nord } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import { FileSystemFetcher } from "../../lib/ssg";
+import {
+  repoRootUrl,
+  viewFileUrl,
+  editFileUrl,
+  createIssueUrl,
+} from "../../lib/util/github";
 import { isNoteMetadata, NoteParams, Note as NoteProps } from "../../types";
 
 const fetcher = new FileSystemFetcher();
@@ -61,7 +68,7 @@ export const getStaticProps: GetStaticProps<NoteProps, NoteParams> = async ({
     throw new Error(`'data' missing fields, exiting: ${data}`);
   }
 
-  return { props: { ...data, raw } };
+  return { props: { ...data, ...params, raw } };
 };
 
 const navigation = [
@@ -73,12 +80,6 @@ const navigation = [
   { name: "Reports", href: "#", icon: ChartBarIcon, current: false },
 ];
 
-const userNavigation = [
-  { name: "Your Profile", href: "#" },
-  { name: "Settings", href: "#" },
-  { name: "Sign out", href: "#" },
-];
-
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
@@ -88,9 +89,18 @@ const Note: NextPage<NoteProps> = ({
   course,
   title,
   readingTime,
+  courseId,
+  noteId,
   toc,
 }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const userNavigation = [
+    { name: "Submit typo report", href: createIssueUrl(course, title) },
+    { name: "View this page", href: viewFileUrl(courseId, noteId) },
+    { name: "Edit this page", href: editFileUrl(courseId, noteId) },
+    { name: "View repository", href: repoRootUrl },
+  ];
 
   return (
     <div>
@@ -269,16 +279,13 @@ const Note: NextPage<NoteProps> = ({
               {/* Profile dropdown */}
               <Menu as="div" className="ml-3 relative">
                 <div>
-                  <Menu.Button className="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  <Menu.Button className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     <span className="sr-only">Open user menu</span>
-                    <div className="relative h-8 w-8">
-                      <Image
-                        className="rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                        layout="fill"
-                      />
-                    </div>
+                    <MarkGithubIcon
+                      verticalAlign="middle"
+                      size={24}
+                      aria-hidden="true"
+                    />
                   </Menu.Button>
                 </div>
                 <Transition
@@ -295,6 +302,8 @@ const Note: NextPage<NoteProps> = ({
                       <Menu.Item key={item.name}>
                         {({ active }) => (
                           <a
+                            target="_blank"
+                            rel="noreferrer"
                             href={item.href}
                             className={classNames(
                               active ? "bg-gray-100" : "",

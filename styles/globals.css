@@ -19,6 +19,17 @@ a {
   height: 100%;
 }
 
+.octicon.octicon-mark-github {
+  /* 
+    For some reason that I don't understand, these icons are `display: inline-block`
+    by default which adds just enough magic space below the image to make the image
+    (and the corresponding outline on `:focus`) look off. Additionally, the
+    properties are added directly to the element, despite the component receiving 
+    a className prop. So, the only choice is !important. :(
+   */
+  display: block !important;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
